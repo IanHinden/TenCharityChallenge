@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>The Ten Charity Challenge</title>
-	<link rel="stylesheet" type="text/cass" href="style.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 
