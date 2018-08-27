@@ -191,3 +191,15 @@ header .nav-login a {
 	line-height: 63px;
 	cursor: pointer;
 }
+
+.main-container {
+	padding-top:40px;
+}
+
+.main-container h2 {
+	font-family: arial;
+	font-size: 40px;
+	color: #111;
+	line-height: 50px;
+	text-align: center;
+}
