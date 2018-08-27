@@ -108,6 +108,11 @@ input, select {
 	width: 1000px;
 }
 
+.main-wrapper ul li{
+	float: left;
+	margin-right; 5px;
+}
+
 a {
 	text-decoration: none;
 }
@@ -184,7 +189,7 @@ header .nav-login a {
 	height: 60px;
 	border: none;
 	float: left;
-	background-color: white;
+	background-color: #DDBD0F;
 	font-family: arial;
 	font-size: 16px;
 	color: #111;
