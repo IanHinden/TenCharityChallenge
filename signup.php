@@ -11,7 +11,7 @@
 			<input type="text" name="email" placeholder="E-mail">
 			<input type="text" name="uid" placeholder="User name">
 			<input type="password" name="pwd" placeholder="Password">
-			<button type="submit" name="submit">Sign up</
+			<button type="submit" name="submit">Sign up</button>
 		</form>
 	</div>
 </section>
