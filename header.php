@@ -1,3 +1,8 @@
+<?php
+	session_start();
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,7 +20,7 @@
 				<li><a href="selecting.php">Picking a Charity</a></li>
 			</ul>
 			<div class="nav-login">
-				<form>
+				<form action="includes/login.inc.php" method="POST">
 					<input type="text" name="uid" placeholder="Username/email">
 					<input type="password" name="pwd" placeholder="Password">
 					<button type="submit" name="submit">Login</button>
