@@ -2,7 +2,7 @@
 
 if (isset($_POST['submit'])) {
 	
-	include_once 'dbh.inc.php';
+	include 'dbh.inc.php';
 	
 	$first = $_POST['first'];
 	$last = $_POST['last'];
