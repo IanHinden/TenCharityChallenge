@@ -1,5 +1,6 @@
 <?php
 	session_start();
+	include_once 'includes/dbh.inc.php'; 
 ?>
 
 
@@ -22,6 +23,7 @@
 			<div class="nav-login">
 				<?php
 					if (isset($_SESSION['u_id'])){
+						echo "Hello, " . $_SESSION["u_first"];
 						echo '<form action="includes/logout.inc.php" method="POST">
 						<button type="submit" name="submit">Logout</button>
 						</form>';
