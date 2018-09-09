@@ -1,5 +1,6 @@
 <?php
 	include_once 'header.php';
+	include_once 'includes/dbh.inc.php';
 ?>
 
 <section class="main-container">
@@ -20,6 +21,16 @@
 			<input type="text" name="length" placeholder="Length">
 			<button type="submit" name="submit">Create Event</button>
 			</form>';
+			
+			$sql = "SELECT * FROM events WHERE event_user = '".$_SESSION['u_id']."';";
+			$result = mysqli_query($conn, $sql);
+			$resultCheck = mysqli_num_rows($result);
+			
+			if ($resultCheck > 0) {
+				while ($row = mysqli_fetch_assoc($result)) {
+					echo $row['event_avenue'] . "<br>";
+				}
+			}
 		} else {
 			echo 'test';
 		}
