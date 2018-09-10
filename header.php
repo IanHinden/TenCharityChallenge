@@ -23,7 +23,7 @@
 			<div class="nav-login">
 				<?php
 					if (isset($_SESSION['u_id'])){
-						echo "Hello, " . $_SESSION["u_first"];
+						echo '<p id="headergreeting">Hello, ' . $_SESSION['u_first'] . '</p>';
 						echo '<form action="includes/logout.inc.php" method="POST">
 						<button type="submit" name="submit">Logout</button>
 						</form>';

@@ -132,7 +132,7 @@ header nav ul {
 }
 
 header nav ul li {
-	float: leftl
+	float: left;
 	list-style: none;
 }
 
@@ -207,6 +207,11 @@ header .nav-login a {
 	color: #111;
 	line-height: 50px;
 	text-align: center;
+}
+
+#headergreeting {
+	float: right;
+	color: red;
 }
 
 /*signup.php*/
