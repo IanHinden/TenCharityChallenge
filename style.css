@@ -210,8 +210,12 @@ header .nav-login a {
 }
 
 #headergreeting {
-	float: right;
-	color: red;
+	display: block;
+	float: left;
+	padding-right: 10px;
+	line-height: 63px;
+	font-size: 20px;
+	font-family: arial;
 }
 
 /*signup.php*/
