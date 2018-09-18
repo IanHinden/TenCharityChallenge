@@ -218,6 +218,7 @@ header .nav-login a {
 	color: white;
 	line-height: 50px;
 	text-align: center;
+	font-family: 'Noto Serif JP', sans-serif;
 }
 
 .main-container img {
@@ -234,6 +235,7 @@ header .nav-login a {
 	color: white;
 	line-height: 50px;
 	text-align: center;
+	font-family: 'Noto Serif JP', sans-serif;
 }
 
 #headergreeting {
