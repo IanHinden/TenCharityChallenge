@@ -213,7 +213,6 @@ header .nav-login a {
 }
 
 .main-container h2 {
-	font-family: arial;
 	font-size: 40px;
 	color: white;
 	line-height: 50px;
@@ -230,12 +229,11 @@ header .nav-login a {
 }
 
 .main-container h3 {
-	font-family: arial;
 	font-size: 30px;
 	color: white;
 	line-height: 50px;
 	text-align: center;
-	font-family: 'Noto Serif JP', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 }
 
 #headergreeting {

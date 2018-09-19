@@ -9,7 +9,7 @@
 <head>
 	<title>The Ten Charity Challenge</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
-	<link href="https://fonts.googleapis.com/css?family=Noto+Serif+JP" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat|Noto+Serif+JP" rel="stylesheet">
 </head>
 <body>
 
