@@ -28,7 +28,7 @@
 			
 			if ($resultCheck > 0) {
 				while ($row = mysqli_fetch_assoc($result)) {
-					echo $row['event_avenue'] . "<br>";
+					echo '<p>' . $row['event_avenue'] . '</p><br>';
 				}
 			}
 		} else {
@@ -36,9 +36,9 @@
 		}
 	?>
 <section>
-	<div>
+	<div class="desc">
 		<h2>Can you volunteer? Ten times in one year?</h2>
-		<p>At the Ten Charity Challenge, we have just one question: can you successfully volunteer ten times in a year? To win, all you need to do serve at a soup kitchen once a month. Or pack lunches for homeless teens. Or drive pets to the vet for veterans...</p>
+		<h3>At the Ten Charity Challenge, we have just one question: can you successfully volunteer ten times in a year? To win, all you need to do serve at a soup kitchen once a month. Or pack lunches for homeless teens. Or drive pets to the vet for veterans...</h3>
 	</div>
 		</section>
 <section>

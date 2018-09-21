@@ -282,3 +282,20 @@ header .nav-login a {
 .signup-form button:hover {
 	background-color: #111;
 }
+
+#intro {
+	padding-top: 90px;
+}
+
+.desc h2{
+	font-family: 'Noto Serif JP', sans-serif;
+	text-align: center;
+	font-size: 30px;
+	padding: 20px;
+}
+
+.desc h3 {
+	font-family: 'Montserrat', sans-serif;
+	text-align: center;
+	max-width: 500px;
+}
