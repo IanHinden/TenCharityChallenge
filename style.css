@@ -207,9 +207,8 @@ header .nav-login a {
 }
 
 .main-container-text {
-		padding: 50px 0;
-		float: left;
-		padding: 50px;
+	padding: 50px 0;
+	padding: 50px;
 }
 
 .main-container h2 {
@@ -218,6 +217,8 @@ header .nav-login a {
 	line-height: 50px;
 	text-align: center;
 	font-family: 'Noto Serif JP', sans-serif;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .main-container img {
@@ -234,6 +235,8 @@ header .nav-login a {
 	line-height: 50px;
 	text-align: center;
 	font-family: 'Montserrat', sans-serif;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 #headergreeting {
@@ -283,8 +286,12 @@ header .nav-login a {
 	background-color: #111;
 }
 
+/*intro paragraph */
+
 #intro {
 	padding-top: 90px;
+	border: 0px;
+	margin: 0px;
 }
 
 .desc h2{
