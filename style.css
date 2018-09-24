@@ -294,14 +294,14 @@ header .nav-login a {
 	margin: 0px;
 }
 
-.desc h2{
+#main-about h2{
 	font-family: 'Noto Serif JP', sans-serif;
 	text-align: center;
 	font-size: 30px;
 	padding: 20px;
 }
 
-.desc h3 {
+#main-about h3 {
 	font-family: 'Montserrat', sans-serif;
 	text-align: center;
 	max-width: 500px;
@@ -310,4 +310,26 @@ header .nav-login a {
 	margin-right: auto;
 	margin-left: auto;
 	line-height: 30px;
+}
+
+.purpose {
+	display: flex;
+	flex-flow: row wrap;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	text-align: none;
+	margin-left: none;
+	margin-right: none;
+}
+
+.purpose-child {
+	margin: auto;
+	flex: 1;
+	flex-grow: 1;
+}
+
+.purpose-child img {
+	width: 20%;
+	display: block;
 }
