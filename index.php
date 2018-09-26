@@ -45,14 +45,14 @@
 			<text x="5" y="30">A nice rectangle</text>
 		</svg>
 	</section>
-	<section>
+	<section id="purposeid">
 		<div class="purpose">	
-			<div class="purpose-child">
+			<div class="purpose-child-two">
 				<h2>What is this site?</h2>
 				<h3>The purpose of this website is to give you a space to keep track of your volunteer events. This site is not a necessary part of the challenge. In fact, everything site does can be replicated with a pencil and paper. But if you want a place to keep track, leave notes and photos, and share events to involve your friends, we're here for you.</h3>
 			</div>
 			<div class="purpose-child">
-				<img src="images/tencharitytest.jpg" alt="Purpose">
+				<img src="images/download.jpg" alt="Purpose">
 			</div>
 		</div>
 	</section>
