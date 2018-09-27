@@ -344,9 +344,11 @@ img {
 
 .purpose-child {
 	flex: 1;
+	text-align: center;
 }
 
 .purpose-child-two {
-	flex: 2;
+	flex: 1;
+	min-width: 600px;
 }
 
