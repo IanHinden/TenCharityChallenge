@@ -350,3 +350,22 @@ header .nav-login a {
 	min-width: 600px;
 }
 
+@media (max-width:667px)  { 
+
+	.desc h2{
+		font-size: 60px;
+	}
+	
+	.desc h3 {
+		font-size: 40px;
+	}
+	
+	#main-about h2 {
+		font-size: 50px;
+		font-color: red;
+	}
+	
+	#main-about h3 {
+		font-size: 30px;
+	}
+}
