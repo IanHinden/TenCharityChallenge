@@ -352,6 +352,10 @@ header .nav-login a {
 
 @media (max-width:667px)  { 
 
+	#intro {
+		height: 500px;
+	}
+
 	.desc h2{
 		font-size: 60px;
 	}
