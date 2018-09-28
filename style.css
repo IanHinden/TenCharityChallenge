@@ -294,6 +294,11 @@ header .nav-login a {
 	margin: 0px;
 }
 
+#main-about img {
+	height: 300px;
+	width: 300px;
+}
+
 #main-about h2{
 	font-family: 'Noto Serif JP', sans-serif;
 	text-align: center;
