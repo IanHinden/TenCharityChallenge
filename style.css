@@ -350,10 +350,33 @@ header .nav-login a {
 	min-width: 600px;
 }
 
+/*mobile media query*/
+
+@media (max-width:800px)  { 
+
+	#navlink {
+		position: fixed;
+		margin-top: 60px;
+		width: 100%;
+		background-color: white;
+	}
+	
+	#navlink ul {
+		width: 100%;
+		text-align: center;
+	}
+	
+	#navlink li {
+		width: 100%;
+		border: .5px solid black;
+	}
+
+}
+
 @media (max-width:667px)  { 
 
-	#intro {
-		height: 500px;
+	.main-container {
+		height: 550px;
 	}
 
 	.desc h2{
