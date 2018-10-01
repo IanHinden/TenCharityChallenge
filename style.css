@@ -370,7 +370,28 @@ header .nav-login a {
 		width: 100%;
 		border: .5px solid black;
 	}
-
+	
+	.nav-login {
+		position: fixed;
+		margin-top: 240px;
+		width: 100%;
+		background-color: white;
+		border-left: auto;
+		border-right: auto;
+		border: 1px solid black;
+		float: none;
+		height: 60px;
+	}
+	
+	.nav-login form input {
+		float: none;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	
+	header .nav-login a {
+		display: none;
+	}
 }
 
 @media (max-width:667px)  { 
