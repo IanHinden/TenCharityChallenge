@@ -371,22 +371,30 @@ header .nav-login a {
 		border: .5px solid black;
 	}
 	
-	.nav-login {
+	header .nav-login {
 		position: fixed;
-		margin-top: 240px;
+		margin-top: 250px;
+		margin-right: auto;
+		margin-left: auto;
 		width: 100%;
 		background-color: white;
-		border-left: auto;
-		border-right: auto;
 		border: 1px solid black;
-		float: none;
 		height: 60px;
+		float: none;
 	}
 	
-	.nav-login form input {
+	header .nav-login form {
+		width: 100%;
 		float: none;
-		margin-left: auto;
-		margin-right: auto;
+		text-align: center;
+	}
+	
+	header .nav-login form input {
+		float: none;
+	}
+	
+	header .nav-login form button {
+		float: none;
 	}
 	
 	header .nav-login a {
