@@ -354,11 +354,47 @@ header .nav-login a {
 
 @media (max-width:800px)  { 
 
+	.menu-icon {
+		  position: absolute;
+		  float: left;
+		  width: 20px;
+		  height: 14px;
+		  margin: auto;
+		  top: 0;
+		  right: 15px;
+		  bottom: 1px;
+	}
+
+	.main-wrapper .menu-line{
+		
+		 background-color: #333;
+		 height: 2px;
+		 width: 100%;
+		 border-radius: 2px;
+		 position: absolute; 
+		 left: 0;
+	}
+		
+	.main-wrapper .menu-line-1 { 
+		top: 0; 
+	}
+
+	.main-wrapper .menu-line-2 {
+		 top: 0;
+		 bottom: 0;
+		 margin: auto;
+	}
+
+	.main-wrapper .menu-line-3 { 
+		bottom: 0; 
+	}
+
 	#navlink {
 		position: fixed;
 		margin-top: 60px;
 		width: 100%;
 		background-color: white;
+		visibility: hidden;
 	}
 	
 	#navlink ul {
