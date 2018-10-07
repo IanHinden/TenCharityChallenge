@@ -389,20 +389,38 @@ header .nav-login a {
 		bottom: 0; 
 	}
 
-	#navlink {
+	.navlink {
 		position: fixed;
 		margin-top: 60px;
 		width: 100%;
 		background-color: white;
-		visibility: hidden;
+		right: -786px;
+		-webkit-transition: .5s ease-out;
+		-moz-transition: .5s ease-out;
+		-o-transition: .5s ease-out;
+		-ms-transition: .5s ease-out;
+		transition: .5s ease-out;
 	}
 	
-	#navlink ul {
+	.navlink-out {
+		position: fixed;
+		margin-top: 60px;
+		width: 100%;
+		background-color: white;
+		right: 0px;
+		-webkit-transition: .5s ease-out;
+		-moz-transition: .5s ease-out;
+		-o-transition: .5s ease-out;
+		-ms-transition: .5s ease-out;
+		transition: .5s ease-out;
+	}
+	
+	.navlink ul {
 		width: 100%;
 		text-align: center;
 	}
 	
-	#navlink li {
+	.navlink li {
 		width: 100%;
 		border: .5px solid black;
 	}
