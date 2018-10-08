@@ -428,13 +428,26 @@ header .nav-login a {
 	header .nav-login {
 		position: fixed;
 		margin-top: 250px;
-		margin-right: auto;
-		margin-left: auto;
 		width: 100%;
 		background-color: white;
 		border: 1px solid black;
 		height: 60px;
 		float: none;
+		right: -768px;
+		-webkit-transition: .5s ease-out;
+		-moz-transition: .5s ease-out;
+		-o-transition: .5s ease-out;
+		-ms-transition: .5s ease-out;
+		transition: .5s ease-out;
+	}
+	
+	header .nav-login-out {
+		right: 0px;
+		-webkit-transition: .5s ease-out;
+		-moz-transition: .5s ease-out;
+		-o-transition: .5s ease-out;
+		-ms-transition: .5s ease-out;
+		transition: .5s ease-out;
 	}
 	
 	header .nav-login form {
