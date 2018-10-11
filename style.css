@@ -430,10 +430,10 @@ header .nav-login a {
 		margin-top: 250px;
 		width: 100%;
 		background-color: white;
-		border: 1px solid black;
+		border-top: 1px solid black;
 		height: 60px;
 		float: none;
-		right: -768px;
+		right: -786px;
 		-webkit-transition: .5s ease-out;
 		-moz-transition: .5s ease-out;
 		-o-transition: .5s ease-out;
