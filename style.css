@@ -103,6 +103,24 @@ input, select {
 
 /*My styling*/
 
+#main-about .mobile-signup a{
+	position: fixed;
+	width: 100px;
+	height: 40px;
+	text-align: center;
+	z-index: 2000;
+	bottom: 20px;
+	left: 43%;
+	right: 43%;
+	border-radius: 25px;
+	line-height: 37px;
+	display: none;
+	font-family: 'Noto Serif JP', sans-serif;
+	font-weight: bold;
+	color: black;
+	background-image: linear-gradient(to right, #00cc44 , #99ffbb);
+}
+
 .main-wrapper {
 	margin: 0 auto;
 	width: auto;
@@ -353,6 +371,9 @@ header .nav-login a {
 /*mobile media query*/
 
 @media (max-width:800px)  { 
+	#main-about .mobile-signup a {
+		display: block;
+	}
 
 	.menu-icon {
 		  position: absolute;

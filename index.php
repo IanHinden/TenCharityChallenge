@@ -56,6 +56,7 @@
 			</div>
 		</div>
 	</section>
+	<div class="mobile-signup"><a href="signup.php">SIGN UP</a></div>
 </div>
 
 <?php
