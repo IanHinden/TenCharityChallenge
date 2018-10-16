@@ -367,7 +367,7 @@ header .nav-login a {
 
 .purpose-child-two {
 	flex: 1;
-	min-width: 600px;
+	min-width: 500px;
 }
 
 /*mobile media query*/
@@ -513,5 +513,9 @@ header .nav-login a {
 	
 	#main-about h3 {
 		font-size: 30px;
+	}
+	
+	.purpose-child-two {
+		min-width: none;
 	}
 }
