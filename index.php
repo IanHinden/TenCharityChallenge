@@ -29,7 +29,8 @@
 			if (isset($_SESSION['u_id'])) {
 				echo "You are logged in!";
 			}
-			echo '</div>';
+			echo '</div>
+			</section>';
 		?>
 	</div>
 </section>';
