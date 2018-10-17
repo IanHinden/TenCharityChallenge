@@ -23,13 +23,10 @@
 			}
 		} else {
 			echo '<section class="main-container">
-					<div class="main-wrapper">
-						<h2>Welcome to the Ten Charity Challenge </h2>';
-
-			if (isset($_SESSION['u_id'])) {
-				echo "You are logged in!";
-			}
-			echo '</div>
+					<div class="main-container-text">
+						<h2>Welcome to the Ten Charity Challenge </h2>
+						<h3>Can you volunteer? Ten times in one year?</h3>
+			</div>
 			</section>';
 		?>
 	</div>
