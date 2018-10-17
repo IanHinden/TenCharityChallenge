@@ -41,9 +41,6 @@
 			<h2>Can you volunteer? Ten times in one year?</h2>
 			<h3>At the Ten Charity Challenge, we have just one question: can you successfully volunteer ten times in a year? To win, all you need to do serve at a soup kitchen once a month. Or pack lunches for homeless teens. Or drive pets to the vet for veterans...</h3>
 		</div>
-		<svg>
-			<text x="5" y="30">A nice rectangle</text>
-		</svg>
 	</section>
 	<section id="purposeid">
 		<div class="purpose">	
