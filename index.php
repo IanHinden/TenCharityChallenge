@@ -3,16 +3,6 @@
 	include_once 'includes/dbh.inc.php';
 ?>
 
-<section class="main-container">
-	<div class="main-wrapper">
-		<h2>Welcome to the Ten Charity Challenge </h2>
-		<?php
-			if (isset($_SESSION['u_id'])) {
-				echo "You are logged in!";
-			}
-		?>
-	</div>
-</section>
 	<?php
 		if (isset($_SESSION['u_id'])){
 			echo '<form action="includes/addevent.inc.php" method="POST">
@@ -32,7 +22,16 @@
 				}
 			}
 		} else {
-			echo 'test';
+			echo '<section class="main-container">
+					<div class="main-wrapper">
+						<h2>Welcome to the Ten Charity Challenge </h2>';
+
+			if (isset($_SESSION['u_id'])) {
+				echo "You are logged in!";
+			}
+		?>
+	</div>
+</section>';
 		}
 	?>
 <div id="main-about">
