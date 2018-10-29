@@ -11,7 +11,15 @@
 			<input type="text" name="email" placeholder="E-mail">
 			<input type="text" name="uid" placeholder="User name">
 			<input type="password" name="pwd" placeholder="Password">
-			<button type="submit" name="submit">Sign up</button>
+		<h3>Sign up</h3>
+			<!-- <button type="submit" name="submit">Sign up</button> -->
+		</form>
+	</div>
+	<div id="confirm">
+		<p>TOS: I will do my best</p>
+		<p>Cancel</p>
+		<form class="signup-form" action="includes/signup.inc.php" method="POST">
+		<button type="submit" name="submit">Sign up</button>
 		</form>
 	</div>
 </section>
@@ -21,3 +29,4 @@
 <?php
 	include_once 'footer.php';
 ?>
+
