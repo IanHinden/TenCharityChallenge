@@ -15,7 +15,7 @@
 			<!-- <button type="submit" name="submit">Sign up</button> -->
 		</form>
 	</div>
-	<div id="confirm">
+	<div class="confirm">
 		<p>TOS: I will do my best</p>
 		<p>Cancel</p>
 		<form class="signup-form" action="includes/signup.inc.php" method="POST">
