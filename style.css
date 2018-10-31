@@ -528,6 +528,26 @@ header .nav-login a {
 	bottom: 0;
 	height: 200px;
 	max-width: 500px;
-	background-color: red;
+	background-color: white;
 	box-shadow: 12px 12px 2px 1px rgba(1, 1, 80, .2);
+	border: 2px solid black;
+	border-radius: 10px;
+}
+
+#tos {
+	background-color: #ADD8E6;
+	padding: 10px;
+}
+
+#terms {
+	padding: 10px;
+	font-weight: bold;
+	text-align: center;
+}
+
+#agree {
+	display: inline;
+	float: left;
+	width: 5%;
+	height: 15px;
 }

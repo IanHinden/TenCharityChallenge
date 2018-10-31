@@ -16,11 +16,11 @@
 		</form>
 	</div>
 	<div class="confirm">
-		<p>TOS: I will do my best</p>
-		<p>Cancel</p>
-		<form class="signup-form" action="includes/signup.inc.php" method="POST" onsubmit="if(document.getElementById('agree').checked) { return true; } else { alert('Please indicate that you have read and agree to the Terms and Conditions and Privacy Policy'); return false; }">
-		<p>I agree to the Terms of Service</p>
+		<p id="tos">Terms of Service</p>
+		<p id="terms">I will do my best.</p>
+		<form class="signup-form" action="includes/signup.inc.php" method="POST" onsubmit="if(document.getElementById('agree').checked) { return true; } else { alert('Please indicate that you have read and agree to the Terms of Service and Privacy Policy'); return false; }">
 		<input type="checkbox" name="checkbox" value="check" id="agree" />
+		<p>I agree to the Terms of Service</p>
 		<button type="submit" name="submit" value="submit" />Sign up</button>
 		</form>
 	</div>
