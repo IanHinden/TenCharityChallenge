@@ -18,10 +18,10 @@
 	<div class="confirm">
 		<p>TOS: I will do my best</p>
 		<p>Cancel</p>
-		<form class="signup-form" action="includes/signup.inc.php" method="POST">
+		<form class="signup-form" action="includes/signup.inc.php" method="POST" onsubmit="if(document.getElementById('agree').checked) { return true; } else { alert('Please indicate that you have read and agree to the Terms and Conditions and Privacy Policy'); return false; }">
 		<p>I agree to the Terms of Service</p>
-		<input type="checkbox" name="agree" value="agree">
-		<button type="submit" name="submit">Sign up</button>
+		<input type="checkbox" name="checkbox" value="check" id="agree" />
+		<button type="submit" name="submit" value="submit" />Sign up</button>
 		</form>
 	</div>
 </section>
