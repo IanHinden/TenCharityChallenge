@@ -19,6 +19,8 @@
 		<p>TOS: I will do my best</p>
 		<p>Cancel</p>
 		<form class="signup-form" action="includes/signup.inc.php" method="POST">
+		<p>I agree to the Terms of Service</p>
+		<input type="checkbox" name="agree" value="agree">
 		<button type="submit" name="submit">Sign up</button>
 		</form>
 	</div>
