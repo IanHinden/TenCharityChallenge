@@ -488,6 +488,12 @@ header .nav-login a {
 	margin-top: 20px;
 }
 
+#partnerpics {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
 #partners h1 {
 	text-align: center;
 	font-family: 'Noto Serif JP', sans-serif;
@@ -498,6 +504,12 @@ header .nav-login a {
 	width: 80%;
 	text-align:center; 
 	margin: 15px auto;
+}
+
+#footer img {
+	max-width: 20%;
+	flex: 1;
+	align-self: center;
 }
 
 /*signup.php*/

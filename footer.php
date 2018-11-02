@@ -1,6 +1,12 @@
 <div id="footer">
 	<section id="partners">
 		<h1>Partners</h1>
+		<hr>
+		<div id="partnerpics">
+			<img src="images/partners/garbage.jpg">
+			<img src="images/partners/garbage.jpg">
+			<img src="images/partners/garbage.jpg">
+		</div>
 	</section>
 	<section id="footer-links">
 		<div id="mailing-list">
