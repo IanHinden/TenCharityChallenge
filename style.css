@@ -481,6 +481,25 @@ header .nav-login a {
 	}
 }
 
+/*footer*/
+
+#footer {
+	padding: 10px;
+	margin-top: 20px;
+}
+
+#partners h1 {
+	text-align: center;
+	font-family: 'Noto Serif JP', sans-serif;
+	font-size: 30px;
+}
+
+#partners hr {
+	width: 80%;
+	text-align:center; 
+	margin: 15px auto;
+}
+
 /*signup.php*/
 
 .signup-form {
