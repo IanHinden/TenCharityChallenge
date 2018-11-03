@@ -512,6 +512,14 @@ header .nav-login a {
 	align-self: center;
 }
 
+#footer-links {
+	background-color: grey;
+}
+
+#footer-links p, li {
+	color: white;
+}
+
 /*signup.php*/
 
 .signup-form {

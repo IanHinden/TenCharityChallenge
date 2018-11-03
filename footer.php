@@ -15,6 +15,9 @@
 				<input type="text" name="mailinglist" placeholder="E-mail Address" />
 			</form>
 		</div>
+		<div id="social">
+			<p>Follow us on Social Media</p>
+		</div>
 		<div id="additional-links">
 			<ul>
 				<li>Privacy Policy</li>
