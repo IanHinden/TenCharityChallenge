@@ -52,7 +52,7 @@
 		</div>
 	</section>
 	<section>
-		<div class="desc">
+		<div class="benefits">
 			<h2>The Benefits of Volunteering</h2>
 			<h3>Volunteering can help organizations in need while giving people in the community a better chance to get to know their neighbors. Volunteers learn more about issues their communities are facing. On top of that, it's a great group activity!</h3>
 		</div>
