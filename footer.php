@@ -18,6 +18,8 @@
 		<div id="social">
 			<p>Follow us on Social Media</p>
 		</div>
+	</section>
+	<section id="legal"
 		<div id="additional-links">
 			<ul>
 				<li>Privacy Policy</li>

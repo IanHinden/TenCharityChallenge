@@ -510,15 +510,28 @@ header .nav-login a {
 	margin: 15px auto;
 }
 
-#footer img {
+#footer #partners img {
 	max-width: 20%;
+	min-width: 240px;
 	flex: 1;
 	align-self: center;
+	margin: 40px;
 }
 
 #footer-links {
+	display: flex;
 	background-color: grey;
+	flex-flow: row wrap;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: space-evenly;
+	align-items: center;
+	justify-content: center;
 }
+
+#mailing-list, #footer-logo, #social {
+	flex: 1;
+} 
 
 #footer-links p, li {
 	color: white;
