@@ -542,6 +542,12 @@ header .nav-login a {
 	background: black;
 }
 
+#copyright {
+	color: white;
+	float: left;
+	line-height: 35px;
+}
+
 #additional-links {
 	padding: 10px 20%;
 }

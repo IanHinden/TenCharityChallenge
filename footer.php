@@ -20,6 +20,9 @@
 		</div>
 	</section>
 	<section id="legal"
+		<div id="copyright">
+			<p>©2018 Ten Charity Challenge. All rights reserved.</p>
+		</div>
 		<div id="additional-links">
 			<ul>
 				<li>Privacy Policy</li>
