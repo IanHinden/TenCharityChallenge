@@ -527,6 +527,7 @@ header .nav-login a {
 	align-items: space-evenly;
 	align-items: center;
 	justify-content: center;
+	height: 100px;
 }
 
 #mailing-list, #footer-logo, #social {
@@ -535,6 +536,24 @@ header .nav-login a {
 
 #footer-links p, li {
 	color: white;
+}
+
+#legal {
+	background: black;
+}
+
+#additional-links {
+	padding: 10px 20%;
+}
+
+#additional-links ul {
+	list-style: none;
+	text-align: center;
+}
+
+#additional-links ul li {
+	display: inline-block;
+	padding: 0px 20px;
 }
 
 /*signup.php*/
