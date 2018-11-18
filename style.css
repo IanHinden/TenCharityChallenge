@@ -564,6 +564,44 @@ header .nav-login a {
 
 /*signup.php*/
 
+#tos {
+	background-color: #ADD8E6;
+	padding: 10px;
+	height: 18px;
+}
+
+.tos-close {
+	  position: relative;
+	  float: right;
+	  width: 20px;
+	  height: 14px;
+	  margin: auto;
+	  top: 0;
+	  right: 15px;
+	  bottom: 1px;
+}
+
+.tos-close .menu-line-tos {	
+	background-color: #333;
+	height: 2px;
+	width: 100%;
+	border-radius: 2px;
+	position: absolute; 
+	left: 0;
+}
+		
+.tos-close .menu-line-1-tos { 
+	top: 0; 
+	transform: translateY(7px) translateY(-50%) rotate(-45deg);
+}
+
+.tos-close .menu-line-2-tos { 
+	bottom: 0; 
+	transform: translateY(-7px) translateY(50%) rotate(45deg);
+}
+
+
+
 .signup-form {
 	width: 400px;
 	margin: 0 auto;
@@ -613,11 +651,6 @@ header .nav-login a {
 	box-shadow: 12px 12px 2px 1px rgba(1, 1, 80, .2);
 	border: 2px solid black;
 	border-radius: 10px;
-}
-
-#tos {
-	background-color: #ADD8E6;
-	padding: 10px;
 }
 
 #terms {

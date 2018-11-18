@@ -16,7 +16,13 @@
 		</form>
 	</div>
 	<div class="confirm">
-		<p id="tos">Terms of Service</p>
+		<div id="tos">
+			<span class="tos-close">
+				<span class="menu-line-tos menu-line-1-tos"></span>
+				<span class="menu-line-tos menu-line-2-tos"></span>
+			</span>
+		</div>
+		<p>Terms of Service</p>
 		<p id="terms">I will do my best.</p>
 		<form class="signup-form" action="includes/signup.inc.php" method="POST" onsubmit="if(document.getElementById('agree').checked) { return true; } else { alert('Please indicate that you have read and agree to the Terms of Service and Privacy Policy'); return false; }">
 		<input type="checkbox" name="checkbox" value="check" id="agree" />
