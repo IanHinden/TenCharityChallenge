@@ -11,9 +11,9 @@
 			<input type="text" name="email" placeholder="E-mail">
 			<input type="text" name="uid" placeholder="User name">
 			<input type="password" name="pwd" placeholder="Password">
-		<h3>Sign up</h3>
 			<!-- <button type="submit" name="submit">Sign up</button> -->
 		</form>
+		<button id="show-tos">Submit</button>
 	</div>
 	<div class="confirm">
 		<div id="tos">
@@ -30,6 +30,7 @@
 		<button type="submit" name="submit" value="submit" />Sign up</button>
 		</form>
 	</div>
+	<div id="opaque"></div>
 </section>
 <section>
 

@@ -8,4 +8,13 @@ $(document).ready(function(){
 	  $('.menu-line-3').toggleClass('menu-line-3-open');
     });
 	
+	$('#show-tos').click(function() {
+		$('.opaque').addClass('opaque-out');
+		$('.confirm').addClass('confirm-out');
+	});
+	
+	$('.opaque').click(function(){
+		$('.opaque').removeClass('opaque-out');
+		$('.confirm').removeClass('confirm-out');
+	});
 });
