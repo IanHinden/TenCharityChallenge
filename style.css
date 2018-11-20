@@ -684,11 +684,21 @@ header .nav-login a {
 	border: 2px solid black;
 	border-radius: 10px;
 	z-index: 2000;
-	display: none;
+	bottom: -1000px;
+	-webkit-transition: .2s ease-out;
+	-moz-transition: .2s ease-out;
+	-o-transition: .2s ease-out;
+	-ms-transition: .2s ease-out;
+	transition: .2s ease-out;
 }
 
 .confirm-out {
-	display: block;
+	bottom: 200px;
+	-webkit-transition: .2s ease-out;
+	-moz-transition: .2s ease-out;
+	-o-transition: .2s ease-out;
+	-ms-transition: .2s ease-out;
+	transition: .2s ease-out;
 }
 
 #terms {
