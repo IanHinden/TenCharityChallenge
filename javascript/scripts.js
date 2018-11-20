@@ -17,4 +17,9 @@ $(document).ready(function(){
 		$('.opaque').removeClass('opaque-out');
 		$('.confirm').removeClass('confirm-out');
 	});
+	
+	$('.tos-close').click(function(){
+		$('.opaque').removeClass('opaque-out');
+		$('.confirm').removeClass('confirm-out');
+	});
 });
