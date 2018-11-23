@@ -30,7 +30,7 @@
 		<button type="submit" name="submit" value="submit" />Sign up</button>
 		</form>
 	</div>
-	<div id="opaque"></div>
+	<div class="opaque"></div>
 </section>
 <section>
 
