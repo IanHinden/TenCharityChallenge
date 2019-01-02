@@ -713,3 +713,8 @@ header .nav-login a {
 	width: 5%;
 	height: 15px;
 }
+
+#tos {
+	background-image: linear-gradient(to right, #00cc44 , #99ffbb);
+	padding: 10px;
+}
