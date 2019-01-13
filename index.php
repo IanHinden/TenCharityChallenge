@@ -28,6 +28,19 @@
 						<h3>Can you volunteer? Ten times in one year?</h3>
 			</div>
 			</section>';
+			
+			$sql = "SELECT * FROM events WHERE event_id > 0";
+			$result = mysqli_query($conn, $sql);
+			$resultCheck = mysqli_num_rows($result);
+			$totalHours = 0;
+			
+			if ($resultCheck > 0) {
+				while ($row = mysqli_fetch_assoc($result)) {
+					$totalHours = $totalHours + $row['event_length'];
+				}
+			}
+			
+			echo '<p> Thanks to Ten Charity Challenge,' . $totalHours . 'hours of charity have been performed. </p>'; 
 		?>
 	</div>
 </section>';
