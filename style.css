@@ -485,6 +485,12 @@ header .nav-login a {
 	}
 }
 
+/* Logged in */
+
+#dashboard {
+	padding-top: 80px;
+}
+
 /*footer*/
 
 #footer {

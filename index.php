@@ -5,7 +5,7 @@
 
 	<?php
 		if (isset($_SESSION['u_id'])){
-			echo '<form action="includes/addevent.inc.php" method="POST">
+			echo '<div id="dashboard"><form action="includes/addevent.inc.php" method="POST">
 			<input type="text" name="avenue" placeholder="Avenue">
 			<input type="text" name="info" placeholder="Info">
 			<input type="text" name="length" placeholder="Length">
@@ -21,6 +21,8 @@
 					echo '<p>' . $row['event_avenue'] . '</p><br>';
 				}
 			}
+			
+			echo '</div>';
 		} else {
 			echo '<section class="main-container">
 					<div class="main-container-text">
