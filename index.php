@@ -6,7 +6,20 @@
 	<?php
 		if (isset($_SESSION['u_id'])){
 			echo '<div id="dashboard"><div id="scores">
-			<div id="volunteerscore" class="scorecard"><p>Volunteer Hours: </p></div>
+			<div id="volunteerscore" class="scorecard"><p>Volunteer Hours:';
+			
+			$sql = "SELECT event_length FROM events WHERE event_user = '".$_SESSION['u_id']."';";
+			$result = mysqli_query($conn, $sql);
+			$resultCheck = mysqli_num_rows($result);
+			$userTotalHours;
+			
+			if ($resultCheck > 0) {
+				while ($row = mysqli_fetch_assoc($result)) {
+					$userTotalHours = $userTotalHours + $row['event_avenue'];
+				}
+			}
+			
+			echo $userTotalHours . '</p></div>
 			<div id="inspirationscore" class="scorecard"><p>Inspiration Score</p></div>
 			</div>
 			<form action="includes/addevent.inc.php" method="POST">
@@ -16,7 +29,7 @@
 			<button type="submit" name="submit">Create Event</button>
 			</form>';
 			
-			$sql = "SELECT * FROM events WHERE event_user = '".$_SESSION['u_id']."';";
+			$sql = "SELECT event_length FROM events WHERE event_user = '".$_SESSION['u_id']."';";
 			$result = mysqli_query($conn, $sql);
 			$resultCheck = mysqli_num_rows($result);
 			
