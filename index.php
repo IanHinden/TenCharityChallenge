@@ -5,7 +5,11 @@
 
 	<?php
 		if (isset($_SESSION['u_id'])){
-			echo '<div id="dashboard"><form action="includes/addevent.inc.php" method="POST">
+			echo '<div id="dashboard"><div id="scores">
+			<div id="volunteerscore" class="scorecard"><p>Volunteer Hours: </p></div>
+			<div id="inspirationscore" class="scorecard"><p>Inspiration Score</p></div>
+			</div>
+			<form action="includes/addevent.inc.php" method="POST">
 			<input type="text" name="avenue" placeholder="Avenue">
 			<input type="text" name="info" placeholder="Info">
 			<input type="text" name="length" placeholder="Length">

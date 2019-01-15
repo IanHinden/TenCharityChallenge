@@ -491,6 +491,20 @@ header .nav-login a {
 	padding-top: 80px;
 }
 
+#volunteerscore {
+	display: inline-block;
+	width: 49%;
+}
+
+#inspirationscore {
+	display: inline-block;
+	width: 49%;
+}
+
+#scores {
+	text-align: center;
+}
+
 /*footer*/
 
 #footer {
