@@ -6,7 +6,7 @@
 	<?php
 		if (isset($_SESSION['u_id'])){
 			echo '<div id="dashboard"><div id="scores">
-			<div id="volunteerscore" class="scorecard"><p>Volunteer Hours:';
+			<div id="volunteerscore" class="scorecard"><p>Volunteer Hours:<p>';
 			
 			$sql = "SELECT event_length FROM events WHERE event_user = '".$_SESSION['u_id']."';";
 			$result = mysqli_query($conn, $sql);
@@ -19,8 +19,8 @@
 				}
 			}
 			
-			echo $userTotalHours . '</p></div>
-			<div id="inspirationscore" class="scorecard"><p>Inspiration Score</p></div>
+			echo $userTotalHours . '</p></p></div>
+			<div id="inspirationscore" class="scorecard"><p>Inspiration Score:<p>Insert Number Here</p></p></div>
 			</div>
 			<form action="includes/addevent.inc.php" method="POST">
 			<input type="text" name="avenue" placeholder="Avenue">
