@@ -20,8 +20,13 @@
 			}
 			
 			echo $userTotalHours . '</p></p></div>
-			<div id="inspirationscore" class="scorecard"><p>Inspiration Score:<p>Insert Number Here</p></p></div>
+			<div id="inspirationscore" class="scorecard"><p>Inspiration Score:</p><p>Insert Number Here</p></div>
 			</div>
+			<div id="navbar"><ol><li>Find Events</li><li>Find Friends</li>
+			<li><img src="https://community.cengage.com/Chilton2/utility/anonymous.gif"><span class="alertcount">5</span></li>
+			<li><img src="https://community.cengage.com/Chilton2/utility/anonymous.gif"><span class="alertcount">5</span></li>
+			<li><img src="https://community.cengage.com/Chilton2/utility/anonymous.gif"><span class="alertcount">5</span></li>
+			</ol></div>
 			<form action="includes/addevent.inc.php" method="POST">
 			<input type="text" name="avenue" placeholder="Avenue">
 			<input type="text" name="info" placeholder="Info">

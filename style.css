@@ -508,6 +508,27 @@ header .nav-login a {
 	width: 49%;
 }
 
+#navbar ol {
+	list-style: none;
+}
+
+#navbar li {
+	display: inline-block;
+}
+
+#navbar img {
+	height: 20px;
+	width: 20px;
+}
+
+#navbar .alertcount {
+	position: relative;
+	left: 10px;
+	bottom: 10px;
+}
+
+
+
 /*footer*/
 
 #footer {
