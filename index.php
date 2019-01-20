@@ -23,7 +23,17 @@
 			<div id="inspirationscore" class="scorecard"><p>Inspiration Score:</p><p>Insert Number Here</p></div>
 			</div>
 			<div id="navbar"><ol><li>Find Events</li><li>Find Friends</li>
-			<li><img src="https://community.cengage.com/Chilton2/utility/anonymous.gif"><span class="alertcount">5</span></li>
+			<li><img src="https://community.cengage.com/Chilton2/utility/anonymous.gif">';
+			
+			$sql = "SELECT * FROM `relationships` WHERE (`user_one_id` = 1 OR `user_two_id` = 1) AND `status` = 0 AND `action_user_id` != 1";
+			$result = mysqli_query($conn, $sql);
+			$totalFriendRequests = mysqli_num_rows($result);
+			
+			if ($totalFriendRequests > 0) {
+				echo '<span class="alertcount">' . $totalFriendRequests . '</span>';
+			}
+			
+			echo '</li>
 			<li><img src="https://community.cengage.com/Chilton2/utility/anonymous.gif"><span class="alertcount">5</span></li>
 			<li><img src="https://community.cengage.com/Chilton2/utility/anonymous.gif"><span class="alertcount">5</span></li>
 			</ol></div>
