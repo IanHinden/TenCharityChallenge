@@ -33,7 +33,17 @@
 				echo '<span class="alertcount">' . $totalFriendRequests . '</span>';
 			}
 			
-			echo '</li>
+			echo '<div id="friendRequestPopup"><ul>';
+			
+			if ($totalFriendRequests > 0) {
+				while ($row = mysqli_fetch_assoc($result)) {
+					echo '<li>' . $row['user_id']. '</li>';
+				}
+			}
+			
+			
+			echo '</ul></div>
+			</li>
 			<li><img src="https://community.cengage.com/Chilton2/utility/anonymous.gif"><span class="alertcount">5</span></li>
 			<li><img src="https://community.cengage.com/Chilton2/utility/anonymous.gif"><span class="alertcount">5</span></li>
 			</ol></div>
