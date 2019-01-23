@@ -37,7 +37,7 @@
 			
 			if ($totalFriendRequests > 0) {
 				while ($row = mysqli_fetch_assoc($result)) {
-					echo '<li>' . $row['user_id']. '</li>';
+					echo '<li>' . $row['action_user_id']. '</li>';
 				}
 			}
 			
