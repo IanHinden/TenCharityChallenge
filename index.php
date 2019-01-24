@@ -35,9 +35,13 @@
 			
 			echo '<div id="friendRequestPopup"><ul>';
 			
-			if ($totalFriendRequests > 0) {
+			$sql = "SELECT user_first, user_last FROM users INNER JOIN relationships ON relationships.action_user_id = users.user_id";
+			$result = mysqli_query($conn, $sql);
+			$resultCheck = mysqli_num_rows($result);
+			
+			if ($resultCheck > 0) {
 				while ($row = mysqli_fetch_assoc($result)) {
-					echo '<li>' . $row['action_user_id']. '</li>';
+					echo '<li>' . $row['user_first']. '</li>';
 				}
 			}
 			
