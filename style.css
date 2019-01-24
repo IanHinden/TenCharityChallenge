@@ -536,7 +536,24 @@ header .nav-login a {
 	display: inline-block;
 }
 
+#friendrequestpopup {
+	position: relative;
+	display: inline-block;
+}
 
+#friendrequestpopup ul {
+	/*display: none;*/
+	position: absolute;
+	background-color: #f9f9f9;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px;
+	padding: 12px 16px;
+	z-index: 1;
+}
+
+#friendrequestpopup ul li {
+	display: block;
+}
 
 /*footer*/
 

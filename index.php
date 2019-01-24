@@ -33,7 +33,7 @@
 				echo '<span class="alertcount">' . $totalFriendRequests . '</span>';
 			}
 			
-			echo '<div id="friendRequestPopup"><ul>';
+			echo '<div id="friendrequestpopup"><ul>';
 			
 			$sql = "SELECT user_first, user_last FROM users INNER JOIN relationships ON relationships.action_user_id = users.user_id";
 			$result = mysqli_query($conn, $sql);
