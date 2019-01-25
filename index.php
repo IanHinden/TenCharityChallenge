@@ -33,20 +33,20 @@
 				echo '<span class="alertcount">' . $totalFriendRequests . '</span>';
 			}
 			
-			echo '<div id="friendrequestpopup"><ul>';
-			
-			$sql = "SELECT user_first, user_last FROM users INNER JOIN relationships ON relationships.action_user_id = users.user_one_id WHERE (user_one_id = '".$_SESSION['u_id']."' OR user_two_id = '".$_SESSION['u_id']."') AND action_user_id !='".$_SESSION['u_id']."'";
+			$sql = "SELECT user_first, user_last FROM users INNER JOIN relationships ON relationships.action_user_id = users.user_one_id WHERE (user_one_id = '".$_SESSION['u_id']."' OR user_two_id = '".$_SESSION['u_id']."') AND action_user_id !='".$_SESSION['u_id']."' AND status = 0";
 			$result = mysqli_query($conn, $sql);
 			$resultCheck = mysqli_num_rows($result);
 			
 			if ($resultCheck > 0) {
+				echo '<div id="friendrequestpopup"><ul>';
 				while ($row = mysqli_fetch_assoc($result)) {
 					echo '<li>' . $row['user_first']. '</li>';
 				}
+				echo '</ul></div>';
 			}
 			
 			
-			echo '</ul></div>
+			echo '
 			</li>
 			<li><img src="https://community.cengage.com/Chilton2/utility/anonymous.gif"><span class="alertcount">5</span></li>
 			<li><img src="https://community.cengage.com/Chilton2/utility/anonymous.gif"><span class="alertcount">5</span></li>
