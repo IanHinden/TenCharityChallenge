@@ -25,7 +25,7 @@
 			<div id="navbar"><ol><li>Find Events</li><li>Find Friends</li>
 			<li><img src="https://community.cengage.com/Chilton2/utility/anonymous.gif">';
 			
-			$sql = "SELECT * FROM `relationships` WHERE (`user_one_id` = 1 OR `user_two_id` = 1) AND `status` = 0 AND `action_user_id` != 1";
+			$sql = "SELECT * FROM `relationships` WHERE (`user_one_id` = '".$_SESSION['u_id']."' OR `user_two_id` = '".$_SESSION['u_id']."') AND `status` = 0 AND `action_user_id` != '".$_SESSION['u_id']."'";
 			$result = mysqli_query($conn, $sql);
 			$totalFriendRequests = mysqli_num_rows($result);
 			
@@ -35,7 +35,7 @@
 			
 			echo '<div id="friendrequestpopup"><ul>';
 			
-			$sql = "SELECT user_first, user_last FROM users INNER JOIN relationships ON relationships.action_user_id = users.user_id";
+			$sql = "SELECT user_first, user_last FROM users INNER JOIN relationships ON relationships.action_user_id = users.user_one_id WHERE (user_one_id = '".$_SESSION['u_id']."' OR user_two_id = '".$_SESSION['u_id']."')";
 			$result = mysqli_query($conn, $sql);
 			$resultCheck = mysqli_num_rows($result);
 			
