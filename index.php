@@ -35,7 +35,7 @@
 			
 			echo '<div id="friendrequestpopup"><ul>';
 			
-			$sql = "SELECT user_first, user_last FROM users INNER JOIN relationships ON relationships.action_user_id = users.user_one_id WHERE (user_one_id = '".$_SESSION['u_id']."' OR user_two_id = '".$_SESSION['u_id']."')";
+			$sql = "SELECT user_first, user_last FROM users INNER JOIN relationships ON relationships.action_user_id = users.user_one_id WHERE (user_one_id = '".$_SESSION['u_id']."' OR user_two_id = '".$_SESSION['u_id']."') AND action_user_id !='".$_SESSION['u_id']."'";
 			$result = mysqli_query($conn, $sql);
 			$resultCheck = mysqli_num_rows($result);
 			
