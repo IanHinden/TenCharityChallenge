@@ -30,7 +30,7 @@ $result = mysqli_query($conn, "SELECT * FROM users
 				
 				echo '<form action="" method="post">
 				<input type="hidden" name="request">
-				<input type="submit" name="submit" value="Add Friend">';
+				<input type="submit" name="Submit"';
 				
 				/*
 				if (isset($_POST['Add Friend'])) {
