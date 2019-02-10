@@ -89,6 +89,7 @@
 			}
 			
 			echo '<p> Thanks to Ten Charity Challenge,' . $totalHours . 'hours of charity have been performed. </p>'; 
+		}
 		?>
 	</div>
 </section>';
