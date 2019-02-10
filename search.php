@@ -35,7 +35,6 @@ $result = mysqli_query($conn, "SELECT * FROM users
 				
 				echo "<br>";
 		}
-	}
     mysqli_close($conn);
 ?>
 
