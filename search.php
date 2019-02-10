@@ -28,24 +28,15 @@ $result = mysqli_query($conn, "SELECT * FROM users
 				
 				echo $row['user_first'] . " " . $row['user_last'];
 				
-				echo '<form action="" method="post">
-				<input type="hidden" name="request">
-				<input type="submit" name="Submit"';
+				echo '<form action="" method="post" />
+				<input type="hidden" value=" '. $usernumber.'"/>
+				<input type="submit" name="addfriend" value="Add Friend" />
+				</form>';
 				
-				/*
+				
 				if (isset($_POST['Add Friend'])) {
-					$sql = "INSERT INTO relationships (user_one_id, user_two_id, status, action_user_id) VALUES (?, ?, ?, ?);";
-					$stmt = mysqli_stmt_init($conn);
-					if (!mysqli_stmt_prepare($stmt, $sql)){
-						echo "SQL error";
-					} else {
-						mysqli_stmt_bind_param($stmt,"ssss", $current, $usernumber, 1, $current);
-						mysqli_stmt_execute($stmt);
-						header("Location: ../search.php?addfriend=success");
-						exit();
-					}
+					$mysql=mysqli_query($conn, "INSERT INTO relationships (user_one_id, user_two_id, status, action_user_id) VALUES ($current, $usernumber, '1', $current)");
 				}	
-				*/
 				
 				echo "<br>";
 		}
