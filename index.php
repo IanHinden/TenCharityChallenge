@@ -92,8 +92,7 @@
 		?>
 	</div>
 </section>';
-		}
-	?>
+
 <div id="main-about">
 	<section id="intro">
 		<div class="desc">
