@@ -29,6 +29,6 @@ $(document).ready(function(){
 		req.open("post", this.action);
 		req.send(new FormData(this));
 		return false;
-	}
+	});
 	
 });
