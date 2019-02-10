@@ -30,7 +30,6 @@ $result = mysqli_query($conn, "SELECT * FROM users
 				
 				echo '<form action="/addfriend.php" class="addfriend" method="post" />
 				<input type="hidden" name="usernumber" value=" '. $usernumber.'"/>
-				<input type="hidden" name="current" value=" '. $current .'"/>
 				<input type="submit" name="addfriend" value="Add Friend" />
 				</form>';
 				
