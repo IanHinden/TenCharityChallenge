@@ -25,5 +25,10 @@ $(document).ready(function(){
 	
 	$('.addfriend').submit(function() {
 		console.log("It works!");
+		var req = new XMLHttpRequest();
+		req.open("post", this.action);
+		req.send(new FormData(this));
+		return false;
 	}
+	
 });
