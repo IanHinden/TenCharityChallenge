@@ -22,4 +22,8 @@ $(document).ready(function(){
 		$('.opaque').removeClass('opaque-out');
 		$('.confirm').removeClass('confirm-out');
 	});
+	
+	$('.addfriend').submit(function() {
+		console.log("It works!");
+	}
 });
