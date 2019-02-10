@@ -28,15 +28,10 @@ $result = mysqli_query($conn, "SELECT * FROM users
 				
 				echo $row['user_first'] . " " . $row['user_last'];
 				
-				echo '<form action="" method="post" />
+				echo '<form action="/addfriend.php" method="post" />
 				<input type="hidden" value=" '. $usernumber.'"/>
 				<input type="submit" name="addfriend" value="Add Friend" />
 				</form>';
-				
-				
-				if (isset($_POST['Add Friend'])) {
-					$mysql=mysqli_query($conn, "INSERT INTO relationships (user_one_id, user_two_id, status, action_user_id) VALUES ($current, $usernumber, '1', $current)");
-				}	
 				
 				echo "<br>";
 		}
