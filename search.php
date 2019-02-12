@@ -21,7 +21,7 @@ $result = mysqli_query($conn, "SELECT * FROM users
     WHERE user_first LIKE '%$name%' OR user_last LIKE '%$name%'");
 
 	if ($name !=""){
-		while ($row = mysqli_fetch_array($result))
+		while ($row = mysqli_fetch_array($result)){
 
 				$usernumber = $row['user_id'];
 				echo $usernumber;
@@ -35,6 +35,7 @@ $result = mysqli_query($conn, "SELECT * FROM users
 				
 				echo "<br>";
 		}
+	}
     mysqli_close($conn);
 ?>
 
