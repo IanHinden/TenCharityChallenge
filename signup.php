@@ -11,6 +11,7 @@
 			<input type="text" name="email" placeholder="E-mail">
 			<input type="text" name="uid" placeholder="User name">
 			<input type="password" name="pwd" placeholder="Password">
+		</form>
 			<!-- <button type="submit" name="submit">Sign up</button> -->
 				<button id="show-tos">Submit</button>
 	</div>
@@ -23,9 +24,11 @@
 		</div>
 		<p>Terms of Service</p>
 		<p id="terms">I will do my best.</p>
+		<form class="signup-form" action="includes/signup.inc.php" method="POST">
 		<input type="checkbox" name="checkbox" value="check" id="agree" />
 		<p>I agree to the Terms of Service</p>
 		<button type="submit" name="submit" value="submit" />Sign up</button>
+		</form>
 	</div>
 	<div class="opaque"></div>	
 			
