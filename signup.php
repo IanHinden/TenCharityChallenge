@@ -24,7 +24,7 @@
 		</div>
 		<p>Terms of Service</p>
 		<p id="terms">I will do my best.</p>
-		<form class="signup-form" action="includes/signup.inc.php" method="POST">
+		<form class="signup-form">
 		<input type="checkbox" name="checkbox" value="check" id="agree" />
 		<p>I agree to the Terms of Service</p>
 		<button type="submit" name="submit" value="submit" />Sign up</button>
