@@ -8,7 +8,7 @@ if (isset($_POST['submit'])) {
 	$last = $_POST['last'];
 	$email = $_POST['email'];
 	$uid = $_POST['uid'];
-	$pwd = $_POST['password'];
+	$pwd = $_POST['pwd'];
 	
 	//Error handlers
 	// Check for empty fields
@@ -23,7 +23,7 @@ if (isset($_POST['submit'])) {
 		} else {
 			//Check if email is valid
 			if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
-				header("Location: ../signup.php?signup=invalid?signup=email");
+				header("Location: ../signup.php?signup=email");
 				exit();
 			} else {
 				$sql = "SELECT * FROM users WHERE user_uid = '$uid'";
