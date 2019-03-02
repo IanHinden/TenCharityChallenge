@@ -45,6 +45,15 @@ if (isset($_POST['submit'])) {
 						mysqli_stmt_bind_param($stmt,"sssss", $first, $last, $email, $uid, $hashedPwd);
 						mysqli_stmt_execute($stmt);
 						
+						$sqlUser = "SELECT * FROM users WHERE user_uid = '$uid'";
+						$result = mysqli_query($conn, $sqlUser);
+						if (mysqli_num_rows($result) > 0) {
+							while ($row = mysqli_fetch_assoc($result)){
+								$userIdNo = $row['user_id'];
+								$sqlImg = "INSERT INTO profileimg (userid, status) VALUES ('$userIdNo', 1);";
+								mysqli_query($conn, $sqlImg);
+							}
+						}
 						header("Location: ../signup.php?signup=success");
 						exit();
 					}
