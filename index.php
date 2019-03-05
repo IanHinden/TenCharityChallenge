@@ -5,7 +5,13 @@
 
 	<?php
 		if (isset($_SESSION['u_id'])){
-			echo '<div id="dashboard"><div id="scores">
+			echo '
+			<div id="dashboard">
+			<div id="profilepic>
+                        <form action="upload.php" method="POST" enctype="multipart/form-data">
+                        <input type="file" name="profilephoto">
+                        <button type="submit" name="photosubmit">Upload Profile Image</div>
+			<div id="scores">
 			<div id="volunteerscore" class="scorecard"><p>Volunteer Hours:<p>';
 			
 			$sql = "SELECT event_length FROM events WHERE event_user = '".$_SESSION['u_id']."';";
