@@ -23,11 +23,11 @@ if (isset($_POST['photosubmit'])) {
 	if (in_array($fileActualExt, $allowed)) {
 		if ($fileError === 0) {
 			if ($fileSize < 1000000) {
-				$fileNameNew = "profile".$id."." . $fileActualExt;
+				$fileNameNew = "profile".$id.".".$fileActualExt;
 				$fileDestination = '/var/www/html/uploads/'. $fileNameNew;
+				move_uploaded_file($fileTmpName, $fileDestination);
 				$sql = "UPDATE profileimg SET status=0 WHERE userid='$id';"
 				$result = mysqli_query($conn, $sql);
-				move_uploaded_file($fileTmpName, $fileDestination);
 				//header("Location: index.php?uploadsuccess");
 			} else {
 				echo "The file you are uploading is too large";
