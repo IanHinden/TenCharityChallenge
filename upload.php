@@ -1,5 +1,10 @@
 <?php
 
+include_once 'header.php';
+include_once 'includes/dbh.inc.php';
+
+$id = $_SESSION['u_id'];
+
 if (isset($_POST['photosubmit'])) {
 	$file = $_FILES['profilephoto'];
 	
@@ -18,8 +23,10 @@ if (isset($_POST['photosubmit'])) {
 	if (in_array($fileActualExt, $allowed)) {
 		if ($fileError === 0) {
 			if ($fileSize < 1000000) {
-				$fileNameNew = uniqid('', true). "." . $fileActualExt;
+				$fileNameNew = "profile".$id."." . $fileActualExt;
 				$fileDestination = '/var/www/html/uploads/'. $fileNameNew;
+				$sql = "UPDATE profileimg SET status=0 WHERE userid='$id';"
+				$result = mysqli_query($conn, $sql);
 				move_uploaded_file($fileTmpName, $fileDestination);
 				//header("Location: index.php?uploadsuccess");
 			} else {

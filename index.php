@@ -10,10 +10,11 @@
 			<div id="profilepic">';
 				$sqlImg = "SELECT * FROM profileimg WHERE userid = '".$_SESSION['u_id']."';";
 				$resultImg = mysqli_query($conn, $sqlImg);
+				$id = $_SESSION['u_id'];
 				while ($rowImg = mysqli_fetch_assoc($resultImg)) {
 					echo "<div>";
 					if ($rowImg['status'] == 0) {
-						echo "<img src='uploads/5c7f931917dcd5.81223625.jpg'>";
+						echo "<img src='uploads/profile".$id.".jpg'>";
 					} else {
 						echo "<img src='uploads/profiledefault.jpg'>";
 					}
