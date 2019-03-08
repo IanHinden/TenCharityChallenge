@@ -8,6 +8,18 @@
 			echo '
 			<div id="dashboard">
 			<div id="profilepic">
+				$sqlImg = "SELECT * FROM profileimg WHERE userid = '".$_SESSION['u_id']."';";
+				$resultImg = mysqli_query($conn, $sqlImg);
+				while ($rowImg = mysqli_fetch_assoc($resultImg)) {
+					echo "<div>";
+					if ($rowImg['status'] == 0) {
+						echo "<img src='uploads/5c7f931917dcd5.81223625.jpg'>";
+					} else {
+						echo "<img src='uploads/profiledefault.jpg'>";
+					}
+					echo "</div>"
+				}
+			</div>
                         <form action="upload.php" method="POST" enctype="multipart/form-data">
                         <input type="file" name="profilephoto">
                         <button type="submit" name="photosubmit">Upload Profile Image</button></form></div>
