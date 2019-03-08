@@ -26,9 +26,9 @@ if (isset($_POST['photosubmit'])) {
 				$fileNameNew = "profile".$id.".".$fileActualExt;
 				$fileDestination = '/var/www/html/uploads/'. $fileNameNew;
 				move_uploaded_file($fileTmpName, $fileDestination);
-				$sql = "UPDATE profileimg SET status=0 WHERE userid='$id';"
+				$sql = "UPDATE profileimg SET status=0 WHERE userid='$id';";
 				$result = mysqli_query($conn, $sql);
-				//header("Location: index.php?uploadsuccess");
+				header("Location: index.php?uploadsuccess");
 			} else {
 				echo "The file you are uploading is too large";
 			}
