@@ -7,7 +7,7 @@
 		if (isset($_SESSION['u_id'])){
 			echo '
 			<div id="dashboard">
-			<div id="profilepic">
+			<div id="profilepic">';
 				$sqlImg = "SELECT * FROM profileimg WHERE userid = '".$_SESSION['u_id']."';";
 				$resultImg = mysqli_query($conn, $sqlImg);
 				while ($rowImg = mysqli_fetch_assoc($resultImg)) {
@@ -17,9 +17,9 @@
 					} else {
 						echo "<img src='uploads/profiledefault.jpg'>";
 					}
-					echo "</div>"
+					echo "</div>";
 				}
-			</div>
+			echo '
                         <form action="upload.php" method="POST" enctype="multipart/form-data">
                         <input type="file" name="profilephoto">
                         <button type="submit" name="photosubmit">Upload Profile Image</button></form></div>
