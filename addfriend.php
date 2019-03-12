@@ -5,7 +5,7 @@
 	$current = $_SESSION['u_id'];
 	$usernumber = $_POST['usernumber'];
 	
-	$mysql=mysqli_query($conn, "INSERT INTO relationships (user_one_id, user_two_id, status, action_user_id) VALUES ($current, $usernumber, '1', $current)");
+	$mysql=mysqli_query($conn, "INSERT INTO relationships (user_one_id, user_two_id, status, action_user_id) VALUES ($current, $usernumber, '0', $current)");
 	
 	
 ?>
