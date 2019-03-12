@@ -491,6 +491,15 @@ header .nav-login a {
 	padding-top: 80px;
 }
 
+#dashboard {
+	text-align: center;
+}
+
+#profilepic img {
+	height: 100px;
+	border-radius: 25px;
+}
+
 #scores {
 	text-align: center;
 	line-height: 50px;
