@@ -12,15 +12,13 @@
 				$resultImg = mysqli_query($conn, $sqlImg);
 				$id = $_SESSION['u_id'];
 				while ($rowImg = mysqli_fetch_assoc($resultImg)) {
-					echo "<div>";
 					if ($rowImg['status'] == 0) {
 						echo "<img src='uploads/profile".$id.".jpg'>";
 					} else {
 						echo "<img src='uploads/profiledefault.jpg'>";
 					}
-					echo "</div>";
 				}
-			echo '
+			echo ' </div>
                         <form action="upload.php" method="POST" enctype="multipart/form-data">
                         <input type="file" name="profilephoto">
                         <button type="submit" name="photosubmit">Upload Profile Image</button></form></div>
