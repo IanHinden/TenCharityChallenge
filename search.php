@@ -26,6 +26,18 @@ $result = mysqli_query($conn, "SELECT * FROM users
 				$usernumber = $row['user_id'];
 				echo $usernumber;
 				
+				echo '<div id="profilepic">';
+					$sqlImg = "SELECT * FROM profileimg WHERE userid = '".$row['user_id']."';";
+					$resultImg = mysqli_query($conn, $sqlImg);
+					$id = $row['user_id'];
+					while ($rowImg = mysqli_fetch_assoc($resultImg)) {
+						if ($rowImg['status'] == 0) {
+							echo "<img src='uploads/profile".$id.".jpg'>";
+						} else {
+							echo "<img src='uploads/profiledefault.jpg'>";
+						}
+				}
+				
 				echo $row['user_first'] . " " . $row['user_last'];
 				
 				echo '<form action="/addfriend.php" class="addfriend" method="post" />
