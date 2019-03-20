@@ -41,8 +41,8 @@ $result = mysqli_query($conn, "SELECT * FROM users
 				echo $row['user_first'] . " " . $row['user_last'];
 				
 				echo '<form action="/addfriend.php" class="addfriend" method="post" />
-				<input type="hidden" name="usernumber" value=" '. $usernumber.'"/>
-				<input type="submit" name="addfriend" value="Add Friend" />
+				<input type="hidden" name="usernumber" value="'. $usernumber.'"/>
+				<input id="'.$usernumber.'" type="submit" name="addfriend" value="Add Friend" />
 				</form>';
 				
 				echo "<br>";
