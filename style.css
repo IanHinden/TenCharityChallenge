@@ -103,6 +103,10 @@ input, select {
 
 /*My styling*/
 
+#map {
+	height: 100%;
+}
+
 #main-about .mobile-signup a{
 	position: fixed;
 	width: 100px;
