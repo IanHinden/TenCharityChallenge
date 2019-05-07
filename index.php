@@ -32,7 +32,7 @@
 			
 			if ($resultCheck > 0) {
 				while ($row = mysqli_fetch_assoc($result)) {
-					$userTotalHours = $userTotalHours + $row['event_avenue'];
+					$userTotalHours = $userTotalHours + $row['event_length'];
 				}
 			}
 			
@@ -75,13 +75,13 @@
 			<button type="submit" name="submit">Create Event</button>
 			</form>';
 			
-			$sql = "SELECT event_length FROM events WHERE event_user = '".$_SESSION['u_id']."';";
+			$sql = "SELECT * FROM events WHERE event_user = '".$_SESSION['u_id']."';";
 			$result = mysqli_query($conn, $sql);
 			$resultCheck = mysqli_num_rows($result);
 			
 			if ($resultCheck > 0) {
 				while ($row = mysqli_fetch_assoc($result)) {
-					echo '<p>' . $row['event_avenue'] . '</p><br>';
+					echo '<p>' . $row['event_info']. '</p><br>';
 				}
 			}
 			
@@ -109,7 +109,8 @@
 		}
 		?>
 	</div>
-</section>';
+</section>
+
 
 <div id="main-about">
 	<section id="intro">
