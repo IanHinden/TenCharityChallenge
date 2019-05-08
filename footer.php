@@ -31,7 +31,6 @@
 		</div>
 	</section>
 </div>
-
-
+	    <script src="https://maps.googleapis.com/maps/api/js?callback=createMap&key=AIzaSyDPrre9KNRhtCUFIH3Do1c7va4L0v91lFs" async defer></script>
 </body>
 </html>

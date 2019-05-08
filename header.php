@@ -12,7 +12,6 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="javascript/scripts.js"></script>
 	<link href="https://fonts.googleapis.com/css?family=Montserrat|Noto+Serif+JP" rel="stylesheet">
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJNOBH7XHJ8_L2esp33U5BGxfAwXgH-aE&libraries=places">
 </head>
 <body>
 

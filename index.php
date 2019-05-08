@@ -72,6 +72,7 @@
 			<input type="text" name="avenue" placeholder="Avenue">
 			<input type="text" name="info" placeholder="Info">
 			<input type="text" name="length" placeholder="Length">
+			<div id="map"></div>
 			<button type="submit" name="submit">Create Event</button>
 			</form>';
 			
