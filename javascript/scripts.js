@@ -33,16 +33,10 @@ $(document).ready(function(){
 		return false;
 	});
 	
-	// Google Map Stuff
-	//function createMap() {
-	//	var options = {
-	//		center: { lat: 43.654, lng: -79.383 },
-	//		zoom: 10
-	//	};
-	//map = new google.maps.Map(document.getElementById('map'), options);
-	//}
 	
 });
+
+var map, infoWindow;
 
 function createMap() {
 	var options = {
@@ -50,4 +44,29 @@ function createMap() {
 		zoom: 10
 	};
 	map = new google.maps.Map(document.getElementById('map'), options);
+	
+	infoWindow = new google.maps.InfoWindow;
+	
+	if (navigator.geolocation) {
+		navigator.geolocation.getCurrentPosition(function (p) {
+			var position = {
+				lat: p.coords.latitude,
+				lng: p.coords.longitude
+			};
+			infoWindow.setPosition(position);
+			infoWindow.setContent('Your current location');
+			infoWindow.open(map);
+		}, function() {
+			handleLocationError('Geolocation service failed', map.center());
+		})
+	} else {
+		handleLocationError('No geolocation available', map.center());
 	}
+}
+
+function handleLocationError (content, position) {
+	infoWindow.setPosition(position);
+	infoWindow.setContent(content);
+	infoWindow.open(map);
+}
+}
