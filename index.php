@@ -69,7 +69,7 @@
 			<li><img src="https://community.cengage.com/Chilton2/utility/anonymous.gif"><span class="alertcount">5</span></li>
 			</ol></div>
 			<form action="includes/addevent.inc.php" method="POST">
-			<input type="text" name="avenue" placeholder="Avenue">
+			<input id="search" type="text" name="avenue" placeholder="Search...">
 			<input type="text" name="info" placeholder="Info">
 			<input type="text" name="length" placeholder="Length">
 			<div id="map"></div>
