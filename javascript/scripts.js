@@ -103,8 +103,7 @@ function createMap() {
 	});	
 }
 	
-	
-}
+
 
 function handleLocationError (content, position) {
 	infoWindow.setPosition(position);
