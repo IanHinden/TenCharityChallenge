@@ -94,7 +94,7 @@ function createMap() {
 			}));
 			
 			if (p.geometry.viewport)
-				bounds.union(p.geometry.location);
+				bounds.union(p.geometry.viewport);
 			else
 				bounds.extend(p.geometry.location);
 		});
