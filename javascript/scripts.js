@@ -87,11 +87,13 @@ function createMap() {
 			if (!p.geometry)
 				return;
 			
-			markers.push(new google.maps.Marker({
+			markers.push(var marker = new google.maps.Marker({
 					map: map,
 					title: p.name,
 					position: p.geometry.location
 			}));
+			
+			google.maps.event.addListener(marker, 'click', function() {console.log("This works");})
 			
 			if (p.geometry.viewport)
 				bounds.union(p.geometry.viewport);
