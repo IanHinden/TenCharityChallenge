@@ -72,10 +72,6 @@ function createMap() {
 	
 	var markers = [];
 	
-	function SelectLoc(marker){
-		console.log(this.marker);
-	}
-	
 	searchBox.addListener('places_changed', function() {
 		var places = searchBox.getPlaces();
 		
@@ -97,7 +93,10 @@ function createMap() {
 					position: p.geometry.location
 			}));
 			
-			google.maps.event.addListener(marker, 'click', SelectLoc(marker));
+			google.maps.event.addListener(marker, 'click', function() {
+				console.log(markers);
+				console.log(marker);
+				})
 			
 			if (p.geometry.viewport)
 				bounds.union(p.geometry.viewport);
