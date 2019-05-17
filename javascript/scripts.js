@@ -87,7 +87,7 @@ function createMap() {
 			if (!p.geometry)
 				return;
 			
-			markers.push(var marker = new google.maps.Marker({
+			markers.push(marker = new google.maps.Marker({
 					map: map,
 					title: p.name,
 					position: p.geometry.location
