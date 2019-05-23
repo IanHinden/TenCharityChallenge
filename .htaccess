@@ -1,0 +1,8 @@
+RewriteEngine on
+
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteCond %{REQUEST_FILENAME}\.php -f
+
+RewriteRule ^user/([0-9]+) user.php?id=$1 [NC, L]
+
