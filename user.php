@@ -11,7 +11,7 @@
 		<?php
 			$userId = $_GET['id'];
 			
-			echo "User ID is: " $userId;
+			echo "User ID is: " . $userId;
 		?>
 	</body>
 </html>
