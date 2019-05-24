@@ -17,7 +17,7 @@
 			
 			echo "User ID is: " . $userId;
 			
-			$sql = "SELECT * FROM users WHERE userid = '".$userId."';";
+			$sql = "SELECT * FROM users WHERE user_id = '".$userId."';";
 			$result = mysqli_query($conn, $sql);
 			$resultCheck = mysqli_num_rows($result);
 			
