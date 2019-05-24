@@ -1,3 +1,7 @@
+<?php
+	include_once 'header.php';
+?>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -12,6 +16,18 @@
 			$userId = $_GET['id'];
 			
 			echo "User ID is: " . $userId;
+			
+			$sql = "SELECT * FROM users WHERE userid = '".$userId."';";
+			$result = mysqli_query($conn, $sql);
+			$resultCheck = mysqli_num_rows($result);
+			
+			if ($resultCheck > 0) {
+				while ($row = mysqli_fetch_assoc($result)) {
+					echo $row['user_first'] . " " . $row['user_last'];
+				}
+			} else {
+				echo "There is no user with this ID";
+			}
 		?>
 	</body>
 </html>
