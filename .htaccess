@@ -6,3 +6,9 @@ RewriteCond %{REQUEST_FILENAME}\.php -f
 
 RewriteRule ^user/([0-9]+) user.php?id=$1 [NC,L]
 
+RewriteCond %{HTTPS} off
+
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# https://askubuntu.com/questions/892327/htaccess-is-not-working-on-ubuntu-16-04-2-lts/978979
+# Use the link above to configure 000-default.conf file
