@@ -23,7 +23,7 @@ $sender_email = 'donotreply@tencharitychallenge.com';
 
 // Replace these sample addresses with the addresses of your recipients. If
 // your account is still in the sandbox, these addresses must be verified.
-$recipient_emails = ['Ian.Hinden@gmail.com'];
+$recipient_emails = ['notarealemailatall@noarealemaisdljfaksljlafsdlactually.com'];
 
 // Specify a configuration set. If you do not want to use a configuration
 // set, comment the following variable, and the
