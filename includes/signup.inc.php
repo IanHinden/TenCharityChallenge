@@ -32,14 +32,6 @@ $recipient_emails = ['ian.hinden@gmail.com'];
 // 'ConfigurationSetName' => $configuration_set argument below.
 $configuration_set = 'ConfigSet';
 
-$subject = 'Welcome to the Ten Charity Challenge!';
-$plaintext_body = 'Please confirm your e-mail address to receive updates and reminders.' ;
-$html_body =  '<h1>AWS Amazon Simple Email Service Test Email</h1>'.
-              '<p>This email was sent with <a href="https://aws.amazon.com/ses/">'.
-              'Amazon SES</a> using the <a href="https://aws.amazon.com/sdk-for-php/">'.
-              'AWS SDK for PHP</a>.</p>';
-$char_set = 'UTF-8';
-
 	$first = $_POST['first'];
 	$last = $_POST['last'];
 	$email = $_POST['email'];
@@ -90,6 +82,27 @@ $char_set = 'UTF-8';
 								mysqli_query($conn, $sqlImg);
 							}
 						}
+
+
+						//Create Signup token
+                                                $selector = bin2hex(random_bytes(8));
+                                                $token = random_bytes(32);
+
+                                                $url = sprintf('%sreset.php?%s', ABS_URL, http_build_query([
+                                                        'selector' => $selector,
+                                                        'validator' => bin2hex($token)
+                                                ]));
+
+
+						$subject = 'Welcome to the Ten Charity Challenge!';
+						$plaintext_body = 'Please confirm your e-mail address to receive updates and reminders.' ;
+						$html_body =  '<h1>Click the link below to confirm your e-mail address</h1>'.
+              						'<p>Here is the token:'.$token.'. Checkit out!'.
+              						'Amazon SES</a> using the <a href="https://aws.amazon.com/sdk-for-php/">'.
+              						'AWS SDK for PHP</a>.</p>';
+						$char_set = 'UTF-8';
+
+
 						//Send welcome e-mail
 						try {
     							$emailResult = $SesClient->sendEmail([
