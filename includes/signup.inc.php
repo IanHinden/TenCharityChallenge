@@ -88,7 +88,7 @@ $configuration_set = 'ConfigSet';
                                                 $selector = bin2hex(random_bytes(8));
                                                 $token = random_bytes(32);
 
-                                                $url = sprintf('%sreset.php?%s', ABS_URL, http_build_query([
+                                                $url = sprintf('%sconfirm.php?%s', 'https://www.tencharitychallenge.com/', http_build_query([
                                                         'selector' => $selector,
                                                         'validator' => bin2hex($token)
                                                 ]));
@@ -97,7 +97,7 @@ $configuration_set = 'ConfigSet';
 						$subject = 'Welcome to the Ten Charity Challenge!';
 						$plaintext_body = 'Please confirm your e-mail address to receive updates and reminders.' ;
 						$html_body =  '<h1>Click the link below to confirm your e-mail address</h1>'.
-              						'<p>Here is the token:'.$token.'. Checkit out!'.
+              						'<p>Here is the token:'.$url.'. Checkit out!'.
               						'Amazon SES</a> using the <a href="https://aws.amazon.com/sdk-for-php/">'.
               						'AWS SDK for PHP</a>.</p>';
 						$char_set = 'UTF-8';
