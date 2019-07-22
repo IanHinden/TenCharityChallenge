@@ -90,7 +90,7 @@ $char_set = 'UTF-8';
 								mysqli_query($conn, $sqlImg);
 							}
 						}
-
+						//Send welcome e-mail
 						try {
     							$emailResult = $SesClient->sendEmail([
 						        'Destination' => [
@@ -114,14 +114,11 @@ $char_set = 'UTF-8';
 						              'Data' => $subject,
 						          ],
 						        ],
-        // If you aren't using a configuration set, comment or delete the
-        // following line
-        //'ConfigurationSetName' => $configuration_set,
 						    ]);
 						    $messageId = $emailResult['MessageId'];
 						    echo("Email sent! Message ID: $messageId"."\n");
 							} catch (AwsException $e) {
-    // output error message if fails
+   								 // output error message if fails
 							    echo $e->getMessage();
 							    echo("The email was not sent. Error message: ".$e->getAwsErrorMessage()."\n");
 							    echo "\n";
