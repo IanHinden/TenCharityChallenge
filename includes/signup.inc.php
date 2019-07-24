@@ -88,6 +88,11 @@ $configuration_set = 'ConfigSet';
                                                 $selector = bin2hex(random_bytes(8));
                                                 $token = random_bytes(32);
 
+						//Insert selector and token into database
+						$confirmSQL = "INSERT INTO confirmation (email, selector, token) VALUES ('$email', '$selector', '$token');";
+						mysqli_query($conn, $confirmSQL);
+
+
                                                 $url = sprintf('%sconfirm.php?%s', 'https://www.tencharitychallenge.com/', http_build_query([
                                                         'selector' => $selector,
                                                         'validator' => bin2hex($token)
