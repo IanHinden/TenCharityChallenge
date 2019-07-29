@@ -26,11 +26,18 @@
 				if (mysqli_num_rows($result) > 0) {
 					while ($row = mysqli_fetch_assoc($result)){
 					$userEmail = $row['email'];
+					$userSelector = $row['selector'];
 					$userToken = bin2hex($row['token']);
 					echo "Try " . $userEmail;
 					echo "Try also " . $userToken;
 					}
 				}
+				if ($validator == $userToken && $selector == $userSelector) {
+					echo "The validator is equal to the token";
+					$confirmUser = "UPDATE users SET verified = 'true' WHERE user_email = '$userEmail'";
+					mysqli_query($conn, $confirmUser);
+				}
+
 			} else {
 			  echo "Please check your e-mail to activate your account";
 			}
