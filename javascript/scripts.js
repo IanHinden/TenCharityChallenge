@@ -93,9 +93,11 @@ function createMap() {
 					position: p.geometry.location
 			}));
 			
-			google.maps.event.addListener(marker, 'click', function() {
+			google.maps.event.addListener(marker, 'click', function(e) {
 				console.log(markers);
-				console.log(marker);
+				console.log(this);
+				console.log(this.getPosition().lat());
+				console.log(this.getPosition().lng());
 				})
 			
 			if (p.geometry.viewport)
