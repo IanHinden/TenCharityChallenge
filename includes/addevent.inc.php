@@ -9,17 +9,18 @@ if (isset($_POST['submit'])) {
 	$info = $_POST['info'];
 	$length = $_POST['length'];
 	$date = $_POST['date'];
+	$lat = $_POST['lat'];
 	$user = $_SESSION['u_id'];
 	
 	//Error handlers
 	// Check for empty fields
 	//Insert the user into the database
-	$sql = "INSERT INTO events (event_avenue, event_info, event_length, event_user, event_date) VALUES (?, ?, ?, ?, ?);";
+	$sql = "INSERT INTO events (event_avenue, event_info, event_length, event_user, event_date, lat) VALUES (?, ?, ?, ?, ?,?);";
 	$stmt = mysqli_stmt_init($conn);
 		if (!mysqli_stmt_prepare($stmt, $sql)){
 			echo "SQL error";
 		} else {
-			mysqli_stmt_bind_param($stmt,"sssss", $avenue, $info, $length, $user, $date);
+			mysqli_stmt_bind_param($stmt,"ssssss", $avenue, $info, $length, $user, $date, $lat);
 			mysqli_stmt_execute($stmt);
 			header("Location: ../index.php?post=success");
 			exit();

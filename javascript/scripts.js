@@ -96,6 +96,8 @@ function createMap() {
 			google.maps.event.addListener(marker, 'click', function(e) {
 				console.log(markers);
 				console.log(this.getTitle());
+				var latField = document.getElementById('lat');
+				latField.value = this.getPosition().lat();
 				console.log(this.getPosition().lat());
 				console.log(this.getPosition().lng());
 				})
