@@ -74,6 +74,7 @@
 			<input type="text" name="length" placeholder="Length">
 			<input type="date" name="date">
 			<input type="hidden" id="lat" name="lat" step="any">
+			<input type="hidden" id="long" name="long" step="any">
 			<div id="map"></div>
 			<button type="submit" name="submit">Create Event</button>
 			</form>';

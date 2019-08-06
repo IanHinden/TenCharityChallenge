@@ -98,6 +98,8 @@ function createMap() {
 				console.log(this.getTitle());
 				var latField = document.getElementById('lat');
 				latField.value = this.getPosition().lat();
+				var longField = document.getElementById('long');
+				longField.value = this.getPosition().lng();
 				console.log(this.getPosition().lat());
 				console.log(this.getPosition().lng());
 				})
