@@ -92,7 +92,7 @@ function createMap() {
 					title: p.name,
 					position: p.geometry.location
 			}));
-			
+			if (places.length > 1) {
 			google.maps.event.addListener(marker, 'click', function(e) {
 				console.log(markers);
 				console.log(this.getTitle());
@@ -103,7 +103,13 @@ function createMap() {
 				console.log(this.getPosition().lat());
 				console.log(this.getPosition().lng());
 				})
-			
+			} else {
+				var latField = document.getElementById('lat');
+				latField.value = markers[0].getPosition().lat();
+				var longField = document.getElementById('long');
+				longField.value = markers[0].getPosition().lng();
+			}
+
 			if (p.geometry.viewport)
 				bounds.union(p.geometry.viewport);
 			else
