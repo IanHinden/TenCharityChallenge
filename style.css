@@ -802,3 +802,10 @@ header .nav-login a {
 	background-image: linear-gradient(to right, #00cc44 , #99ffbb);
 	padding: 10px;
 }
+
+
+/*eventsearch.php*/
+#searchmap {
+	height: 300px;
+	width: 300px
+}
