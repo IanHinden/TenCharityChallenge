@@ -145,18 +145,30 @@ var customLabel = {
         });
         var infoWindow = new google.maps.InfoWindow;
 
+        if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function (p) {                                                                       var position = {                                                                                                              lat: p.coords.latitude,
+                                lng: p.coords.longitude
+                        };                                                                                                                    infoWindow.setPosition(position);
+                        infoWindow.setContent('Your current location');                                                                       infoWindow.open(map);
+                }, function() {
+                        handleLocationError('Geolocation service failed', map.center());                                              })                                                                                                            } else {
+                handleLocationError('No geolocation available', map.center());
+        }
+
+
+
           // Change this depending on the name of your PHP or XML file
           downloadUrl('https://tencharitychallenge.com/eventxml.php', function(data) {
             var xml = data.responseXML;
-            var markers = xml.documentElement.getElementsByTagName('marker');
+            var markers = xml.documentElement.getElementsByTagName('events');
             Array.prototype.forEach.call(markers, function(markerElem) {
-              var id = markerElem.getAttribute('id');
-              var name = markerElem.getAttribute('name');
-              var address = markerElem.getAttribute('address');
-              var type = markerElem.getAttribute('type');
+              var id = markerElem.getAttribute('event_id');
+              //var name = markerElem.getAttribute('name');
+              //var address = markerElem.getAttribute('address');
+              //var type = markerElem.getAttribute('type');
               var point = new google.maps.LatLng(
                   parseFloat(markerElem.getAttribute('lat')),
-                  parseFloat(markerElem.getAttribute('lng')));
+                  parseFloat(markerElem.getAttribute('longit')));
 
               var infowincontent = document.createElement('div');
               var strong = document.createElement('strong');
@@ -198,6 +210,9 @@ var customLabel = {
         request.open('GET', url, true);
         request.send(null);
       }
+
+function handleLocationError (content, position) {                                                                            infoWindow.setPosition(position);                                                                                     infoWindow.setContent(content);                                                                                       infoWindow.open(map);
+}   
 
       function doNothing() {}
 
