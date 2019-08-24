@@ -211,8 +211,11 @@ var customLabel = {
         request.send(null);
       }
 
-function handleLocationError (content, position) {                                                                            infoWindow.setPosition(position);                                                                                     infoWindow.setContent(content);                                                                                       infoWindow.open(map);
-}   
+	function handleLocationError (content, position) {
+		infoWindow.setPosition(position);
+		infoWindow.setContent(content);
+		infoWindow.open(map);
+	}
 
       function doNothing() {}
 
