@@ -8,10 +8,10 @@
 <html>
 <head>
 	<title>The Ten Charity Challenge</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="style.css"></link>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="javascript/scripts.js"></script>
-	<link href="https://fonts.googleapis.com/css?family=Montserrat|Noto+Serif+JP" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat|Noto+Serif+JP" rel="stylesheet"></link>
 </head>
 <body>
 
@@ -39,8 +39,8 @@
 						</form>';
 					} else {
 						echo '<form action="includes/login.inc.php" method="POST">
-						<input type="text" name="uid" placeholder="Username/email">
-						<input type="password" name="pwd" placeholder="Password">
+						<input type="text" name="uid" placeholder="Username/email"></input>
+						<input type="password" name="pwd" placeholder="Password"></input>
 						<button type="submit" name="submit">Login</button>
 						</form>
 						<a href="signup.php">Sign up</a>';
