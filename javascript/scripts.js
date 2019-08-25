@@ -160,30 +160,31 @@ var customLabel = {
           // Change this depending on the name of your PHP or XML file
           downloadUrl('https://tencharitychallenge.com/eventxml.php', function(data) {
             var xml = data.responseXML;
-            var markers = xml.documentElement.getElementsByTagName('events');
+            var markers = xml.documentElement.getElementsByTagName('event');
+		console.log(markers);
             Array.prototype.forEach.call(markers, function(markerElem) {
               var id = markerElem.getAttribute('event_id');
+	      var avenue = markerElem.getAttribute('event_avenue');
               //var name = markerElem.getAttribute('name');
               //var address = markerElem.getAttribute('address');
               //var type = markerElem.getAttribute('type');
               var point = new google.maps.LatLng(
                   parseFloat(markerElem.getAttribute('lat')),
                   parseFloat(markerElem.getAttribute('longit')));
-
               var infowincontent = document.createElement('div');
               var strong = document.createElement('strong');
-              strong.textContent = name
+              strong.textContent = id
               infowincontent.appendChild(strong);
               infowincontent.appendChild(document.createElement('br'));
 
               var text = document.createElement('text');
-              text.textContent = address
+              text.textContent = avenue
               infowincontent.appendChild(text);
-              var icon = customLabel[type] || {};
+              //var icon = customLabel[type] || {};
               var marker = new google.maps.Marker({
                 map: map,
                 position: point,
-                label: icon.label
+                //label: icon.label
               });
               marker.addListener('click', function() {
                 infoWindow.setContent(infowincontent);
@@ -224,7 +225,7 @@ function initialize() {
 	createMap();
 	}
 	catch(error){
-	console.error(error);
+	//console.error(error);
 	}
    initMap();
 }
