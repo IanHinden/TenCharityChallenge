@@ -57,7 +57,7 @@
 			if ($resultCheck > 0) {
 				echo '<div id="friendrequestpopup"><ul>';
 				while ($row = mysqli_fetch_assoc($result)) {
-					echo '<li>' . $row['user_first']. '</li>';
+					echo '<li>' . $row['user_first']. ' ' . $row['user_last'] . '</li>';
 				}
 				echo '</ul></div>';
 			}
