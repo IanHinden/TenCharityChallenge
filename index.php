@@ -53,11 +53,16 @@
 			$sql = "SELECT user_first, user_last, user_id FROM users INNER JOIN relationships ON relationships.action_user_id = users.user_id WHERE (user_one_id = '".$_SESSION['u_id']."' OR user_two_id = '".$_SESSION['u_id']."') AND action_user_id !='".$_SESSION['u_id']."' AND status = 0";
 			$result = mysqli_query($conn, $sql);
 			$resultCheck = mysqli_num_rows($result);
-			
+
 			if ($resultCheck > 0) {
 				echo '<div id="friendrequestpopup"><ul>';
 				while ($row = mysqli_fetch_assoc($result)) {
-					echo '<li>' . $row['user_first']. ' ' . $row['user_last'] . '</li>';
+					$userid = $row['user_id'];
+					echo '<li>' . $row['user_first']. ' ' . $row['user_last'] . 
+					'<form action="/confirmfriend.php" class="confirmfriend" method="post" />
+					<input type="hidden" name="userid" value="'. $userid.'"/>
+					<input id="'.$userid.'" type="submit" name="confirmfriend" value="Confirm Friend" />
+					</form></li>';
 				}
 				echo '</ul></div>';
 			}

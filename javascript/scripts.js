@@ -33,7 +33,15 @@ $(document).ready(function(){
 		return false;
 	});
 	
-	
+	$('.confirmfriend').submit(function() {
+		console.log("It works!");
+		var req = new XMLHttpRequest();
+		req.open("post", this.action);
+		req.send(new FormData(this));
+		//var btn = document.getElementById(this.childNodes[2].nextSibling.id);
+		//btn.disabled = true;
+		return false;
+	});	
 });
 
 var map, infoWindow;
