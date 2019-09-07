@@ -62,7 +62,11 @@
 					'<form action="/confirmfriend.php" class="confirmfriend" method="post" />
 					<input type="hidden" name="userid" value="'. $userid.'"/>
 					<input id="'.$userid.'" type="submit" name="confirmfriend" value="Confirm Friend" />
-					</form></li>';
+					</form></li>' .
+					'<form action="/rejectfriend.php" class="rejectfriend" method="post" />
+                                        <input type="hidden" name="userid" value="'. $userid.'"/>
+                                        <input id="'.$userid.'" type="submit" name="rejectfriend" value="Reject Friend" />
+                                  	 </form></li>';
 				}
 				echo '</ul></div>';
 			}
