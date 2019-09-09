@@ -23,6 +23,10 @@ if (isset($_POST['submit'])) {
 		} else {
 			mysqli_stmt_bind_param($stmt,"sssssss", $avenue, $info, $length, $user, $date, $lat, $long);
 			mysqli_stmt_execute($stmt);
+			
+			//Set relationsip with user to event as creator
+			$eventid = mysqli_insert_id($conn);
+			$sql = mysqli_query($conn, "INSERT INTO eventrelationships (event_id, user_id, creator) VALUES ($eventid, $user, 1)");
 			header("Location: ../index.php?post=success");
 			exit();
 		}
