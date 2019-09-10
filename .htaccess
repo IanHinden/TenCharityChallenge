@@ -6,6 +6,8 @@ RewriteCond %{REQUEST_FILENAME}\.php -f
 
 RewriteRule ^user/([0-9]+) user.php?id=$1 [NC,L]
 
+RewriteRule ^event/([0-9]+) event.php?id=$1 [NC,L]
+
 RewriteCond %{HTTPS} off
 
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
