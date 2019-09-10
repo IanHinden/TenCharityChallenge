@@ -1,5 +1,6 @@
 <?php
 	include_once 'includes/dbh.inc.php';
+        session_start();
 ?>
 
 <!DOCTYPE html>
@@ -24,6 +25,12 @@
 			if ($resultCheck > 0) {
 				while ($row = mysqli_fetch_assoc($result)) {
 					echo $row['event_avenue'] . " " . $row['event_info'];
+				
+				//Button to add event
+				if (isset($_SESSION['u_id'])){
+					echo 'You are logged in as '. $_SESSION['u_id']. '.';
+				}
+
 				}
 			} else {
 				echo "There is no event with this ID";
