@@ -15,7 +15,7 @@
 		<?php
 			$eventId = $_GET['id'];
 			
-			echo "User ID is: " . $eventId;
+			echo "Event ID is: " . $eventId;
 			
 			$sql = "SELECT * FROM events WHERE event_id = '".$eventId."';";
 			$result = mysqli_query($conn, $sql);
