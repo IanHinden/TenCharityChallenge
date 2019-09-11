@@ -28,6 +28,9 @@
 				
 				//Button to add event
 				if (isset($_SESSION['u_id'])){
+                                        echo '<form action="/confirmevent.php" class="confirmevent" method="post" />
+                                        <input type="hidden" name="eventId" value="'. $eventId.'"/>
+                                        <input id="'.$event.'" type="submit" name="confirmevent" value="Add Event" /></form>';
 					echo 'You are logged in as '. $_SESSION['u_id']. '.';
 				}
 
