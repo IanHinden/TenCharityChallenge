@@ -10,6 +10,10 @@
 		<meta name="description" content="User page">
 		<meta name=viewport content="width=device-width, initial-scale=1">
 		<title>Volunteer Event Page</title>
+		<link rel="stylesheet" type="text/css" href="../style.css"></link>
+        	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        	<script src="../javascript/scripts.js"></script>
+        	<link href="https://fonts.googleapis.com/css?family=Montserrat|Noto+Serif+JP" rel="stylesheet"></link>
 	</head>
 	<body>
 	
@@ -30,7 +34,7 @@
 				if (isset($_SESSION['u_id'])){
                                         echo '<form action="/confirmevent.php" class="confirmevent" method="post" />
                                         <input type="hidden" name="eventId" value="'. $eventId.'"/>
-                                        <input id="'.$event.'" type="submit" name="confirmevent" value="Add Event" /></form>';
+                                        <input id="'.$eventId.'" type="submit" name="confirmevent" value="Add Event" /></form>';
 					echo 'You are logged in as '. $_SESSION['u_id']. '.';
 				}
 
