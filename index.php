@@ -58,7 +58,7 @@
 				echo '<div id="friendrequestpopup"><ul>';
 				while ($row = mysqli_fetch_assoc($result)) {
 					$userid = $row['user_id'];
-					echo '<li>' . $row['user_first']. ' ' . $row['user_last'] . 
+					echo '<li><a href="https://tencharitychallenge.com/user/' . $userid . '">' . $row['user_first']. ' ' . $row['user_last'] . '</a>' . 
 					'<form action="/confirmfriend.php" class="confirmfriend" method="post" />
 					<input type="hidden" name="userid" value="'. $userid.'"/>
 					<input id="'.$userid.'" type="submit" name="confirmfriend" value="Confirm Friend" />
