@@ -37,7 +37,21 @@
 			}
 			
 			echo $userTotalHours . '</p></p></div>
-			<div id="inspirationscore" class="scorecard"><p>Inspiration Score:</p><p>Insert Number Here</p></div>
+			<div id="inspirationscore" class="scorecard"><p>Inspiration Score:</p>'; /*<p>Insert Number Here</p>*/
+
+			$sql = "SELECT * FROM events INNER JOIN eventrelationships ON events.event_id = eventrelationships.event_id WHERE event_user = '".$_SESSION['u_id']."' AND user_id <> '".$_SESSION['u_id']."' AND completed = 1;";
+			$result = mysqli_query($conn, $sql);
+			$totalEvents = mysqli_num_rows($result);
+			$inspirationScore = 0;
+			
+			if ($totalEvents > 0) {
+				while ($row = mysqli_fetch_assoc($result)) {
+					$inspirationScore = $inspirationScore + $row['event_length'];
+				}
+			}
+
+			echo '<span class="inspirationcount">' . $inspirationScore . '</span>';
+			echo '</div>
 			</div>
 			<div id="navbar"><ol><li>Find Events</li><li>Find Friends</li>
 			<li><img src="https://community.cengage.com/Chilton2/utility/anonymous.gif">';
