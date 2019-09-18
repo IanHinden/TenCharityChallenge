@@ -19,10 +19,11 @@
 						}
 				}
 			echo ' </div></div>
-                        <form action="upload.php" method="POST" enctype="multipart/form-data">
-                        <input type="file" name="profilephoto">
-                        <button type="submit" name="photosubmit">Upload Profile Image</button></form></div>
-			<div id="scores">
+                        <form action="testfileupload.php" method="POST" enctype="multipart/form-data">
+                        <input type="file" name="fileToUpload" id="fileToUpload">
+                        <button type="submit" value="Upload Image" name="submit">Submit</button></form></div>';
+			echo "<img src='https://gastatic.s3-us-west-1.amazonaws.com/profile/IanProfile.jpg'>";
+			echo '<div id="scores">
 			<div id="volunteerscore" class="scorecard"><p>Volunteer Hours:<p>';
 			
 			$sql = "SELECT event_length FROM events WHERE event_user = '".$_SESSION['u_id']."';";
