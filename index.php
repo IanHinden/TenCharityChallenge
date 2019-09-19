@@ -22,7 +22,7 @@
                         <form action="testfileupload.php" method="POST" enctype="multipart/form-data">
                         <input type="file" name="fileToUpload" id="fileToUpload">
                         <button type="submit" value="Upload Image" name="submit">Submit</button></form></div>';
-			echo "<img src='https://gastatic.s3-us-west-1.amazonaws.com/profile/IanProfile.jpg'>";
+			echo "<img id='profileimage' src='https://gastatic.s3-us-west-1.amazonaws.com/profile/IanProfile.jpg'>";
 			echo '<div id="scores">
 			<div id="volunteerscore" class="scorecard"><p>Volunteer Hours:<p>';
 			

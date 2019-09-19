@@ -33,6 +33,12 @@ $(document).ready(function(){
 		return false;
 	});
 	
+	document.getElementById("profileimage").addEventListener("click", profileupload);
+
+	function profileupload() {
+  		alert("You clicked me");
+	}
+
 	$('.confirmfriend').submit(function() {
 		console.log("It works!");
 		var req = new XMLHttpRequest();
