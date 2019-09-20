@@ -1,4 +1,7 @@
 <?php
+
+	include_once 'header.php';
+        include_once 'includes/dbh.inc.php';
 	// This file demonstrates file upload to an S3 bucket. This is for using file upload via a
 	// file compared to just having the link. If you are doing it via link, refer to this:
 	// https://gist.github.com/keithweaver/08c1ab13b0cc47d0b8528f4bc318b49a
@@ -46,7 +49,10 @@
 	}
 	
 	// For this, I would generate a unqiue random string for the key name. But you can do whatever.
-	$keyName = 'profile/' . basename($_FILES["fileToUpload"]['name']);
+	$result = uniqid();
+	$user = $_SESSION['u_id'];
+	$basename = basename($_FILES["fileToUpload"]['name']);
+	$keyName = 'profilepicture/' . $user . '/' . $result . basename($_FILES["fileToUpload"]['name']);
 	$pathInS3 = 'https://s3.us-west-1.amazonaws.com/' . $bucketName . '/' . $keyName;
 	// Add it to S3
 	try {
