@@ -36,7 +36,8 @@ $(document).ready(function(){
 	document.getElementById("profileimage").addEventListener("click", profileupload);
 
 	function profileupload() {
-  		alert("You clicked me");
+  		var uploadButton = document.getElementById("fileToUpload");
+		uploadButton.click();
 	}
 
 	$('.confirmfriend').submit(function() {
@@ -52,7 +53,8 @@ $(document).ready(function(){
 	$('.rejectfriend').submit(function() {
                 console.log("It works!");
                 var req = new XMLHttpRequest();
-                req.open("post", this.action);                                                                                          req.send(new FormData(this));
+                req.open("post", this.action);
+		req.send(new FormData(this));
                 //var btn = document.getElementById(this.childNodes[2].nextSibling.id);
                 //btn.disabled = true;
                 return false;
