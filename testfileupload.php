@@ -69,12 +69,9 @@
 			)
 		);
 		echo "<br><br><br><br><br>";
-		$basename = strval($basename);
-		echo $basename;
-		$result = strval($result);
-		echo $result;
-		echo $user;
-		
+		$basename = "'".$basename."'";
+		$result = "'".$result."'";
+
 		$mysql=mysqli_query($conn, "INSERT INTO profilepicturelocation (user_id, uniq_id, image_name, current) VALUES ($user, $result, $basename, '1')");
 
 	} catch (S3Exception $e) {
