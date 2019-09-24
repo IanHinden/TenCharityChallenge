@@ -8,16 +8,15 @@
 			echo '
 			<div id="dashboard">
 				<div id="profilepic">';
-					$sqlImg = "SELECT * FROM profileimg WHERE userid = '".$_SESSION['u_id']."';";
+					$sqlImg = "SELECT * FROM profilepicturelocation WHERE user_id = '".$_SESSION['u_id']."' AND current = 1;";
 					$resultImg = mysqli_query($conn, $sqlImg);
 					$id = $_SESSION['u_id'];
-					while ($rowImg = mysqli_fetch_assoc($resultImg)) {
-						if ($rowImg['status'] == 0) {
-							echo "<img src='uploads/profile".$id.".jpg'>";
-						} else {
-							echo "<img src='uploads/profiledefault.jpg'>";
-						}
-				}
+					$rowresults = mysqli_num_rows($resultImg);
+					if ($rowresults > 0) {
+						echo "<img src='https://gastatic.s3-us-west-1.amazonaws.com/profilepicture/" . $id . "'>";
+							} else {
+						echo "<img src='uploads/profiledefault.jpg'>";
+					}
 			echo ' </div></div>
                         <form action="testfileupload.php" method="POST" enctype="multipart/form-data">
                         <input type="file" name="fileToUpload" id="fileToUpload">
