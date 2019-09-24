@@ -13,15 +13,16 @@
 					$id = $_SESSION['u_id'];
 					$rowresults = mysqli_num_rows($resultImg);
 					if ($rowresults > 0) {
-						echo "<img src='https://gastatic.s3-us-west-1.amazonaws.com/profilepicture/" . $id . "'>";
-							} else {
-						echo "<img src='uploads/profiledefault.jpg'>";
+						while ($row = mysqli_fetch_assoc($resultImg)){
+							echo "<img id='profileimage' src='https://gastatic.s3-us-west-1.amazonaws.com/profilepicture/" . $id .  "/". $row['uniq_id']. $row['image_name'] . "'>";
+						}
+					} else {
+						echo "<img id='profileimage' src='uploads/profiledefault.jpg'>";
 					}
 			echo ' </div></div>
                         <form action="testfileupload.php" method="POST" enctype="multipart/form-data">
                         <input type="file" name="fileToUpload" id="fileToUpload">
                         <button type="submit" value="Upload Image" name="submit">Submit</button></form></div>';
-			echo "<img id='profileimage' src='https://gastatic.s3-us-west-1.amazonaws.com/profile/IanProfile.jpg'>";
 			echo '<div id="scores">
 			<div id="volunteerscore" class="scorecard"><p>Volunteer Hours:<p>';
 			
