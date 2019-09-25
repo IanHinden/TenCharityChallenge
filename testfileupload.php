@@ -72,6 +72,7 @@
 		$basename = "'".$basename."'";
 		$result = "'".$result."'";
 
+		$imageClear=mysqli_query($conn, "UPDATE profilepicturelocation SET current=0 WHERE user_id = '$user'");
 		$mysql=mysqli_query($conn, "INSERT INTO profilepicturelocation (user_id, uniq_id, image_name, current) VALUES ($user, $result, $basename, '1')");
 
 	} catch (S3Exception $e) {
