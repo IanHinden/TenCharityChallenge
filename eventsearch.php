@@ -5,8 +5,12 @@
 
 
 <br><br><br><br>
+<br><br><br><br><br><br>
+<input id="refreshMap" type="button" value="Search" onclick="initMap();" />
+
 
 <?php
+
 	echo '<div id="searchmap"></div>';
 
 ?>
