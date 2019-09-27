@@ -552,7 +552,7 @@ header .nav-login a {
 
 #friendrequestpopup {
 	position: relative;
-	display: inline-block;
+	display: none;
 }
 
 #friendrequestpopup ul {

@@ -55,7 +55,7 @@
 			echo '</div>
 			</div>
 			<div id="navbar"><ol><li>Find Events</li><li>Find Friends</li>
-			<li><img src="https://community.cengage.com/Chilton2/utility/anonymous.gif">';
+			<li id="friendrequestsicon"><img src="https://community.cengage.com/Chilton2/utility/anonymous.gif">';
 			
 			$sql = "SELECT * FROM `relationships` WHERE (`user_one_id` = '".$_SESSION['u_id']."' OR `user_two_id` = '".$_SESSION['u_id']."') AND `status` = 0 AND `action_user_id` != '".$_SESSION['u_id']."'";
 			$result = mysqli_query($conn, $sql);

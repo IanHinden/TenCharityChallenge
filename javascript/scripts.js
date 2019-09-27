@@ -40,6 +40,10 @@ $(document).ready(function(){
 		uploadButton.click();
 	}
 
+	$("#friendrequestsicon").click(function(){
+		$("#friendrequestpopup").toggle();
+	});
+
 	$('.confirmfriend').submit(function() {
 		console.log("It works!");
 		var req = new XMLHttpRequest();
