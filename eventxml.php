@@ -31,6 +31,7 @@
   	$newnode->setAttribute("lat", $row['lat']);
   	$newnode->setAttribute("longit", $row['longit']);
   	$newnode->setAttribute("event_user", $row['event_user']);
+	$newnode->setAttribute("cause", $row['cause']);
 	}
 
 	echo $dom->saveXML();
