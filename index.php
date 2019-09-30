@@ -97,6 +97,10 @@
 			<input type="text" name="info" placeholder="Info">
 			<input type="text" name="length" placeholder="Length">
 			<input type="date" name="date">
+			<select name="cause">
+    				<option value="Animals">Animals</option>
+    				<option value="Food Bank">Food Bank</option>
+  			</select>
 			<input type="hidden" id="lat" name="lat" step="any">
 			<input type="hidden" id="long" name="long" step="any">
 			<div id="map"></div>
