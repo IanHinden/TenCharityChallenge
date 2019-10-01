@@ -12,6 +12,11 @@
         <option value="10">10</option>
         <option value="20">20</option>
 </select>
+<select id="cause">
+	<option value="All">All</option>
+	<option value="Animals">Animals</option>
+	<option value="Food Bank">Food Bank</option>
+</select>
 <input id="refreshMap" type="button" value="Search" onclick="initMap();" />
 
 

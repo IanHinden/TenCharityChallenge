@@ -181,6 +181,8 @@ var customLabel = {
 
 	var e = document.getElementById('eventdistance').value;
         console.log(e);
+	var eventTypeFilter = document.getElementById('cause').value;
+	console.log(eventTypeFilter);
 
         var map = new google.maps.Map(document.getElementById('searchmap'), {
           center: new google.maps.LatLng(-33.863276, 151.207977),
@@ -208,6 +210,8 @@ var customLabel = {
             Array.prototype.forEach.call(markers, function(markerElem) {
               var id = markerElem.getAttribute('event_id');
 	      var avenue = markerElem.getAttribute('event_avenue');
+	      var cause = markerElem.getAttribute('cause');
+		console.log("This is the " + cause);
               //var name = markerElem.getAttribute('name');
               //var address = markerElem.getAttribute('address');
               //var type = markerElem.getAttribute('type');
@@ -224,11 +228,13 @@ var customLabel = {
               text.textContent = avenue
               infowincontent.appendChild(text);
               //var icon = customLabel[type] || {};
-              var marker = new google.maps.Marker({
-                map: map,
-                position: point,
-                //label: icon.label
-              });
+              if(eventTypeFilter == 'All' || eventTypeFilter == cause){
+		var marker = new google.maps.Marker({
+                	map: map,
+                	position: point,
+                	//label: icon.label
+              	});
+	      }
               marker.addListener('click', function() {
                 infoWindow.setContent(infowincontent);
                 infoWindow.open(map, marker);

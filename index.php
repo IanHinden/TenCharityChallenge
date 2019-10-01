@@ -100,6 +100,7 @@
 			<select name="cause">
     				<option value="Animals">Animals</option>
     				<option value="Food Bank">Food Bank</option>
+				<option value="Other">Other</option>
   			</select>
 			<input type="hidden" id="lat" name="lat" step="any">
 			<input type="hidden" id="long" name="long" step="any">
