@@ -211,7 +211,6 @@ var customLabel = {
               var id = markerElem.getAttribute('event_id');
 	      var avenue = markerElem.getAttribute('event_avenue');
 	      var cause = markerElem.getAttribute('cause');
-		console.log("This is the " + cause);
               //var name = markerElem.getAttribute('name');
               //var address = markerElem.getAttribute('address');
               //var type = markerElem.getAttribute('type');
@@ -228,17 +227,19 @@ var customLabel = {
               text.textContent = avenue
               infowincontent.appendChild(text);
               //var icon = customLabel[type] || {};
-              if(eventTypeFilter == 'All' || eventTypeFilter == cause){
+              if(eventTypeFilter == 'All' || cause == eventTypeFilter){
+		console.log("This is the " + cause);
 		var marker = new google.maps.Marker({
                 	map: map,
                 	position: point,
                 	//label: icon.label
               	});
-	      }
+
               marker.addListener('click', function() {
                 infoWindow.setContent(infowincontent);
                 infoWindow.open(map, marker);
               });
+	      }
             });
           });
         }

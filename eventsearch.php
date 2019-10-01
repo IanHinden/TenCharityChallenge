@@ -7,10 +7,10 @@
 <br><br><br><br>
 <br><br><br><br><br><br>
 <select id="eventdistance">
-	<option value="1">1</option>
-        <option value="5">5</option>
-        <option value="10">10</option>
-        <option value="20">20</option>
+	<option value="10">10</option>
+        <option value="8">8</option>
+        <option value="6">6</option>
+        <option value="4">4</option>
 </select>
 <select id="cause">
 	<option value="All">All</option>
