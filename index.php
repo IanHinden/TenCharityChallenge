@@ -97,6 +97,7 @@
 			<input type="text" name="info" placeholder="Info">
 			<input type="text" name="length" placeholder="Length">
 			<input type="date" name="date">
+			<input type="time" name="start_time">
 			<select name="cause">
     				<option value="Animals">Animals</option>
     				<option value="Food Bank">Food Bank</option>

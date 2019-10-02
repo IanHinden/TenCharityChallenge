@@ -13,16 +13,17 @@ if (isset($_POST['submit'])) {
 	$long = $_POST['long'];
 	$user = $_SESSION['u_id'];
 	$cause = $_POST['cause'];
+	$startTime = $_POST['start_time'];
 	
 	//Error handlers
 	// Check for empty fields
 	//Insert the user into the database
-	$sql = "INSERT INTO events (event_avenue, event_info, event_length, event_user, event_date, lat, longit, cause) VALUES (?, ?, ?, ?, ?, ?, ?, ?);";
+	$sql = "INSERT INTO events (event_avenue, event_info, event_length, event_user, event_date, start_time, lat, longit, cause) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);";
 	$stmt = mysqli_stmt_init($conn);
 		if (!mysqli_stmt_prepare($stmt, $sql)){
 			echo "SQL error";
 		} else {
-			mysqli_stmt_bind_param($stmt,"ssssssss", $avenue, $info, $length, $user, $date, $lat, $long, $cause);
+			mysqli_stmt_bind_param($stmt,"sssssssss", $avenue, $info, $length, $user, $date, $startTime, $lat, $long, $cause);
 			mysqli_stmt_execute($stmt);
 			
 			//Set relationsip with user to event as creator
