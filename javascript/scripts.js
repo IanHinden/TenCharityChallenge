@@ -180,9 +180,13 @@ var customLabel = {
         function initMap() {
 
 	var e = document.getElementById('eventdistance').value;
-        console.log(e);
 	var eventTypeFilter = document.getElementById('cause').value;
-	console.log(eventTypeFilter);
+	var fD = document.getElementById('fromDate').value;
+	var fromDate = new Date(fD);
+	console.log(fromDate);
+	var tD = document.getElementById('toDate').value;
+	var toDate = new Date(tD);
+	console.log(toDate);
 
         var map = new google.maps.Map(document.getElementById('searchmap'), {
           center: new google.maps.LatLng(-33.863276, 151.207977),
@@ -211,7 +215,9 @@ var customLabel = {
               var id = markerElem.getAttribute('event_id');
 	      var avenue = markerElem.getAttribute('event_avenue');
 	      var cause = markerElem.getAttribute('cause');
-              //var name = markerElem.getAttribute('name');
+              var eventDate = markerElem.getAttribute('event_date');
+	      var eventDateObject = new Date(eventDate);
+		console.log(eventDateObject);
               //var address = markerElem.getAttribute('address');
               //var type = markerElem.getAttribute('type');
               var point = new google.maps.LatLng(
@@ -227,8 +233,7 @@ var customLabel = {
               text.textContent = avenue
               infowincontent.appendChild(text);
               //var icon = customLabel[type] || {};
-              if(eventTypeFilter == 'All' || cause == eventTypeFilter){
-		console.log("This is the " + cause);
+              if((eventTypeFilter == 'All' || cause == eventTypeFilter) && ((fromDate < eventDateObject) && (eventDateObject < toDate))){
 		var marker = new google.maps.Marker({
                 	map: map,
                 	position: point,
