@@ -12,6 +12,8 @@
         <option value="6">6</option>
         <option value="4">4</option>
 </select>
+<input type="date" id="fromDate" name="fromDate"></input>
+<input type="date" id="toDate" name="toDate"></input>
 <select id="cause">
 	<option value="All">All</option>
 	<option value="Animals">Animals</option>
