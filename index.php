@@ -112,10 +112,23 @@
 			$sql = "SELECT * FROM events WHERE event_user = '".$_SESSION['u_id']."';";
 			$result = mysqli_query($conn, $sql);
 			$resultCheck = mysqli_num_rows($result);
-			
+
+			echo "Today is " . date("Y-m-d") . "<br>";
+			$todayDate = date("Y-m-d");
+			echo $todayDate;
+
 			if ($resultCheck > 0) {
 				while ($row = mysqli_fetch_assoc($result)) {
 					echo '<p>' . $row['event_info']. '</p><br>';
+					echo 'This is the date: ' . date($row['event_date']) . '<br>';
+					$eventDate = date($row['event_date']);
+					echo $eventDate;
+					if ($eventDate > $todayDate) {
+						echo "This event is in the future";
+					} else {
+						echo "This event is in the past";
+					}
+					//echo '<script type="text/Javascript">console.log(' . $row['event_date'] .');</script>';
 				}
 			}
 			
