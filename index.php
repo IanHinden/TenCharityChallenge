@@ -117,7 +117,11 @@
 			$todayDate = date("Y-m-d");
 			echo $todayDate;
 
-			if ($resultCheck > 0) {
+			for ($set = array (); $row = mysqli_fetch_assoc($result); $set[] = $row);
+			//var_dump($set);
+			echo "<pre>" . print_r($set, 1) . "</pre>";
+			
+			/*if ($resultCheck > 0) {
 				while ($row = mysqli_fetch_assoc($result)) {
 					echo '<p>' . $row['event_info']. '</p><br>';
 					echo 'This is the date: ' . date($row['event_date']) . '<br>';
@@ -130,7 +134,7 @@
 					}
 					//echo '<script type="text/Javascript">console.log(' . $row['event_date'] .');</script>';
 				}
-			}
+			}*/
 			
 			echo '</div>';
 		} else {
