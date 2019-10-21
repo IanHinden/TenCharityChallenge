@@ -54,7 +54,7 @@
 			echo '<span class="inspirationcount">' . $inspirationScore . '</span>';
 			echo '</div>
 			</div>
-			<div id="navbar"><ol><li>Find Events</li><li>Find Friends</li>
+			<div id="navbar"><ol><li><a href="/search.php">Find Events</a></li><li>Find Friends</li>
 			<li id="friendrequestsicon"><img src="https://community.cengage.com/Chilton2/utility/anonymous.gif">';
 			
 			$sql = "SELECT * FROM `relationships` WHERE (`user_one_id` = '".$_SESSION['u_id']."' OR `user_two_id` = '".$_SESSION['u_id']."') AND `status` = 0 AND `action_user_id` != '".$_SESSION['u_id']."'";
@@ -112,14 +112,31 @@
 			$sql = "SELECT * FROM events WHERE event_user = '".$_SESSION['u_id']."';";
 			$result = mysqli_query($conn, $sql);
 			$resultCheck = mysqli_num_rows($result);
-
-			echo "Today is " . date("Y-m-d") . "<br>";
 			$todayDate = date("Y-m-d");
-			echo $todayDate;
 
 			for ($set = array (); $row = mysqli_fetch_assoc($result); $set[] = $row);
+			
+			echo '<div id="upcomingevents">Upcoming Events';
+
+			foreach ($set as $item){
+				if($item['event_date'] > $todayDate){
+					echo $item['event_info'];
+					echo '<br>';
+				}
+			}
+			echo '</div>';
+
+			echo '<div id="previousevents">Previous Events';
+
+			foreach ($set as $item){
+				if($item['event_date'] < $todayDate){
+					echo $item['event_info'];
+					echo '<br>';
+                                }
+                        }
+                        echo '</div>';
 			//var_dump($set);
-			echo "<pre>" . print_r($set, 1) . "</pre>";
+			//echo "<pre>" . print_r($set, 1) . "</pre>";
 			
 			/*if ($resultCheck > 0) {
 				while ($row = mysqli_fetch_assoc($result)) {
