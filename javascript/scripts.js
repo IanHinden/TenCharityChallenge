@@ -32,7 +32,15 @@ $(document).ready(function(){
 		btn.disabled = true;
 		return false;
 	});
+
+	//Edit profile scripts
+	document.getElementById("editaboutme").addEventListener("click", enableaboutme);
 	
+	function enableaboutme() {
+		var aboutmefield = document.getElementById("aboutme");
+		aboutmefield.disabled = false;
+	}
+
 	document.getElementById("profileimage").addEventListener("click", profileupload);
 
 	function profileupload() {
