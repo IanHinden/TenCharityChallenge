@@ -38,7 +38,7 @@ $(document).ready(function(){
 	
 	function enableaboutme() {
 		var aboutmefield = document.getElementById("aboutme");
-		aboutmefield.disabled = false;
+		aboutmefield.removeAttribute('readonly');
 	}
 
 	document.getElementById("profileimage").addEventListener("click", profileupload);

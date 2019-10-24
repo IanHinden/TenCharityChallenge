@@ -21,7 +21,7 @@
                         	echo "User ID is: " . $id;
 
 				echo '<form action="aboutme.php" method="post">
-				About Me: <input type="text" name="aboutme" id="aboutme" disabled><br>
+				About Me: <input type="text" name="aboutme" id="aboutme" readonly="readonly"><br>
 				<p id="editaboutme">Edit</p>
 				<input type="submit">
 				</form>';
