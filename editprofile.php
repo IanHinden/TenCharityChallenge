@@ -20,7 +20,7 @@
 				echo '<br><br><br><br>';
                         	echo "User ID is: " . $id;
 
-				echo '<form action="aboutme.php" method="post">
+				echo '<form action="includes/aboutme.inc.php" method="post">
 				About Me: <input type="text" name="aboutme" id="aboutme" readonly="readonly"><br>
 				<p id="editaboutme">Edit</p>
 				<input type="submit">
