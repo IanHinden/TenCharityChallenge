@@ -18,7 +18,7 @@
                         	$id = $_SESSION['u_id'];
 
 				//Retreive user details
-				$sql = "SELECT * FROM profile WHERE user_id = '".$_SESSION['u_id']."';";
+				$sql = "SELECT * FROM profile WHERE current_profile = 1 AND user_id = '".$_SESSION['u_id']."';";
                         	$result = mysqli_query($conn, $sql);
 				$resultCheck = mysqli_num_rows($result);
 

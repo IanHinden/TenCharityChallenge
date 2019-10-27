@@ -16,6 +16,10 @@ if (isset($_POST['aboutme'])) {
                 if (!mysqli_stmt_prepare($stmt, $sql)){
                         echo "SQL error";
                 } else {
+			//Remove old profile as default
+			$sqlRemoveDefault = "UPDATE profile SET current_profile=0 WHERE user_id='$user';";
+			$result = mysqli_query($conn, $sqlRemoveDefault);
+
                         mysqli_stmt_bind_param($stmt,"ss", $user, $aboutme);
                         mysqli_stmt_execute($stmt);
                         exit();
