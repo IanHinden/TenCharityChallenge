@@ -157,8 +157,8 @@
 		} else {
 			echo '<section class="main-container">
 					<div class="main-container-text">
-						<h2>Welcome to the Ten Charity Challenge </h2>
-						<h3>Can you volunteer? Ten times in one year?</h3>
+						<h2>Find, Create, and Share Volunteer Events With Friends</h2>
+						<h3>Join the Ten Charity Challenge.</h3>
 			</div>
 			</section>';
 			
@@ -183,8 +183,9 @@
 <div id="main-about">
 	<section id="intro">
 		<div class="desc">
-			<h2>Can you volunteer? Ten times in one year?</h2>
-			<h3>At the Ten Charity Challenge, we have just one question: can you successfully volunteer ten times in a year? To win, all you need to do serve at a soup kitchen once a month. Or pack lunches for homeless teens. Or drive pets to the vet for veterans...</h3>
+			<h2>Wait! You might not need to sign up!</h2>
+			<h3>Ten Charity Challenge has one goal: to maximize the number of completed charity hours. Since we know that many people are concerned with their data on social networking sites, our search feature is available without an account. For more details, check here.</h3>
+			<h3>However, if you do sign up, you can look forward to these features!</h3>
 		</div>
 	</section>
 	<section id="purposeid">
@@ -193,15 +194,15 @@
 				<img src="https://s3.amazonaws.com/www.thegarbage.org/images/headerimage1.jpg" alt="Purpose">
 			</div>
 			<div class="purpose-child-two">
-				<h2>What is this site?</h2>
-				<h3>The purpose of this website is to give you a space to keep track of your volunteer events. This site is not a necessary part of the challenge. In fact, everything site does can be replicated with a pencil and paper. But if you want a place to keep track, leave notes and photos, and share events to involve your friends, we're here for you.</h3>
+				<h2>Search for Volunteer Opportunities</h2>
+				<h3>Using our search tools, you can search for volunteer events based on your favorite causes and narrow down events that fit into your schedule.</h3>
 			</div>
 		</div>
 	</section>
 	<section>
 		<div class="benefits">
-			<h2>The Benefits of Volunteering</h2>
-			<h3>Volunteering can help organizations in need while giving people in the community a better chance to get to know their neighbors. Volunteers learn more about issues their communities are facing. On top of that, it's a great group activity!</h3>
+			<h2>It's not Social Media, it's Social Conscious Media</h2>
+			<h3>Share photos and invite friends to find the joy in helping and working together.</h3>
 		</div>
 	</section>
 	<div class="mobile-signup"><a href="signup.php">SIGN UP</a></div>
