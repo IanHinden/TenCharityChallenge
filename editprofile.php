@@ -29,7 +29,7 @@
                                         $aboutMeText = $item['about_me'];
                                 }
 				echo $aboutMeText;
-				echo '<form action="includes/aboutme.inc.php" method="post">
+				echo '<form action="includes/aboutme.inc.php" method="post" class="aboutme">
 				About Me: <input type="text" value="'.$aboutMeText.'" name="aboutme" id="aboutme" readonly="readonly"><br>
 				<p id="editaboutme">Edit</p>
 				<input type="submit">

@@ -24,7 +24,6 @@ $(document).ready(function(){
 	});
 	
 	$('.addfriend').submit(function() {
-		console.log("It works!");
 		var req = new XMLHttpRequest();
 		req.open("post", this.action);
 		req.send(new FormData(this));
@@ -41,6 +40,14 @@ $(document).ready(function(){
 		aboutmefield.removeAttribute('readonly');
 	}
 
+	$('.aboutme').submit(function() {
+                console.log("This is running");
+		var req = new XMLHttpRequest();
+                req.open("post", this.action);
+                req.send(new FormData(this));
+                return false;
+        });
+
 	document.getElementById("profileimage").addEventListener("click", profileupload);
 
 	function profileupload() {
@@ -53,7 +60,6 @@ $(document).ready(function(){
 	});
 
 	$('.confirmfriend').submit(function() {
-		console.log("It works!");
 		var req = new XMLHttpRequest();
 		req.open("post", this.action);
 		req.send(new FormData(this));
