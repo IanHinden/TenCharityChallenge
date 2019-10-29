@@ -41,10 +41,11 @@ $(document).ready(function(){
 	}
 
 	$('.aboutme').submit(function() {
-                console.log("This is running");
 		var req = new XMLHttpRequest();
                 req.open("post", this.action);
                 req.send(new FormData(this));
+		var aboutmefield = document.getElementById("aboutme");
+		aboutmefield.readOnly = true;
                 return false;
         });
 
