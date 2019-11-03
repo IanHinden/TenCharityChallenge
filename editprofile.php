@@ -27,12 +27,14 @@
 				for ($set = array (); $row = mysqli_fetch_assoc($result); $set[] = $row);
                                 foreach ($set as $item){
                                         $aboutMeText = $item['about_me'];
+					$birthday = $item['birthday'];
                                 }
 				echo $aboutMeText;
 				echo '<form action="includes/aboutme.inc.php" method="post" class="aboutme">
 				About Me: <input type="text" value="'.$aboutMeText.'" name="aboutme" id="aboutme" readonly="readonly"><br>
+                                Birthday: <input type="date" value="'.$birthday.'" name="birthday" id="birthday" readonly="readonly"><br>
 				<p id="editaboutme">Edit</p>
-				<input type="submit">
+                                <input type="submit">
 				</form>';
 			} else {
 				echo "No one is logged in";

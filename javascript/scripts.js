@@ -38,6 +38,8 @@ $(document).ready(function(){
 	function enableaboutme() {
 		var aboutmefield = document.getElementById("aboutme");
 		aboutmefield.removeAttribute('readonly');
+		var birthdayfield = document.getElementById("birthday");
+		birthdayfield.removeAttribute('readonly');
 	}
 
 	$('.aboutme').submit(function() {

@@ -6,12 +6,13 @@ if (isset($_POST['aboutme'])) {
         include 'dbh.inc.php';
 
         $aboutme = $_POST['aboutme'];
+	$birthday = $_POST['birthday'];
         $user = $_SESSION['u_id'];
 
         //Error handlers
         // Check for empty fields
         //Insert the user into the database
-        $sql = "INSERT INTO profile (user_id, about_me) VALUES (?, ?);";
+        $sql = "INSERT INTO profile (user_id, about_me, birthday) VALUES (?, ?, ?);";
         $stmt = mysqli_stmt_init($conn);
                 if (!mysqli_stmt_prepare($stmt, $sql)){
                         echo "SQL error";
@@ -20,7 +21,7 @@ if (isset($_POST['aboutme'])) {
 			$sqlRemoveDefault = "UPDATE profile SET current_profile=0 WHERE user_id='$user';";
 			$result = mysqli_query($conn, $sqlRemoveDefault);
 
-                        mysqli_stmt_bind_param($stmt,"ss", $user, $aboutme);
+                        mysqli_stmt_bind_param($stmt,"sss", $user, $aboutme, $birthday);
                         mysqli_stmt_execute($stmt);
                         exit();
                 }
