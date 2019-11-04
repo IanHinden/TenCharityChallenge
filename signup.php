@@ -6,11 +6,12 @@
 	<div class="main-wrapper">
 		<h2>Signup</h2>
 		<form class="signup-form" action="includes/signup.inc.php" method="POST" onsubmit="if(document.getElementById('agree').checked) { return true; } else { alert('Please indicate that you have read and agree to the Terms of Service and Privacy Policy'); return false; }">
-			<input type="text" name="first" placeholder="First name">
-			<input type="text" name="last" placeholder="Last name">
-			<input type="text" name="email" placeholder="E-mail">
-			<input type="text" name="uid" placeholder="User name">
-			<input type="password" name="pwd" placeholder="Password">
+			<input type="text" name="first" placeholder="First name"><br>
+			<input type="text" name="last" placeholder="Last name"><br>
+			<input type="text" id="email" name="email" placeholder="E-mail"><br>
+			<p id="emailformat">Please enter a valid email address.<p>
+			<input type="text" name="uid" placeholder="User name"><br>
+			<input type="password" name="pwd" placeholder="Password"><br>
 
 
 		<div class="confirm">

@@ -32,6 +32,23 @@ $(document).ready(function(){
 		return false;
 	});
 
+	//Form validation for sign up
+	document.getElementById("email").addEventListener("blur", displayemailwarning);
+
+	function displayemailwarning(e) {
+		var emailformat = document.getElementById("emailformat");
+		if(!validateEmail(e.target.value)){
+			emailformat.style.visibility = "visible";
+		} else {
+			emailformat.style.visibility = "hidden";
+		}
+	}
+
+	function validateEmail(email) {
+ 		var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  		return re.test(email);
+	}
+
 	//Edit profile scripts
 	document.getElementById("editaboutme").addEventListener("click", enableaboutme);
 	

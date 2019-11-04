@@ -647,6 +647,11 @@ header .nav-login a {
 
 /*signup.php*/
 
+#emailformat {
+	visibility: hidden;
+	color: red;
+}
+
 #show-tos {
 	display: block;
 	margin: 0 auto;
