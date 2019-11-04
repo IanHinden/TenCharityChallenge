@@ -28,11 +28,13 @@
                                 foreach ($set as $item){
                                         $aboutMeText = $item['about_me'];
 					$birthday = $item['birthday'];
+					$favoriteCause = $item['favorite_cause'];
                                 }
 				echo $aboutMeText;
 				echo '<form action="includes/aboutme.inc.php" method="post" class="aboutme">
 				About Me: <input type="text" value="'.$aboutMeText.'" name="aboutme" id="aboutme" readonly="readonly"><br>
                                 Birthday: <input type="date" value="'.$birthday.'" name="birthday" id="birthday" readonly="readonly"><br>
+				Favorite Cause: <input type="text" value="'.$favoriteCause.'" name="favoritecause" id="favoritecause" readonly="readonly"><br>
 				<p id="editaboutme">Edit</p>
                                 <input type="submit">
 				</form>';

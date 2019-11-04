@@ -40,6 +40,8 @@ $(document).ready(function(){
 		aboutmefield.removeAttribute('readonly');
 		var birthdayfield = document.getElementById("birthday");
 		birthdayfield.removeAttribute('readonly');
+		var favoritecausefield = document.getElementById("favoritecause");
+		favoritecausefield.removeAttribute('readonly');
 	}
 
 	$('.aboutme').submit(function() {
@@ -48,6 +50,10 @@ $(document).ready(function(){
                 req.send(new FormData(this));
 		var aboutmefield = document.getElementById("aboutme");
 		aboutmefield.readOnly = true;
+		var birthdayfield = document.getElementById("birthday");
+		birthdayfield.readOnly = true;
+		var favoritecausefield = document.getElementById("favoritecause");
+		favoritecausefield.readOnly = true;
                 return false;
         });
 
