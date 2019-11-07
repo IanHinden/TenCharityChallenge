@@ -49,6 +49,22 @@ $(document).ready(function(){
   		return re.test(email);
 	}
 
+        document.getElementById("username").addEventListener("input", invalidcharacterwarning);
+
+        function invalidcharacterwarning(e) {
+                var emailformat = document.getElementById("specialchars");
+                if(!validateUsernameSpecialChars(e.target.value)){
+                        emailformat.style.color = "red";
+                } else {
+                        emailformat.style.color = "blue";
+                }
+        }
+
+        function validateUsernameSpecialChars(username) {
+                var re = /^[a-zA-Z0-9]*$/
+		return re.test(username);
+        }
+
 	//Edit profile scripts
 	document.getElementById("editaboutme").addEventListener("click", enableaboutme);
 	

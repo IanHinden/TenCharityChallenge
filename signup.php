@@ -10,7 +10,8 @@
 			<input type="text" name="last" placeholder="Last name"><br>
 			<input type="text" id="email" name="email" placeholder="E-mail"><br>
 			<p id="emailformat">Please enter a valid email address.<p>
-			<input type="text" name="uid" placeholder="User name"><br>
+			<input type="text" id="username" name="uid" placeholder="User name"><br>
+			<p id="specialchars">Your username may not have any special characters.<p>
 			<input type="password" name="pwd" placeholder="Password"><br>
 
 
@@ -30,7 +31,7 @@
 		</div>
 		<div class="opaque"></div>
 			<!-- <button type="submit" name="submit" value="submit">Sign up</button></form> -->
-				<button id="show-tos">Submit</button>
+				<button id="show-tos" disabled="disabled">Submit</button>
 	</div>
 
 </section>
