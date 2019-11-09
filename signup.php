@@ -11,7 +11,8 @@
 			<input type="text" id="email" name="email" placeholder="E-mail"><br>
 			<p id="emailformat">Please enter a valid email address.<p>
 			<input type="text" id="username" name="uid" placeholder="User name"><br>
-			<p id="specialchars">Your username may not have any special characters.<p>
+			<p id="specialchars">Your username may not have any special characters.</p>
+			<p id="usernametaken">This username is already taken. Please choose another.</p>
 			<input type="password" name="pwd" placeholder="Password"><br>
 
 

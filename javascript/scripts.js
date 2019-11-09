@@ -33,6 +33,31 @@ $(document).ready(function(){
 	});
 
 	//Form validation for sign up
+
+	var ajax = new XMLHttpRequest();
+	ajax.open("GET", "../allusernames.php", true);
+	ajax.send();
+
+	ajax.onreadystatechange = function() {
+
+		var data;
+
+    		if (this.readyState == 4 && this.status == 200) {
+			data = JSON.parse(this.responseText);
+    		}
+
+		document.getElementById("username").addEventListener("input", checkusernameinuse);
+
+		function checkusernameinuse(e) {
+			for (var i = 0; i < data.length; i++) {
+    				if (data[i].user_uid === e.target.value) {
+        				let usernametaken = document.getElementById("usernametaken");
+					usernametaken.style.display = "block";
+    				}
+			}
+		}
+	};
+
 	document.getElementById("email").addEventListener("blur", displayemailwarning);
 
 	function displayemailwarning(e) {
@@ -53,10 +78,13 @@ $(document).ready(function(){
 
         function invalidcharacterwarning(e) {
                 var emailformat = document.getElementById("specialchars");
+		var usernametaken = document.getElementById("usernametaken");
                 if(!validateUsernameSpecialChars(e.target.value)){
-                        emailformat.style.color = "red";
+                        emailformat.style.display = "inline-block";
+			usernametaken.style.display = "none";
                 } else {
-                        emailformat.style.color = "blue";
+                        emailformat.style.display = "none";
+			usernametaken.style.display = "none";
                 }
         }
 
