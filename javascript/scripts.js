@@ -51,8 +51,8 @@ $(document).ready(function(){
 		function checkusernameinuse(e) {
 			for (var i = 0; i < data.length; i++) {
     				if (data[i].user_uid === e.target.value) {
-        				let usernametaken = document.getElementById("usernametaken");
-					usernametaken.style.display = "block";
+        				let usernametaken = document.getElementById("usernamewarning");
+                                        usernametaken.innerText = "This username is already in use. Please select another.";
     				}
 			}
 		}
@@ -77,14 +77,11 @@ $(document).ready(function(){
         document.getElementById("username").addEventListener("input", invalidcharacterwarning);
 
         function invalidcharacterwarning(e) {
-                var emailformat = document.getElementById("specialchars");
-		var usernametaken = document.getElementById("usernametaken");
+                var emailformat = document.getElementById("usernamewarning");
                 if(!validateUsernameSpecialChars(e.target.value)){
-                        emailformat.style.display = "inline-block";
-			usernametaken.style.display = "none";
+                        emailformat.innerText = "Please choose a username with no special characters.";
                 } else {
-                        emailformat.style.display = "none";
-			usernametaken.style.display = "none";
+                        emailformat.innerText = " ";
                 }
         }
 
