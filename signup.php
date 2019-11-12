@@ -31,7 +31,7 @@
 		</div>
 		<div class="opaque"></div>
 			<!-- <button type="submit" name="submit" value="submit">Sign up</button></form> -->
-				<button id="show-tos" disabled="disabled">Submit</button>
+				<button id="show-tos" /*disabled="disabled"*/>Submit</button>
 	</div>
 
 </section>
