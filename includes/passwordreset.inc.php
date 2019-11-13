@@ -38,6 +38,8 @@ $email = $_POST['email'];
 $selector = bin2hex(random_bytes(8));
 $token = random_bytes(32);
 
+$expire = date("Y-m-d H:i:s", strtotime("+1 hours"));
+
 $url = sprintf('%spasswordreset.php?%s', 'https://www.tencharitychallenge.com/', http_build_query([
 	'selector' => $selector,
         'validator' => bin2hex($token)
