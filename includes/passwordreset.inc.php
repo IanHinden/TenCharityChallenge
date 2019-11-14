@@ -40,6 +40,17 @@ $token = random_bytes(32);
 
 $expire = date("Y-m-d H:i:s", strtotime("+1 hours"));
 
+//Insert info into database
+$passwordresetSQL = "INSERT INTO passwordreset (email, selector, token, expires) VALUES (?, ?, ?, ?);";
+$stmt = mysqli_stmt_init($conn);
+
+if (!mysqli_stmt_prepare($stmt, $passwordresetSQL)){
+	echo "SQL error";
+} else {
+	mysqli_stmt_bind_param($stmt,"ssss", $email, $selector, $token, $expire);
+	mysqli_stmt_execute($stmt);
+}
+
 $url = sprintf('%spasswordreset.php?%s', 'https://www.tencharitychallenge.com/', http_build_query([
 	'selector' => $selector,
         'validator' => bin2hex($token)
