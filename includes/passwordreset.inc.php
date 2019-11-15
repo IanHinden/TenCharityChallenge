@@ -40,6 +40,10 @@ $token = random_bytes(32);
 
 $expire = date("Y-m-d H:i:s", strtotime("+1 hours"));
 
+//Remove other instances of password reset reuests
+$deleteSQL = "DELETE FROM passwordreset WHERE email = '$email'";
+$deletequery = mysqli_query($conn, $deleteSQL);
+
 //Insert info into database
 $passwordresetSQL = "INSERT INTO passwordreset (email, selector, token, expires) VALUES (?, ?, ?, ?);";
 $stmt = mysqli_stmt_init($conn);
