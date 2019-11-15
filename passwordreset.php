@@ -24,8 +24,9 @@ if(isset($selector)) {
 		if ($validator == $userToken && $selector == $userSelector) {
 			echo '<form class="password-reset-confirm-form" action="includes/passwordresetconfirm.inc.php" method="POST">
                 	<p>Enter your new password and confirm below.</p>
+			<input type="hidden" name="email" value="'.$userEmail.'">
         		<input type="text" name="password" placeholder="Password"><br>
-			<input type="text" name="passwordconfirm" placeholder="Confirm Password"><br> 
+			<input type="text" name="passwordconfirm" placeholder="Confirm Password"><br>
         		<button type="submit" value="submit" name="submit">Submit</button></form>';
 		}
 
