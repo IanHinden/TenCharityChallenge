@@ -43,6 +43,7 @@
 						<input type="password" name="pwd" placeholder="Password"></input>
 						<button type="submit" name="submit">Login</button>
 						</form>
+						<a href="https://tencharitychallenge.com/passwordreset.php">Forgot your password?</a>
 						<a href="signup.php">Sign up</a>';
 					}
 				?>

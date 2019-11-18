@@ -213,7 +213,7 @@ header .nav-login form button:hover {
 
 header .nav-login a {
 	display: block;
-	width: 60px;
+	padding-right: 8px;
 	height: 60px;
 	border: none;
 	float: left;
