@@ -32,6 +32,7 @@ if(isset($selector)) {
 
         } else {
 		echo "Your token has expired. Please request another.";
+		echo '<a href="https://tencharitychallenge.com/passwordreset.php">Request Aother Password Reset</a>';
 	}
 
 } else {
