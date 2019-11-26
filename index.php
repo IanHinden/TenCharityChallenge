@@ -74,12 +74,13 @@
 				echo '<div id="friendrequestpopup"><ul>';
 				while ($row = mysqli_fetch_assoc($result)) {
 					$userid = $row['user_id'];
+					$firstname = $row['user_first'];
+					$lastname = $row['user_last'];
 
 					//Profile Image
 					echo '<div class="requestprofilepic">';
 					$sqlImg = "SELECT * FROM profilepicturelocation WHERE user_id = '".$row['user_id']."' AND current = 1;";
 					$resultImg = mysqli_query($conn, $sqlImg);
-					$id = $_SESSION['u_id'];
 					$rowresults = mysqli_num_rows($resultImg);
 					if ($rowresults > 0) {
 						while ($row = mysqli_fetch_assoc($resultImg)){
@@ -88,8 +89,9 @@
 					} else {
 						echo "<img id='profileimage' src='uploads/profiledefault.jpg'>";
 					}
+					echo '</div>';
 
-					echo '<li><a href="https://tencharitychallenge.com/user/' . $userid . '">' . $row['user_first']. ' ' . $row['user_last'] . '</a>' . 
+					echo '<li><a href="https://tencharitychallenge.com/user/' . $userid . '">' . $firstname. ' ' . $lastname . '</a>' . 
 					'<form action="/confirmfriend.php" class="confirmfriend" method="post" />
 					<input type="hidden" name="userid" value="'. $userid.'"/>
 					<input id="'.$userid.'" type="submit" name="confirmfriend" value="Confirm Friend" />
