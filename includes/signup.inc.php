@@ -73,6 +73,7 @@ $configuration_set = 'ConfigSet';
 						mysqli_stmt_bind_param($stmt,"sssss", $first, $last, $email, $uid, $hashedPwd);
 						mysqli_stmt_execute($stmt);
 						
+						/*
 						$sqlUser = "SELECT * FROM users WHERE user_uid = '$uid'";
 						$result = mysqli_query($conn, $sqlUser);
 						if (mysqli_num_rows($result) > 0) {
@@ -82,7 +83,7 @@ $configuration_set = 'ConfigSet';
 								mysqli_query($conn, $sqlImg);
 							}
 						}
-
+						*/
 
 						//Create Signup token
                                                 $selector = bin2hex(random_bytes(8));
@@ -102,7 +103,7 @@ $configuration_set = 'ConfigSet';
 						$subject = 'Welcome to the Ten Charity Challenge!';
 						$plaintext_body = 'Please confirm your e-mail address to receive updates and reminders.' ;
 						$html_body =  '<h1>Click the link below to confirm your e-mail address</h1>'.
-              						'<p>Here is the token:'.$url.'. Checkit out!'.
+              						'<p>Here is the token:'.$url.'. Check it out!'.
               						'Amazon SES</a> using the <a href="https://aws.amazon.com/sdk-for-php/">'.
               						'AWS SDK for PHP</a>.</p>';
 						$char_set = 'UTF-8';

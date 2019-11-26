@@ -55,6 +55,7 @@
 			echo '</div>
 			</div>
 			<div id="navbar"><ol><li><a href="/search.php">Find Events</a></li><li>Find Friends</li>
+			//Friend requests
 			<li id="friendrequestsicon"><img src="https://community.cengage.com/Chilton2/utility/anonymous.gif">';
 			
 			$sql = "SELECT * FROM `relationships` WHERE (`user_one_id` = '".$_SESSION['u_id']."' OR `user_two_id` = '".$_SESSION['u_id']."') AND `status` = 0 AND `action_user_id` != '".$_SESSION['u_id']."'";
@@ -73,6 +74,21 @@
 				echo '<div id="friendrequestpopup"><ul>';
 				while ($row = mysqli_fetch_assoc($result)) {
 					$userid = $row['user_id'];
+
+					//Profile Image
+					echo '<div class="requestprofilepic">';
+					$sqlImg = "SELECT * FROM profilepicturelocation WHERE user_id = '".$row['user_id']."' AND current = 1;";
+					$resultImg = mysqli_query($conn, $sqlImg);
+					$id = $_SESSION['u_id'];
+					$rowresults = mysqli_num_rows($resultImg);
+					if ($rowresults > 0) {
+						while ($row = mysqli_fetch_assoc($resultImg)){
+							echo "<img id='profileimage' src='https://gastatic.s3-us-west-1.amazonaws.com/profilepicture/" . $userid .  "/". $row['uniq_id']. $row['image_name'] . "'>";
+						}
+					} else {
+						echo "<img id='profileimage' src='uploads/profiledefault.jpg'>";
+					}
+
 					echo '<li><a href="https://tencharitychallenge.com/user/' . $userid . '">' . $row['user_first']. ' ' . $row['user_last'] . '</a>' . 
 					'<form action="/confirmfriend.php" class="confirmfriend" method="post" />
 					<input type="hidden" name="userid" value="'. $userid.'"/>
