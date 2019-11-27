@@ -25,7 +25,22 @@ $result = mysqli_query($conn, "SELECT * FROM users
 
 				$usernumber = $row['user_id'];
 				echo $usernumber;
-				
+
+				//Profile Image
+				echo '<div class="searchprofilepic">';
+				$sqlImg = "SELECT * FROM profilepicturelocation WHERE user_id = '".$row['user_id']."' AND current = 1;";
+				$resultImg = mysqli_query($conn, $sqlImg);
+				$rowresults = mysqli_num_rows($resultImg);
+				if ($rowresults > 0) {
+					while ($row = mysqli_fetch_assoc($resultImg)){
+						echo "<img class='searchprofileimage' src='https://gastatic.s3-us-west-1.amazonaws.com/profilepicture/" . $usernumber .  "/". $row['uniq_id']. $row['image_name'] . "'>";
+						}
+				} else {
+					echo "<img class='searchprofileimage' src='uploads/profiledefault.jpg'>";
+				}
+				echo '</div>';
+
+				/*
 				echo '<div id="profilepic">';
 					$sqlImg = "SELECT * FROM profileimg WHERE userid = '".$row['user_id']."';";
 					$resultImg = mysqli_query($conn, $sqlImg);
@@ -36,7 +51,7 @@ $result = mysqli_query($conn, "SELECT * FROM users
 						} else {
 							echo "<img src='uploads/profiledefault.jpg'>";
 						}
-				}
+				}*/
 				
 				echo $row['user_first'] . " " . $row['user_last'];
 				

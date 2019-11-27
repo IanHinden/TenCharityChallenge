@@ -645,6 +645,11 @@ header .nav-login a {
 	padding: 0px 20px;
 }
 
+/*Search.php*/
+.searchprofileimage {
+	height: 100px;
+}
+
 /*signup.php*/
 
 #emailformat {
