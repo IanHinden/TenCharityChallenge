@@ -52,7 +52,25 @@ $result = mysqli_query($conn, "SELECT * FROM users
 							echo "<img src='uploads/profiledefault.jpg'>";
 						}
 				}*/
+
 				
+				if ($current < $usernumber){
+					$lower = $current;
+					$higher = $usernumber;
+				} else {
+					$lower = $usernumber;
+					$higher = $current;
+				}
+
+				$sqlRelationship = "SELECT * FROM relationships WHERE user_one_id = '".$lower."' AND user_two_id = '".$higher."';";
+                                $resultRelationship = mysqli_query($conn, $sqlRelationship);
+                                $rowresults = mysqli_num_rows($resultRelationship);
+                                if ($rowresults > 0) {
+                                        while ($row = mysqli_fetch_assoc($resultRelationship)){
+                                       		echo "There is a relationship here";
+					}
+                                }
+
 				echo $row['user_first'] . " " . $row['user_last'];
 				
 				echo '<form action="/addfriend.php" class="addfriend" method="post" />
