@@ -159,25 +159,34 @@ $(document).ready(function(){
 //Friend Request Scripts
 function properButton(id, status, currentUserRequested){
 	console.log("The proper button script was run");
-	console.log(currentUserRequested);
+
 	var addDiv = document.getElementById("add" + id);
 	var requestSent = document.getElementById("sent" + id);
 	var accept = document.getElementById("accept" + id);
+	var removeFriend = document.getElementById("remove" + id);
 	
 	if(status == -1){
 		addDiv.style.display = "block";
 		requestSent.style.display = "none";
 		accept.style.display = "none";
+		removeFriend.style.display = "none";
 	} else if (status == 0) {
 		if (currentUserRequested == true) {
 			addDiv.style.display = "none";
 			requestSent.style.display = "block";
 			accept.style.display = "none";
+			removeFriend.style.display = "none";
 		} else {
 			accept.style.display = "block";
 			addDiv.style.display = "none";
 			requestSent.style.display = "none";
+			removeFriend.style.display = "none";
 		}
+	} else if (status == 1) {
+		removeFriend.style.display = "block";
+		addDiv.style.display = "none";
+		requestSent.style.display = "none";
+		accept.style.display = "none";
 	}
 
 }

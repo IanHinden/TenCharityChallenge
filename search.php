@@ -65,6 +65,8 @@ $result = mysqli_query($conn, "SELECT * FROM users
 				
 				echo '<input id="accept'. $usernumber.'" type="submit" value="Accept Friend Request" />';
 
+				echo '<input id="remove'. $usernumber.'" type="submit" value="Remove Friend" />';
+
 				if ($current < $usernumber){
                                         $lower = $current;
                                         $higher = $usernumber;
@@ -83,15 +85,8 @@ $result = mysqli_query($conn, "SELECT * FROM users
 							$currentUserRequested = false;
 						}
 
-						if ($currentUserRequested == true){
-							echo "True";
-						} else {
-							echo "False";
-						};
-
-						echo "There is a relationship here";
                                                 echo '<script type="text/javascript">',
-                                                        'properButton('. $usernumber. ', 0, '. json_encode($currentUserRequested) .');',
+                                                        'properButton('. $usernumber. ', '. $row['status'].', '. json_encode($currentUserRequested) .');',
                                                 '</script>';
                                         }
                                 } else {
