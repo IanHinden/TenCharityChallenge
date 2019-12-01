@@ -53,31 +53,39 @@ $result = mysqli_query($conn, "SELECT * FROM users
 						}
 				}*/
 
-				
-				if ($current < $usernumber){
-					$lower = $current;
-					$higher = $usernumber;
-				} else {
-					$lower = $usernumber;
-					$higher = $current;
-				}
-
-				$sqlRelationship = "SELECT * FROM relationships WHERE user_one_id = '".$lower."' AND user_two_id = '".$higher."';";
-                                $resultRelationship = mysqli_query($conn, $sqlRelationship);
-                                $rowresults = mysqli_num_rows($resultRelationship);
-                                if ($rowresults > 0) {
-                                        while ($row = mysqli_fetch_assoc($resultRelationship)){
-                                       		echo "There is a relationship here";
-					}
-                                }
 
 				echo $row['user_first'] . " " . $row['user_last'];
 				
-				echo '<form action="/addfriend.php" class="addfriend" method="post" />
+				echo '<form action="/addfriend.php" class="addfriend" id="accept'. $usernumber.'" method="post" />
 				<input type="hidden" name="usernumber" value="'. $usernumber.'"/>
 				<input id="'.$usernumber.'" type="submit" name="addfriend" value="Add Friend" />
 				</form>';
+
+				echo '<input id="sent'. $usernumber.'" type="submit" value="Friend Request Submitted" disabled="true" />';
 				
+
+				if ($current < $usernumber){
+                                        $lower = $current;
+                                        $higher = $usernumber;
+                                } else {
+                                        $lower = $usernumber;
+                                        $higher = $current;                                                                                                                                                 }
+
+                                $sqlRelationship = "SELECT * FROM relationships WHERE user_one_id = '".$lower."' AND user_two_id = '".$higher."';";                                                         $resultRelationship = mysqli_query($conn, $sqlRelationship);
+                                $rowresults = mysqli_num_rows($resultRelationship);
+                                if ($rowresults > 0) {
+                                        while ($row = mysqli_fetch_assoc($resultRelationship)){
+                                                echo "There is a relationship here";
+                                                echo '<script type="text/javascript">',
+                                                        'properButton('. $usernumber. ', 0);',
+                                                '</script>';
+                                        }
+                                } else {
+					echo '<script type="text/javascript">',
+                                        	'properButton('. $usernumber. ', -1);',
+                                        '</script>';
+				}
+
 				echo "<br>";
 		}
 	}

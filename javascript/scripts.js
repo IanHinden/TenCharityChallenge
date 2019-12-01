@@ -156,6 +156,23 @@ $(document).ready(function(){
 	});
 });
 
+//Friend Request Scripts
+function properButton(id, status){
+	console.log("The proper button script was run");
+	var acceptDiv = document.getElementById("accept" + id);
+	var requestSent = document.getElementById("sent" + id);
+	
+	if(status == -1){
+		acceptDiv.style.display = "block";
+		requestSent.style.display = "none";
+	} else {
+		acceptDiv.style.display = "none";
+		requestSent.style.display = "block";
+	}
+
+}
+
+// Map scripts
 var map, infoWindow;
 
 function createMap() {
