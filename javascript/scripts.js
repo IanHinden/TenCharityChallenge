@@ -157,17 +157,27 @@ $(document).ready(function(){
 });
 
 //Friend Request Scripts
-function properButton(id, status){
+function properButton(id, status, currentUserRequested){
 	console.log("The proper button script was run");
-	var acceptDiv = document.getElementById("accept" + id);
+	console.log(currentUserRequested);
+	var addDiv = document.getElementById("add" + id);
 	var requestSent = document.getElementById("sent" + id);
+	var accept = document.getElementById("accept" + id);
 	
 	if(status == -1){
-		acceptDiv.style.display = "block";
+		addDiv.style.display = "block";
 		requestSent.style.display = "none";
-	} else {
-		acceptDiv.style.display = "none";
-		requestSent.style.display = "block";
+		accept.style.display = "none";
+	} else if (status == 0) {
+		if (currentUserRequested == true) {
+			addDiv.style.display = "none";
+			requestSent.style.display = "block";
+			accept.style.display = "none";
+		} else {
+			accept.style.display = "block";
+			addDiv.style.display = "none";
+			requestSent.style.display = "none";
+		}
 	}
 
 }

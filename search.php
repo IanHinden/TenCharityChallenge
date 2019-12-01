@@ -56,13 +56,14 @@ $result = mysqli_query($conn, "SELECT * FROM users
 
 				echo $row['user_first'] . " " . $row['user_last'];
 				
-				echo '<form action="/addfriend.php" class="addfriend" id="accept'. $usernumber.'" method="post" />
+				echo '<form action="/addfriend.php" class="addfriend" id="add'. $usernumber.'" method="post" />
 				<input type="hidden" name="usernumber" value="'. $usernumber.'"/>
 				<input id="'.$usernumber.'" type="submit" name="addfriend" value="Add Friend" />
 				</form>';
 
 				echo '<input id="sent'. $usernumber.'" type="submit" value="Friend Request Submitted" disabled="true" />';
 				
+				echo '<input id="accept'. $usernumber.'" type="submit" value="Accept Friend Request" />';
 
 				if ($current < $usernumber){
                                         $lower = $current;
@@ -71,18 +72,31 @@ $result = mysqli_query($conn, "SELECT * FROM users
                                         $lower = $usernumber;
                                         $higher = $current;                                                                                                                                                 }
 
-                                $sqlRelationship = "SELECT * FROM relationships WHERE user_one_id = '".$lower."' AND user_two_id = '".$higher."';";                                                         $resultRelationship = mysqli_query($conn, $sqlRelationship);
+                                $sqlRelationship = "SELECT * FROM relationships WHERE user_one_id = '".$lower."' AND user_two_id = '".$higher."';";
+				$resultRelationship = mysqli_query($conn, $sqlRelationship);
                                 $rowresults = mysqli_num_rows($resultRelationship);
                                 if ($rowresults > 0) {
                                         while ($row = mysqli_fetch_assoc($resultRelationship)){
-                                                echo "There is a relationship here";
+                                                $currentUserRequested = true;
+
+						if($row['action_user_id'] != $current){
+							$currentUserRequested = false;
+						}
+
+						if ($currentUserRequested == true){
+							echo "True";
+						} else {
+							echo "False";
+						};
+
+						echo "There is a relationship here";
                                                 echo '<script type="text/javascript">',
-                                                        'properButton('. $usernumber. ', 0);',
+                                                        'properButton('. $usernumber. ', 0, '. json_encode($currentUserRequested) .');',
                                                 '</script>';
                                         }
                                 } else {
 					echo '<script type="text/javascript">',
-                                        	'properButton('. $usernumber. ', -1);',
+                                        	'properButton('. $usernumber. ', -1, false);',
                                         '</script>';
 				}
 
