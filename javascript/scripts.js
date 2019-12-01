@@ -162,22 +162,22 @@ function properButton(id, status, currentUserRequested){
 
 	var addDiv = document.getElementById("add" + id);
 	var requestSent = document.getElementById("sent" + id);
-	var accept = document.getElementById("accept" + id);
+	var acceptreject = document.getElementById("acceptreject" + id);
 	var removeFriend = document.getElementById("remove" + id);
 	
 	if(status == -1){
 		addDiv.style.display = "block";
 		requestSent.style.display = "none";
-		accept.style.display = "none";
+		acceptreject.style.display = "none";
 		removeFriend.style.display = "none";
 	} else if (status == 0) {
 		if (currentUserRequested == true) {
 			addDiv.style.display = "none";
 			requestSent.style.display = "block";
-			accept.style.display = "none";
+			acceptreject.style.display = "none";
 			removeFriend.style.display = "none";
 		} else {
-			accept.style.display = "block";
+			acceptreject.style.display = "block";
 			addDiv.style.display = "none";
 			requestSent.style.display = "none";
 			removeFriend.style.display = "none";
@@ -186,7 +186,7 @@ function properButton(id, status, currentUserRequested){
 		removeFriend.style.display = "block";
 		addDiv.style.display = "none";
 		requestSent.style.display = "none";
-		accept.style.display = "none";
+		acceptreject.style.display = "none";
 	}
 
 }

@@ -63,7 +63,10 @@ $result = mysqli_query($conn, "SELECT * FROM users
 
 				echo '<input id="sent'. $usernumber.'" type="submit" value="Friend Request Submitted" disabled="true" />';
 				
-				echo '<input id="accept'. $usernumber.'" type="submit" value="Accept Friend Request" />';
+				echo '<div id="acceptreject'. $usernumber.'">
+					<input id="accept'. $usernumber.'" type="submit" value="Accept Friend Request" />
+					<input id="reject'. $usernumber.'" type="submit" value="Reject Friend Request" />
+					</div>';
 
 				echo '<input id="remove'. $usernumber.'" type="submit" value="Remove Friend" />';
 
