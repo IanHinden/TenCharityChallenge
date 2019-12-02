@@ -40,20 +40,6 @@ $result = mysqli_query($conn, "SELECT * FROM users
 				}
 				echo '</div>';
 
-				/*
-				echo '<div id="profilepic">';
-					$sqlImg = "SELECT * FROM profileimg WHERE userid = '".$row['user_id']."';";
-					$resultImg = mysqli_query($conn, $sqlImg);
-					$id = $row['user_id'];
-					while ($rowImg = mysqli_fetch_assoc($resultImg)) {
-						if ($rowImg['status'] == 0) {
-							echo "<img src='uploads/profile".$id.".jpg'>";
-						} else {
-							echo "<img src='uploads/profiledefault.jpg'>";
-						}
-				}*/
-
-
 				echo $row['user_first'] . " " . $row['user_last'];
 				
 				echo '<form action="/addfriend.php" class="addfriend" id="add'. $usernumber.'" method="post" />
@@ -63,10 +49,17 @@ $result = mysqli_query($conn, "SELECT * FROM users
 
 				echo '<input id="sent'. $usernumber.'" type="submit" value="Friend Request Submitted" disabled="true" />';
 				
-				echo '<div id="acceptreject'. $usernumber.'">
-					<input id="accept'. $usernumber.'" type="submit" value="Accept Friend Request" />
-					<input id="reject'. $usernumber.'" type="submit" value="Reject Friend Request" />
-					</div>';
+				echo '<div id="acceptreject'. $usernumber.'">' .
+
+					'<form action="/confirmfriend.php" class="confirmfriend" method="post" />
+					<input type="hidden" name="userid" value="'. $usernumber.'"/>
+                                        <input id="'.$usernumber.'" type="submit" name="confirmfriend" value="Confirm Friend" />
+                                        </form></li>' .
+
+					'<form action="/rejectfriend.php" class="rejectfriend" method="post" />
+                                        <input type="hidden" name="userid" value="'. $usernumber.'"/>
+					<input id="'.$usernumber.'" type="submit" name="rejectfriend" value="Reject Friend" />
+                                         </form></li></div>';
 
 				echo '<input id="remove'. $usernumber.'" type="submit" value="Remove Friend" />';
 
