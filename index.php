@@ -127,7 +127,7 @@
 			<button type="submit" name="submit">Create Event</button>
 			</form>';
 			
-			$sql = "SELECT * FROM events WHERE event_user = '".$_SESSION['u_id']."';";
+			$sql = "SELECT * FROM events JOIN eventrelationships ON events.event_id = eventrelationships.event_id WHERE user_id = '".$_SESSION['u_id']."';";
 			$result = mysqli_query($conn, $sql);
 			$resultCheck = mysqli_num_rows($result);
 			$todayDate = date("Y-m-d");
