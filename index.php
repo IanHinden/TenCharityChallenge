@@ -149,9 +149,10 @@
 			foreach ($set as $item){
 				if($item['event_date'] < $todayDate){
 					echo $item['event_info'];
-					echo '<form action="/confirmcompletedevent.php" class="confirmcompletedevent" method="post" />
-                                        <input type="hidden" name="userid" value="'. $userid.'"/>
-                                        <input id="'.$userid.'" type="submit" name="confirmcompletedevent" value="Confirm Completion" />
+					$eventid = $item['event_id'];
+					echo '<form action="includes/confirmcompletedevent.inc.php" class="confirmcompletedevent" method="post" />
+                                        <input type="hidden" name="eventid" value="'. $eventid.'"/>
+                                        <input id="'.$eventid.'" type="submit" name="confirmcompletedevent" value="Confirm Completion" />
                                         </form></li>';
 
 					echo '<br>';
