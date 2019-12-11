@@ -127,7 +127,7 @@
 			<button type="submit" name="submit">Create Event</button>
 			</form>';
 			
-			$sql = "SELECT * FROM events JOIN eventrelationships ON events.event_id = eventrelationships.event_id WHERE user_id = '".$_SESSION['u_id']."';";
+			$sql = "SELECT * FROM events JOIN eventrelationships ON events.event_id = eventrelationships.event_id WHERE completed >= 0 AND user_id = '".$_SESSION['u_id']."';";
 			$result = mysqli_query($conn, $sql);
 			$resultCheck = mysqli_num_rows($result);
 			$todayDate = date("Y-m-d");
@@ -139,6 +139,11 @@
 			foreach ($set as $item){
 				if($item['event_date'] > $todayDate){
 					echo $item['event_info'];
+					$eventid = $item['event_id'];                                                                                                                                                     echo '<a href="https://tencharitychallenge.com/event/' . $eventid . '">' . $eventinfo. '</a>';
+                                        echo '<form action="includes/cancelattendevent.inc.php" class="cancelattendevent" method="post" />
+                                        <input type="hidden" name="eventid" value="'. $eventid.'"/>
+                                        <input id="'.$eventid.'" type="submit" name="cancelattendevent" value="Cancel Attendance" />
+                                        </form></li>';
 					echo '<br>';
 				}
 			}
