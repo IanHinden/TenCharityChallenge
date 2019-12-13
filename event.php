@@ -21,6 +21,25 @@
 			$eventId = $_GET['id'];
 			
 			echo "Event ID is: " . $eventId;
+
+			//Determine user permissions
+        		$userId = $_SESSION['u_id'];
+
+        		$sql = "SELECT * FROM eventrelationships WHERE event_id = '".$eventId."' AND user_id = '".$userId."';";
+        		$result = mysqli_query($conn, $sql);
+        		$resultCheck = mysqli_num_rows($result);
+
+        		if ($resultCheck > 0) {
+                		while ($row = mysqli_fetch_assoc($result)) {
+					if ($row['creator'] == 1) {
+                        			echo "This user is the creator";
+					} else {
+						echo "This user is involved, but not the creator";
+					}
+                		}
+        		} else {
+                		echo "This user is not signed up for this event";
+        		}
 			
 			$sql = "SELECT * FROM events WHERE event_id = '".$eventId."';";
 			$result = mysqli_query($conn, $sql);
