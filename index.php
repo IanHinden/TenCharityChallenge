@@ -138,8 +138,9 @@
 
 			foreach ($set as $item){
 				if($item['event_date'] > $todayDate){
-					echo $item['event_info'];
-					$eventid = $item['event_id'];                                                                                                                                                     echo '<a href="https://tencharitychallenge.com/event/' . $eventid . '">' . $eventinfo. '</a>';
+					$eventinfo = $item['event_info'];
+					$eventid = $item['event_id'];
+					echo '<a href="https://tencharitychallenge.com/event/' . $eventid . '">' . $eventinfo. '</a>';
                                         echo '<form action="includes/cancelattendevent.inc.php" class="cancelattendevent" method="post" />
                                         <input type="hidden" name="eventid" value="'. $eventid.'"/>
                                         <input id="'.$eventid.'" type="submit" name="cancelattendevent" value="Cancel Attendance" />
