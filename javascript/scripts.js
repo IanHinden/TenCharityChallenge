@@ -332,12 +332,18 @@ var customLabel = {
         var infoWindow = new google.maps.InfoWindow;
 
         if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(function (p) {                                                                       var position = {                                                                                                              lat: p.coords.latitude,
-                                lng: p.coords.longitude
-                        };                                                                                                                    infoWindow.setPosition(position);
-                        infoWindow.setContent('Your current location');                                                                       infoWindow.open(map);
+                navigator.geolocation.getCurrentPosition(function (p) { 
+				var position = {
+					lat: p.coords.latitude,
+                                	lng: p.coords.longitude
+                        	};
+			infoWindow.setPosition(position);
+                        infoWindow.setContent('Your current location');
+			infoWindow.open(map);
                 }, function() {
-                        handleLocationError('Geolocation service failed', map.center());                                              })                                                                                                            } else {
+                        handleLocationError('Geolocation service failed', map.center());
+			})
+		} else {
                 handleLocationError('No geolocation available', map.center());
         }
 
