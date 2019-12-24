@@ -154,6 +154,14 @@ $(document).ready(function(){
 		//btn.disabled = true;
 		return false;
 	});
+
+	$('.cancelattendevent').submit(function() {
+		var data = new FormData();
+                var req = new XMLHttpRequest();
+                req.open('post', '../includes/cancelattendevent.inc.php');
+                req.send();
+		return false;
+        });
 });
 
 //Friend Request Scripts
@@ -187,6 +195,18 @@ function properButton(id, status, currentUserRequested){
 		addDiv.style.display = "none";
 		requestSent.style.display = "none";
 		acceptreject.style.display = "none";
+	} else if (status == 2 ) {
+		if (currentUserRequested == true) {
+			addDiv.style.display = "block";
+			requestSent.style.display = "none";
+			acceptreject.style.display = "none";
+			removeFriend.style.display = "none";
+                } else {
+                        acceptreject.style.display = "none";
+                        addDiv.style.display = "none";
+			requestSent.style.display = "block";
+			removeFriend.style.display = "none";
+		}
 	}
 
 }
