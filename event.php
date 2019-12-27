@@ -23,7 +23,16 @@
 			echo "Event ID is: " . $eventId;
 
 			//Determine user permissions
-        		$userId = $_SESSION['u_id'];
+
+			$permission = 1;
+			
+			if(isset($_SESSION['u_id'])) {
+        			$userId = $_SESSION['u_id'];
+			} else {
+				$permission = 0;
+				echo "There is no user";
+			}
+			//0 means not signed in, 1 means creator, 2 means involved, 3 means not signed up,
 
         		$sql = "SELECT * FROM eventrelationships WHERE event_id = '".$eventId."' AND user_id = '".$userId."';";
         		$result = mysqli_query($conn, $sql);
@@ -33,12 +42,15 @@
                 		while ($row = mysqli_fetch_assoc($result)) {
 					if ($row['creator'] == 1) {
                         			echo "This user is the creator";
+						$permission = 1;
 					} else {
 						echo "This user is involved, but not the creator";
+						$permission = 2;
 					}
                 		}
-        		} else {
+        		} elseif ($permission != 0) {
                 		echo "This user is not signed up for this event";
+				$permission = 3;
         		}
 			
 			$sql = "SELECT * FROM events WHERE event_id = '".$eventId."';";
@@ -49,8 +61,17 @@
 				while ($row = mysqli_fetch_assoc($result)) {
 					echo $row['event_avenue'] . " " . $row['event_info'];
 				
+
+				echo "This is the permission";
+				echo $permission;
 				//Button to add event
-				if (isset($_SESSION['u_id'])){
+				if ($permission == 0) {
+					echo "Feel free to log your hours by signing up for this site!";
+				} elseif ($permission == 1){
+					echo "You made this";
+				} elseif ($permission == 2) {
+					echo "You didn't make this, but you're involved.";
+				} elseif ($permission == 3){
                                         echo '<form action="/confirmevent.php" class="confirmevent" method="post" />
                                         <input type="hidden" name="eventId" value="'. $eventId.'"/>
                                         <input id="'.$eventId.'" type="submit" name="confirmevent" value="Add Event" /></form>';
