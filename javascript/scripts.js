@@ -171,9 +171,16 @@ $(document).ready(function(){
 function properEventButton(permission){
 	console.log("The proper event button was run");
 	var signup = document.getElementById("signupeventbutton");
+	var cancel = document.getElementById("canceleventbutton");
+	var leave = document.getElementById("leaveeventbutton"); 
 
-	if (permission == 1) {
-		console.log("This is running");
+	if (permission == 0) {
+		console.log("You can sign up for an account");
+	} else if (permission == 1) {
+		leave.style.display = "block";
+		cancel.style.display = "block";
+	} else if (permission == 2) {
+		leave.style.display = "block";
 	} else if (permission == 3) {
 		signup.style.display = "block";
 	}

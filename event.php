@@ -61,10 +61,23 @@
 				while ($row = mysqli_fetch_assoc($result)) {
 					echo $row['event_avenue'] . " " . $row['event_info'];
 				
+				//Event details
+				echo "<div id='eventdetails'>";
+				echo "</div>";
 
 				//Div for the proper button to interact with the event
 				echo "<div id='interactbutton'>";
 				
+				//Cancel event
+                                echo '<form action="/cancelevent.php" class="cancelevent" method="post" id="canceleventbutton"/>
+                                <input type="hidden" name="eventId" value="'. $eventId.'"/>
+                                <input id="'.$eventId.'" type="submit" name="cancelevent" value="Cancel Event" /></form>';
+
+				//Leave event
+                                echo '<form action="/leaveevent.php" class="leaveevent" method="post" id="leaveeventbutton"/>
+                                <input type="hidden" name="eventId" value="'. $eventId.'"/>
+                                <input id="'.$eventId.'" type="submit" name="leaveevent" value="Leave Event" /></form>';
+
 				//Signup button
 				echo '<form action="/confirmevent.php" class="confirmevent" method="post" id="signupeventbutton"/>
 				<input type="hidden" name="eventId" value="'. $eventId.'"/>
