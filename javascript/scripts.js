@@ -102,17 +102,20 @@ $(document).ready(function(){
 		favoritecausefield.removeAttribute('readonly');
 	}
 
-	$('.aboutme').submit(function() {
+	$('.aboutmeform').submit(function() {
 		var req = new XMLHttpRequest();
-                req.open("post", this.action);
-                req.send(new FormData(this));
+		req.onload = function(){ alert(req.responseText); }
+                req.open("POST", "../includes/aboutme.inc.php", true);
+		var form = document.getElementById("aboutmeform");
+		var formData = new FormData(form);
+                req.send(formData);
 		var aboutmefield = document.getElementById("aboutme");
 		aboutmefield.readOnly = true;
 		var birthdayfield = document.getElementById("birthday");
 		birthdayfield.readOnly = true;
 		var favoritecausefield = document.getElementById("favoritecause");
 		favoritecausefield.readOnly = true;
-                return false;
+		return false;
         });
 
 	document.getElementById("profileimage").addEventListener("click", profileupload);
@@ -164,10 +167,20 @@ $(document).ready(function(){
         });
 });
 
+//Display proper button to interact with events
+function properEventButton(permission){
+	console.log("The proper event button was run");
+	var signup = document.getElementById("signup");
+
+	if (permission == 1) {
+		signup.style.display = "none";
+	} else if (permission == 3) {
+		console.log("You can sign up");
+	}
+}
+
 //Friend Request Scripts
 function properButton(id, status, currentUserRequested){
-	console.log("The proper button script was run");
-
 	var addDiv = document.getElementById("add" + id);
 	var requestSent = document.getElementById("sent" + id);
 	var acceptreject = document.getElementById("acceptreject" + id);

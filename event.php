@@ -62,20 +62,28 @@
 					echo $row['event_avenue'] . " " . $row['event_info'];
 				
 
-				echo "This is the permission";
-				echo $permission;
+				echo "<div id='interactbutton'>";
+				
+				//Signup button
+				echo '<form action="/confirmevent.php" class="confirmevent" method="post" id="signup"/>
+				<input type="hidden" name="eventId" value="'. $eventId.'"/>
+                                <input id="'.$eventId.'" type="submit" name="confirmevent" value="Add Event" /></form>';
+
+				echo "</div>";
 				//Button to add event
 				if ($permission == 0) {
 					echo "Feel free to log your hours by signing up for this site!";
 				} elseif ($permission == 1){
 					echo "You made this";
+					echo '<script type="text/javascript">',
+                                                'properEventButton(1);',
+                                             '</script>';
 				} elseif ($permission == 2) {
 					echo "You didn't make this, but you're involved.";
 				} elseif ($permission == 3){
-                                        echo '<form action="/confirmevent.php" class="confirmevent" method="post" />
-                                        <input type="hidden" name="eventId" value="'. $eventId.'"/>
-                                        <input id="'.$eventId.'" type="submit" name="confirmevent" value="Add Event" /></form>';
-					echo 'You are logged in as '. $_SESSION['u_id']. '.';
+                                        echo '<script type="text/javascript">',
+                                                'properEventButton(3);',
+                                        '</script>';
 				}
 
 				}
