@@ -490,6 +490,11 @@ header .nav-login a {
 	}
 }
 
+/*Event Page */
+#signupeventbutton {
+	display: none;
+}
+
 /* Logged in */
 
 #dashboard {

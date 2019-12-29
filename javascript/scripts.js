@@ -170,12 +170,12 @@ $(document).ready(function(){
 //Display proper button to interact with events
 function properEventButton(permission){
 	console.log("The proper event button was run");
-	var signup = document.getElementById("signup");
+	var signup = document.getElementById("signupeventbutton");
 
 	if (permission == 1) {
-		signup.style.display = "none";
+		console.log("This is running");
 	} else if (permission == 3) {
-		console.log("You can sign up");
+		signup.style.display = "block";
 	}
 }
 

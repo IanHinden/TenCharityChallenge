@@ -62,16 +62,20 @@
 					echo $row['event_avenue'] . " " . $row['event_info'];
 				
 
+				//Div for the proper button to interact with the event
 				echo "<div id='interactbutton'>";
 				
 				//Signup button
-				echo '<form action="/confirmevent.php" class="confirmevent" method="post" id="signup"/>
+				echo '<form action="/confirmevent.php" class="confirmevent" method="post" id="signupeventbutton"/>
 				<input type="hidden" name="eventId" value="'. $eventId.'"/>
                                 <input id="'.$eventId.'" type="submit" name="confirmevent" value="Add Event" /></form>';
 
 				echo "</div>";
 				//Button to add event
 				if ($permission == 0) {
+					echo '<script type="text/javascript">',
+                                                'properEventButton(0);',
+                                        '</script>';
 					echo "Feel free to log your hours by signing up for this site!";
 				} elseif ($permission == 1){
 					echo "You made this";
@@ -80,6 +84,9 @@
                                              '</script>';
 				} elseif ($permission == 2) {
 					echo "You didn't make this, but you're involved.";
+					echo '<script type="text/javascript">',
+                                                'properEventButton(2);',
+                                        '</script>';
 				} elseif ($permission == 3){
                                         echo '<script type="text/javascript">',
                                                 'properEventButton(3);',
