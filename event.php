@@ -19,7 +19,8 @@
 	
 		<?php
 			$eventId = $_GET['id'];
-			
+			$todayDate = date("Y-m-d");
+
 			echo "Event ID is: " . $eventId;
 
 			//Determine user permissions
@@ -41,8 +42,13 @@
         		if ($resultCheck > 0) {
                 		while ($row = mysqli_fetch_assoc($result)) {
 					if ($row['creator'] == 1) {
-                        			echo "This user is the creator";
-						$permission = 1;
+						if ($row['completed'] != -1) {
+                        				echo "This user is the creator";
+							$permission = 1;
+						} else {
+							echo "This user is the creator, but they left this event";
+							$permission = 3;
+						}
 					} else {
 						echo "This user is involved, but not the creator";
 						$permission = 2;
@@ -74,9 +80,14 @@
                                 <input id="'.$eventId.'" type="submit" name="cancelevent" value="Cancel Event" /></form>';
 
 				//Leave event
-                                echo '<form action="/leaveevent.php" class="leaveevent" method="post" id="leaveeventbutton"/>
+				echo '<form action="../includes/cancelattendevent.inc.php" class="cancelattendevent" method="post" id="leaveeventbutton"/>
+				<input type="hidden" name="eventid" value="'. $eventId.'"/>
+				<input id="'.$eventId.'" type="submit" name="cancelattendevent" value="Cancel Attendance" /></form>';
+
+
+                                /*echo '<form action="/leaveevent.php" class="leaveevent" method="post" id="leaveeventbutton"/>
                                 <input type="hidden" name="eventId" value="'. $eventId.'"/>
-                                <input id="'.$eventId.'" type="submit" name="leaveevent" value="Leave Event" /></form>';
+                                <input id="'.$eventId.'" type="submit" name="leaveevent" value="Leave Event" /></form>';*/
 
 				//Signup button
 				echo '<form action="/confirmevent.php" class="confirmevent" method="post" id="signupeventbutton"/>
