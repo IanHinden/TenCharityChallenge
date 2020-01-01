@@ -63,12 +63,29 @@
 			$result = mysqli_query($conn, $sql);
 			$resultCheck = mysqli_num_rows($result);
 			
+			for ($set = array (); $row = mysqli_fetch_assoc($result); $set[] = $row);
+                        foreach ($set as $item){
+                        	$eventAvenue = $item['event_avenue'];
+                                $eventInfo = $item['event_info'];
+				$lat = $item['lat'];
+				$longit = $item['longit'];
+                        }
+                        echo $eventAvenue;
+                        echo '<form class="eventform" id="eventform">
+                        Event Avenue: <input type="text" value="'.$eventAvenue.'" name="eventAvenue" id="eventAvenue" readonly="readonly"><br>
+                        Event Info: <input type="text" value="'.$eventInfo.'" name="eventInfo" id="eventInfo" readonly="readonly"><br>
+			<input type="hidden" value="'.$lat.'" name="lat" id="lat" readonly="readonly">
+			<input type="hidden" value="'.$longit.'" name="longit" id="longit" readonly="readonly">
+                        <p id="editEvent">Edit</p>
+                        <input type="submit">
+                        </form>';
+
 			if ($resultCheck > 0) {
 				while ($row = mysqli_fetch_assoc($result)) {
-					echo $row['event_avenue'] . " " . $row['event_info'];
 				
 				//Event details
 				echo "<div id='eventdetails'>";
+				echo $row['event_avenue'] . " " . $row['event_info'];
 				echo "</div>";
 
 				//Div for the proper button to interact with the event
