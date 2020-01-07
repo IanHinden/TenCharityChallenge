@@ -76,7 +76,8 @@
                         Event Info: <input type="text" value="'.$eventInfo.'" name="eventInfo" id="eventInfo" readonly="readonly"><br>
 			<input type="hidden" value="'.$lat.'" name="lat" id="lat" readonly="readonly">
 			<input type="hidden" value="'.$longit.'" name="longit" id="longit" readonly="readonly">
-                        <p id="editEvent">Edit</p>
+                        <div id="viewEventMap"></div>
+			<p id="editEvent">Edit</p>
                         <input type="submit">
                         </form>';
 
@@ -139,5 +140,9 @@
 				echo "There is no event with this ID";
 			}
 		?>
+
+<?php
+include_once 'footer.php';
+?>
 	</body>
 </html>

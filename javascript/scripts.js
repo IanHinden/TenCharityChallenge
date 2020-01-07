@@ -234,6 +234,20 @@ function properButton(id, status, currentUserRequested){
 // Map scripts
 var map, infoWindow;
 
+function initViewEventMap() {                                                                                                                                               var locationRio = {lat: -22.915, lng: -43.197};
+        var locationRio = {lat: -22.915, lng: -43.197};
+        var map = new google.maps.Map(document.getElementById('viewEventMap'), {
+          zoom: 13,
+          center: locationRio,
+          gestureHandling: 'cooperative'
+        });
+        var marker = new google.maps.Marker({
+          position: locationRio,
+          map: map,
+          title: 'Hello World!'
+        });
+}
+
 function createMap() {
 	var options = {
 		center: { lat: 43.654, lng: -79.383 },
@@ -439,11 +453,15 @@ var customLabel = {
       function doNothing() {}
 
 function initialize() {
-   try {
-	createMap();
-	}
-	catch(error){
+	try {
+		createMap();
+	} catch(error){
 	//console.error(error);
 	}
-   initMap();
+	try {
+		initMap();
+	} catch(error){
+
+	}
+	initViewEventMap();
 }
