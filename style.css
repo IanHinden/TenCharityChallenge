@@ -502,6 +502,12 @@ header .nav-login a {
 #canceleventbutton {
 	display: none;
 }
+
+#viewEventMap {
+	height: 200px;
+	width: 200px;
+}
+
 /* Logged in */
 
 #dashboard {
