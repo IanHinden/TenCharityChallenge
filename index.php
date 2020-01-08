@@ -152,6 +152,10 @@
 
 			echo '<div id="previousevents">Previous Events';
 
+			echo '<form action="report.php" method="post">
+  				<input type="submit" value="Print Completed Event Report">
+			</form>';
+
 			foreach ($set as $item){
 				if($item['event_date'] < $todayDate){
 					$eventinfo = $item['event_info'];
