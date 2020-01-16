@@ -35,9 +35,21 @@
 				if ($resultCheck > 0) {
                                 	while ($row = mysqli_fetch_assoc($result)) {
                                         	if ($row['action_user_id'] == $userId ) {
-                                                	echo "This logged in user requested a change";
+							if ($row['status'] == 0) {
+								echo "Logged in user sent friend request";
+							} else if ($row['status'] == 1) {
+								echo "Logged in user confirmed friend request";
+							} else if ($row['status'] == 2) {
+								echo "Logged in user rejected friend request";
+							}
                                         	} else {
-                                                	echo "The user that owns this profile requested a change";
+                                                        if ($row['status'] == 0) {
+                                                                echo "Profile user sent friend request";
+                                                        } else if ($row['status'] == 1) {
+                                                                echo "Profile user confirmed friend request";
+                                                        } else if ($row['status'] == 2) {
+                                                                echo "Profile user rejected friend request";
+                                                        }
                                         	}
                                 	}
                         	} else {
