@@ -81,12 +81,15 @@
                         <input type="submit">
                         </form>';
 
-			if ($resultCheck > 0) {
-				while ($row = mysqli_fetch_assoc($result)) {
+			echo "Here is the array";
+			print_r($set);
+
+			if (count($set) > 0) {
+				
 				
 				//Event details
 				echo "<div id='eventdetails'>";
-				echo $row['event_avenue'] . " " . $row['event_info'];
+				echo $set['event_avenue'] . " " . $set['event_info'];
 				echo "</div>";
 
 				//Div for the proper button to interact with the event
@@ -135,7 +138,16 @@
                                         '</script>';
 				}
 
+				echo '<div id="eventImages">';
+
+				if ($permission == 1 || $permission == 2) {
+					echo ' </div></div>
+		                        <form action="testfileupload.php" method="POST" enctype="multipart/form-data">
+                        		<input type="file" name="fileToUpload" id="fileToUpload">
+                        		<button type="submit" value="Upload Image" name="submit">Submit</button></form></div>';
 				}
+
+				echo '</div>';
 			} else {
 				echo "There is no event with this ID";
 			}
