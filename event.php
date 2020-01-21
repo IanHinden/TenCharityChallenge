@@ -89,7 +89,7 @@
 				
 				//Event details
 				echo "<div id='eventdetails'>";
-				echo $set['event_avenue'] . " " . $set['event_info'];
+				echo $set[0]['event_avenue'] . " " . $set[0]['event_info'];
 				echo "</div>";
 
 				//Div for the proper button to interact with the event
@@ -142,12 +142,16 @@
 
 				if ($permission == 1 || $permission == 2) {
 					echo ' </div></div>
-		                        <form action="testfileupload.php" method="POST" enctype="multipart/form-data">
-                        		<input type="file" name="fileToUpload" id="fileToUpload">
+		                        <form action="../testfileupload.php" method="POST" enctype="multipart/form-data">
+                        		<input type="file" name="fileToUpload" id="fileToUpload" multiple="" readonly="false">
                         		<button type="submit" value="Upload Image" name="submit">Submit</button></form></div>';
-				}
+
+					echo '<div id="drop_zone" ondrop="dropHandler(event);" ondragover="dragOverHandler(event);">
+  						<p>Drag one or more files to this Drop Zone ...</p>
+						</div>';
 
 				echo '</div>';
+				}
 			} else {
 				echo "There is no event with this ID";
 			}

@@ -167,6 +167,28 @@ $(document).ready(function(){
         });
 });
 
+//Event page functions
+function dragOverHandler(e) {
+	console.log('File(s) in drop zone'); 
+
+	let zone = document.getElementById("drop_zone");
+	zone.style.border = "2px dashed black";
+  	// Prevent default behavior (Prevent file from being opened)
+  	e.preventDefault();
+}
+
+function dropHandler(ev) {
+  console.log('File(s) dropped');
+  var filesToUpload = document.getElementById("fileToUpload");
+
+  // Prevent default behavior (Prevent file from being opened)
+  ev.preventDefault();
+  ev.stopPropagation();
+
+  console.log(ev);
+  filesToUpload.files = ev.dataTransfer.files;
+}
+
 //Display proper button to interact with events
 function properEventButton(permission){
 	console.log("The proper event button was run");
