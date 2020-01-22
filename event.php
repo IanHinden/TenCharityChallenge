@@ -142,8 +142,8 @@
 
 				if ($permission == 1 || $permission == 2) {
 					echo ' </div></div>
-		                        <form action="../testfileupload.php" method="POST" enctype="multipart/form-data">
-                        		<input type="file" name="fileToUpload" id="fileToUpload" multiple="" readonly="false">
+		                        <form action="../eventimageupload.php" method="POST" enctype="multipart/form-data">
+                        		<input type="file" name="fileToUpload[]" id="fileToUpload" multiple="multiple" readonly="false">
                         		<button type="submit" value="Upload Image" name="submit">Submit</button></form></div>';
 
 					echo '<div id="drop_zone" ondrop="dropHandler(event);" ondragover="dragOverHandler(event);">
