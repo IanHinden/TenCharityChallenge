@@ -23,7 +23,7 @@
 	use Aws\S3\Exception\S3Exception;
 	// AWS Info
 
-	$bucketName = 'gastatic';
+	$bucketName = 'tencharity';
 	$IAM_KEY = 'AKIAYNFZXG2V2CHGDZFW';
 	$IAM_SECRET = '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';
 	// Connect to AWS
@@ -37,7 +37,7 @@
 					'secret' => $IAM_SECRET
 				),
 				'version' => 'latest',
-				'region'  => 'us-west-1'
+				'region'  => 'us-west-2'
 			)
 		);
 
@@ -63,7 +63,7 @@
 		$result = uniqid();
         	$user = $_SESSION['u_id'];
 		$basename = basename($_FILES['fileToUpload']['name'][$i]);
-        	$keyName = 'profilepicture/' . $user . '/' . $result . basename($_FILES['fileToUpload']['name'][$i]);
+        	$keyName = 'event/' . $user . '/' . $result . basename($_FILES['fileToUpload']['name'][$i]);
         	$pathInS3 = 'https://s3.us-west-1.amazonaws.com/' . $bucketName . '/' . $keyName;
 
 		try {
