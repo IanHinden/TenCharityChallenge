@@ -62,8 +62,9 @@
 	for($i=0; $i<$countfiles; $i++){
 		$result = uniqid();
         	$user = $_SESSION['u_id'];
+		$event = $_POST['eventId'];
 		$basename = basename($_FILES['fileToUpload']['name'][$i]);
-        	$keyName = 'event/' . $user . '/' . $result . basename($_FILES['fileToUpload']['name'][$i]);
+        	$keyName = 'event/' . $event . '/' . $result . basename($_FILES['fileToUpload']['name'][$i]);
         	$pathInS3 = 'https://s3.us-west-1.amazonaws.com/' . $bucketName . '/' . $keyName;
 
 		try {
