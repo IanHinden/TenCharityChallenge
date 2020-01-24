@@ -508,6 +508,11 @@ header .nav-login a {
 	width: 200px;
 }
 
+.eventimage {
+	height: 67px;
+	margin: 12px;
+}
+
 /* Logged in */
 
 #dashboard {

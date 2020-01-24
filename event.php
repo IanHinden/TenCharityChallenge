@@ -81,9 +81,6 @@
                         <input type="submit">
                         </form>';
 
-			echo "Here is the array";
-			print_r($set);
-
 			if (count($set) > 0) {
 				
 				
@@ -140,8 +137,22 @@
 
 				echo '<div id="eventImages">';
 
+				$sql = "SELECT * FROM eventimages WHERE event_id = '".$eventId."';";
+                        	$result = mysqli_query($conn, $sql);
+
+                        	for ($eventImages = array (); $row = mysqli_fetch_assoc($result); $eventImages[] = $row);
+                        	foreach ($eventImages as $item){
+                                	$uniqId = $item['uniq_id'];
+                                	$imageName = $item['image_name'];
+
+					$imageURL = "<img class='eventimage' src='https://tencharity.s3-us-west-2.amazonaws.com/event/" . $eventId. "/" . $uniqId . $imageName . "'>";
+					//echo "<img class='eventimage' src='https://tencharity.s3-us-west-2.amazonaws.com/event/'".$eventId."'/'" .$uniqId . $image_name'">";
+                        		echo $imageURL;
+				}
+
+
 				if ($permission == 1 || $permission == 2) {
-					echo ' </div></div>
+					echo '</div>
 		                        <form action="../eventimageupload.php" method="POST" enctype="multipart/form-data">
                         		<input type="file" name="fileToUpload[]" id="fileToUpload" multiple="multiple" readonly="false">
 					<input type="hidden" name="eventId" value="'. $eventId.'"/>
