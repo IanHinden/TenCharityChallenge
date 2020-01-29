@@ -1,12 +1,12 @@
 $(document).ready(function(){
 
-    $('.menu-icon').click(function() {
-      $('.navlink').toggleClass('navlink-out');
-	  $('.nav-login').toggleClass('nav-login-out');
-	  $('.menu-line-1').toggleClass('menu-line-1-open');
-	  $('.menu-line-2').toggleClass('menu-line-2-open');
-	  $('.menu-line-3').toggleClass('menu-line-3-open');
-    });
+	$('.menu-icon').click(function() {
+      		$('.navlink').toggleClass('navlink-out');
+	  	$('.nav-login').toggleClass('nav-login-out');
+	  	$('.menu-line-1').toggleClass('menu-line-1-open');
+	  	$('.menu-line-2').toggleClass('menu-line-2-open');
+	  	$('.menu-line-3').toggleClass('menu-line-3-open');
+    	});
 	
 	$('#show-tos').click(function() {
 		$('.opaque').addClass('opaque-out');
@@ -46,7 +46,9 @@ $(document).ready(function(){
 			data = JSON.parse(this.responseText);
     		}
 
-		document.getElementById("username").addEventListener("input", checkusernameinuse);
+		if(document.getElementById("username") != null) {
+			document.getElementById("username").addEventListener("input", checkusernameinuse);
+		}
 
 		function checkusernameinuse(e) {
 			for (var i = 0; i < data.length; i++) {
@@ -57,8 +59,10 @@ $(document).ready(function(){
 			}
 		}
 	};
-
-	document.getElementById("email").addEventListener("blur", displayemailwarning);
+	
+	if(document.getElementById("email") != null) {
+		document.getElementById("email").addEventListener("blur", displayemailwarning);
+	}
 
 	function displayemailwarning(e) {
 		var emailformat = document.getElementById("emailformat");
@@ -74,7 +78,9 @@ $(document).ready(function(){
   		return re.test(email);
 	}
 
-        document.getElementById("username").addEventListener("input", invalidcharacterwarning);
+        if(document.getElementById("username") !=null){
+		document.getElementById("username").addEventListener("input", invalidcharacterwarning);
+	}
 
         function invalidcharacterwarning(e) {
                 var emailformat = document.getElementById("usernamewarning");
@@ -91,7 +97,9 @@ $(document).ready(function(){
         }
 
 	//Edit profile scripts
-	document.getElementById("editaboutme").addEventListener("click", enableaboutme);
+	if (document.getElementById("editaboutme") != null) {
+		document.getElementById("editaboutme").addEventListener("click", enableaboutme);
+	}
 	
 	function enableaboutme() {
 		var aboutmefield = document.getElementById("aboutme");
@@ -118,7 +126,9 @@ $(document).ready(function(){
 		return false;
         });
 
-	document.getElementById("profileimage").addEventListener("click", profileupload);
+	if(document.getElementById("profileimage") != null) {
+		document.getElementById("profileimage").addEventListener("click", profileupload);
+	}
 
 	function profileupload() {
   		var uploadButton = document.getElementById("fileToUpload");
@@ -165,9 +175,48 @@ $(document).ready(function(){
                 req.send();
 		return false;
         });
-});
+
+	console.log("Page has loaded");
 
 //Event page functions
+
+//Slide show
+	var slideIndex = 1;
+	showSlides(slideIndex);
+
+	function showSlides(n) {
+		var i;
+		var slides = document.getElementsByClassName("eventimage");
+        	console.log(slides)
+        	if (n > slides.length) {slideIndex = 1}
+		if (n < 1) {slideIndex = slides.length}
+        	for (i = 0; i < slides.length; i++) {
+                	slides[i].style.display = "none";
+                	console.log(slides[i]);
+        	}
+
+        	console.log("This is it" + slideIndex);
+        	console.log(slides[0]);
+        	slides[slideIndex - 1].style.display = "block";
+	}
+});
+
+/*function showSlides(n) {
+	var i;
+  	var slides = document.getElementsByClassName("eventimage");
+	console.log(slides);
+  	if (n > slides.length) {slideIndex = 1}
+  	if (n < 1) {slideIndex = slides.length}
+  	for (i = 0; i < slides.length; i++) {
+      		slides[i].style.display = "none";
+  		console.log(slides[i]);
+  	}
+
+	console.log("This is it" + slideIndex);
+	console.log(slides[0]);
+	slides[slideIndex - 1].style.display = "block";
+}*/
+
 function dragOverHandler(e) {
 	console.log('File(s) in drop zone'); 
 
@@ -188,6 +237,8 @@ function dropHandler(ev) {
   console.log(ev);
   filesToUpload.files = ev.dataTransfer.files;
 }
+
+
 
 //Display proper button to interact with events
 function properEventButton(permission){
@@ -252,6 +303,7 @@ function properButton(id, status, currentUserRequested){
 	}
 
 }
+
 
 // Map scripts
 var map, infoWindow;
@@ -487,3 +539,4 @@ function initialize() {
 	}
 	initViewEventMap();
 }
+
