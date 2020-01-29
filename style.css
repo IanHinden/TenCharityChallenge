@@ -509,8 +509,12 @@ header .nav-login a {
 }
 
 .eventimage {
+	display: inline-block;
+}
+
+.eventimage img {
 	height: 67px;
-	margin: 12px;
+	margin: 12px
 }
 
 /* Logged in */
