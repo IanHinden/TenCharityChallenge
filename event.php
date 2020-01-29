@@ -94,13 +94,13 @@
 				
 				//Cancel event
                                 echo '<form action="/cancelevent.php" class="cancelevent" method="post" id="canceleventbutton"/>
-                                <input type="hidden" name="eventId" value="'. $eventId.'"/>
-                                <input id="'.$eventId.'" type="submit" name="cancelevent" value="Cancel Event" /></form>';
+                                <input type="hidden" name="eventId" value="'.$eventId.'"/>
+                                <input id="cancel'.$eventId.'" type="submit" name="cancelevent" value="Cancel Event" /></form>';
 
 				//Leave event
 				echo '<form action="../includes/cancelattendevent.inc.php" class="cancelattendevent" method="post" id="leaveeventbutton"/>
 				<input type="hidden" name="eventid" value="'. $eventId.'"/>
-				<input id="'.$eventId.'" type="submit" name="cancelattendevent" value="Cancel Attendance" /></form>';
+				<input id="leave'.$eventId.'" type="submit" name="cancelattendevent" value="Cancel Attendance" /></form>';
 
 
                                 /*echo '<form action="/leaveevent.php" class="leaveevent" method="post" id="leaveeventbutton"/>
@@ -110,7 +110,7 @@
 				//Signup button
 				echo '<form action="/confirmevent.php" class="confirmevent" method="post" id="signupeventbutton"/>
 				<input type="hidden" name="eventId" value="'. $eventId.'"/>
-                                <input id="'.$eventId.'" type="submit" name="confirmevent" value="Add Event" /></form>';
+                                <input id="signup'.$eventId.'" type="submit" name="confirmevent" value="Add Event" /></form>';
 
 				echo "</div>";
 				//Button to add event
@@ -145,9 +145,11 @@
                                 	$uniqId = $item['uniq_id'];
                                 	$imageName = $item['image_name'];
 
-					$imageURL = "<img class='eventimage' src='https://tencharity.s3-us-west-2.amazonaws.com/event/" . $eventId. "/" . $uniqId . $imageName . "'>";
+					$imageURL = "<img src='https://tencharity.s3-us-west-2.amazonaws.com/event/" . $eventId. "/" . $uniqId . $imageName . "'>";
 					//echo "<img class='eventimage' src='https://tencharity.s3-us-west-2.amazonaws.com/event/'".$eventId."'/'" .$uniqId . $image_name'">";
+					echo "<div class='eventimage'>";
                         		echo $imageURL;
+					echo "</div>";
 				}
 
 
