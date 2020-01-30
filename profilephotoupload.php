@@ -23,7 +23,7 @@
 	use Aws\S3\Exception\S3Exception;
 	// AWS Info
 
-	$bucketName = 'gastatic';
+	$bucketName = 'tencharity';
 	$IAM_KEY = 'AKIAYNFZXG2V2CHGDZFW';
 	$IAM_SECRET = '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';
 	// Connect to AWS
@@ -37,7 +37,7 @@
 					'secret' => $IAM_SECRET
 				),
 				'version' => 'latest',
-				'region'  => 'us-west-1'
+				'region'  => 'us-west-2'
 			)
 		);
 
