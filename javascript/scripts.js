@@ -1,5 +1,7 @@
 $(document).ready(function(){
 
+	console.log("Page finished loading");
+
 	$('.menu-icon').click(function() {
       		$('.navlink').toggleClass('navlink-out');
 	  	$('.nav-login').toggleClass('nav-login-out');
@@ -176,7 +178,6 @@ $(document).ready(function(){
 		return false;
         });
 
-	console.log("Page has loaded");
 
 //Event page functions
 
@@ -187,7 +188,7 @@ $(document).ready(function(){
 	function showSlides(n) {
 		var i;
 		var slides = document.getElementsByClassName("eventimage");
-        	console.log(slides)
+
         	if (n > slides.length) {slideIndex = 1}
 		if (n < 1) {slideIndex = slides.length}
         	for (i = 0; i < slides.length; i++) {
@@ -195,27 +196,26 @@ $(document).ready(function(){
                 	console.log(slides[i]);
         	}
 
-        	console.log("This is it" + slideIndex);
-        	console.log(slides[0]);
         	slides[slideIndex - 1].style.display = "block";
 	}
+
+	if(document.getElementById("prev") != null) {
+                document.getElementById("prev").addEventListener("click", function(){
+			plusSlides(-1);
+        	});
+	}
+
+	if(document.getElementById("next") != null) {
+                document.getElementById("next").addEventListener("click", function(){
+			plusSlides(-1);
+		});
+        }
+
+	function plusSlides(n) {
+		showSlides(slideIndex += n);
+        }
+
 });
-
-/*function showSlides(n) {
-	var i;
-  	var slides = document.getElementsByClassName("eventimage");
-	console.log(slides);
-  	if (n > slides.length) {slideIndex = 1}
-  	if (n < 1) {slideIndex = slides.length}
-  	for (i = 0; i < slides.length; i++) {
-      		slides[i].style.display = "none";
-  		console.log(slides[i]);
-  	}
-
-	console.log("This is it" + slideIndex);
-	console.log(slides[0]);
-	slides[slideIndex - 1].style.display = "block";
-}*/
 
 function dragOverHandler(e) {
 	console.log('File(s) in drop zone'); 
