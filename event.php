@@ -135,6 +135,7 @@
                                         '</script>';
 				}
 
+				echo '<div id="eventPopup">';
 				echo '<div id="eventImages">';
 
 				$sql = "SELECT * FROM eventimages WHERE event_id = '".$eventId."';";
@@ -154,7 +155,7 @@
 
 				echo '<a id="prev" class="prev">&#10094;</a>
                                       <a id="next" class="next">&#10095;</a>';
-				echo '</div>';
+				echo '</div></div>';
 
 				if ($permission == 1 || $permission == 2) {
 					echo '</div>

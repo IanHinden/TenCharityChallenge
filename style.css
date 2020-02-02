@@ -517,8 +517,22 @@ header .nav-login a {
 	margin: 12px
 }
 
+#eventPopup {
+    	background: rgba(0,0,0,.6);
+    	position: fixed;
+    	top: 0;
+    	bottom: 0;
+    	left: 0;
+    	right: 0;
+}
+
 #eventImages {
 	position: relative;
+	text-align: center;
+	margin: 0 auto;
+	width: 50%;
+	top: 16%;
+	background: rgba(0,0,0,0.4);
 }
 
 .prev, .next {
@@ -536,9 +550,13 @@ header .nav-login a {
   	user-select: none;
 }
 
+.prev {
+	left: 0;
+}
+
 .next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
+  	right: 0;
+  	border-radius: 3px 0 0 3px;
 }
 
 /* Logged in */
