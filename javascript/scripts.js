@@ -211,6 +211,20 @@ $(document).ready(function(){
 		});
         }
 
+	if(document.getElementById("popupClose") != null) {
+                document.getElementById("popupClose").addEventListener("click", function(){
+                        document.getElementById("eventPopup").style.display = "none";
+		});
+
+		document.getElementById("popupClose").addEventListener("mouseover", function(){
+			document.getElementById("popupClose").style.background = "grey";
+		});
+
+                document.getElementById("popupClose").addEventListener("mouseout", function(){
+			document.getElementById("popupClose").style.background = "none";
+		});
+	}
+
 	function plusSlides(n) {
 		showSlides(slideIndex += n);
         }

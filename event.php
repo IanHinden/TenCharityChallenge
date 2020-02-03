@@ -136,6 +136,7 @@
 				}
 
 				echo '<div id="eventPopup">';
+				echo '<div id="popupClose">&times</div>';
 				echo '<div id="eventImages">';
 
 				$sql = "SELECT * FROM eventimages WHERE event_id = '".$eventId."';";

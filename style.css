@@ -513,7 +513,8 @@ header .nav-login a {
 }
 
 .eventimage img {
-	height: 67px;
+	height: 100%;
+	max-height: 140px;
 	margin: 12px
 }
 
@@ -524,6 +525,18 @@ header .nav-login a {
     	bottom: 0;
     	left: 0;
     	right: 0;
+}
+
+#popupClose {
+	font-size: 27px;
+	float: right;
+	color: white;
+	font-weight: bold;
+	border-radius: 42px;
+	width: 27px;
+	text-align: center;
+	margin: 9px;
+	cursor: pointer;
 }
 
 #eventImages {
