@@ -525,6 +525,7 @@ header .nav-login a {
     	bottom: 0;
     	left: 0;
     	right: 0;
+	display: none;
 }
 
 #popupClose {
@@ -570,6 +571,16 @@ header .nav-login a {
 .next {
   	right: 0;
   	border-radius: 3px 0 0 3px;
+}
+
+.eventimagethumb {
+	width: 100px;
+	height: 100%;
+	padding: 10px;
+}
+
+.eventimagethumbcontainers {
+	display: inline-block;
 }
 
 /* Logged in */

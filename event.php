@@ -158,6 +158,17 @@
                                       <a id="next" class="next">&#10095;</a>';
 				echo '</div></div>';
 
+				foreach ($eventImages as $key => $item){
+					$uniqId = $item['uniq_id'];
+                                        $imageName = $item['image_name'];
+
+                                        $imageURL = "<img class='eventimagethumb' src='https://tencharity.s3-us-west-2.amazonaws.com/event/" . $eventId. "/" . $uniqId . $imageName . "'>";
+                                        //echo "<img class='eventimage' src='https://tencharity.s3-us-west-2.amazonaws.com/event/'".$eventId."'/'" .$uniqId . $image_name'">";
+                                        echo "<div id='$key' class='eventimagethumbcontainers'>";
+                                        echo $imageURL;
+	                                echo "</div>";
+                                }
+
 				if ($permission == 1 || $permission == 2) {
 					echo '</div>
 		                        <form action="../eventimageupload.php" method="POST" enctype="multipart/form-data">
