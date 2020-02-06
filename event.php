@@ -19,7 +19,7 @@
 	
 		<?php
 			$eventId = $_GET['id'];
-			$todayDate = date("Y-m-d");
+			$now = new DateTime();
 
 			echo "Event ID is: " . $eventId;
 
@@ -69,7 +69,16 @@
                                 $eventInfo = $item['event_info'];
 				$lat = $item['lat'];
 				$longit = $item['longit'];
+				$datetime = $item['datetime_local'];
                         }
+
+			//Check if event is future
+			$future = true;
+
+			if(new DateTime($datetime) < $now){
+				$future = false;
+			}
+
                         echo $eventAvenue;
                         echo '<form class="eventform" id="eventform">
                         Event Avenue: <input type="text" value="'.$eventAvenue.'" name="eventAvenue" id="eventAvenue" readonly="readonly"><br>

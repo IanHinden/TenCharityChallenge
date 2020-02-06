@@ -115,8 +115,7 @@
 			<input id="search" type="text" name="avenue" placeholder="Search...">
 			<input type="text" name="info" placeholder="Info">
 			<input type="text" name="length" placeholder="Length">
-			<input type="date" name="date">
-			<input type="time" name="start_time">
+			<input type="datetime-local" name="datetime-local">
 			<select name="cause">
     				<option value="Animals">Animals</option>
     				<option value="Food Bank">Food Bank</option>
@@ -131,14 +130,14 @@
 			$sql = "SELECT * FROM events JOIN eventrelationships ON events.event_id = eventrelationships.event_id WHERE completed >= 0 AND user_id = '".$_SESSION['u_id']."';";
 			$result = mysqli_query($conn, $sql);
 			$resultCheck = mysqli_num_rows($result);
-			$todayDate = date("Y-m-d");
+			$todayDate = new DateTime();
 
 			for ($set = array (); $row = mysqli_fetch_assoc($result); $set[] = $row);
 			
 			echo '<div id="upcomingevents">Upcoming Events';
 
 			foreach ($set as $item){
-				if($item['event_date'] > $todayDate){
+				if(new DateTime($item['datetime_local']) > $todayDate){
 					$eventinfo = $item['event_info'];
 					$eventid = $item['event_id'];
 					echo '<a href="https://tencharitychallenge.com/event/' . $eventid . '">' . $eventinfo. '</a>';
@@ -158,7 +157,7 @@
 			</form>';
 
 			foreach ($set as $item){
-				if($item['event_date'] < $todayDate){
+				if(new DateTime($item['datetime_local']) < $todayDate){
 					$eventinfo = $item['event_info'];
 					$eventid = $item['event_id'];
 					$completed = $item['completed'];
