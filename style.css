@@ -146,6 +146,8 @@ body {
 	background-color: #184193
 }
 
+
+
 header nav {
 	width: 100%;
 	height: 60px;
@@ -225,10 +227,16 @@ header .nav-login a {
 	cursor: pointer;
 }
 
+#loggedoutmain {
+	display: flex;
+	max-width: 983px;
+	margin: 0 auto;
+}
+
 .main-container {
 	padding-top:70px;
-	background-image: url("images/bear-green.gif");
 	height: 370px;
+	flex: 1;
 }
 
 .main-container-text {
@@ -237,10 +245,10 @@ header .nav-login a {
 }
 
 .main-container h2 {
-	font-size: 40px;
+	font-size: 17px;
 	color: white;
 	line-height: 50px;
-	text-align: center;
+	text-align: left;
 	font-family: 'Noto Serif JP', sans-serif;
 	margin-left: auto;
 	margin-right: auto;
@@ -255,13 +263,17 @@ header .nav-login a {
 }
 
 .main-container h3 {
-	font-size: 30px;
+	font-size: 22px;
 	color: white;
 	line-height: 50px;
-	text-align: center;
+	text-align: left;
 	font-family: 'Montserrat', sans-serif;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+#loginorsignup {
+	flex: 1;
 }
 
 #headergreeting {

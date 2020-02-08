@@ -196,12 +196,20 @@
 			
 			echo '</div>';
 		} else {
-			echo '<section class="main-container">
+			echo '<div id="loggedoutmain"><section class="main-container">
 					<div class="main-container-text">
-						<h2>Find, Create, and Share Volunteer Events With Friends</h2>
+						<div>
+							<h2>Find, Create, and Share Volunteer Events</h2>
+						</div>
+						<div>
+							<h2>Track volunteer work you inspired</h2>
+						</div>
+						<div>
+							<h2>Easy volunteer resume reports</h2>
+						</div>
 						<h3>Join the Ten Charity Challenge.</h3>
-			</div>
-			</section>';
+					</div>
+			      </section>';
 			
 			$sql = "SELECT * FROM events WHERE event_id > 0";
 			$result = mysqli_query($conn, $sql);
@@ -213,12 +221,15 @@
 					$totalHours = $totalHours + $row['event_length'];
 				}
 			}
-			
-			echo '<p> Thanks to Ten Charity Challenge,' . $totalHours . 'hours of charity have been performed. </p>'; 
+			echo '<section id="loginorsignup">
+				<div>
+					<p> Thanks to Ten Charity Challenge,' . $totalHours . 'hours of charity have been performed. </p>
+				</div>
+			</section></div>';
+
 		}
 		?>
 
-		<div class="mobile-signup"><a href="signup.php">SIGN UP</a></div> 
 	</div>
 </section>
 
