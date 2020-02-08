@@ -277,70 +277,6 @@ header .nav-login a {
 	padding-top: 70px;
 }
 
-/*intro paragraph */
-
-#intro {
-	padding-top: 90px;
-	border: 0px;
-	margin: 0px;
-}
-
-#main-about img {
-	height: 300px;
-	width: 300px;
-}
-
-#main-about h2{
-	font-family: 'Noto Serif JP', sans-serif;
-	text-align: center;
-	font-size: 30px;
-	padding: 20px;
-}
-
-#main-about h3 {
-	font-family: 'Montserrat', sans-serif;
-	text-align: center;
-	max-width: 500px;
-	border-top: 10px;
-	padding: 10px;
-	margin-right: auto;
-	margin-left: auto;
-	line-height: 30px;
-}
-
-#purposeid {
-	margin-top: 100px;
-}
-
-#purposeid h2, #purposeid h3{
-	max-width: 500px;
-	margin-right: auto;
-	margin-left: auto;
-	text-align: left;
-}
-
-.purpose {
-	display: flex;
-	flex-flow: row wrap;
-	flex-direction: row;
-	justify-content: space-between;
-	align-items: space-evenly;
-}
-
-.purpose h2, h3 {
-	text-align: left;
-}
-
-.purpose-child {
-	flex: 1;
-	text-align: center;
-}
-
-.purpose-child-two {
-	flex: 1;
-	min-width: 500px;
-}
-
 /*mobile media query*/
 
 @media (max-width:800px)  { 
@@ -467,26 +403,6 @@ header .nav-login a {
 
 	.main-container {
 		height: 550px;
-	}
-
-	.desc h2{
-		font-size: 12px;
-	}
-	
-	.desc h3 {
-		font-size: 8px;
-	}
-	
-	#main-about h2 {
-		font-size: 10px;
-	}
-	
-	#main-about h3 {
-		font-size: 5px;
-	}
-	
-	.purpose-child-two {
-		min-width: 340px;
 	}
 }
 

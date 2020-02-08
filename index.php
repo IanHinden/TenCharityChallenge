@@ -217,37 +217,10 @@
 			echo '<p> Thanks to Ten Charity Challenge,' . $totalHours . 'hours of charity have been performed. </p>'; 
 		}
 		?>
+
+		<div class="mobile-signup"><a href="signup.php">SIGN UP</a></div> 
 	</div>
 </section>
-
-
-<div id="main-about">
-	<section id="intro">
-		<div class="desc">
-			<h2>Wait! You might not need to sign up!</h2>
-			<h3>Ten Charity Challenge has one goal: to maximize the number of completed charity hours. Since we know that many people are concerned with their data on social networking sites, our search feature is available without an account. For more details, check here.</h3>
-			<h3>However, if you do sign up, you can look forward to these features!</h3>
-		</div>
-	</section>
-	<section id="purposeid">
-		<div class="purpose">	
-			<div class="purpose-child">
-				<img src="https://s3.amazonaws.com/www.thegarbage.org/images/headerimage1.jpg" alt="Purpose">
-			</div>
-			<div class="purpose-child-two">
-				<h2>Search for Volunteer Opportunities</h2>
-				<h3>Using our search tools, you can search for volunteer events based on your favorite causes and narrow down events that fit into your schedule.</h3>
-			</div>
-		</div>
-	</section>
-	<section>
-		<div class="benefits">
-			<h2>It's not Social Media, it's Social Conscious Media</h2>
-			<h3>Share photos and invite friends to find the joy in helping and working together.</h3>
-		</div>
-	</section>
-	<div class="mobile-signup"><a href="signup.php">SIGN UP</a></div>
-</div>
 
 <?php
 	include_once 'footer.php';
