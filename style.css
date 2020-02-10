@@ -274,6 +274,11 @@ header .nav-login a {
 
 #loginorsignup {
 	flex: 1;
+	padding-top: 70px;
+}
+
+#loginorsignup p {
+	color: white;
 }
 
 #headergreeting {
