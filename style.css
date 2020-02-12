@@ -414,6 +414,10 @@ header .nav-login a {
 	header .nav-login a {
 		display: none;
 	}
+
+	#loggedoutmain {
+        	flex-direction: column;
+	}
 }
 
 @media (max-width:667px)  { 
@@ -754,7 +758,7 @@ header .nav-login a {
 }
 
 .signup-form {
-	width: 400px;
+	width: 80%;
 	margin: 0 auto;
 	padding-top: 30px;
 }
