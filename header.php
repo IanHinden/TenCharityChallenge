@@ -25,11 +25,7 @@
 				<span class="menu-line menu-line-3"></span>
 			</span>
 			<div class="navlink">
-				<ul>
-					<li><a href="index.php">Home</a></li>
-					<li><a href="about.php">About</a></li>
-					<li><a href="selecting.php">Picking a Charity</a></li>
-				</ul>
+				<p>Ten Charity Challenge</p>
 			</div>
 			<div class="nav-login">
 				<?php
@@ -39,13 +35,22 @@
 						<button type="submit" name="submit">Logout</button>
 						</form>';
 					} else {
-						echo '<form action="includes/login.inc.php" method="POST">
-						<input type="text" name="uid" placeholder="Username/email"></input>
-						<input type="password" name="pwd" placeholder="Password"></input>
-						<button type="submit" name="submit">Login</button>
-						</form>
-						<a href="https://tencharitychallenge.com/passwordreset.php">Forgot your password?</a>
-						<a href="signup.php">Sign up</a>';
+						echo '<div id="loginbox">
+							<form action="includes/login.inc.php" method="POST">
+							<table>
+								<tr>
+									<td><input type="text" name="uid" placeholder="Username/email"></input></td>
+									<td><input type="password" name="pwd" placeholder="Password"></input></td>
+									<td><button type="submit" name="submit">Login</button></td>
+								</tr>
+								<tr>
+									<td></td>
+									<td><a href="https://tencharitychallenge.com/passwordreset.php">Forgot your password?</a></td>
+									<td></td>
+								</tr>
+							</table>
+						</div>
+							</form>';
 					}
 				?>
 			</div>
