@@ -680,6 +680,10 @@ header .nav-login a {
 	color: red;
 }
 
+#firstnamewarning {
+	visibility: hidden;
+}
+
 #show-tos {
 	display: block;
 	margin: 0 auto;

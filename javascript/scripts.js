@@ -95,8 +95,12 @@ $(document).ready(function(){
 
 	
 	$('#show-tos').click(function() {
-		$('.opaque').addClass('opaque-out');
-                $('.confirm').addClass('confirm-out');
+		if( !$("#firstname").val() ) {
+          		$("#firstnamewarning").css({"visibility":"visible"});
+    		} else {
+			$('.opaque').addClass('opaque-out');
+                	$('.confirm').addClass('confirm-out');
+		}
         });
 
 	//Edit profile scripts
