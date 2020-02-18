@@ -51,7 +51,8 @@ $(document).ready(function(){
 			for (var i = 0; i < data.length; i++) {
     				if (data[i].user_uid === e.target.value) {
         				let usernametaken = document.getElementById("usernamewarning");
-                                        usernametaken.innerText = "This username is already in use. Please select another.";
+					usernametaken.innerText = "This username is already in use. Please select another.";
+                                        usernametaken.style.visibility = "visible";
     				}
 			}
 		}
@@ -80,11 +81,12 @@ $(document).ready(function(){
 	}
 
         function invalidcharacterwarning(e) {
-                var emailformat = document.getElementById("usernamewarning");
+                var usernameformat = document.getElementById("usernamewarning");
                 if(!validateUsernameSpecialChars(e.target.value)){
-                        emailformat.innerText = "Please choose a username with no special characters.";
+			usernameformat.style.visibility = "visible";
+                        usernameformat.innerText = "Please choose a username with no special characters.";
                 } else {
-                        emailformat.innerText = " ";
+                        usernameformat.style.visibility = "hidden";
                 }
         }
 
