@@ -176,23 +176,7 @@
                                 }
                         }
                         echo '</div>';
-			//var_dump($set);
-			//echo "<pre>" . print_r($set, 1) . "</pre>";
-			
-			/*if ($resultCheck > 0) {
-				while ($row = mysqli_fetch_assoc($result)) {
-					echo '<p>' . $row['event_info']. '</p><br>';
-					echo 'This is the date: ' . date($row['event_date']) . '<br>';
-					$eventDate = date($row['event_date']);
-					echo $eventDate;
-					if ($eventDate > $todayDate) {
-						echo "This event is in the future";
-					} else {
-						echo "This event is in the past";
-					}
-					//echo '<script type="text/Javascript">console.log(' . $row['event_date'] .');</script>';
-				}
-			}*/
+
 			
 			echo '</div>';
 		} else {
@@ -228,12 +212,14 @@
 					?>
 					<form class="signup-form" action="includes/signup.inc.php" method="POST" onsubmit="if(document.getElementById('agree').checked) { return true; } else { alert('Please indicate that you have read and agree to the Terms of Service and Privacy Policy'); return false; }">
 					<input type="text" name="first" placeholder="First name"><br>
-			<input type="text" name="last" placeholder="Last name"><br>
-			<input type="text" id="email" name="email" placeholder="E-mail"><br>
-			<p id="emailformat">Please enter a valid email address.<p>
-			<input type="text" id="username" name="uid" placeholder="User name"><br>
-			<p id="usernamewarning"> </p>
-			<input type="password" name="pwd" placeholder="Password"><br>
+					<p id="firstnamewarning">First name can not be blank.</p>
+					<input type="text" name="last" placeholder="Last name"><br>
+					<p id="lastnamewarning">Last name can not be blank.</p>
+					<input type="text" id="email" name="email" placeholder="E-mail"><br>
+					<p id="emailformat">Please enter a valid email address.</p>
+					<input type="text" id="username" name="uid" placeholder="User name"><br>
+					<p id="usernamewarning">This username is already in use.</p>
+					<input type="password" name="pwd" placeholder="Password"><br>
 
 
 		<div class="confirm">
