@@ -95,6 +95,13 @@ $(document).ready(function(){
 		return re.test(username);
         }
 
+	$("#show-tos").mouseover(function(){
+  		$("#show-tos").css("background-color", "#523");
+	});
+
+	$("#show-tos").mouseleave(function(){
+                $("#show-tos").css("background-color", "#222");
+        });
 	
 	$('#show-tos').click(function() {
 		if( !$("#firstname").val() ) {
