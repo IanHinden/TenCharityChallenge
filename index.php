@@ -213,7 +213,7 @@
 					<form class="signup-form" action="includes/signup.inc.php" method="POST" onsubmit="if(document.getElementById('agree').checked) { return true; } else { alert('Please indicate that you have read and agree to the Terms of Service and Privacy Policy'); return false; }">
 					<input type="text" id="firstname" name="first" placeholder="First name"><br>
 					<p id="firstnamewarning">First name can not be blank.</p>
-					<input type="text" name="last" placeholder="Last name"><br>
+					<input type="text" id="lastname" name="last" placeholder="Last name"><br>
 					<p id="lastnamewarning">Last name can not be blank.</p>
 					<input type="text" id="email" name="email" placeholder="E-mail"><br>
 					<p id="emailformat">Please enter a valid email address.</p>

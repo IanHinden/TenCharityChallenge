@@ -100,6 +100,16 @@ $(document).ready(function(){
 		if( !$("#firstname").val() ) {
           		$("#firstnamewarning").css({"visibility":"visible"});
     		} else {
+			$("#firstnamewarning").css({"visibility":"hidden"});
+		}
+
+		if( !$("#lastname").val() ) {
+			$("#lastnamewarning").css({"visibility":"visible"});
+		} else {
+			$("#lastnamewarning").css({"visibility":"hidden"});
+		}
+
+		if( $("#firstname").val() && $("#lastname").val()) {
 			$('.opaque').addClass('opaque-out');
                 	$('.confirm').addClass('confirm-out');
 		}
