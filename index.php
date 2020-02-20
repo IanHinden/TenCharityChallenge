@@ -206,7 +206,7 @@
 				}
 			}
 			echo '<section id="loginorsignup">
-				<div>
+				<div id="loginorsignup-text">
 					<p> Thanks to Ten Charity Challenge,' . $totalHours . 'hours of charity have been performed. </p>';
 				
 					?>
