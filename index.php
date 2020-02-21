@@ -180,6 +180,19 @@
 			
 			echo '</div>';
 		} else {
+
+			$sql = "SELECT * FROM events WHERE event_id > 0";
+                        $result = mysqli_query($conn, $sql);
+			$resultCheck = mysqli_num_rows($result);
+			$totalHours = 0;
+
+			if ($resultCheck > 0) {
+				while ($row = mysqli_fetch_assoc($result)) {
+                                        $totalHours = $totalHours + $row['event_length'];
+                                }
+                        }
+
+
 			echo '<div id="loggedoutmain"><section class="main-container">
 					<div class="main-container-text">
 						<div>
@@ -192,23 +205,13 @@
 							<h2>Easy volunteer resume reports</h2>
 						</div>
 						<h3>Join the Ten Charity Challenge.</h3>
+						<p> Thanks to Ten Charity Challenge, ' . $totalHours . ' hours of charity have been performed. </p>
 					</div>
 			      </section>';
-			
-			$sql = "SELECT * FROM events WHERE event_id > 0";
-			$result = mysqli_query($conn, $sql);
-			$resultCheck = mysqli_num_rows($result);
-			$totalHours = 0;
-			
-			if ($resultCheck > 0) {
-				while ($row = mysqli_fetch_assoc($result)) {
-					$totalHours = $totalHours + $row['event_length'];
-				}
-			}
+
 			echo '<section id="loginorsignup">
-				<div id="loginorsignup-text">
-					<p> Thanks to Ten Charity Challenge,' . $totalHours . 'hours of charity have been performed. </p>';
-				
+				<div id="loginorsignup-text">';
+
 					?>
 					<form class="signup-form" action="includes/signup.inc.php" method="POST" onsubmit="if(document.getElementById('agree').checked) { return true; } else { alert('Please indicate that you have read and agree to the Terms of Service and Privacy Policy'); return false; }">
 					<input type="text" id="firstname" name="first" placeholder="First name"><br>
