@@ -630,27 +630,7 @@ header .nav-login a {
 	align-self: center;
 	margin: 40px;
 }
-
-#footer-links {
-	display: flex;
-	background-color: grey;
-	flex-flow: row wrap;
-	flex-direction: row;
-	justify-content: space-between;
-	align-items: space-evenly;
-	align-items: center;
-	justify-content: center;
-	height: 100px;
-}
-
-#mailing-list, #footer-logo, #social {
-	flex: 1;
-} 
-
-#footer-links p, li {
-	color: white;
-}
-
+ 
 #legal {
 	background: black;
 }
