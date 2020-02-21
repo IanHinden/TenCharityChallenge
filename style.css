@@ -641,9 +641,8 @@ header .nav-login a {
 }
 
 #copyright {
-	color: white;
-	float: left;
-	line-height: 35px;
+	font-size: 13px;
+	text-align: center;
 }
 
 #additional-links {

@@ -6,17 +6,16 @@
 			<img src="https://s3-us-west-2.amazonaws.com/tencharity/images/partners/garbage.jpg">
 		</div>
 	</section>
-	<section id="legal"
-		<div id="copyright">
-			<p>©2018 Ten Charity Challenge. All rights reserved.</p>
-		</div>
-		<div id="additional-links">
-			<ul>
-				<li>Privacy Policy</li>
-				<li>About</li>
-			</ul>
-		</div>
-	</section>
+	<div id="additional-links">
+		<ul>
+			<li>Privacy Policy</li>
+			<li>About</li>
+			<li>You Might Not Need This Site</li>
+		</ul>
+	</div>
+	<div id="copyright">
+		<p>2020 Ten Charity Challenge. All rights reserved.</p>
+	</div>
 </div>
 	    <script src="https://maps.googleapis.com/maps/api/js?callback=initialize&libraries=places&key=AIzaSyDPrre9KNRhtCUFIH3Do1c7va4L0v91lFs" async defer></script>
 </body>
