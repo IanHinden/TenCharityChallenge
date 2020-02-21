@@ -160,6 +160,8 @@ header nav {
 
 header nav p {
 	float: left;
+	padding-left: 12px;
+	font-weight: bold;
 	font-family: arial;
 	font-size: 16px;
 	color: #111;
@@ -213,6 +215,7 @@ header .nav-login form button:hover {
 }
 
 header .nav-login a {
+	padding: 2px 0px 0px 10px;
 	display: block;
 	font-family: arial;
 	font-size: 11px;
