@@ -14,8 +14,8 @@ if (isset($_POST['submit'])) {
     'version' => '2010-12-01',
     'region'  => 'us-west-2',
     'credentials' => array(
-    'key' => 'AKIAYNFZXG2V2CHGDZFW',
-    'secret' => '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'
+    'key' => 'AKIAYNFZXG2V7RYKEBM6',
+    'secret' => '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'
     ),
 ]);
 
