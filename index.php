@@ -213,6 +213,10 @@
 				<div id="loginorsignup-text">';
 
 					?>
+					<div id="signupinstructions">
+						<h1>Sign up</h1>
+						<h2>Fill out the form below</h2>
+					</div>
 					<form class="signup-form" action="includes/signup.inc.php" method="POST" onsubmit="if(document.getElementById('agree').checked) { return true; } else { alert('Please indicate that you have read and agree to the Terms of Service and Privacy Policy'); return false; }">
 					<input type="text" id="firstname" name="first" placeholder="First name"><br>
 					<p id="firstnamewarning">First name can not be blank.</p>
@@ -233,6 +237,7 @@
 				</span>
 			</div>
 			<p>Terms of Service</p>
+			
 			<p id="terms">I will do my best.</p>
 			<input type="checkbox" name="checkbox" value="check" id="agree" />
 			<p>I agree to the Terms of Service</p>
