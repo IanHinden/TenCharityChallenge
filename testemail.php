@@ -32,10 +32,51 @@ $configuration_set = 'ConfigSet';
 
 $subject = 'Amazon SES test (AWS SDK for PHP)';
 $plaintext_body = 'This email was sent with Amazon SES using the AWS SDK for PHP.' ;
-$html_body =  '<h1>AWS Amazon Simple Email Service Test Email</h1>'.
-              '<p>This email was sent with <a href="https://aws.amazon.com/ses/">'.
-              'Amazon SES</a> using the <a href="https://aws.amazon.com/sdk-for-php/">'.
-              'AWS SDK for PHP</a>.</p>';
+$html_body =  '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+		<html xmlns="http://www.w3.org/1999/xhtml">
+ 			<head>
+  				<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  					<title>Demystifying Email Design</title>
+  				<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+			</head>
+		</html>
+
+		<body style="margin: 0; padding: 0;">
+ 			<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+ 				<tr>
+  					<td align="center" bgcolor="#665882" style="padding: 40px 0 30px 0;">
+						<img src="https://static.irs.com/wp-content/uploads/2018/11/tax-deduction-charity-work.jpg" alt="Creating Email Magic" width="300" height="230" style="display: block;" />
+  					</td>
+ 				</tr>
+ 				<tr>
+  					<td bgcolor="#ffffff" style="padding: 40px 30px 40px 30px;">
+ 						<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  							<tr>
+   								<td>
+    									Welcome to the Ten Charity Challenge!
+   								</td>
+  							</tr>
+  							<tr>
+   								<td>
+    									To verify that you signed up for an account, please click the link below.
+									If you did not sign up for an account, you can ignore this e-mail. 
+   								</td>
+  							</tr>
+  							<tr>
+   								<td>
+    									Row 3
+   								</td>
+  							</tr>
+ 						</table>
+					</td>
+ 				</tr>
+ 				<tr>
+  					<td bgcolor="#665882">
+   						Row 3
+  					</td>
+ 				</tr>
+			</table>
+		</body>';
 $char_set = 'UTF-8';
 
 try {
