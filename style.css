@@ -710,9 +710,16 @@ header .nav-login a {
 }
 
 #tos {
-	background-color: #ADD8E6;
+	background-color: #665882;
 	padding: 10px;
-	height: 18px;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+}
+
+#termsheadertext {
+	font-family: 'Montserrat', sans-serif;
+	display: inline-block;
+	font-weight: bold;
 }
 
 .tos-close {
@@ -835,24 +842,12 @@ header .nav-login a {
 	transition: .2s ease-out;
 }
 
-#terms {
-	padding: 10px;
-	font-weight: bold;
-	text-align: center;
-}
-
 #agree {
 	display: inline;
 	float: left;
 	width: 5%;
 	height: 15px;
 }
-
-#tos {
-	background-image: linear-gradient(to right, #00cc44 , #99ffbb);
-	padding: 10px;
-}
-
 
 /*eventsearch.php*/
 #searchmap {

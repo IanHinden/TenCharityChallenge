@@ -231,16 +231,17 @@
 
 		<div class="confirm">
 			<div id="tos">
+				<p id="termsheadertext">Terms of Service</p>
 				<span class="tos-close">
 					<span class="menu-line-tos menu-line-1-tos"></span>
 					<span class="menu-line-tos menu-line-2-tos"></span>
 				</span>
 			</div>
-			<p>Terms of Service</p>
 			
-			<p id="terms">I will do my best.</p>
-			<input type="checkbox" name="checkbox" value="check" id="agree" />
+			<input type="checkbox" name="checkbox" value="check" id="agree" class="tostext"/>
 			<p>I agree to the Terms of Service</p>
+			<input type="checkbox" name="tos" value="tos" id="tos" class="tostext"/>
+			<p>I will always do my best.</p>
 			<button type="submit" name="submit" value="submit" />Sign up</button>
 			</form>
 		</div>
