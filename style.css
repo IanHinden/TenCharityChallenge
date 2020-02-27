@@ -282,7 +282,7 @@ header .nav-login a {
 	padding: 25px;
 }
 
-#loginorsignup p {
+#loginorsignup .warning {
 	color: white;
 }
 
@@ -716,10 +716,15 @@ header .nav-login a {
 	border-top-right-radius: 8px;
 }
 
+#tosinteract {
+	margin-top: 25px;
+}
+
 #termsheadertext {
 	font-family: 'Montserrat', sans-serif;
 	display: inline-block;
 	font-weight: bold;
+	color: white;
 }
 
 .tos-close {
@@ -842,11 +847,22 @@ header .nav-login a {
 	transition: .2s ease-out;
 }
 
+.tosagree {
+	color: #605395;
+}
+
 #agree {
 	display: inline;
 	float: left;
 	width: 5%;
 	height: 15px;
+}
+
+#tostext {
+        display: inline;                                                                                                                   
+	float: left;
+	width: 5%;
+	height: 15px; 
 }
 
 /*eventsearch.php*/

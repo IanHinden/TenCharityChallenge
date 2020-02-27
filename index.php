@@ -237,12 +237,19 @@
 					<span class="menu-line-tos menu-line-2-tos"></span>
 				</span>
 			</div>
-			
-			<input type="checkbox" name="checkbox" value="check" id="agree" class="tostext"/>
-			<p>I agree to the Terms of Service</p>
-			<input type="checkbox" name="tos" value="tos" id="tos" class="tostext"/>
-			<p>I will always do my best.</p>
-			<button type="submit" name="submit" value="submit" />Sign up</button>
+			<div id="tosinteract">
+				<div>
+					<input type="checkbox" name="checkbox" value="check" id="agree"/>
+					<p class="tosagree">I agree to the Terms of Service</p>
+				</div><br>
+				<div>
+					<input type="checkbox" name="tos" value="tos" id="tostext"/>
+					<p class="tosagree">I will be the best person that I can be.</p>
+				</div><br>
+				<div>
+					<button type="submit" name="submit" value="submit" disabled="disabled"/>Sign up</button>
+				</div>
+			</div>
 			</form>
 		</div>
 		<div class="opaque"></div>
