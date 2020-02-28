@@ -24,8 +24,8 @@
 	// AWS Info
 
 	$bucketName = 'tencharity';
-	$IAM_KEY = 'AKIAYNFZXG2V2CHGDZFW';
-	$IAM_SECRET = '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';
+	$IAM_KEY = 'AKIAYNFZXG2V7RYKEBM6';
+	$IAM_SECRET = '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';
 	// Connect to AWS
 	try {
 		// You may need to change the region. It will say in the URL when the bucket is open
