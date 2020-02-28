@@ -240,21 +240,21 @@
 			<div id="tosinteract">
 				<div>
 					<input type="checkbox" name="checkbox" value="check" id="agree"/>
-					<p class="tosagree">I agree to the Terms of Service</p>
+					<p class="tosagree">I agree to the <a href="https://tencharitychallenge.com/terms">Terms of Service</a></p>
 				</div><br>
 				<div>
 					<input type="checkbox" name="tos" value="tos" id="tostext"/>
 					<p class="tosagree">I will be the best person that I can be.</p>
 				</div><br>
 				<div>
-					<button type="submit" name="submit" value="submit" disabled="disabled"/>Sign up</button>
+					<button id="accountsignupbutton" type="submit" name="submit" value="submit" disabled="disabled"/>Sign up</button>
 				</div>
 			</div>
 			</form>
 		</div>
 		<div class="opaque"></div>
 			<!-- <button type="submit" name="submit" value="submit">Sign up</button></form> -->
-				<button id="show-tos" /*disabled="disabled"*/>Submit</button>
+				<button id="show-tos">Submit</button>
 			<?php
 			echo	'</div>
 			</section></div>';

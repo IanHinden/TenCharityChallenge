@@ -19,6 +19,30 @@ $(document).ready(function(){
 		$('.opaque').removeClass('opaque-out');
 		$('.confirm').removeClass('confirm-out');
 	});
+
+	var checkbox1 = document.getElementById("agree");
+	var checkbox2 = document.getElementById("tostext");
+	var accountsignupbutton = document.getElementById("accountsignupbutton");
+
+	checkbox1.addEventListener( 'change', function() {
+    		if(this.checked && checkbox2.checked) {
+			accountsignupbutton.disabled = false;
+			accountsignupbutton.style.backgroundColor = "black";
+    		} else {
+			accountsignupbutton.disabled = true;
+			accountsignupbutton.style.backgroundColor = "grey";
+    		}
+	});
+
+	checkbox2.addEventListener( 'change', function() {
+                if(this.checked && checkbox1.checked) {
+			accountsignupbutton.disabled = false;
+			accountsignupbutton.style.backgroundColor = "black";
+                } else {
+			accountsignupbutton.disabled = true;
+			accountsignupbutton.style.backgroundColor = "grey";
+                }
+        });
 	
 	$('.addfriend').submit(function() {
 		var req = new XMLHttpRequest();
