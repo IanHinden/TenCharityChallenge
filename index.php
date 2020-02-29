@@ -205,7 +205,7 @@
 							<h2>Easy volunteer resume reports</h2>
 						</div>
 						<h3>Join the Ten Charity Challenge.</h3>
-						<p> Thanks to Ten Charity Challenge, ' . $totalHours . ' hours of charity have been performed. </p>
+						<p> Thanks to Ten Charity Challenge, ' . $totalHours . ' hours of volunteer work have been performed. </p>
 					</div>
 			      </section>';
 
