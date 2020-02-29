@@ -812,10 +812,6 @@ header .nav-login a {
 	cursor: pointer;
 }
 
-.signup-form button:hover {
-	background-color: #111;
-}
-
 .confirm {
 	position: fixed;
 	left: 0;

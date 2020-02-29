@@ -44,6 +44,16 @@ $(document).ready(function(){
                 }
         });
 	
+	$("#accountsignupbutton").mouseover(function(){
+		if($("#accountsignupbutton").prop("disabled", false)){
+			$("#accountsignupbutton").css("background-color", "#523");
+        	}
+	});
+
+	$("#accountsignupbutton").mouseleave(function(){
+		$("#accountsignupbutton").css("background-color", "#222");
+        });
+
 	$('.addfriend').submit(function() {
 		var req = new XMLHttpRequest();
 		req.open("post", this.action);
