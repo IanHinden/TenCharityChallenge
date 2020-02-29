@@ -24,25 +24,29 @@ $(document).ready(function(){
 	var checkbox2 = document.getElementById("tostext");
 	var accountsignupbutton = document.getElementById("accountsignupbutton");
 
-	checkbox1.addEventListener( 'change', function() {
-    		if(this.checked && checkbox2.checked) {
-			accountsignupbutton.disabled = false;
-			accountsignupbutton.style.backgroundColor = "black";
-    		} else {
-			accountsignupbutton.disabled = true;
-			accountsignupbutton.style.backgroundColor = "grey";
-    		}
-	});
+	if(checkbox1 && checkbox2){
+		checkbox1.addEventListener( 'change', function() {
+	    		if(this.checked && checkbox2.checked) {
+				accountsignupbutton.disabled = false;
+				accountsignupbutton.style.backgroundColor = "black";
+	    		} else {
+				accountsignupbutton.disabled = true;
+				accountsignupbutton.style.backgroundColor = "grey";
+	    		}
+		});
+	}
 
-	checkbox2.addEventListener( 'change', function() {
-                if(this.checked && checkbox1.checked) {
-			accountsignupbutton.disabled = false;
-			accountsignupbutton.style.backgroundColor = "black";
-                } else {
-			accountsignupbutton.disabled = true;
-			accountsignupbutton.style.backgroundColor = "grey";
-                }
-        });
+	if(checkbox1 && checkbox2){
+		checkbox2.addEventListener( 'change', function() {
+	                if(this.checked && checkbox1.checked) {
+				accountsignupbutton.disabled = false;
+				accountsignupbutton.style.backgroundColor = "black";
+	                } else {
+				accountsignupbutton.disabled = true;
+				accountsignupbutton.style.backgroundColor = "grey";
+	                }
+	        });
+	}
 	
 	$("#accountsignupbutton").mouseover(function(){
 		if($("#accountsignupbutton").prop("disabled", false)){
