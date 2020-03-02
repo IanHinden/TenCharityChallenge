@@ -110,22 +110,7 @@
 			</li>
 			<li><img src="https://community.cengage.com/Chilton2/utility/anonymous.gif"><span class="alertcount">5</span></li>
 			<li><img src="https://community.cengage.com/Chilton2/utility/anonymous.gif"><span class="alertcount">5</span></li>
-			</ol></div>
-			<form action="includes/addevent.inc.php" method="POST">
-			<input id="search" type="text" name="avenue" placeholder="Search...">
-			<input type="text" name="info" placeholder="Info">
-			<input type="text" name="length" placeholder="Length">
-			<input type="datetime-local" name="datetime-local">
-			<select name="cause">
-    				<option value="Animals">Animals</option>
-    				<option value="Food Bank">Food Bank</option>
-				<option value="Other">Other</option>
-  			</select>
-			<input type="hidden" id="lat" name="lat" step="any">
-			<input type="hidden" id="long" name="long" step="any">
-			<div id="map"></div>
-			<button type="submit" name="submit">Create Event</button>
-			</form>';
+			</ol></div>';
 			
 			$sql = "SELECT * FROM events JOIN eventrelationships ON events.event_id = eventrelationships.event_id WHERE completed >= 0 AND user_id = '".$_SESSION['u_id']."';";
 			$result = mysqli_query($conn, $sql);
