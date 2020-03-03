@@ -108,8 +108,7 @@
 			
 			echo '
 			</li>
-			<li><img src="https://community.cengage.com/Chilton2/utility/anonymous.gif"><span class="alertcount">5</span></li>
-			<li><img src="https://community.cengage.com/Chilton2/utility/anonymous.gif"><span class="alertcount">5</span></li>
+			<li><img src="https://community.cengage.com/Chilton2/utility/anonymous.gif"><span class="alertcount"></span></li>
 			</ol></div>';
 			
 			$sql = "SELECT * FROM events JOIN eventrelationships ON events.event_id = eventrelationships.event_id WHERE completed >= 0 AND user_id = '".$_SESSION['u_id']."';";
