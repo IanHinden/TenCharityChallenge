@@ -430,6 +430,10 @@ header .nav-login a {
 	.main-container {
 		height: 550px;
 	}
+
+	.main-container-text {
+		padding: 39px;
+	}
 }
 
 /*Event Page */
