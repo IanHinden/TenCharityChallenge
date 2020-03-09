@@ -55,59 +55,9 @@
 			echo '<span class="inspirationcount">' . $inspirationScore . '</span>';
 			echo '</div>
 			</div>
-			<div id="navbar"><ol><li><a href="/search.php">Find Events</a></li><li>Find Friends</li>
-			//Friend requests
-			<li id="friendrequestsicon"><img src="https://community.cengage.com/Chilton2/utility/anonymous.gif">';
-			
-			$sql = "SELECT * FROM `relationships` WHERE (`user_one_id` = '".$_SESSION['u_id']."' OR `user_two_id` = '".$_SESSION['u_id']."') AND `status` = 0 AND `action_user_id` != '".$_SESSION['u_id']."'";
-			$result = mysqli_query($conn, $sql);
-			$totalFriendRequests = mysqli_num_rows($result);
-			
-			if ($totalFriendRequests > 0) {
-				echo '<span class="alertcount">' . $totalFriendRequests . '</span>';
-			}
-			
-			$sql = "SELECT user_first, user_last, user_id FROM users INNER JOIN relationships ON relationships.action_user_id = users.user_id WHERE (user_one_id = '".$_SESSION['u_id']."' OR user_two_id = '".$_SESSION['u_id']."') AND action_user_id !='".$_SESSION['u_id']."' AND status = 0";
-			$result = mysqli_query($conn, $sql);
-			$resultCheck = mysqli_num_rows($result);
-
-			if ($resultCheck > 0) {
-				echo '<div id="friendrequestpopup"><ul>';
-				while ($row = mysqli_fetch_assoc($result)) {
-					$userid = $row['user_id'];
-					$firstname = $row['user_first'];
-					$lastname = $row['user_last'];
-
-					//Profile Image
-					echo '<div class="requestprofilepic">';
-					$sqlImg = "SELECT * FROM profilepicturelocation WHERE user_id = '".$row['user_id']."' AND current = 1;";
-					$resultImg = mysqli_query($conn, $sqlImg);
-					$rowresults = mysqli_num_rows($resultImg);
-					if ($rowresults > 0) {
-						while ($row = mysqli_fetch_assoc($resultImg)){
-							echo "<img id='profileimage' src='https://gastatic.s3-us-west-1.amazonaws.com/profilepicture/" . $userid .  "/". $row['uniq_id']. $row['image_name'] . "'>";
-						}
-					} else {
-						echo "<img id='profileimage' src='uploads/profiledefault.jpg'>";
-					}
-					echo '</div>';
-
-					echo '<li><a href="https://tencharitychallenge.com/user/' . $userid . '">' . $firstname. ' ' . $lastname . '</a>' . 
-					'<form action="/confirmfriend.php" class="confirmfriend" method="post" />
-					<input type="hidden" name="userid" value="'. $userid.'"/>
-					<input id="'.$userid.'" type="submit" name="confirmfriend" value="Confirm Friend" />
-					</form></li>' .
-					'<form action="/rejectfriend.php" class="rejectfriend" method="post" />
-                                        <input type="hidden" name="userid" value="'. $userid.'"/>
-                                        <input id="'.$userid.'" type="submit" name="rejectfriend" value="Reject Friend" />
-                                  	 </form></li>';
-				}
-				echo '</ul></div>';
-			}
-			
+			<div id="navbar"><ol><li><a href="/search.php">Find Events</a></li><li>Find Friends</li>';
 			
 			echo '
-			</li>
 			<li><img src="https://community.cengage.com/Chilton2/utility/anonymous.gif"><span class="alertcount"></span></li>
 			</ol></div>';
 			
