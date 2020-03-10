@@ -197,6 +197,10 @@ header nav .alertcount {
 	display: inline-block;
 }
 
+.requestitem {
+	display: inline-block;
+}
+
 header .nav-login {
 	float: right;
 }
@@ -612,6 +616,7 @@ header .nav-login a {
 
 #friendrequestpopup {
 	position: relative;
+	width: 377px;
 	display: none;
 }
 

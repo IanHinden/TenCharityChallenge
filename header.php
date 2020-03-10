@@ -29,7 +29,7 @@
 					<p>Ten Charity Challenge</p>
 						<?php
 							if (isset($_SESSION['u_id'])){
-								echo '<li id="friendrequestsicon"><img src="https://community.cengage.com/Chilton2/utility/anonymous.gif">';
+								echo '<div id="friendrequestsicon"><img src="https://community.cengage.com/Chilton2/utility/anonymous.gif">';
 			
 								$sql = "SELECT * FROM `relationships` WHERE (`user_one_id` = '".$_SESSION['u_id']."' OR `user_two_id` = '".$_SESSION['u_id']."') AND `status` = 0 AND `action_user_id` != '".$_SESSION['u_id']."'";
 								$result = mysqli_query($conn, $sql);
@@ -51,7 +51,7 @@
 										$lastname = $row['user_last'];
 
 									//Profile Image
-									echo '<div class="requestprofilepic">';
+									echo '<li><div class="requestprofilepic requestitem">';
 									$sqlImg = "SELECT * FROM profilepicturelocation WHERE user_id = '".$row['user_id']."' AND current = 1;";
 									$resultImg = mysqli_query($conn, $sqlImg);
 									$rowresults = mysqli_num_rows($resultImg);
@@ -64,19 +64,19 @@
 									}
 									echo '</div>';
 
-									echo '<li><a href="https://tencharitychallenge.com/user/' . $userid . '">' . $firstname. ' ' . $lastname . '</a>' . 
-									'<form action="/confirmfriend.php" class="confirmfriend" method="post" />
+									echo '<a class="requestitem" href="https://tencharitychallenge.com/user/' . $userid . '">' . $firstname. ' ' . $lastname . '</a>' . 
+									'<form class="requestitem" action="/confirmfriend.php" class="confirmfriend" method="post" />
 									<input type="hidden" name="userid" value="'. $userid.'"/>
 									<input id="'.$userid.'" type="submit" name="confirmfriend" value="Confirm Friend" />
-									</form></li>' .
-									'<form action="/rejectfriend.php" class="rejectfriend" method="post" />
+									</form>' .
+									'<form class="requestitem" action="/rejectfriend.php" class="rejectfriend" method="post" />
                                         				<input type="hidden" name="userid" value="'. $userid.'"/>
                                         				<input id="'.$userid.'" type="submit" name="rejectfriend" value="Reject Friend" />
-                                  	 				</form></li>';
+                                  	 				</form>';
 									}
-									echo '</ul></div>';
+									echo '</li></div>';
 								}
-							echo '</li>';
+							echo '</ul></div>';
 
 							echo '<div class="nav-login"><p id="headergreeting">Hello, ' . $_SESSION['u_first'] . '</p>';
 							echo '<form action="includes/logout.inc.php" method="POST">
