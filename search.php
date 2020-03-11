@@ -14,15 +14,17 @@
 <?php
 
 $current = $_SESSION['u_id'];
-echo $current;
 
 $name = $_POST['search'];
-$result = mysqli_query($conn, "SELECT * FROM users
-    WHERE user_first LIKE '%$name%' OR user_last LIKE '%$name%'");
+$names = explode(" ", $name);
 
+if(strpos($name, ' ') !== false) {
+	$result = mysqli_query($conn, "SELECT * FROM users WHERE user_first LIKE '%$names[0]%' OR user_last LIKE '%$names[1]'");
+} else {
+	$result = mysqli_query($conn, "SELECT * FROM users WHERE user_first LIKE '%$name%' OR user_last LIKE '%$name%'");
+}
 	if ($name !=""){
 		while ($row = mysqli_fetch_array($result)){
-
 				$usernumber = $row['user_id'];
 				echo $usernumber;
 
