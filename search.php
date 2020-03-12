@@ -1,28 +1,28 @@
 <?php
 	include_once 'header.php';
 	include_once 'includes/dbh.inc.php';
-?>
 
-<p>This is a search page</p>
-<br><br><br><br><br>
+if (isset($_SESSION['u_id'])){
 
-<form action="" method="post">
-<input type="text" name="search">
-<input type="submit" name="submit" value="Search">
-</form>
+	echo '<p>This is a search page</p>
+	<br><br><br><br><br>
 
-<?php
+	<form action="" method="post">
+	<input type="text" name="search">
+	<input type="submit" name="submit" value="Search">
+	</form>';
 
-$current = $_SESSION['u_id'];
 
-$name = $_POST['search'];
-$names = explode(" ", $name);
+	$current = $_SESSION['u_id'];
 
-if(strpos($name, ' ') !== false) {
-	$result = mysqli_query($conn, "SELECT * FROM users WHERE user_first LIKE '%$names[0]%' OR user_last LIKE '%$names[1]'");
-} else {
-	$result = mysqli_query($conn, "SELECT * FROM users WHERE user_first LIKE '%$name%' OR user_last LIKE '%$name%'");
-}
+	$name = $_POST['search'];
+	$names = explode(" ", $name);
+
+	if(strpos($name, ' ') !== false) {
+		$result = mysqli_query($conn, "SELECT * FROM users WHERE user_first LIKE '%$names[0]%' OR user_last LIKE '%$names[1]'");
+	} else {
+		$result = mysqli_query($conn, "SELECT * FROM users WHERE user_first LIKE '%$name%' OR user_last LIKE '%$name%'");
+	}
 	if ($name !=""){
 		while ($row = mysqli_fetch_array($result)){
 				$usernumber = $row['user_id'];
@@ -94,9 +94,12 @@ if(strpos($name, ' ') !== false) {
 				}
 
 				echo "<br>";
+			}
 		}
-	}
-    mysqli_close($conn);
+    	mysqli_close($conn);
+} else {
+	header("Location: http://www.tencharitychallenge.com/");
+}
 ?>
 
 <?php
