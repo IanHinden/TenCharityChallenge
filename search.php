@@ -4,9 +4,7 @@
 
 if (isset($_SESSION['u_id'])){
 
-	echo '<p>This is a search page</p>
-	<br><br><br><br><br>
-
+	echo '<div id="searchpagecontent">
 	<form action="" method="post">
 	<input type="text" name="search">
 	<input type="submit" name="submit" value="Search">
@@ -97,6 +95,7 @@ if (isset($_SESSION['u_id'])){
 			}
 		}
     	mysqli_close($conn);
+	echo '</div>';
 } else {
 	header("Location: http://www.tencharitychallenge.com/");
 }

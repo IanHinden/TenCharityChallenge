@@ -458,6 +458,12 @@ header .nav-login a {
 	}
 }
 
+/*Friend Search Page*/
+#searchpagecontent {
+	padding-top: 95px;
+	text-align: center;
+}
+
 /*Event Page */
 #signupeventbutton {
 	display: none;
