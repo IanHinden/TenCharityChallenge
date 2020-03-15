@@ -58,7 +58,6 @@
 			<div id="navbar"><ol><li><a href="/search.php">Find Events</a></li><li>Find Friends</li>';
 			
 			echo '
-			<li><img src="https://community.cengage.com/Chilton2/utility/anonymous.gif"><span class="alertcount"></span></li>
 			</ol></div>';
 			
 			$sql = "SELECT * FROM events JOIN eventrelationships ON events.event_id = eventrelationships.event_id WHERE completed >= 0 AND user_id = '".$_SESSION['u_id']."';";
