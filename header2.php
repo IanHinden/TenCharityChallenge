@@ -8,9 +8,9 @@
 <html>
 <head>
 	<title>The Ten Charity Challenge</title>
-	<link rel="stylesheet" type="text/css" href="style.css"></link>
+	<link rel="stylesheet" type="text/css" href="../style.css"></link>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="javascript/scripts.js"></script>
+	<script src="../javascript/scripts.js"></script>
 	<link href="https://fonts.googleapis.com/css?family=Montserrat|Noto+Serif+JP" rel="stylesheet"></link>
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
 </head>
@@ -65,11 +65,11 @@
 									echo '</div>';
 
 									echo '<a class="requestitem" href="https://tencharitychallenge.com/user/' . $userid . '">' . $firstname. ' ' . $lastname . '</a>' . 
-									'<form class="requestitem" action="/confirmfriend.php" class="confirmfriend" method="post" />
+									'<form class="requestitem" action="../confirmfriend.php" class="confirmfriend" method="post" />
 									<input type="hidden" name="userid" value="'. $userid.'"/>
 									<input id="'.$userid.'" type="submit" name="confirmfriend" value="Confirm Friend" />
 									</form>' .
-									'<form class="requestitem" action="/rejectfriend.php" class="rejectfriend" method="post" />
+									'<form class="requestitem" action="../rejectfriend.php" class="rejectfriend" method="post" />
                                         				<input type="hidden" name="userid" value="'. $userid.'"/>
                                         				<input id="'.$userid.'" type="submit" name="rejectfriend" value="Reject Friend" />
                                   	 				</form>';
@@ -79,12 +79,12 @@
 							echo '</ul></div>';
 
 							echo '<div class="nav-login"><p id="headergreeting">Hello, ' . $_SESSION['u_first'] . '</p>';
-							echo '<form action="includes/logout.inc.php" method="POST">
+							echo '<form action="../includes/logout.inc.php" method="POST">
 							<button type="submit" name="submit">Logout</button>
 							</form>';
 							} else {
 								echo '<div class="nav-login"><div id="loginbox">
-									<form action="includes/login.inc.php" method="POST">
+									<form action="../includes/login.inc.php" method="POST">
 									<table>
 										<tr>
 											<td><input type="text" name="uid" placeholder="Username/email"></input></td>
