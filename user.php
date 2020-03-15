@@ -42,6 +42,9 @@
                                                         }
                                         	}
                                 	}
+				echo '<div id="maincontent">
+
+					</div>';
                         	} else {
                                 	echo "These users have no relationships";
                         	}
@@ -59,7 +62,7 @@
 					echo $row['user_first'] . " " . $row['user_last'];
 				}
 			} else {
-				echo "There is no user with this ID";
+				header("Location: http://www.tencharitychallenge.com/");
 			}
 		?>
 	</body>
