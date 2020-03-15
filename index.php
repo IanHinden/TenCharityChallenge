@@ -5,8 +5,8 @@
 
 	<?php
 		if (isset($_SESSION['u_id'])){
-			echo '
-			<div id="dashboard">
+			echo '<div id="dashboard">
+			<div id="dashboardcontent">
 				<div id="profilepic">';
 					$sqlImg = "SELECT * FROM profilepicturelocation WHERE user_id = '".$_SESSION['u_id']."' AND current = 1;";
 					$resultImg = mysqli_query($conn, $sqlImg);
@@ -20,12 +20,12 @@
 					} else {
 						echo "<img id='profileimage' src='uploads/profiledefault.jpg'>";
 					}
-			echo ' </div></div>
+			echo '
                         <form action="profilephotoupload.php" method="POST" enctype="multipart/form-data">
                         <input type="file" name="fileToUpload" id="fileToUpload">
                         <button type="submit" value="Upload Image" name="submit">Submit</button></form></div>';
 			echo '<div id="scores">
-			<div id="volunteerscore" class="scorecard"><p>Volunteer Hours:<p>';
+			<div id="volunteerscorespace"><div id="volunteerscore" class="scorecard"><p>Volunteer Hours:<p>';
 			
 			$sql = "SELECT event_length FROM events WHERE event_user = '".$_SESSION['u_id']."';";
 			$result = mysqli_query($conn, $sql);
@@ -38,8 +38,8 @@
 				}
 			}
 			
-			echo $userTotalHours . '</p></p></div>
-			<div id="inspirationscore" class="scorecard"><p>Inspiration Score:</p>'; /*<p>Insert Number Here</p>*/
+			echo $userTotalHours . '</p></p></div></div>
+			<div id="inspirationscorespace"><div id="inspirationscore" class="scorecard"><p>Inspiration Score:</p>'; /*<p>Insert Number Here</p>*/
 
 			$sql = "SELECT * FROM events INNER JOIN eventrelationships ON events.event_id = eventrelationships.event_id WHERE event_user = '".$_SESSION['u_id']."' AND user_id <> '".$_SESSION['u_id']."' AND completed = 1;";
 			$result = mysqli_query($conn, $sql);
@@ -53,8 +53,8 @@
 			}
 
 			echo '<span class="inspirationcount">' . $inspirationScore . '</span>';
-			echo '</div>
-			</div>
+			echo '</div></div>
+			</div></div></div></div>
 			<div id="navbar"><ol><li><a href="/search.php">Find Events</a></li><li>Find Friends</li>';
 			
 			echo '

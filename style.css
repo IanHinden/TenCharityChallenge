@@ -562,6 +562,7 @@ header .nav-login a {
 #dashboard {
 	padding-top: 80px;
 	text-align: center;
+	background-image: linear-gradient(to bottom, rgb(218, 214, 234), rgba(255, 255, 255, 0.73)),url(https://i0.wp.com/www.intelligentliving.co/wp-content/uploads/2019/08/Planting-trees.jpg?w=1751&ssl=1);
 }
 
 #profilepic img {
@@ -574,6 +575,21 @@ header .nav-login a {
 	line-height: 50px;
 	font-size: 30px;
 	padding-bottom: 20px;
+	display: flex;
+	margin-top: 12px;
+}
+
+#inspirationscorespace {
+	flex: 1;
+}
+
+#volunteerscorespace {
+	flex: 1;
+}
+
+.scorecard {
+	background: white;
+	border-radius: 8px;
 }
 
 #volunteerscore {
