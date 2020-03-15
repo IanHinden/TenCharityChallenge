@@ -57,7 +57,7 @@
 									$rowresults = mysqli_num_rows($resultImg);
 									if ($rowresults > 0) {
 										while ($row = mysqli_fetch_assoc($resultImg)){
-											echo "<img id='profileimage' src='https://gastatic.s3-us-west-1.amazonaws.com/profilepicture/" . $userid .  "/". $row['uniq_id']. $row['image_name'] . "'>";
+											echo "<img id='profileimage' src='https://tencharity.s3-us-west-2.amazonaws.com/profilepicture/" . $userid .  "/". $row['uniq_id']. $row['image_name'] . "'>";
 										}
 									} else {
 										echo "<img id='profileimage' src='uploads/profiledefault.jpg'>";
