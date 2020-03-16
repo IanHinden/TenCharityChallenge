@@ -80,10 +80,10 @@
 						echo '<div id="scores">
 							<div id="volunteerscorespace"><div id="volunteerscore" class="scorecard"><p>Volunteer Hours:<p>';
 			
-							$sql = "SELECT event_length FROM events WHERE event_user = '".$_SESSION['u_id']."';";
+							$sql = "SELECT event_length FROM events WHERE event_user = '".$profileId."';";
 							$result = mysqli_query($conn, $sql);
 							$resultCheck = mysqli_num_rows($result);
-							$userTotalHours;
+							$userTotalHours = 0;
 			
 							if ($resultCheck > 0) {
 								while ($row = mysqli_fetch_assoc($result)) {
@@ -97,7 +97,7 @@
 						</div>
 						<div id="inspirationscorespace"><div id="inspirationscore" class="scorecard"><p>Inspiration Score:</p>'; /*<p>Insert Number Here</p>*/
 
-						$sql = "SELECT * FROM events INNER JOIN eventrelationships ON events.event_id = eventrelationships.event_id WHERE event_user = '".$_SESSION['u_id']."' AND user_id <> '".$_SESSION['u_id']."' AND completed = 1;";
+						$sql = "SELECT * FROM events INNER JOIN eventrelationships ON events.event_id = eventrelationships.event_id WHERE event_user = '".$profileId."' AND user_id <> '".$profileId."' AND completed = 1;";
 						$result = mysqli_query($conn, $sql);
 						$totalEvents = mysqli_num_rows($result);
 						$inspirationScore = 0;
