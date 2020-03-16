@@ -42,9 +42,6 @@
                                                         }
                                         	}
                                 	}
-				echo '<div id="maincontent">
-
-					</div>';
                         	} else {
                                 	echo "These users have no relationships";
                         	}
@@ -53,14 +50,72 @@
                                 echo "There is no user";
                     	}
 			
-			$sql = "SELECT * FROM users WHERE user_id = '".$profileId."';";
-			$result = mysqli_query($conn, $sql);
-			$resultCheck = mysqli_num_rows($result);
-			
 			if ($resultCheck > 0) {
-				while ($row = mysqli_fetch_assoc($result)) {
-					echo $row['user_first'] . " " . $row['user_last'];
-				}
+				echo '<div id="maincontent">';
+				echo '<div id="dashboard">
+					<div id="dashboardcontent">
+						<div id="profilepic">';
+							$sqlImg = "SELECT * FROM profilepicturelocation WHERE user_id = '".$profileId."' AND current = 1;";
+							$resultImg = mysqli_query($conn, $sqlImg);
+							$id = $_SESSION['u_id'];
+							$rowresults = mysqli_num_rows($resultImg);
+							if ($rowresults > 0) {
+								while ($row = mysqli_fetch_assoc($resultImg)){
+									//echo "<img id='profileimage' src='https://gastatic.s3-us-west-1.amazonaws.com/profilepicture/" . $id .  "/". $row['uniq_id']. $row['image_name'] . "'>";
+									echo "<img id='profileimage' src='https://tencharity.s3-us-west-2.amazonaws.com/profilepicture/" . $profileId . "/". $row['uniq_id']. $row['image_name'] . "'>";
+								}
+							} else {
+								echo "<img id='profileimage' src='../uploads/profiledefault.jpg'>";
+							}
+
+						        $sql = "SELECT * FROM users WHERE user_id = '".$profileId."';";                                                         
+							$result = mysqli_query($conn, $sql);
+                        				$resultCheck = mysqli_num_rows($result);
+							while ($row = mysqli_fetch_assoc($result)) {
+								echo '<div id="fullname">';
+								echo $row['user_first'] . " " . $row['user_last'];
+								echo '</div>';
+							}
+
+						echo '<div id="scores">
+							<div id="volunteerscorespace"><div id="volunteerscore" class="scorecard"><p>Volunteer Hours:<p>';
+			
+							$sql = "SELECT event_length FROM events WHERE event_user = '".$_SESSION['u_id']."';";
+							$result = mysqli_query($conn, $sql);
+							$resultCheck = mysqli_num_rows($result);
+							$userTotalHours;
+			
+							if ($resultCheck > 0) {
+								while ($row = mysqli_fetch_assoc($result)) {
+									$userTotalHours = $userTotalHours + $row['event_length'];
+								}
+							}
+			
+							echo $userTotalHours . '</p>
+							</p>
+							</div>
+						</div>
+						<div id="inspirationscorespace"><div id="inspirationscore" class="scorecard"><p>Inspiration Score:</p>'; /*<p>Insert Number Here</p>*/
+
+						$sql = "SELECT * FROM events INNER JOIN eventrelationships ON events.event_id = eventrelationships.event_id WHERE event_user = '".$_SESSION['u_id']."' AND user_id <> '".$_SESSION['u_id']."' AND completed = 1;";
+						$result = mysqli_query($conn, $sql);
+						$totalEvents = mysqli_num_rows($result);
+						$inspirationScore = 0;
+			
+						if ($totalEvents > 0) {
+							while ($row = mysqli_fetch_assoc($result)) {
+								$inspirationScore = $inspirationScore + $row['event_length'];
+							}
+						}
+
+						echo '<span class="inspirationcount">' . $inspirationScore . '</span>';
+						echo '</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>';
+				echo '</div>';
 			} else {
 				header("Location: http://www.tencharitychallenge.com/");
 			}
