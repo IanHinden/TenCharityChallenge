@@ -80,7 +80,7 @@
 	} catch (Exception $e) {
 		die('Error:' . $e->getMessage());
 	}
-	echo 'Done';
+	header("Location: http://www.tencharitychallenge.com/index.php");
 	// Now that you have it working, I recommend adding some checks on the files.
 	// Example: Max size, allowed file types, etc.
 ?>
