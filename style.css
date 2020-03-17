@@ -465,6 +465,10 @@ header .nav-login a {
 }
 
 /*Event Page */
+#pagecontent {
+	margin-top: 50px;
+}
+
 #signupeventbutton {
 	display: none;
 }

@@ -1,27 +1,15 @@
 <?php
+	include_once 'header2.php';
 	include_once 'includes/dbh.inc.php';
-        session_start();
 ?>
 
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="description" content="User page">
-		<meta name=viewport content="width=device-width, initial-scale=1">
-		<title>Volunteer Event Page</title>
-		<link rel="stylesheet" type="text/css" href="../style.css"></link>
-        	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        	<script src="../javascript/scripts.js"></script>
-        	<link href="https://fonts.googleapis.com/css?family=Montserrat|Noto+Serif+JP" rel="stylesheet"></link>
-	</head>
 	<body>
 	
 		<?php
 			$eventId = $_GET['id'];
 			$now = new DateTime();
-
-			echo "Event ID is: " . $eventId;
 
 			//Determine user permissions
 
@@ -79,7 +67,7 @@
 				$future = false;
 			}
 
-                        echo $eventAvenue;
+			echo '<div id="pagecontent">';
                         echo '<form class="eventform" id="eventform">
                         Event Avenue: <input type="text" value="'.$eventAvenue.'" name="eventAvenue" id="eventAvenue" readonly="readonly"><br>
                         Event Info: <input type="text" value="'.$eventInfo.'" name="eventInfo" id="eventInfo" readonly="readonly"><br>
@@ -102,7 +90,7 @@
 				echo "<div id='interactbutton'>";
 				
 				//Cancel event
-                                echo '<form action="/cancelevent.php" class="cancelevent" method="post" id="canceleventbutton"/>
+                                echo '<form action="../includes/cancelevent.php" class="cancelevent" method="post" id="canceleventbutton"/>
                                 <input type="hidden" name="eventId" value="'.$eventId.'"/>
                                 <input id="cancel'.$eventId.'" type="submit" name="cancelevent" value="Cancel Event" /></form>';
 
@@ -175,11 +163,10 @@
                                         //echo "<img class='eventimage' src='https://tencharity.s3-us-west-2.amazonaws.com/event/'".$eventId."'/'" .$uniqId . $image_name'">";
                                         echo "<div id='$key' class='eventimagethumbcontainers'>";
                                         echo $imageURL;
-	                                echo "</div>";
                                 }
 
 				if ($permission == 1 || $permission == 2) {
-					echo '</div>
+					echo '
 		                        <form action="../eventimageupload.php" method="POST" enctype="multipart/form-data">
                         		<input type="file" name="fileToUpload[]" id="fileToUpload" multiple="multiple" readonly="false">
 					<input type="hidden" name="eventId" value="'. $eventId.'"/>
@@ -189,7 +176,7 @@
   						<p>Drag one or more files to this Drop Zone ...</p>
 						</div>';
 
-				echo '</div>';
+				echo '</div></div></div></div>';
 				}
 			} else {
 				echo "There is no event with this ID";
@@ -197,7 +184,7 @@
 		?>
 
 <?php
-include_once 'footer.php';
+	include_once 'footer.php';
 ?>
 	</body>
 </html>
