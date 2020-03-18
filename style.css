@@ -466,7 +466,22 @@ header .nav-login a {
 
 /*Event Page */
 #pagecontent {
-	margin-top: 50px;
+	margin-top: 44px;
+}
+
+#eventform {
+	background-image: linear-gradient(to bottom, rgb(218, 214, 234), rgba(255, 255, 255, 0.73)),url(https://i0.wp.com/www.intelligentliving.co/wp-content/uploads/2019/08/Planting-trees.jpg?w=1751&ssl=1);
+}
+
+#detailsandmap {
+	display: flex;
+	max-width: 925px;
+	margin: 0 auto;
+}
+
+#eventdetails {
+	flex: 1;
+	margin-top: 16px;
 }
 
 #signupeventbutton {
@@ -483,7 +498,10 @@ header .nav-login a {
 
 #viewEventMap {
 	height: 200px;
-	width: 200px;
+	flex: 2;
+	border-radius: 9px;
+	margin-top: 14px;
+	border: 1px solid #3F3077;
 }
 
 .eventimage {
@@ -499,7 +517,7 @@ header .nav-login a {
 #eventPopup {
     	background: rgba(0,0,0,.6);
     	position: fixed;
-    	top: 0;
+    	top: 60px;
     	bottom: 0;
     	left: 0;
     	right: 0;

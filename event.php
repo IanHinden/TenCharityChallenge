@@ -69,13 +69,19 @@
 
 			echo '<div id="pagecontent">';
                         echo '<form class="eventform" id="eventform">
-                        Event Avenue: <input type="text" value="'.$eventAvenue.'" name="eventAvenue" id="eventAvenue" readonly="readonly"><br>
-                        Event Info: <input type="text" value="'.$eventInfo.'" name="eventInfo" id="eventInfo" readonly="readonly"><br>
-			<input type="hidden" value="'.$lat.'" name="lat" id="lat" readonly="readonly">
-			<input type="hidden" value="'.$longit.'" name="longit" id="longit" readonly="readonly">
-                        <div id="viewEventMap"></div>
-			<p id="editEvent">Edit</p>
-                        <input type="submit">
+			<div id="detailsandmap">
+				<div id="eventdetails">
+                        		Event Avenue: <input type="text" value="'.$eventAvenue.'" name="eventAvenue" id="eventAvenue" readonly="readonly"><br>
+                        		Event Info: <input type="text" value="'.$eventInfo.'" name="eventInfo" id="eventInfo" readonly="readonly"><br>
+					<input type="hidden" value="'.$lat.'" name="lat" id="lat" readonly="readonly">
+					<input type="hidden" value="'.$longit.'" name="longit" id="longit" readonly="readonly">
+                        	</div>
+				<div id="viewEventMap"></div>
+			</div>
+			<div>
+				<p id="editEvent">Edit</p>
+                        	<input type="submit">
+			</div>
                         </form>';
 
 			if (count($set) > 0) {
