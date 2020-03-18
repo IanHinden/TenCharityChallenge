@@ -233,10 +233,11 @@ $(document).ready(function(){
 	});
 
 	$('.cancelattendevent').submit(function() {
+		console.log("It's being clicked");
 		var data = new FormData();
                 var req = new XMLHttpRequest();
-                req.open('post', '../includes/cancelattendevent.inc.php');
-                req.send();
+                req.open('post', this.action);
+                req.send(new FormData(this));
 		return false;
         });
 
@@ -394,15 +395,24 @@ function properButton(id, status, currentUserRequested){
 // Map scripts
 var map, infoWindow;
 
-function initViewEventMap() {                                                                                                                                               var locationRio = {lat: -22.915, lng: -43.197};
-        var locationRio = {lat: -22.915, lng: -43.197};
+function initViewEventMap() {
+
+	if(document.getElementById("lat") != null) {
+		var lat = parseFloat(document.getElementById("lat").value);
+	}
+
+	if(document.getElementById("longit") != null) {
+		var longit = parseFloat(document.getElementById("longit").value);
+        }
+
+	var locationEvent = {lat: lat, lng: longit};
         var map = new google.maps.Map(document.getElementById('viewEventMap'), {
           zoom: 13,
-          center: locationRio,
+          center: locationEvent,
           gestureHandling: 'cooperative'
         });
         var marker = new google.maps.Marker({
-          position: locationRio,
+          position: locationEvent,
           map: map,
           title: 'Hello World!'
         });
