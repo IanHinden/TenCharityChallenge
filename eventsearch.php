@@ -1,6 +1,10 @@
 <?php
 	include_once 'header.php';
 	include_once 'includes/dbh.inc.php';
+
+	if($_SERVER['HTTP_HOST'] == "www.tencharitychallenge.com"){
+		header("Location: http://tencharitychallenge.com/eventsearch.php");
+	}
 ?>
 
 
