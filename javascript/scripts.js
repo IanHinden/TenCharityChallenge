@@ -524,10 +524,8 @@ var customLabel = {
 	var eventTypeFilter = document.getElementById('cause').value;
 	var fD = document.getElementById('fromDate').value;
 	var fromDate = new Date(fD);
-	console.log(fromDate);
 	var tD = document.getElementById('toDate').value;
 	var toDate = new Date(tD);
-	console.log(toDate);
 
         var map = new google.maps.Map(document.getElementById('searchmap'), {
           center: new google.maps.LatLng(-33.863276, 151.207977),
@@ -557,14 +555,12 @@ var customLabel = {
           downloadUrl('https://tencharitychallenge.com/eventxml.php', function(data) {
             var xml = data.responseXML;
             var markers = xml.documentElement.getElementsByTagName('event');
-		console.log(markers);
             Array.prototype.forEach.call(markers, function(markerElem) {
               var id = markerElem.getAttribute('event_id');
 	      var avenue = markerElem.getAttribute('event_avenue');
 	      var cause = markerElem.getAttribute('cause');
               var eventDate = markerElem.getAttribute('event_date');
 	      var eventDateObject = new Date(eventDate);
-		console.log(eventDateObject);
               //var address = markerElem.getAttribute('address');
               //var type = markerElem.getAttribute('type');
               var point = new google.maps.LatLng(
@@ -633,6 +629,10 @@ function initialize() {
 	} catch(error){
 
 	}
-	initViewEventMap();
+	try {
+		initViewEventMap();
+	} catch(error){
+
+	}
 }
 

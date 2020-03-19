@@ -29,7 +29,7 @@
   	$newnode->setAttribute("event_avenue",$row['event_avenue']);
   	$newnode->setAttribute("event_info", $row['event_info']);
   	$newnode->setAttribute("lat", $row['lat']);
-	$newnode->setAttribute("event_date",$row['event_date']);
+	$newnode->setAttribute("event_date",$row['datetime_local']);
   	$newnode->setAttribute("longit", $row['longit']);
   	$newnode->setAttribute("event_user", $row['event_user']);
 	$newnode->setAttribute("cause", $row['cause']);
