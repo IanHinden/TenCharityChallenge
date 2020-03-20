@@ -67,12 +67,16 @@
 				$future = false;
 			}
 
+			$datetime = strtotime($datetime);
+			$datetime = date('Y-m-d\TH:i', $datetime);
+
 			echo '<div id="pagecontent">';
                         echo '<form class="eventform" id="eventform">
 			<div id="detailsandmap">
 				<div id="eventdetails">
-                        		Event Avenue: <input type="text" value="'.$eventAvenue.'" name="eventAvenue" id="eventAvenue" readonly="readonly"><br>
-                        		Event Info: <input type="text" value="'.$eventInfo.'" name="eventInfo" id="eventInfo" readonly="readonly"><br>
+                        		<div><p>Event Avenue</p><textarea rows="2" value="'.$eventAvenue.'" name="eventAvenue" id="eventAvenue" readonly="readonly">'.$eventAvenue.'</textarea></div>
+                        		<div><p>Date and Time</p><input type="datetime-local" value="'.$datetime.'" name="datetime" id="datetime" readonly="readonly"></div>
+					Event Info: <input type="text" value="'.$eventInfo.'" name="eventInfo" id="eventInfo" readonly="readonly"><br>
 					<input type="hidden" value="'.$lat.'" name="lat" id="lat" readonly="readonly">
 					<input type="hidden" value="'.$longit.'" name="longit" id="longit" readonly="readonly">
                         	</div>
