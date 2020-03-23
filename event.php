@@ -47,7 +47,7 @@
 				$permission = 3;
         		}
 			
-			$sql = "SELECT events.event_avenue, events.event_info, events.lat, events.longit, events.datetime_local, users.user_first, users.user_last FROM events JOIN users ON events.event_user = users.user_id WHERE event_id = '".$eventId."';";
+			$sql = "SELECT events.event_avenue, events.event_user, events.event_info, events.lat, events.longit, events.datetime_local, users.user_first, users.user_last FROM events JOIN users ON events.event_user = users.user_id WHERE event_id = '".$eventId."';";
 			$result = mysqli_query($conn, $sql);
 			$resultCheck = mysqli_num_rows($result);
 			
@@ -60,6 +60,7 @@
 				$datetime = $item['datetime_local'];
 				$firstname = $item['user_first'];
 				$lastname = $item['user_last'];
+				$eventcreatorid = $item['event_user'];
                         }
 
 			echo $firstname;
@@ -88,7 +89,7 @@
 				<div id="viewEventMap"></div>
 			</div>
 			<div id="createdby">
-				<p>Event host: '.$firstname.' '.$lastname.'</p>
+				<p>Event host: <a href="https://www.tencharitychallenge.com/user/'.$eventcreatorid.'">'.$firstname.' '.$lastname.'</a></p>
 			</div>
 			<div>
 				<p id="editEvent">Edit</p>
