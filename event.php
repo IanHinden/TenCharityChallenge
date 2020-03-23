@@ -47,7 +47,7 @@
 				$permission = 3;
         		}
 			
-			$sql = "SELECT * FROM events WHERE event_id = '".$eventId."';";
+			$sql = "SELECT events.event_avenue, events.event_info, events.lat, events.longit, events.datetime_local, users.user_first, users.user_last FROM events JOIN users ON events.event_user = users.user_id WHERE event_id = '".$eventId."';";
 			$result = mysqli_query($conn, $sql);
 			$resultCheck = mysqli_num_rows($result);
 			
@@ -58,7 +58,12 @@
 				$lat = $item['lat'];
 				$longit = $item['longit'];
 				$datetime = $item['datetime_local'];
+				$firstname = $item['user_first'];
+				$lastname = $item['user_last'];
                         }
+
+			echo $firstname;
+			echo $lastname;
 
 			//Check if event is future
 			$future = true;
@@ -76,11 +81,14 @@
 				<div id="eventdetails">
                         		<div><p>Event Avenue</p><textarea rows="2" value="'.$eventAvenue.'" name="eventAvenue" id="eventAvenue" readonly="readonly">'.$eventAvenue.'</textarea></div>
                         		<div><p>Date and Time</p><input type="datetime-local" value="'.$datetime.'" name="datetime" id="datetime" readonly="readonly"></div>
-					Event Info: <input type="text" value="'.$eventInfo.'" name="eventInfo" id="eventInfo" readonly="readonly"><br>
+					<div><p>Event Info</p><input type="text" value="'.$eventInfo.'" name="eventInfo" id="eventInfo" readonly="readonly"></div>
 					<input type="hidden" value="'.$lat.'" name="lat" id="lat" readonly="readonly">
 					<input type="hidden" value="'.$longit.'" name="longit" id="longit" readonly="readonly">
                         	</div>
 				<div id="viewEventMap"></div>
+			</div>
+			<div id="createdby">
+				<p>Event host: '.$firstname.' '.$lastname.'</p>
 			</div>
 			<div>
 				<p id="editEvent">Edit</p>
