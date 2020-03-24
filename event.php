@@ -47,7 +47,7 @@
 				$permission = 3;
         		}
 			
-			$sql = "SELECT events.event_avenue, events.event_user, events.event_info, events.lat, events.longit, events.datetime_local, users.user_first, users.user_last FROM events JOIN users ON events.event_user = users.user_id WHERE event_id = '".$eventId."';";
+			$sql = "SELECT events.event_avenue, events.event_user, events.event_info, events.lat, events.longit, events.datetime_local, events.event_length, users.user_first, users.user_last FROM events JOIN users ON events.event_user = users.user_id WHERE event_id = '".$eventId."';";
 			$result = mysqli_query($conn, $sql);
 			$resultCheck = mysqli_num_rows($result);
 			
@@ -58,6 +58,7 @@
 				$lat = $item['lat'];
 				$longit = $item['longit'];
 				$datetime = $item['datetime_local'];
+				$duration = $item['event_length'];
 				$firstname = $item['user_first'];
 				$lastname = $item['user_last'];
 				$eventcreatorid = $item['event_user'];
@@ -82,6 +83,7 @@
 				<div id="eventdetails">
                         		<div><p>Event Avenue</p><textarea rows="2" value="'.$eventAvenue.'" name="eventAvenue" id="eventAvenue" readonly="readonly">'.$eventAvenue.'</textarea></div>
                         		<div><p>Date and Time</p><input type="datetime-local" value="'.$datetime.'" name="datetime" id="datetime" readonly="readonly"></div>
+					<div><p>Event Duration</p><input type="text" value="'.$duration.'" name="duration" id="duration" readonly="readonly"></div>
 					<div><p>Event Info</p><input type="text" value="'.$eventInfo.'" name="eventInfo" id="eventInfo" readonly="readonly"></div>
 					<input type="hidden" value="'.$lat.'" name="lat" id="lat" readonly="readonly">
 					<input type="hidden" value="'.$longit.'" name="longit" id="longit" readonly="readonly">
