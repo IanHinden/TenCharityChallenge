@@ -151,7 +151,6 @@ header nav {
 	height: 60px;
 	position: fixed;
 	z-index: 1000;
-	position: absolute;
 	background-color: #665882
 }
 
