@@ -186,7 +186,10 @@
                                         //echo "<img class='eventimage' src='https://tencharity.s3-us-west-2.amazonaws.com/event/'".$eventId."'/'" .$uniqId . $image_name'">";
                                         echo "<div id='$key' class='eventimagethumbcontainers'>";
                                         echo $imageURL;
+					echo "</div>";
                                 }
+
+				echo '</div>';
 
 				if ($permission == 1 || $permission == 2) {
 					echo '
