@@ -81,10 +81,12 @@
                         echo '<form class="eventform" id="eventform">
 			<div id="detailsandmap">
 				<div id="eventdetails">
-                        		<div><p>Event Avenue</p><textarea rows="2" value="'.$eventAvenue.'" name="eventAvenue" id="eventAvenue" readonly="readonly">'.$eventAvenue.'</textarea></div>
-                        		<div><p>Date and Time</p><input type="datetime-local" value="'.$datetime.'" name="datetime" id="datetime" readonly="readonly"></div>
-					<div><p>Event Duration</p><input type="text" value="'.$duration.'" name="duration" id="duration" readonly="readonly"></div>
-					<div><p>Event Info</p><input type="text" value="'.$eventInfo.'" name="eventInfo" id="eventInfo" readonly="readonly"></div>
+                        		<div class="eventvalues"><p>Event Avenue</p><textarea rows="2" value="'.$eventAvenue.'" name="eventAvenue" id="eventAvenue" readonly="readonly">'.$eventAvenue.'</textarea></div>
+                        		<div id="datetimeduration">
+						<div id="datetimebox" class="eventvalues"><p>Date and Time</p><input type="datetime-local" value="'.$datetime.'" name="datetime" id="datetime" readonly="readonly"></div>
+						<div id="durationbox" class="eventvalues"><p>Event Duration</p><input type="text" value="'.$duration.'" name="duration" id="duration" readonly="readonly"></div>
+					</div>
+					<div class="eventvalues"><p>Event Info</p><input type="text" value="'.$eventInfo.'" name="eventInfo" id="eventInfo" readonly="readonly"></div>
 					<input type="hidden" value="'.$lat.'" name="lat" id="lat" readonly="readonly">
 					<input type="hidden" value="'.$longit.'" name="longit" id="longit" readonly="readonly">
                         	</div>
