@@ -626,6 +626,18 @@ header .nav-login a {
 	display: inline-block;
 }
 
+/*Evnet page media queries*/
+
+@media (max-width:800px){
+	#detailsandmap {
+		flex-direction: column;
+	}
+
+	#viewEventMap {
+		flex: none;
+	}
+}
+
 /* Logged in */
 
 #dashboard {
