@@ -102,12 +102,6 @@
                         </form>';
 
 			if (count($set) > 0) {
-				
-				
-				//Event details
-				echo "<div id='eventdetails'>";
-				echo $set[0]['event_avenue'] . " " . $set[0]['event_info'];
-				echo "</div>";
 
 				//Div for the proper button to interact with the event
 				echo "<div id='interactbutton'>";
