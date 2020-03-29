@@ -486,7 +486,7 @@ header .nav-login a {
 
 #detailsandmap textarea {
 	height: 33px;
-	width: 90%;
+	width: 95%;
 	border-radius: 8px;
 	font-family: 'Noto Serif JP', sans-serif;
 	font-size: 14px;
@@ -495,12 +495,19 @@ header .nav-login a {
 	overflow: hidden;
 }
 
+.eventdetailsboxes {
+	margin: 16px 10px 10px 10px;
+}
+
 .eventvalues {
 	padding: 2px;
 }
 
+#eventInfo {
+	width: 95%;
+}
+
 #detailsandmap input {
-	width: 90%;
 	border-radius: 8px;
 	font-family: 'Montserrat', sans-serif;
 	font-size: 14px;
@@ -510,11 +517,14 @@ header .nav-login a {
 
 #datetimeduration {
 	display: flex;
-	width: 470px;
 }
 
 #datetimebox {
 	flex: 1;
+}
+
+#datetime {
+	width: 90%;
 }
 
 #durationbox {
@@ -523,12 +533,11 @@ header .nav-login a {
 }
 
 #duration {
-	width: 22px;
+	width: 86%;
 }
 
 #eventdetails {
 	flex: 1;
-	margin-top: 16px;
 }
 
 #signupeventbutton {
@@ -545,9 +554,8 @@ header .nav-login a {
 
 #viewEventMap {
 	height: 200px;
-	flex: 2;
+	flex: 1;
 	border-radius: 9px;
-	margin-top: 14px;
 	border: 1px solid #3F3077;
 }
 
