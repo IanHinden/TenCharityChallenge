@@ -94,12 +94,15 @@
 			</div>
 			<div id="createdby">
 				<p>Event host: <a href="https://www.tencharitychallenge.com/user/'.$eventcreatorid.'">'.$firstname.' '.$lastname.'</a></p>
-			</div>
-			<div>
-				<p id="editEvent">Edit</p>
-                        	<input type="submit">
-			</div>
-                        </form>';
+			</div>';
+			
+			if($permission == 1){
+				echo '<div>
+					<p id="editEvent">Edit</p>
+                        		<input type="submit">
+				</div>';
+			}
+                        echo '</form>';
 
 			if (count($set) > 0) {
 
