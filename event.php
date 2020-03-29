@@ -174,18 +174,6 @@
 				echo '<a id="prev" class="prev">&#10094;</a>
                                       <a id="next" class="next">&#10095;</a>';
 				echo '</div></div>';
-
-				foreach ($eventImages as $key => $item){
-					$uniqId = $item['uniq_id'];
-                                        $imageName = $item['image_name'];
-
-                                        $imageURL = "<img class='eventimagethumb' src='https://tencharity.s3-us-west-2.amazonaws.com/event/" . $eventId. "/" . $uniqId . $imageName . "'>";
-                                        //echo "<img class='eventimage' src='https://tencharity.s3-us-west-2.amazonaws.com/event/'".$eventId."'/'" .$uniqId . $image_name'">";
-                                        echo "<div id='$key' class='eventimagethumbcontainers'>";
-                                        echo $imageURL;
-					echo "</div>";
-                                }
-
 				echo '</div>';
 
 				if ($permission == 1 || $permission == 2) {
@@ -195,9 +183,21 @@
 					<input type="hidden" name="eventId" value="'. $eventId.'"/>
                         		<button type="submit" value="Upload Image" name="submit">Submit</button></form></div>';
 
-					echo '<div id="drop_zone" ondrop="dropHandler(event);" ondragover="dragOverHandler(event);">
-  						<p>Drag one or more files to this Drop Zone ...</p>
-						</div>';
+					echo '<div id="drop_zone" ondrop="dropHandler(event);" ondragover="dragOverHandler(event);" ondragleave="dragLeaveHandler(event);">
+  						<p>Drag one or more files to this Drop Zone ...</p>';
+
+						foreach ($eventImages as $key => $item){
+                                        	$uniqId = $item['uniq_id'];
+                                        	$imageName = $item['image_name'];
+						
+						$imageURL = "<img class='eventimagethumb' src='https://tencharity.s3-us-west-2.amazonaws.com/event/" . $eventId. "/" . $uniqId . $imageName . "'>";
+						echo "<div id='$key' class='eventimagethumbcontainers'>";
+                                        	echo $imageURL;
+                                        	echo "</div>";
+	                                	}
+
+
+						echo '</div>';
 
 				echo '</div></div></div></div>';
 				}

@@ -305,8 +305,6 @@ $(document).ready(function(){
 });
 
 function dragOverHandler(e) {
-	console.log('File(s) in drop zone'); 
-
 	let zone = document.getElementById("drop_zone");
 	zone.style.border = "2px dashed black";
   	// Prevent default behavior (Prevent file from being opened)
@@ -314,17 +312,21 @@ function dragOverHandler(e) {
 }
 
 function dropHandler(ev) {
-  console.log('File(s) dropped');
-  var filesToUpload = document.getElementById("fileToUpload");
+  	var filesToUpload = document.getElementById("fileToUpload");
 
-  // Prevent default behavior (Prevent file from being opened)
-  ev.preventDefault();
-  ev.stopPropagation();
+  	// Prevent default behavior (Prevent file from being opened)
+  	ev.preventDefault();
+  	ev.stopPropagation();
 
-  console.log(ev);
-  filesToUpload.files = ev.dataTransfer.files;
+  	filesToUpload.files = ev.dataTransfer.files;
 }
 
+function dragLeaveHandler(e) {
+	let zone = document.getElementById("drop_zone");
+        zone.style.border = "none";
+	// Prevent default behavior (Prevent file from being opened)
+        e.preventDefault();
+}
 
 
 //Display proper button to interact with events
