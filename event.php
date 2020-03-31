@@ -18,8 +18,8 @@
 			if(isset($_SESSION['u_id'])) {
         			$userId = $_SESSION['u_id'];
 			} else {
+				//There is no user
 				$permission = 0;
-				echo "There is no user";
 			}
 			//0 means not signed in, 1 means creator, 2 means involved, 3 means not signed up,
 
@@ -135,7 +135,9 @@
 					echo '<script type="text/javascript">',
                                                 'properEventButton(0);',
                                         '</script>';
-					echo "Feel free to log your hours by signing up for this site!";
+					echo '<div id="calltoaction">
+						<p>Want to log your volunteer hours for this event? Sign up <a href="https://tencharitychallenge.com/signup.php">here!</a></p>
+						</div>';
 				} elseif ($permission == 1){
 					echo "You made this";
 					echo '<script type="text/javascript">',

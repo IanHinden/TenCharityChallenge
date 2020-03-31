@@ -559,6 +559,14 @@ header .nav-login a {
 	border: 1px solid #3F3077;
 }
 
+#createdby {
+	text-align: center;
+	font-size: 19px;
+	font-family: 'Noto Serif JP', sans-serif;
+	font-weight: bold;
+	padding-bottom: 17px;
+}
+
 .eventimage {
 	display: inline-block;
 }
