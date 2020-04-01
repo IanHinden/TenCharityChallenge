@@ -223,21 +223,21 @@ $(document).ready(function(){
         });
 
 	$('.confirmevent').submit(function() {
-		console.log("It works!");
 		var req = new XMLHttpRequest();
 		req.open("post", this.action);
 		req.send(new FormData(this));
 		//var btn = document.getElementById(this.childNodes[2].nextSibling.id);
 		//btn.disabled = true;
+		this.properEventButton(2);
 		return false;
 	});
 
 	$('.cancelattendevent').submit(function() {
-		console.log("It's being clicked");
 		var data = new FormData();
                 var req = new XMLHttpRequest();
                 req.open('post', this.action);
                 req.send(new FormData(this));
+		this.properEventButton(3);
 		return false;
         });
 
