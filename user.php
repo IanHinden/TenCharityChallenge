@@ -46,9 +46,7 @@
                                 	echo "These users have no relationships";
                         	}
 
-                        } else {
-                                echo "There is no user";
-                    	}
+                        }
 			
 			if ($resultCheck > 0) {
 				echo '<div id="maincontent">';
