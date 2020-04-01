@@ -463,11 +463,21 @@ header .nav-login a {
 @media (max-width:667px)  { 
 
 	.main-container {
-		height: 550px;
+		padding-top: 56px;
 	}
 
 	.main-container-text {
-		padding: 39px;
+		padding: 25px;
+	}
+
+	.main-container-text h2 {
+		font-size: 12px;
+		line-height: 25px;
+	}
+
+	.main-container-text h3 {
+		font-size: 17px;
+		line-height: 30px;
 	}
 }
 
