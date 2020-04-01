@@ -38,8 +38,13 @@
 							$permission = 3;
 						}
 					} else {
-						echo "This user is involved, but not the creator";
-						$permission = 2;
+						if ($row['completed'] !=-1) {
+							echo "This user is involved, but not the creator";
+							$permission = 2;
+						} else {
+							echo "This user was signed up but left";
+							$permission = 3;
+						}
 					}
                 		}
         		} elseif ($permission != 0) {
@@ -115,7 +120,7 @@
                                 <input id="cancel'.$eventId.'" type="submit" name="cancelevent" value="Cancel Event" /></form>';
 
 				//Leave event
-				echo '<form action="../includes/cancelattendevent.inc.php" class="cancelattendevent" method="post" id="leaveeventbutton"/>
+				echo '<form action="/includes/cancelattendevent.inc.php" class="cancelattendevent" method="post" id="leaveeventbutton"/>
 				<input type="hidden" name="eventid" value="'. $eventId.'"/>
 				<input id="leave'.$eventId.'" type="submit" name="cancelattendevent" value="Cancel Attendance" /></form>';
 
