@@ -26,7 +26,7 @@
 			</span>
 			<div class="navlink">
 				<div id="header-items">
-					<p>Ten Charity Challenge</p>
+					<div id="logoandtitle"><img src="https://tencharity.s3-us-west-2.amazonaws.com/images/logos/10CC.png"></img><p>Ten Charity Challenge</p></div>
 						<?php
 							if (isset($_SESSION['u_id'])){
 								echo '<div id="friendrequestsicon"><img src="https://community.cengage.com/Chilton2/utility/anonymous.gif">';

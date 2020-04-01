@@ -159,14 +159,28 @@ header nav {
 	padding: 0px 65px 0px 83px;
 }
 
-header nav p {
+#logoandtitle {
 	float: left;
+	display: inline-block;
+	height: 59px;
+	line-height: 57px;
+}
+
+#logoandtitle img {
+	display: inline-block;
+	vertical-align: middle;
+	border-radius: 5px;
+	height: 40px;
+	width: 40px;
+}
+
+header nav p {
+	display: inline-block;
 	padding-left: 12px;
 	font-weight: bold;
 	font-family: 'Montserrat', sans-serif;
 	font-size: 16px;
-	color: white;
-	line-height: 63px;   
+	color: white;   
 }
 
 header nav ul li a {
