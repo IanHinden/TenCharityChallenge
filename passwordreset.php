@@ -8,7 +8,7 @@ $selector = $_GET['selector'];
 $validator = $_GET['validator'];
 $date = date('Y-m-d H:i:s');
 
-echo '<br><br><br><br>';
+echo '<div id="passwordresetcontent">';
 
 if(isset($selector)) {
 
@@ -42,4 +42,6 @@ echo '<form class="password-reset-form" action="includes/passwordreset.inc.php" 
         <input type="text" name="email" placeholder="E-mail Address"><br>
 	<button type="submit" value="submit" name="submit">Submit</button></form>';
 }
+
+echo '</div>';
 ?>

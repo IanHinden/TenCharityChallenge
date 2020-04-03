@@ -487,6 +487,13 @@ header .nav-login a {
 	text-align: center;
 }
 
+/*Password Reset Page*/
+#passwordresetcontent {
+	padding-top: 61px;
+	background-image: linear-gradient(to bottom, rgb(218, 214, 234), rgba(255, 255, 255, 0.73)),url(https://i0.wp.com/www.intelligentliving.co/wp-content/uploads/2019/08/Planting-trees.jpg?w=1751&ssl=1);
+	height: 200px;
+}
+
 /*Event Page */
 #pagecontent {
 	margin-top: 44px;
