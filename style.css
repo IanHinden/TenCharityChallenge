@@ -1045,7 +1045,19 @@ header .nav-login a {
 }
 
 /*eventsearch.php*/
+#searcheventcontent {
+	padding-top: 60px;
+	background-image: linear-gradient(to bottom, rgb(218, 214, 234), rgba(255, 255, 255, 0.73)),url(https://i0.wp.com/www.intelligentliving.co/wp-content/uploads/2019/08/Planting-trees.jpg?w=1751&ssl=1);
+}
+
+#formandmap {
+	max-width: 720px;
+	margin: 0 auto;
+	padding-top: 44px;
+}
+
 #searchmap {
 	height: 300px;
-	width: 300px
+	width: 100%;
+	border-radius: 8px;
 }

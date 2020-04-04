@@ -8,29 +8,30 @@
 ?>
 
 
-<br><br><br><br>
-<br><br><br><br><br><br>
-<select id="eventdistance">
-	<option value="10">10</option>
-        <option value="8">8</option>
-        <option value="6">6</option>
-        <option value="4">4</option>
-</select>
-<input type="date" id="fromDate" name="fromDate"></input>
-<input type="date" id="toDate" name="toDate"></input>
-<select id="cause">
-	<option value="All">All</option>
-	<option value="Animals">Animals</option>
-	<option value="Food Bank">Food Bank</option>
-</select>
-<input id="refreshMap" type="button" value="Search" onclick="initMap();" />
-
+<div id="searcheventcontent">
+	<div id="formandmap">
+		<select id="eventdistance">
+			<option value="10">10</option>
+	        	<option value="8">8</option>
+	        	<option value="6">6</option>
+	        	<option value="4">4</option>
+		</select>
+		<input type="date" id="fromDate" name="fromDate"></input>
+		<input type="date" id="toDate" name="toDate"></input>
+		<select id="cause">
+			<option value="All">All</option>
+			<option value="Animals">Animals</option>
+			<option value="Food Bank">Food Bank</option>
+		</select>
+		<input id="refreshMap" type="button" value="Search" onclick="initMap();" />
 
 <?php
 
 	echo '<div id="searchmap"></div>';
 
 ?>
+	</div>
+</div>
 
 
 <?php
