@@ -21,34 +21,46 @@
 				$sql = "SELECT * FROM relationships WHERE user_one_id = '".$lower."' AND user_two_id = '".$higher."';";
                         	$result = mysqli_query($conn, $sql);
                         	$resultCheck = mysqli_num_rows($result);
+				$status = null;
+				$currentUserRequested = null;
 
 				if ($resultCheck > 0) {
                                 	while ($row = mysqli_fetch_assoc($result)) {
+						$status = $row['status'];
                                         	if ($row['action_user_id'] == $userId ) {
+							$currentUserRequested = true;
 							if ($row['status'] == 0) {
+								$status = 0;
 								echo "Logged in user sent friend request";
 							} else if ($row['status'] == 1) {
+								$status = 1;
 								echo "Logged in user confirmed friend request";
 							} else if ($row['status'] == 2) {
+								$status = 2;
 								echo "Logged in user rejected friend request";
 							}
                                         	} else {
+							$currentUserRequested = false;
                                                         if ($row['status'] == 0) {
+								$status = 0;
                                                                 echo "Profile user sent friend request";
                                                         } else if ($row['status'] == 1) {
+								$status = 1;
                                                                 echo "Profile user confirmed friend request";
                                                         } else if ($row['status'] == 2) {
+								$status = 2;
                                                                 echo "Profile user rejected friend request";
                                                         }
                                         	}
                                 	}
                         	} else {
+					$status = -1;
                                 	echo "These users have no relationships";
                         	}
 
                         }
-			
-			if ($resultCheck > 0) {
+
+			if (isset($_SESSION['u_id'])) {
 				echo '<div id="maincontent">';
 				echo '<div id="dashboard">
 					<div id="dashboardcontent">
@@ -75,6 +87,33 @@
 								echo $row['user_first'] . " " . $row['user_last'];
 								echo '</div>';
 							}
+
+							echo '<div id="requestbox">';
+								echo '<form action="/addfriend.php" class="addfriend" id="add'. $usernumber.'" method="post" />
+                                				<input type="hidden" name="usernumber" value="'. $profileId.'"/>
+                                				<input id="add'.$profileId.'" type="submit" name="addfriend" value="Add Friend" />
+                                				</form>';
+
+                                				echo '<input id="sent'. $profileId.'" type="submit" value="Friend Request Submitted" disabled="true" />';
+
+                                				echo '<div id="acceptreject'. $profileId.'">' .
+
+                                        			'<form action="/confirmfriend.php" class="confirmfriend" method="post" />
+                                        			<input type="hidden" name="userid" value="'. $profileId.'"/>
+                                        			<input id="'.$profileId.'" type="submit" name="confirmfriend" value="Confirm Friend" />
+                                        			</form></li>' .
+
+                                        			'<form action="/rejectfriend.php" class="rejectfriend" method="post" />
+                                        			<input type="hidden" name="userid" value="'. $profileId.'"/>
+                                        			<input id="'.$profileId.'" type="submit" name="rejectfriend" value="Reject Friend" />
+                                         			</form></li></div>';
+
+                                				echo '<input id="remove'. $profileId.'" type="submit" value="Remove Friend" />';
+							echo '</div>';
+
+						echo '<script type="text/javascript">',
+                                                        'properButton('. $profileId. ', '. $status.', '. json_encode($currentUserRequested) .');',
+                                                '</script>';
 
 						echo '<div id="scores">
 							<div id="volunteerscorespace"><div id="volunteerscore" class="scorecard"><p>Volunteer Hours:<p>';
@@ -116,7 +155,7 @@
 	</div>';
 				echo '</div>';
 			} else {
-				header("Location: http://www.tencharitychallenge.com/");
+-                               header("Location: http://www.tencharitychallenge.com/");
 			}
 		?>
 	</body>
