@@ -65,8 +65,9 @@
 							} else {
 								echo "<img id='profileimage' src='../uploads/profiledefault.jpg'>";
 							}
+							echo '</div>';
 
-						        $sql = "SELECT * FROM users WHERE user_id = '".$profileId."';";                                                         
+						        $sql = "SELECT * FROM users WHERE user_id = '".$profileId."';";
 							$result = mysqli_query($conn, $sql);
                         				$resultCheck = mysqli_num_rows($result);
 							while ($row = mysqli_fetch_assoc($result)) {
