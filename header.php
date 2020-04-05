@@ -64,7 +64,7 @@
 									}
 									echo '</div>';
 
-									echo '<a class="requestitem" href="https://tencharitychallenge.com/user/' . $userid . '">' . $firstname. ' ' . $lastname . '</a>' . 
+									echo '<a class="requestitem" href="https://www.tencharitychallenge.com/user/' . $userid . '">' . $firstname. ' ' . $lastname . '</a>' . 
 									'<form class="requestitem" action="/confirmfriend.php" class="confirmfriend" method="post" />
 									<input type="hidden" name="userid" value="'. $userid.'"/>
 									<input id="'.$userid.'" type="submit" name="confirmfriend" value="Confirm Friend" />
