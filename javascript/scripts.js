@@ -356,14 +356,14 @@ function properButton(id, status, currentUserRequested){
 	var removeFriend = document.getElementById("remove" + id);
 	
 	if(status == -1){
-		addDiv.style.display = "block";
+		addDiv.style.display = "inline";
 		requestSent.style.display = "none";
 		acceptreject.style.display = "none";
 		removeFriend.style.display = "none";
 	} else if (status == 0) {
 		if (currentUserRequested == true) {
 			addDiv.style.display = "none";
-			requestSent.style.display = "block";
+			requestSent.style.display = "inline";
 			acceptreject.style.display = "none";
 			removeFriend.style.display = "none";
 		} else {
@@ -373,20 +373,20 @@ function properButton(id, status, currentUserRequested){
 			removeFriend.style.display = "none";
 		}
 	} else if (status == 1) {
-		removeFriend.style.display = "block";
+		removeFriend.style.display = "inline";
 		addDiv.style.display = "none";
 		requestSent.style.display = "none";
 		acceptreject.style.display = "none";
 	} else if (status == 2 ) {
 		if (currentUserRequested == true) {
-			addDiv.style.display = "block";
+			addDiv.style.display = "inline";
 			requestSent.style.display = "none";
 			acceptreject.style.display = "none";
 			removeFriend.style.display = "none";
                 } else {
                         acceptreject.style.display = "none";
                         addDiv.style.display = "none";
-			requestSent.style.display = "block";
+			requestSent.style.display = "inline";
 			removeFriend.style.display = "none";
 		}
 	}
