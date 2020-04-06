@@ -24,7 +24,8 @@ if (isset($_SESSION['u_id'])){
 	if ($name !=""){
 		while ($row = mysqli_fetch_array($result)){
 				$usernumber = $row['user_id'];
-				echo $usernumber;
+				$userfirst = $row['user_first'];
+				$userlast = $row['user_last'];
 
 				//Profile Image
 				echo '<div class="searchprofilepic">';
@@ -34,14 +35,15 @@ if (isset($_SESSION['u_id'])){
 				if ($rowresults > 0) {
 					while ($row = mysqli_fetch_assoc($resultImg)){
 						echo "<img class='searchprofileimage' src='https://tencharity.s3-us-west-2.amazonaws.com/profilepicture/" . $usernumber .  "/". $row['uniq_id']. $row['image_name'] . "'>";
-						}
+					}
 				} else {
 					echo "<img class='searchprofileimage' src='uploads/profiledefault.jpg'>";
 				}
 				echo '</div>';
+				echo '<div>';
+					echo $userfirst . " " . $userlast;
+				echo '</div>';
 
-				echo $row['user_first'] . " " . $row['user_last'];
-				
 				echo '<form action="/addfriend.php" class="addfriend" id="add'. $usernumber.'" method="post" />
 				<input type="hidden" name="usernumber" value="'. $usernumber.'"/>
 				<input id="'.$usernumber.'" type="submit" name="addfriend" value="Add Friend" />
