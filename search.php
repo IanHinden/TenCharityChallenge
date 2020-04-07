@@ -17,9 +17,9 @@ if (isset($_SESSION['u_id'])){
 	$names = explode(" ", $name);
 
 	if(strpos($name, ' ') !== false) {
-		$result = mysqli_query($conn, "SELECT * FROM users WHERE user_first LIKE '%$names[0]%' OR user_last LIKE '%$names[1]'");
+		$result = mysqli_query($conn, "SELECT * FROM users WHERE user_id <> '$current' AND (user_first LIKE '%$names[0]%' OR user_last LIKE '%$names[1]')");
 	} else {
-		$result = mysqli_query($conn, "SELECT * FROM users WHERE user_first LIKE '%$name%' OR user_last LIKE '%$name%'");
+		$result = mysqli_query($conn, "SELECT * FROM users WHERE user_id <> '$current' AND (user_first LIKE '%$name%' OR user_last LIKE '%$name%')");
 	}
 	if ($name !=""){
 		while ($row = mysqli_fetch_array($result)){
