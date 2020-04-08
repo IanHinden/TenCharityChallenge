@@ -56,13 +56,13 @@
 			echo '</div></div>
 			</div></div></div></div>
 			<div id="navbar">
-				<form method="post" action="/search.php">
+				<form class="navbutton" method="post" action="/search.php">
     					<input type="submit" value="SEARCH FRIENDS" />
 				</form>
-				<form method="post" action="/eventsearch.php">
+				<form class="navbutton" method="post" action="/eventsearch.php">
                                         <input type="submit" value="SEARCH EVENTS" />
                                 </form>
-				<form method="post" action="/addevent.php">
+				<form class="navbutton" method="post" action="/addevent.php">
                                         <input type="submit" value="CREATE EVENT" />
                                 </form>';
 			
