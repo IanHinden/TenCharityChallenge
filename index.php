@@ -55,10 +55,18 @@
 			echo '<span class="inspirationcount">' . $inspirationScore . '</span>';
 			echo '</div></div>
 			</div></div></div></div>
-			<div id="navbar"><ol><li><a href="/search.php">Find Events</a></li><li>Find Friends</li>';
+			<div id="navbar">
+				<form method="post" action="/search.php">
+    					<input type="submit" value="SEARCH FRIENDS" />
+				</form>
+				<form method="post" action="/eventsearch.php">
+                                        <input type="submit" value="SEARCH EVENTS" />
+                                </form>
+				<form method="post" action="/addevent.php">
+                                        <input type="submit" value="CREATE EVENT" />
+                                </form>';
 			
-			echo '
-			</ol></div>';
+			echo '</div>';
 			
 			$sql = "SELECT * FROM events JOIN eventrelationships ON events.event_id = eventrelationships.event_id WHERE completed >= 0 AND user_id = '".$_SESSION['u_id']."';";
 			$result = mysqli_query($conn, $sql);
