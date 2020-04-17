@@ -14,7 +14,7 @@
 		</ul>
 	</div>
 	<div id="copyright">
-		<p>2020 Ten Charity Challenge. All rights reserved.</p>
+		<p>©2020 Ten Charity Challenge. All rights reserved.</p>
 	</div>
 </div>
 	    <script src="https://maps.googleapis.com/maps/api/js?callback=initialize&libraries=places&key=AIzaSyDPrre9KNRhtCUFIH3Do1c7va4L0v91lFs" async defer></script>
