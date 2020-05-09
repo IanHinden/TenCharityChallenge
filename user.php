@@ -87,33 +87,36 @@
 								echo $row['user_first'] . " " . $row['user_last'];
 								echo '</div>';
 							}
+							
+							if($profileId != $userId){
+								echo '<div id="requestbox">';
+									echo '<form action="/addfriend.php" class="addfriend" id="add'. $usernumber.'" method="post" />
+                                					<input type="hidden" name="usernumber" value="'. $profileId.'"/>
+                                					<input id="add'.$profileId.'" type="submit" name="addfriend" value="Add Friend" />
+                                					</form>';
 
-							echo '<div id="requestbox">';
-								echo '<form action="/addfriend.php" class="addfriend" id="add'. $usernumber.'" method="post" />
-                                				<input type="hidden" name="usernumber" value="'. $profileId.'"/>
-                                				<input id="add'.$profileId.'" type="submit" name="addfriend" value="Add Friend" />
-                                				</form>';
+                                					echo '<input id="sent'. $profileId.'" type="submit" value="Friend Request Submitted" disabled="true" />';
 
-                                				echo '<input id="sent'. $profileId.'" type="submit" value="Friend Request Submitted" disabled="true" />';
+                                					echo '<div id="acceptreject'. $profileId.'">' .
 
-                                				echo '<div id="acceptreject'. $profileId.'">' .
+                                        				'<form action="/confirmfriend.php" class="confirmfriend" method="post" />
+                                        				<input type="hidden" name="userid" value="'. $profileId.'"/>
+                                        				<input id="'.$profileId.'" type="submit" name="confirmfriend" value="Confirm Friend" />
+                                        				</form></li>' .
 
-                                        			'<form action="/confirmfriend.php" class="confirmfriend" method="post" />
-                                        			<input type="hidden" name="userid" value="'. $profileId.'"/>
-                                        			<input id="'.$profileId.'" type="submit" name="confirmfriend" value="Confirm Friend" />
-                                        			</form></li>' .
+                                        				'<form action="/rejectfriend.php" class="rejectfriend" method="post" />
+                                        				<input type="hidden" name="userid" value="'. $profileId.'"/>
+                                        				<input id="'.$profileId.'" type="submit" name="rejectfriend" value="Reject Friend" />
+                                         				</form></li></div>';
 
-                                        			'<form action="/rejectfriend.php" class="rejectfriend" method="post" />
-                                        			<input type="hidden" name="userid" value="'. $profileId.'"/>
-                                        			<input id="'.$profileId.'" type="submit" name="rejectfriend" value="Reject Friend" />
-                                         			</form></li></div>';
+                                					echo '<input id="remove'. $profileId.'" type="submit" value="Remove Friend" />';
+								echo '</div>';
+							
 
-                                				echo '<input id="remove'. $profileId.'" type="submit" value="Remove Friend" />';
-							echo '</div>';
-
-						echo '<script type="text/javascript">',
-                                                        'properButton('. $profileId. ', '. $status.', '. json_encode($currentUserRequested) .');',
-                                                '</script>';
+								echo '<script type="text/javascript">',
+                                                        		'properButton('. $profileId. ', '. $status.', '. json_encode($currentUserRequested) .');',
+                                                		'</script>';
+							}
 
 						echo '<div id="scores">
 							<div id="volunteerscorespace"><div id="volunteerscore" class="scorecard"><p>Volunteer Hours:<p>';
