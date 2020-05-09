@@ -541,6 +541,7 @@ var customLabel = {
 					lat: p.coords.latitude,
                                 	lng: p.coords.longitude
                         	};
+			map.setCenter(position);
 			infoWindow.setPosition(position);
                         infoWindow.setContent('Your current location');
 			infoWindow.open(map);
