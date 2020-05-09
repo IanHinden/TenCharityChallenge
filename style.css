@@ -494,6 +494,11 @@ header .nav-login a {
 	height: 200px;
 }
 
+/*Add Event page*/
+#addeventform {
+	padding-top: 80px;
+}
+
 /*Event Page */
 #pagecontent {
 	margin-top: 44px;

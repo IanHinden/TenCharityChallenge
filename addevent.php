@@ -5,7 +5,7 @@
 
 <?php
 	if (isset($_SESSION['u_id'])){
-		echo '<form action="includes/addevent.inc.php" method="POST">
+		echo '<div id="addeventform"><form action="includes/addevent.inc.php" method="POST">
 			<input id="search" type="text" name="avenue" placeholder="Search...">
 			<input type="text" name="info" placeholder="Info">
 			<input type="text" name="length" placeholder="Length">
@@ -19,7 +19,7 @@
 			<input type="hidden" id="long" name="long" step="any">
         		<div id="map"></div>
         		<button type="submit" name="submit">Create Event</button>
-		</form>';
+		</div></form>';
 	} else {
 		header("Location: ../index.php");
 	}
