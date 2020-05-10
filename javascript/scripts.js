@@ -594,6 +594,7 @@ var customLabel = {
 		locationp.appendChild(location);
 
 		let infodiv = document.getElementById("eventdetails");
+		infodiv.innerHTML = "";
 		infodiv.appendChild(locationp);
               });
 	      }
