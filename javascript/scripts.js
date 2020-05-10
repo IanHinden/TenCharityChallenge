@@ -571,12 +571,12 @@ var customLabel = {
                   parseFloat(markerElem.getAttribute('longit')));
               var infowincontent = document.createElement('div');
               var strong = document.createElement('strong');
-              strong.textContent = id
+              strong.textContent = eventDate
               infowincontent.appendChild(strong);
               infowincontent.appendChild(document.createElement('br'));
 
               var text = document.createElement('text');
-              text.textContent = avenue
+              text.textContent = avenue;
               infowincontent.appendChild(text);
               //var icon = customLabel[type] || {};
               if((eventTypeFilter == 'All' || cause == eventTypeFilter) && ((fromDate < eventDateObject) && (eventDateObject < toDate))){
@@ -593,9 +593,13 @@ var customLabel = {
 		let location = document.createTextNode(avenue);
 		locationp.appendChild(location);
 
-		let infodiv = document.getElementById("eventdetails");
+		let infodiv = document.getElementById("searcheventdetails");
 		infodiv.innerHTML = "";
 		infodiv.appendChild(locationp);
+		
+		infodiv.addEventListener("click", function(){
+			document.location.href = 'https://www.tencharitychallenge.com/event/' + id;
+		});
               });
 	      }
             });

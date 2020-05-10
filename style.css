@@ -1034,7 +1034,8 @@ header .nav-login a {
 
 /*eventsearch.php*/
 #searcheventcontent {
-	padding-top: 60px;
+	padding-top: 41px;
+	padding-bottom: 24px;
 	background-image: linear-gradient(to bottom, rgb(218, 214, 234), rgba(255, 255, 255, 0.73)),url(https://i0.wp.com/www.intelligentliving.co/wp-content/uploads/2019/08/Planting-trees.jpg?w=1751&ssl=1);
 }
 
@@ -1048,4 +1049,17 @@ header .nav-login a {
 	height: 300px;
 	width: 100%;
 	border-radius: 8px;
+}
+
+#eventdetailssection {
+	max-width: 720px;
+	margin: 0 auto;
+}
+
+#searcheventdetails {
+	border: 1px solid black;
+	border-radius: 8px;
+	height: 64px;
+	padding: 10px;
+	margin-top: 19px;
 }

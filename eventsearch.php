@@ -32,9 +32,10 @@
 ?>
 	</div>
 </div>
-<div id="eventdetails">
+<div id="eventdetailssection">
+	<div id="searcheventdetails">
+	</div>
 </div>
-
 
 <?php
 	include_once 'footer.php';
