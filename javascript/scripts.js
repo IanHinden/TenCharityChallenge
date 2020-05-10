@@ -589,6 +589,12 @@ var customLabel = {
               marker.addListener('click', function() {
                 infoWindow.setContent(infowincontent);
                 infoWindow.open(map, marker);
+		let locationp = document.createElement("p");
+		let location = document.createTextNode(avenue);
+		locationp.appendChild(location);
+
+		let infodiv = document.getElementById("eventdetails");
+		infodiv.appendChild(locationp);
               });
 	      }
             });
