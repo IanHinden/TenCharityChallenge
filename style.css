@@ -1056,10 +1056,11 @@ header .nav-login a {
 	margin: 0 auto;
 }
 
-#searcheventdetails {
+.searchdetailscontent {
 	border: 1px solid black;
 	border-radius: 8px;
 	height: 64px;
 	padding: 10px;
 	margin-top: 19px;
+	cursor: pointer;
 }

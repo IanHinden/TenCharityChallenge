@@ -589,13 +589,19 @@ var customLabel = {
               marker.addListener('click', function() {
                 infoWindow.setContent(infowincontent);
                 infoWindow.open(map, marker);
+
+		//Create content
+		let content = document.createElement("div");
+		content.classList.add("searchdetailscontent");
+
 		let locationp = document.createElement("p");
-		let location = document.createTextNode(avenue);
+		let location = document.createTextNode("Location: " + avenue);
 		locationp.appendChild(location);
+		content.appendChild(location);
 
 		let infodiv = document.getElementById("searcheventdetails");
 		infodiv.innerHTML = "";
-		infodiv.appendChild(locationp);
+		infodiv.appendChild(content);
 		
 		infodiv.addEventListener("click", function(){
 			document.location.href = 'https://www.tencharitychallenge.com/event/' + id;
