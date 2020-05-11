@@ -164,6 +164,7 @@ header nav {
 	display: inline-block;
 	height: 59px;
 	line-height: 57px;
+	cursor: pointer;
 }
 
 #logoandtitle img {
