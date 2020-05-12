@@ -17,6 +17,13 @@
   		die('Invalid query: ' . mysql_error());
 	}
 
+	$http_origin = $_SERVER['HTTP_ORIGIN'];
+
+	if ($http_origin == "https://www.tencharitychallenge.com" || $http_origin == "https://tencharitychallenge.com")
+		{
+    			header("Access-Control-Allow-Origin: $http_origin");
+		}
+
 	header("Content-type: text/xml");
 
 	// Iterate through the rows, adding XML nodes for each
