@@ -5,7 +5,7 @@
 if (isset($_SESSION['u_id'])){
 
 	echo '<div id="searchpagecontent">
-	<form action="" method="post">
+	<form id="searchform" action="" method="post">
 	<input type="text" name="search">
 	<input type="submit" name="submit" value="Search">
 	</form>';
@@ -28,20 +28,20 @@ if (isset($_SESSION['u_id'])){
 				$userlast = $row['user_last'];
 
 				//Profile Image
-				echo '<div class="searchprofilepic">';
+				echo '<div class="searchresult"><div class="searchprofilepic">';
 				$sqlImg = "SELECT * FROM profilepicturelocation WHERE user_id = '".$row['user_id']."' AND current = 1;";
 				$resultImg = mysqli_query($conn, $sqlImg);
 				$rowresults = mysqli_num_rows($resultImg);
 				if ($rowresults > 0) {
 					while ($row = mysqli_fetch_assoc($resultImg)){
-						echo "<img class='searchprofileimage' src='https://tencharity.s3-us-west-2.amazonaws.com/profilepicture/" . $usernumber .  "/". $row['uniq_id']. $row['image_name'] . "'>";
+						echo "<a href='https://www.tencharitychallenge.com/user/".$usernumber."'><img class='searchprofileimage' src='https://tencharity.s3-us-west-2.amazonaws.com/profilepicture/" . $usernumber .  "/". $row['uniq_id']. $row['image_name'] . "'></a>";
 					}
 				} else {
-					echo "<img class='searchprofileimage' src='uploads/profiledefault.jpg'>";
+					echo "<a href='https://www.tencharitychallenge.com/user/".$usernumber."'><img class='searchprofileimage' src='uploads/profiledefault.jpg'></a>";
 				}
 				echo '</div>';
 				echo '<div>';
-					echo $userfirst . " " . $userlast;
+				echo '<a href="https://www.tencharitychallenge.com/user/'.$usernumber.'">'.$userfirst.' '.$userlast.'</a>';
 				echo '</div>';
 
 				echo '<form action="/addfriend.php" class="addfriend" id="add'. $usernumber.'" method="post" />
@@ -64,6 +64,7 @@ if (isset($_SESSION['u_id'])){
                                          </form></li></div>';
 
 				echo '<input id="remove'. $usernumber.'" type="submit" value="Remove Friend" />';
+				echo '</div>';
 
 				if ($current < $usernumber){
                                         $lower = $current;

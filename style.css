@@ -488,6 +488,19 @@ header .nav-login a {
 	text-align: center;
 }
 
+#searchform {
+	height: 37px;
+}
+
+.searchresult {
+	width: 500px;
+	border: 1px solid purple;
+	margin: 4px auto;
+	border-radius: 8px;
+	padding: 6px;
+	
+}
+
 /*Password Reset Page*/
 #passwordresetcontent {
 	padding-top: 61px;
@@ -496,8 +509,12 @@ header .nav-login a {
 }
 
 /*Add Event page*/
-#addeventform {
-	padding-top: 80px;
+#addEventLabel {
+	padding-top: 33px;
+	padding-bottom: 12px;
+	font-size: 26px;
+	font-family: 'Noto Serif JP', sans-serif;
+	font-weight: bold;
 }
 
 /*Event Page */
