@@ -60,7 +60,7 @@
 											echo "<img id='profileimage' src='https://tencharity.s3-us-west-2.amazonaws.com/profilepicture/" . $userid .  "/". $row['uniq_id']. $row['image_name'] . "'>";
 										}
 									} else {
-										echo "<img id='profileimage' src='uploads/profiledefault.jpg'>";
+										echo "<img id='profileimage' src='../uploads/profiledefault.jpg'>";
 									}
 									echo '</div>';
 
