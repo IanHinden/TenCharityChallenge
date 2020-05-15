@@ -73,10 +73,10 @@
 			echo $lastname;
 
 			//Check if event is future
-			$future = true;
+			$passedEvent = false;
 
 			if(new DateTime($datetime) < $now){
-				$future = false;
+				$passedEvent = true;
 			}
 
 			$datetime = strtotime($datetime);
