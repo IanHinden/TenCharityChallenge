@@ -157,6 +157,67 @@
 		</div>
 	</div>';
 				echo '</div>';
+		echo '<div id="friendevents">';
+
+		if ($status == 1 || ($currentUserRequested == false && $status == 0)) {
+			$sql = "SELECT * FROM events JOIN eventrelationships ON events.event_id = eventrelationships.event_id WHERE completed >= 0 AND user_id = '".$profileId."';";
+			$result = mysqli_query($conn, $sql);
+			$resultCheck = mysqli_num_rows($result);
+			$todayDate = new DateTime();
+
+			for ($set = array (); $row = mysqli_fetch_assoc($result); $set[] = $row);
+			
+			echo '<div id="upcomingevents">Upcoming Events';
+
+			foreach ($set as $item){
+				if(new DateTime($item['datetime_local']) > $todayDate){
+					$eventinfo = $item['event_info'];
+					$eventid = $item['event_id'];
+					echo '<a href="https://tencharitychallenge.com/event/' . $eventid . '">' . $eventinfo. '</a>';
+                                        echo '<form action="includes/cancelattendevent.inc.php" class="cancelattendevent" method="post" />
+                                        <input type="hidden" name="eventid" value="'. $eventid.'"/>
+                                        <input id="'.$eventid.'" type="submit" name="cancelattendevent" value="Cancel Attendance" />
+                                        </form></li>';
+					echo '<br>';
+				}
+			}
+			echo '</div>';
+
+			echo '<div id="previousevents">Previous Events';
+			foreach ($set as $item){
+				if(new DateTime($item['datetime_local']) < $todayDate){
+					$eventinfo = $item['event_info'];
+					$eventid = $item['event_id'];
+					$completed = $item['completed'];
+
+					echo '<a href="https://tencharitychallenge.com/event/' . $eventid . '">' . $eventinfo. '</a>';
+					if($completed == 0){
+						echo '<form action="includes/confirmcompletedevent.inc.php" class="confirmcompletedevent" method="post" />
+                                        	<input type="hidden" name="eventid" value="'. $eventid.'"/>
+                                        	<input id="'.$eventid.'" type="submit" name="confirmcompletedevent" value="Confirm Completion" />
+                                        	</form></li>';
+					} else {
+						echo 'You completed this!';
+					}
+
+					echo '<br>';
+                                }
+                        }
+                        echo '</div>';
+
+			
+			echo '</div>';
+
+
+		} else {
+			echo 'These users are not friends';
+		}
+
+		echo '</div>';
+
+
+
+
 			} else {
 -                               header("Location: http://www.tencharitychallenge.com/");
 			}
