@@ -7,7 +7,7 @@
         $current = $_SESSION['u_id'];
 	$eventid = $_POST['eventid'];
 
-        $mysql=mysqli_query($conn, "UPDATE eventrelationships SET completed = 1 WHERE event_id = $eventid AND user_id = $current");
+	$mysql=mysqli_query($conn, "INSERT INTO eventrelationships (completed, event_id, user_id, creator) VALUES (1, $eventid, $current, 0) ON DUPLICATE KEY UPDATE completed = 1");
 
 
 ?>
