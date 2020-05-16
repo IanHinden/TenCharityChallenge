@@ -245,6 +245,13 @@ $(document).ready(function(){
 		return false;
         });
 
+	$('.confirmcompletedevent').submit(function() {                                                                                                                                      var data = new FormData();
+                var req = new XMLHttpRequest();
+                req.open('post', this.action);
+                req.send(new FormData(this));
+		return false;
+        });
+
 
 //Event page functions
 
