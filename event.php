@@ -110,53 +110,77 @@
                         echo '</form>';
 
 			if (count($set) > 0) {
-
-				//Div for the proper button to interact with the event
-				echo "<div id='interactbutton'>";
+				if ($passedEvent == false) {
+					//Div for the proper button to interact with the event
+					echo "<div id='interactbutton'>";
 				
-				//Cancel event
-                                echo '<form action="../includes/cancelevent.php" class="cancelevent" method="post" id="canceleventbutton"/>
-                                <input type="hidden" name="eventId" value="'.$eventId.'"/>
-                                <input id="cancel'.$eventId.'" type="submit" name="cancelevent" value="Cancel Event" /></form>';
+					//Cancel event
+                                	echo '<form action="../includes/cancelevent.php" class="cancelevent" method="post" id="canceleventbutton"/>
+                                	<input type="hidden" name="eventId" value="'.$eventId.'"/>
+                                	<input id="cancel'.$eventId.'" type="submit" name="cancelevent" value="Cancel Event" /></form>';
 
-				//Leave event
-				echo '<form action="/includes/cancelattendevent.inc.php" class="cancelattendevent" method="post" id="leaveeventbutton"/>
-				<input type="hidden" name="eventid" value="'. $eventId.'"/>
-				<input id="leave'.$eventId.'" type="submit" name="cancelattendevent" value="Cancel Attendance" /></form>';
+					//Leave event
+					echo '<form action="/includes/cancelattendevent.inc.php" class="cancelattendevent" method="post" id="leaveeventbutton"/>
+					<input type="hidden" name="eventid" value="'. $eventId.'"/>
+					<input id="leave'.$eventId.'" type="submit" name="cancelattendevent" value="Cancel Attendance" /></form>';
 
 
-                                /*echo '<form action="/leaveevent.php" class="leaveevent" method="post" id="leaveeventbutton"/>
-                                <input type="hidden" name="eventId" value="'. $eventId.'"/>
-                                <input id="'.$eventId.'" type="submit" name="leaveevent" value="Leave Event" /></form>';*/
+                                	/*echo '<form action="/leaveevent.php" class="leaveevent" method="post" id="leaveeventbutton"/>
+                                	<input type="hidden" name="eventId" value="'. $eventId.'"/>
+                                	<input id="'.$eventId.'" type="submit" name="leaveevent" value="Leave Event" /></form>';*/
 
-				//Signup button
-				echo '<form action="/confirmevent.php" class="confirmevent" method="post" id="signupeventbutton"/>
-				<input type="hidden" name="eventId" value="'. $eventId.'"/>
-                                <input id="signup'.$eventId.'" type="submit" name="confirmevent" value="Add Event" /></form>';
+					//Signup button
+					echo '<form action="/confirmevent.php" class="confirmevent" method="post" id="signupeventbutton"/>
+					<input type="hidden" name="eventId" value="'. $eventId.'"/>
+                                	<input id="signup'.$eventId.'" type="submit" name="confirmevent" value="Add Event" /></form>';
 
-				echo "</div>";
-				//Button to add event
-				if ($permission == 0) {
-					echo '<script type="text/javascript">',
-                                                'properEventButton(0);',
-                                        '</script>';
-					echo '<div id="calltoaction">
-						<p>Want to log your volunteer hours for this event? Sign up <a href="https://tencharitychallenge.com/signup.php">here!</a></p>
-						</div>';
-				} elseif ($permission == 1){
-					echo "You made this";
-					echo '<script type="text/javascript">',
-                                                'properEventButton(1);',
-                                             '</script>';
-				} elseif ($permission == 2) {
-					echo "You didn't make this, but you're involved.";
-					echo '<script type="text/javascript">',
-                                                'properEventButton(2);',
-                                        '</script>';
-				} elseif ($permission == 3){
-                                        echo '<script type="text/javascript">',
-                                                'properEventButton(3);',
-                                        '</script>';
+					echo "</div>";
+					//Button to add event
+					if ($permission == 0) {
+						echo '<script type="text/javascript">',
+                                                	'properEventButton(0);',
+                                        	'</script>';
+						echo '<div id="calltoaction">
+							<p>Want to log your volunteer hours for this event? Sign up <a href="https://tencharitychallenge.com/signup.php">here!</a></p>
+							</div>';
+					} elseif ($permission == 1){
+						echo "You made this";
+						echo '<script type="text/javascript">',
+                                                	'properEventButton(1);',
+                                             	'</script>';
+					} elseif ($permission == 2) {
+						echo "You didn't make this, but you're involved.";
+						echo '<script type="text/javascript">',
+                                                	'properEventButton(2);',
+                                        	'</script>';
+					} elseif ($permission == 3){
+                                        	echo '<script type="text/javascript">',
+                                                	'properEventButton(3);',
+                                        	'</script>';
+					}
+				} else {
+					echo "This event is over";
+
+					//Div for the proper button to interact with the event
+                                        echo "<div id='interactbutton'>";
+
+                                        //Confirm Completion
+                                        echo '<form action="../includes/confirmcompletion.php" class="confirmcompletion" method="post" id="confirmcompletionbutton"/>
+                                        <input type="hidden" name="eventId" value="'.$eventId.'"/>
+                                        <input id="confirmcompleted'.$eventId.'" type="submit" name="confirmcompletedevent" value="Confirm Completion" /></form>';
+
+                                        //Confirm Absence
+                                        echo '<form action="/includes/confirmabsence.inc.php" class="confirmabsence" method="post" id="confirmabsencebutton"/>
+                                        <input type="hidden" name="eventid" value="'. $eventId.'"/>
+                                        <input id="confirmabsence'.$eventId.'" type="submit" name="confirmabsentevent" value="Confirm Absence" /></form>';
+
+					//Confirm Attendance (not previously signed up)
+                                        echo '<form action="/confirmattendnew.php" class="confirmattendnew" method="post" id="confirmattendnewbutton"/>
+                                        <input type="hidden" name="eventId" value="'. $eventId.'"/>
+                                        <input id="confirmattentnew'.$eventId.'" type="submit" name="confirmattendnew" value="Confirm Completion" /></form>';
+
+                                        echo "</div>";
+
 				}
 
 				echo '<div id="eventPopup">';
