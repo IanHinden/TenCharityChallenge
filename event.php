@@ -165,12 +165,12 @@
                                         echo "<div id='interactbutton'>";
 
                                         //Confirm Completion
-                                        echo '<form action="../includes/confirmcompletion.php" class="confirmcompletion" method="post" id="confirmcompletionbutton"/>
-                                        <input type="hidden" name="eventId" value="'.$eventId.'"/>
+                                        echo '<form action="../includes/confirmcompletedevent.inc.php" class="confirmcompletion" method="post" id="confirmcompletionbutton"/>
+                                        <input type="hidden" name="eventid" value="'.$eventId.'"/>
                                         <input id="confirmcompleted'.$eventId.'" type="submit" name="confirmcompletedevent" value="Confirm Completion" /></form>';
 
                                         //Confirm Absence
-                                        echo '<form action="/includes/confirmabsence.inc.php" class="confirmabsence" method="post" id="confirmabsencebutton"/>
+                                        echo '<form action="/includes/cancelattendevent.inc.php" class="confirmabsence" method="post" id="confirmabsencebutton"/>
                                         <input type="hidden" name="eventid" value="'. $eventId.'"/>
                                         <input id="confirmabsence'.$eventId.'" type="submit" name="confirmabsentevent" value="Confirm Absence" /></form>';
 
