@@ -618,6 +618,14 @@ header .nav-login a {
 	display: none;
 }
 
+#confirmcompletionbutton {
+	display: none;
+}
+
+#confirmabsencebutton {
+	display: none;
+}
+
 #viewEventMap {
 	height: 200px;
 	flex: 1;

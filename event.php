@@ -144,12 +144,10 @@
 							<p>Want to log your volunteer hours for this event? Sign up <a href="https://tencharitychallenge.com/signup.php">here!</a></p>
 							</div>';
 					} elseif ($permission == 1){
-						echo "You made this";
 						echo '<script type="text/javascript">',
                                                 	'properEventButton(1);',
                                              	'</script>';
 					} elseif ($permission == 2) {
-						echo "You didn't make this, but you're involved.";
 						echo '<script type="text/javascript">',
                                                 	'properEventButton(2);',
                                         	'</script>';
@@ -174,12 +172,29 @@
                                         <input type="hidden" name="eventid" value="'. $eventId.'"/>
                                         <input id="confirmabsence'.$eventId.'" type="submit" name="confirmabsentevent" value="Confirm Absence" /></form>';
 
-					//Confirm Attendance (not previously signed up)
-                                        echo '<form action="/confirmattendnew.php" class="confirmattendnew" method="post" id="confirmattendnewbutton"/>
-                                        <input type="hidden" name="eventId" value="'. $eventId.'"/>
-                                        <input id="confirmattentnew'.$eventId.'" type="submit" name="confirmattendnew" value="Confirm Completion" /></form>';
-
                                         echo "</div>";
+
+					//Button to confirm completions
+                                        if ($permission == 0) {
+                                                echo '<script type="text/javascript">',
+                                                        'properPostEventButton(0);',
+                                                '</script>';
+                                                echo '<div id="calltoaction">
+                                                        <p>Want to log your volunteer hours for this event? Sign up <a href="https://tencharitychallenge.com/signup.php">here</a></p>
+						</div>';
+                                        } elseif ($permission == 1){
+                                                echo '<script type="text/javascript">',
+                                                        'properPostEventButton(1);',
+                                                '</script>';
+                                        } elseif ($permission == 2) {
+                                                echo '<script type="text/javascript">',
+                                                        'properPostEventButton(2);',
+                                                '</script>';
+                                        } elseif ($permission == 3){
+                                                echo '<script type="text/javascript">',
+                                                        'properPostEventButton(3);',
+                                                '</script>';
+                                        }
 
 				}
 

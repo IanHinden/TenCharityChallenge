@@ -340,12 +340,11 @@ function dragLeaveHandler(e) {
 }
 
 
-//Display proper button to interact with events
+//Display proper button to interact with events in the future
 function properEventButton(permission){
-	console.log("The proper event button was run");
 	var signup = document.getElementById("signupeventbutton");
 	var cancel = document.getElementById("canceleventbutton");
-	var leave = document.getElementById("leaveeventbutton"); 
+	var leave = document.getElementById("leaveeventbutton");
 
 	if (permission == 0) {
 		console.log("You can sign up for an account");
@@ -358,6 +357,25 @@ function properEventButton(permission){
 		signup.style.display = "block";
 	}
 }
+
+//Display proper buttons to interact with events in the past
+function properPostEventButton(permission){
+	var completion = document.getElementById("confirmcompletionbutton");
+	var absence = document.getElementById("confirmabsencebutton");
+
+	if (permission == 0) {
+		console.log("Sign up for an account!");
+	} else if (permission == 1 || permission == 2) {
+		console.log("Confirm completion of the event");
+		completion.style.display = "block";
+		absence.style.display = "block";
+	} else if (permission == 3) {
+		console.log("User not signed up. Confirm anyway?");
+		completion.style.display = "block";
+	}
+}
+
+
 
 //Friend Request Scripts
 function properButton(id, status, currentUserRequested){
