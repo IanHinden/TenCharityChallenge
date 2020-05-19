@@ -810,6 +810,16 @@ header .nav-login a {
         color: black;
 }
 
+.friendlistprofilepicbox {
+	display: inline-block;
+}
+
+.friendlistprofilepic {
+	height: 40px;
+	width: 40px;
+	border-radius: 5px;
+}
+
 /*footer*/
 
 #footer {

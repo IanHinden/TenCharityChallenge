@@ -116,10 +116,56 @@
 					echo '<br>';
                                 }
                         }
-                        echo '</div>';
-
-			
+                        	echo '</div>';
 			echo '</div>';
+			echo '<div id="friendlist">';
+			
+			$sql = "SELECT user_first, user_last, user_id FROM users INNER JOIN relationships ON relationships.user_two_id = users.user_id WHERE (user_one_id = '".$_SESSION['u_id']."') AND status = 1";
+			$result = mysqli_query($conn, $sql);
+			$resultCheck = mysqli_num_rows($result);
+
+			for ($set = array (); $row = mysqli_fetch_assoc($result); $set[] = $row);
+
+			$sql = "SELECT user_first, user_last, user_id FROM users INNER JOIN relationships ON relationships.user_one_id = users.user_id WHERE (user_two_id = '".$_SESSION['u_id']."') AND status = 1";
+			$result = mysqli_query($conn, $sql);
+                        $resultCheck = mysqli_num_rows($result);
+
+                        for ($set; $row = mysqli_fetch_assoc($result); $set[] = $row);
+
+			foreach ($set as $item){
+				echo '<div class="friend"><ul>';
+				
+					$userid = $item['user_id'];
+					$firstname = $item['user_first'];
+					$lastname = $item['user_last'];
+
+					//Profile Image
+					echo '<li><div class="friendlistprofilepicbox">';
+					$sqlImg = "SELECT * FROM profilepicturelocation WHERE user_id = '".$userid."' AND current = 1;";
+					$resultImg = mysqli_query($conn, $sqlImg);
+					$rowresults = mysqli_num_rows($resultImg);
+					if ($rowresults > 0) {
+						while ($row = mysqli_fetch_assoc($resultImg)){
+							echo "<img class='friendlistprofilepic' src='https://tencharity.s3-us-west-2.amazonaws.com/profilepicture/" . $userid .  "/". $row['uniq_id']. $row['image_name'] . "'>";
+						}
+					} else {
+						echo "<img class='friendlistprofilepic' src='uploads/profiledefault.jpg'>";
+					}
+					echo '</div>';
+
+					echo '<a class="friendlistname" href="https://www.tencharitychallenge.com/user/' . $userid . '">' . $firstname. ' ' . $lastname . '</a>' .
+					'<form class="removefriend" action="/removefriend.php" method="post" />
+					<input type="hidden" name="userid" value="'. $userid.'"/>
+					<input id="'.$userid.'" type="submit" name="removefriend" value="Remove Friend" />
+					</form>';
+					
+				echo '</li></div>';
+			}
+
+			echo '</div>';
+
+
+
 		} else {
 
 			$sql = "SELECT * FROM events WHERE event_id > 0";
