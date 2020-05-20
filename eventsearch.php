@@ -6,6 +6,7 @@
 
 <div id="searcheventcontent">
 	<div id="formandmap">
+		<p id="searchEventLabel">Search Events</p>
 		<select id="eventdistance">
 			<option value="10">10</option>
 	        	<option value="8">8</option>

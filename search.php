@@ -5,6 +5,7 @@
 if (isset($_SESSION['u_id'])){
 
 	echo '<div id="searchpagecontent">
+	<p id="friendSearchLabel">Search Friends</p>
 	<form id="searchform" action="" method="post">
 	<input type="text" name="search">
 	<input type="submit" name="submit" value="Search">

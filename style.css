@@ -488,6 +488,14 @@ header .nav-login a {
 	text-align: center;
 }
 
+#friendSearchLabel {
+	padding-top: 9px;
+	padding-bottom: 12px;
+	font-size: 26px;
+	font-family: 'Noto Serif JP', sans-serif;
+	font-weight: bold;
+}
+
 #searchform {
 	height: 37px;
 }
@@ -510,7 +518,7 @@ header .nav-login a {
 
 /*Add Event page*/
 #addEventLabel {
-	padding-top: 33px;
+	padding-top: 9px;
 	padding-bottom: 12px;
 	font-size: 26px;
 	font-family: 'Noto Serif JP', sans-serif;
@@ -1116,6 +1124,14 @@ header .nav-login a {
 	max-width: 720px;
 	margin: 0 auto;
 	padding-top: 44px;
+}
+
+#searchEventLabel {
+	padding-top: 9px;
+	padding-bottom: 12px;
+	font-size: 26px;
+	font-family: 'Noto Serif JP', sans-serif;
+	font-weight: bold;
 }
 
 #searchmap {
