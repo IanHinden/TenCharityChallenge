@@ -51,7 +51,7 @@
 										$lastname = $row['user_last'];
 
 									//Profile Image
-									echo '<li><div class="requestprofilepic requestitem">';
+									echo '<li id="friendrequest'.$userid.'"><div class="requestprofilepic requestitem">';
 									$sqlImg = "SELECT * FROM profilepicturelocation WHERE user_id = '".$row['user_id']."' AND current = 1;";
 									$resultImg = mysqli_query($conn, $sqlImg);
 									$rowresults = mysqli_num_rows($resultImg);

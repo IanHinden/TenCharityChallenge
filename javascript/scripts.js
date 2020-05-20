@@ -226,6 +226,13 @@ $(document).ready(function(){
                 return false;
         });
 
+	$('.requestitem').submit(function() {
+                var req = new XMLHttpRequest();
+                req.open("post", this.action);
+		req.send(new FormData(this));
+                return false;
+	});
+
 	$('.confirmevent').submit(function() {
 		var req = new XMLHttpRequest();
 		req.open("post", this.action);
