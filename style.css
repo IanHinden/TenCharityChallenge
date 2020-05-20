@@ -810,6 +810,31 @@ header .nav-login a {
         color: black;
 }
 
+#friendlist {
+	border: 1px solid purple;
+	width: 271px;
+	height: 300px;
+	overflow: scroll;
+	border-radius: 4px;
+}
+
+.friend ul li {
+	padding: 5px;
+}
+
+.friendlistname {
+	position: relative;
+	margin-left: 7px;
+	top: -13px;
+}
+
+.removefriend {
+	display: inline-block;
+	margin-left: 6px;
+	position: relative;
+	top: -14px;
+}
+
 .friendlistprofilepicbox {
 	display: inline-block;
 }
