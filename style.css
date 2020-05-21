@@ -800,13 +800,15 @@ header .nav-login a {
 	display: flex;
 }
 
-#upcomingevents {
+#upcomingpreviousevents {
 	flex: 2;
+}
+
+#upcomingevents {
 }
 
 #previousevents {
 	display: none;
-	flex: 2;
 }
 
 #friendrequestsicon {

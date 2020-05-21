@@ -75,7 +75,7 @@
 
 			for ($set = array (); $row = mysqli_fetch_assoc($result); $set[] = $row);
 			
-			echo '<div id="eventsandfriends"><div id="upcomingevents">Upcoming Events';
+			echo '<div id="eventsandfriends"><div id="upcomingpreviousevents"><div id="upcomingevents">Upcoming Events';
 
 			foreach ($set as $item){
 				if(new DateTime($item['datetime_local']) > $todayDate){
@@ -116,7 +116,7 @@
 					echo '<br>';
                                 }
                         }
-			echo '</div>';
+			echo '</div></div>';
 			echo '<div id="friendlist">';
 			
 			$sql = "SELECT user_first, user_last, user_id FROM users INNER JOIN relationships ON relationships.user_two_id = users.user_id WHERE (user_one_id = '".$_SESSION['u_id']."') AND status = 1";
