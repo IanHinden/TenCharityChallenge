@@ -108,6 +108,22 @@
 				</div>';
 			}
                         echo '</form>';
+			echo '<div id="volunteers">';
+				$sql = "SELECT u.user_id, user_first, user_last, uniq_id, image_name, event_id, current FROM users u inner join eventrelationships e on u.user_id = e.user_id left join profilepicturelocation p on p.user_id = e.user_id WHERE event_id = '".$eventId."' AND (current = 1 OR current IS NULL)";
+				$result = mysqli_query($conn, $sql);
+                        	$resultCheck = mysqli_num_rows($result);
+
+				if ($resultCheck > 0) {
+                                	while ($row = mysqli_fetch_assoc($result)) {
+                                        	if (is_null($row['current'])) {
+							echo "<a href='https://www.tencharitychallenge.com/user/" . $row["user_id"] . "'><img class='volunteerimage' src='../uploads/profiledefault.jpg'></a>";
+						} else {
+							echo "<a href='https://www.tencharitychallenge.com/user/" . $row["user_id"] . "'><img class='volunteerimage' src='https://tencharity.s3-us-west-2.amazonaws.com/profilepicture/" . $row['user_id'] . "/". $row['uniq_id']. $row['image_name'] . "'></a>";
+						}
+                                	}
+                        	}
+
+			echo '</div>';
 
 			if (count($set) > 0) {
 				if ($passedEvent == false) {

@@ -649,6 +649,12 @@ header .nav-login a {
 	padding-bottom: 17px;
 }
 
+.volunteerimage {
+	width: 30px;
+	height: 30px;
+	border-radius: 20px;
+}
+
 .eventimage {
 	display: inline-block;
 }
