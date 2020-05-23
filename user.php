@@ -174,10 +174,6 @@
 					$eventinfo = $item['event_info'];
 					$eventid = $item['event_id'];
 					echo '<a href="https://www.tencharitychallenge.com/event/' . $eventid . '">' . $eventinfo. '</a>';
-                                        echo '<form action="includes/cancelattendevent.inc.php" class="cancelattendevent" method="post" />
-                                        <input type="hidden" name="eventid" value="'. $eventid.'"/>
-                                        <input id="'.$eventid.'" type="submit" name="cancelattendevent" value="Cancel Attendance" />
-                                        </form></li>';
 					echo '<br>';
 				}
 			}
@@ -192,10 +188,7 @@
 
 					echo '<a href="https://www.tencharitychallenge.com/event/' . $eventid . '">' . $eventinfo. '</a>';
 					if($completed == 0){
-						echo '<form action="includes/confirmcompletedevent.inc.php" class="confirmcompletedevent" method="post" />
-                                        	<input type="hidden" name="eventid" value="'. $eventid.'"/>
-                                        	<input id="'.$eventid.'" type="submit" name="confirmcompletedevent" value="Confirm Completion" />
-                                        	</form></li>';
+						echo '</li>';
 					} else {
 						echo 'You completed this!';
 					}
