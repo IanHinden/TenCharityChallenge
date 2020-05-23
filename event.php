@@ -109,7 +109,7 @@
 			}
                         echo '</form>';
 			echo '<div id="volunteers">';
-				$sql = "SELECT u.user_id, user_first, user_last, uniq_id, image_name, event_id, current FROM users u inner join eventrelationships e on u.user_id = e.user_id left join profilepicturelocation p on p.user_id = e.user_id WHERE event_id = '".$eventId."' AND (current = 1 OR current IS NULL)";
+				$sql = "SELECT u.user_id, user_first, user_last, uniq_id, image_name, event_id, current, completed FROM users u inner join eventrelationships e on u.user_id = e.user_id left join profilepicturelocation p on p.user_id = e.user_id WHERE event_id = '".$eventId."' AND (completed >= 0) AND (current = 1 OR current IS NULL)";
 				$result = mysqli_query($conn, $sql);
                         	$resultCheck = mysqli_num_rows($result);
 
