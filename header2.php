@@ -36,7 +36,7 @@
 								$totalFriendRequests = mysqli_num_rows($result);
 			
 								if ($totalFriendRequests > 0) {
-									echo '<span class="alertcount">' . $totalFriendRequests . '</span>';
+									echo '<span id="alertcount" class="alertcount">' . $totalFriendRequests . '</span>';
 								}
 			
 								$sql = "SELECT user_first, user_last, user_id FROM users INNER JOIN relationships ON relationships.action_user_id = users.user_id WHERE (user_one_id = '".$_SESSION['u_id']."' OR user_two_id = '".$_SESSION['u_id']."') AND action_user_id !='".$_SESSION['u_id']."' AND status = 0";
@@ -51,7 +51,7 @@
 										$lastname = $row['user_last'];
 
 									//Profile Image
-									echo '<li><div class="requestprofilepic requestitem">';
+									echo '<li id="friendrequest'.$userid.'"><div class="requestprofilepic requestitem">';
 									$sqlImg = "SELECT * FROM profilepicturelocation WHERE user_id = '".$row['user_id']."' AND current = 1;";
 									$resultImg = mysqli_query($conn, $sqlImg);
 									$rowresults = mysqli_num_rows($resultImg);
@@ -67,11 +67,11 @@
 									echo '<a class="requestitem" href="https://www.tencharitychallenge.com/user/' . $userid . '">' . $firstname. ' ' . $lastname . '</a>' . 
 									'<form class="requestitem" action="../confirmfriend.php" class="confirmfriend" method="post" />
 									<input type="hidden" name="userid" value="'. $userid.'"/>
-									<input id="'.$userid.'" type="submit" name="confirmfriend" value="Confirm Friend" />
+									<input id="'.$userid.'" class="modifyfriend" type="submit" name="confirmfriend" value="Confirm Friend" />
 									</form>' .
 									'<form class="requestitem" action="../rejectfriend.php" class="rejectfriend" method="post" />
                                         				<input type="hidden" name="userid" value="'. $userid.'"/>
-                                        				<input id="'.$userid.'" type="submit" name="rejectfriend" value="Reject Friend" />
+                                        				<input id="'.$userid.'" class="modifyfriend" type="submit" name="rejectfriend" value="Reject Friend" />
                                   	 				</form>';
 									}
 									echo '</li></div>';

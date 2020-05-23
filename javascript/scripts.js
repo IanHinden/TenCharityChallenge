@@ -226,6 +226,25 @@ $(document).ready(function(){
                 return false;
         });
 
+	// Code to put event listeners on friend request buttons
+	var friendacceptbuttons = document.getElementsByClassName("modifyfriend");
+
+	var adjustFriends = function() {
+		let buttonarea = document.getElementById("friendrequest" + this.id);
+		buttonarea.style.display = "none";
+		let friendrequestbadge = document.getElementById("alertcount");
+		let friendrequestquantity = parseInt(friendrequestbadge.innerText);
+		if (friendrequestquantity == 1) {
+			friendrequestbadge.style.display = "none";
+		} else {
+			friendrequestbadge.innerText = (friendrequestquantity - 1).toString();
+		}
+	};
+
+	for (var i = 0; i < friendacceptbuttons.length; i++) {
+    		friendacceptbuttons[i].addEventListener('click', adjustFriends, false);
+	}
+
 	$('.requestitem').submit(function() {
                 var req = new XMLHttpRequest();
                 req.open("post", this.action);
