@@ -75,7 +75,13 @@
 
 			for ($set = array (); $row = mysqli_fetch_assoc($result); $set[] = $row);
 			
-			echo '<div id="eventsandfriends"><div id="upcomingpreviousevents"><div id="upcomingevents">Upcoming Events';
+			echo '<div id="eventsandfriends">
+				<div id="upcomingpreviousevents">
+					<div id="eventsnavbar">
+						<div class="eventnavbutton" id="upcomingeventsbutton"><p>Upcoming Events</p></div>
+						<div class="eventnavbutton" id="previouseventsbutton"><p>Previous Events</p></div>
+					</div>
+					<div id="upcomingevents">';
 
 			foreach ($set as $item){
 				if(new DateTime($item['datetime_local']) > $todayDate){
@@ -91,7 +97,7 @@
 			}
 			echo '</div>';
 
-			echo '<div id="previousevents">Previous Events';
+			echo '<div id="previousevents">';
 
 			echo '<form action="report.php" method="post">
   				<input type="submit" value="Print Completed Event Report">

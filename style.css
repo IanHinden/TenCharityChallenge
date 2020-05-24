@@ -810,6 +810,16 @@ header .nav-login a {
 	flex: 2;
 }
 
+.eventnavbutton {
+	display: inline-block;
+	height: 27px;
+	width: 150px;
+	border: 1px solid black;
+	border-radius: 8px;
+	text-align: center;
+	line-height: 27px;
+}
+
 #upcomingevents {
 }
 
