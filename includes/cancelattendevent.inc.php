@@ -9,6 +9,4 @@
         $eventid = $_POST['eventid'];
 
         $mysql=mysqli_query($conn, "UPDATE eventrelationships SET completed = -1 WHERE event_id = $eventid AND user_id = $current");
-
-	header("Location: https://www.tencharitychallenge.com/event/" . $eventid);
 ?>
