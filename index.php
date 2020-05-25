@@ -113,8 +113,11 @@
 					if($completed == 0){
 						echo '<form action="includes/confirmcompletedevent.inc.php" class="confirmcompletedevent" method="post" />
                                         	<input type="hidden" name="eventid" value="'. $eventid.'"/>
-                                        	<input id="'.$eventid.'" type="submit" name="confirmcompletedevent" value="Confirm Completion" />
-                                        	</form></li>';
+                                        	<input id="confirm'.$eventid.'" type="submit" name="confirmcompletedevent" value="Confirm Completion" />
+                                        	</form></li>
+						<form action="includes/cancelattendevent.inc.php" class="confirmabsentevent" method="post" />
+                                                <input type="hidden" name="eventid" value="'. $eventid.'"/>
+						<input id="absent'.$eventid.'" type="submit" name="confirmabsentevent" value="Confirm Absence" />                                                            </form></li>';
 					} else {
 						echo 'You completed this!';
 					}
