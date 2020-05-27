@@ -204,43 +204,45 @@ $(document).ready(function(){
 	}
 
 	//Event navigation buttons
-	let upcoming = document.getElementById("upcomingeventsbutton");
-	upcoming.addEventListener("mouseover", hovercolor, false);
-	upcoming.addEventListener("mouseout", defaultcolor, false);
-	upcoming.addEventListener("click", displayupcoming, false);
+	if(document.getElementById("upcomingeventsbutton") != null){
+		let upcoming = document.getElementById("upcomingeventsbutton");
+		upcoming.addEventListener("mouseover", hovercolor, false);
+		upcoming.addEventListener("mouseout", defaultcolor, false);
+		upcoming.addEventListener("click", displayupcoming, false);
 
-	let previous = document.getElementById("previouseventsbutton");
-	previous.addEventListener("mouseover", prevhovercolor, false);
-        previous.addEventListener("mouseout", prevdefaultcolor, false);
-	previous.addEventListener("click", displayprevious, false);
+		let previous = document.getElementById("previouseventsbutton");
+		previous.addEventListener("mouseover", prevhovercolor, false);
+        	previous.addEventListener("mouseout", prevdefaultcolor, false);
+		previous.addEventListener("click", displayprevious, false);
 
-	let upcomingevents = document.getElementById("upcomingevents");
-	let previousevents = document.getElementById("previousevents");
+		let upcomingevents = document.getElementById("upcomingevents");
+		let previousevents = document.getElementById("previousevents");
 
-	function hovercolor(){
-		upcoming.style.backgroundColor = "#665882";
-	}
+		function hovercolor(){
+			upcoming.style.backgroundColor = "#665882";
+		}
 
-	function defaultcolor(){
-		upcoming.style.backgroundColor = "white";
-	}
+		function defaultcolor(){
+			upcoming.style.backgroundColor = "white";
+		}
 
-	function displayupcoming() {
-		upcomingevents.style.display = "block";
-		previousevents.style.display = "none";
-	}
+		function displayupcoming() {
+			upcomingevents.style.display = "block";
+			previousevents.style.display = "none";
+		}
 
-	function prevhovercolor(){
-                previous.style.backgroundColor = "#665882";
-        }
+		function prevhovercolor(){
+                	previous.style.backgroundColor = "#665882";
+        	}
 
-	function prevdefaultcolor(){
-                previous.style.backgroundColor = "white";
-	}
+		function prevdefaultcolor(){
+                	previous.style.backgroundColor = "white";
+		}
 
-	function displayprevious() {
-                upcomingevents.style.display = "none";
-                previousevents.style.display = "block";
+		function displayprevious() {
+                	upcomingevents.style.display = "none";
+                	previousevents.style.display = "block";
+		}
 	}
 
 	$("#friendrequestsicon").click(function(){
