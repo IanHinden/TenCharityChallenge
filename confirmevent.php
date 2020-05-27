@@ -7,5 +7,4 @@
 	
 	$mysql=mysqli_query($conn, "INSERT INTO eventrelationships (event_id, user_id) VALUES ($eventnumber, $current) ON DUPLICATE KEY UPDATE completed = 0");
 
-	header("Location: https://www.tencharitychallenge.com/event/" . $eventnumber);
 ?>

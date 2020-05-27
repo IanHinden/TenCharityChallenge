@@ -136,7 +136,7 @@
                                 	<input id="cancel'.$eventId.'" type="submit" name="cancelevent" value="Cancel Event" /></form>';
 
 					//Leave event
-					echo '<form action="/includes/cancelattendevent.inc.php" class="cancelattendevent" method="post" id="leaveeventbutton"/>
+					echo '<form action="../includes/cancelattendevent.inc.php" class="cancelattendevent" method="post" id="leaveeventbutton"/>
 					<input type="hidden" name="eventid" value="'. $eventId.'"/>
 					<input id="leave'.$eventId.'" type="submit" name="cancelattendevent" value="Cancel Attendance" /></form>';
 
@@ -146,12 +146,13 @@
                                 	<input id="'.$eventId.'" type="submit" name="leaveevent" value="Leave Event" /></form>';*/
 
 					//Signup button
-					echo '<form action="/confirmevent.php" class="confirmevent" method="post" id="signupeventbutton"/>
+					echo '<form action="../confirmevent.php" class="confirmevent" method="post" id="signupeventbutton"/>
 					<input type="hidden" name="eventId" value="'. $eventId.'"/>
                                 	<input id="signup'.$eventId.'" type="submit" name="confirmevent" value="Add Event" /></form>';
 
 					echo "</div>";
 					//Button to add event
+					//TODO Need to add function for user that created event and left to still see button to delete event
 					if ($permission == 0) {
 						echo '<script type="text/javascript">',
                                                 	'properEventButton(0);',

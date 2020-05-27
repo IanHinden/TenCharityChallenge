@@ -300,7 +300,7 @@ $(document).ready(function(){
 		req.send(new FormData(this));
 		//var btn = document.getElementById(this.childNodes[2].nextSibling.id);
 		//btn.disabled = true;
-		this.properEventButton(2);
+		properEventButton(2);
 		return false;
 	});
 
@@ -309,7 +309,7 @@ $(document).ready(function(){
                 var req = new XMLHttpRequest();
                 req.open('post', this.action);
                 req.send(new FormData(this));
-		this.properEventButton(3);
+		properEventButton(3);
 		return false;
         });
 
@@ -410,19 +410,30 @@ function dragLeaveHandler(e) {
 
 //Display proper button to interact with events in the future
 function properEventButton(permission){
-	var signup = document.getElementById("signupeventbutton");
-	var cancel = document.getElementById("canceleventbutton");
-	var leave = document.getElementById("leaveeventbutton");
+	if(document.getElementById("signupeventbutton") != null) {
+		var signup = document.getElementById("signupeventbutton");
+	}
 
-	if (permission == 0) {
+	if(document.getElementById("canceleventbutton") != null) {
+		var cancel = document.getElementById("canceleventbutton");
+	}
+
+	if(document.getElementById("leaveeventbutton") != null) {
+		var leave = document.getElementById("leaveeventbutton");
+	}
+
+	if (permission === 0) {
 		console.log("You can sign up for an account");
-	} else if (permission == 1) {
-		leave.style.display = "block";
+	} else if (permission === 1) {
+		signup.style.display = "none";
 		cancel.style.display = "block";
-	} else if (permission == 2) {
 		leave.style.display = "block";
-	} else if (permission == 3) {
+	} else if (permission === 2) {
+		leave.style.display = "block";
+		signup.style.display = "none";
+	} else if (permission === 3) {
 		signup.style.display = "block";
+		leave.style.display = "none";
 	}
 }
 
