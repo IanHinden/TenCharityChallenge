@@ -27,7 +27,7 @@
 			echo '<div id="scores">
 			<div id="volunteerscorespace"><div id="volunteerscore" class="scorecard"><p>Volunteer Hours:<p>';
 			
-			$sql = "SELECT event_length FROM events WHERE event_user = '".$_SESSION['u_id']."';";
+			$sql = "SELECT event_length, completed FROM events INNER JOIN eventrelationships ON events.event_id = eventrelationships.event_id WHERE event_user = '".$_SESSION['u_id']."' AND completed > 0;";
 			$result = mysqli_query($conn, $sql);
 			$resultCheck = mysqli_num_rows($result);
 			$userTotalHours;
@@ -115,7 +115,7 @@
                                         	<input type="hidden" name="eventid" value="'. $eventid.'"/>
                                         	<input id="confirm'.$eventid.'" type="submit" name="confirmcompletedevent" value="Confirm Completion" />
                                         	</form></li>
-						<form action="includes/cancelattendevent.inc.php" class="confirmabsentevent" method="post" />
+						<form action="includes/cancelattendevent.inc.php" class="cancelattendevent" method="post" />
                                                 <input type="hidden" name="eventid" value="'. $eventid.'"/>
 						<input id="absent'.$eventid.'" type="submit" name="confirmabsentevent" value="Confirm Absence" />                                                            </form></li>';
 					} else {
