@@ -121,7 +121,7 @@
 						echo '<div id="scores">
 							<div id="volunteerscorespace"><div id="volunteerscore" class="scorecard"><p>Volunteer Hours:<p>';
 			
-							$sql = "SELECT event_length FROM events WHERE event_user = '".$profileId."';";
+							$sql = "SELECT event_length, completed FROM events INNER JOIN eventrelationships ON events.event_id = eventrelationships.event_id WHERE event_user = '".$profileId."' AND completed > 0;";
 							$result = mysqli_query($conn, $sql);
 							$resultCheck = mysqli_num_rows($result);
 							$userTotalHours = 0;
