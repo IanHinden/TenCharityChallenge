@@ -820,6 +820,25 @@ header .nav-login a {
 	line-height: 27px;
 }
 
+.previouseventsinteractions {
+	display: inline-block;
+}
+
+#previouseventneedsaction {
+        position: relative;
+        right: -161px;
+        bottom: 15px;
+        background: red;
+        color: white;
+        border-radius: 0.8em;
+        font-size: 10px;
+        line-height: 1.5em;
+        width: 1.5em;
+        font-weight: bold;
+        text-align: center;
+        display: inline-block;
+}
+
 #upcomingevents {
 }
 

@@ -336,6 +336,22 @@ $(document).ready(function(){
 		return false;
         });
 
+	$('.confirmcompletedeventindex').submit(function() {
+                var req = new XMLHttpRequest();
+                req.open('post', this.action);
+                req.send(new FormData(this));
+                console.log(this);
+                return false;
+	});
+
+	$('.cancelattendeventindex').submit(function() {
+                var req = new XMLHttpRequest();
+                req.open('post', this.action);
+                req.send(new FormData(this));
+                console.log(this);
+                return false;
+	});
+
 
 //Event page functions
 
@@ -421,6 +437,11 @@ function dragLeaveHandler(e) {
         zone.style.border = "none";
 	// Prevent default behavior (Prevent file from being opened)
         e.preventDefault();
+}
+
+function needsAction(quantity){
+	let badge = document.getElementById("previouseventneedsaction");
+	badge.innerHTML = quantity;
 }
 
 

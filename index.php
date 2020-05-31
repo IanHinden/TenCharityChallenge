@@ -78,8 +78,15 @@
 			echo '<div id="eventsandfriends">
 				<div id="upcomingpreviousevents">
 					<div id="eventsnavbar">
-						<div class="eventnavbutton" id="upcomingeventsbutton"><p>Upcoming Events</p></div>
-						<div class="eventnavbutton" id="previouseventsbutton"><p>Previous Events</p></div>
+						<div class="eventnavbutton" id="upcomingeventsbutton">
+							<p>Upcoming Events</p>
+						</div>
+						<div class="previouseventsinteractions">
+							<div id="previouseventneedsaction">0</div>
+							<div class="eventnavbutton" id="previouseventsbutton">
+								<p>Previous Events</p>
+							</div>
+						</div>
 					</div>
 					<div id="upcomingevents">';
 
@@ -103,6 +110,8 @@
   				<input type="submit" value="Print Completed Event Report">
 			</form>';
 
+			$needsaction = 0;
+
 			foreach ($set as $item){
 				if(new DateTime($item['datetime_local']) < $todayDate){
 					$eventinfo = $item['event_info'];
@@ -111,13 +120,15 @@
 
 					echo '<a href="https://www.tencharitychallenge.com/event/' . $eventid . '">' . $eventinfo. '</a>';
 					if($completed == 0){
-						echo '<form action="includes/confirmcompletedevent.inc.php" class="confirmcompletedevent" method="post" />
+						++$needsaction;
+						echo '<form action="includes/confirmcompletedeventindex.inc.php" class="confirmcompletedeventindex" method="post" />
                                         	<input type="hidden" name="eventid" value="'. $eventid.'"/>
                                         	<input id="confirm'.$eventid.'" type="submit" name="confirmcompletedevent" value="Confirm Completion" />
                                         	</form></li>
-						<form action="includes/cancelattendevent.inc.php" class="cancelattendevent" method="post" />
+						<form action="includes/cancelattendeventindex.inc.php" class="cancelattendeventindex" method="post" />
                                                 <input type="hidden" name="eventid" value="'. $eventid.'"/>
-						<input id="absent'.$eventid.'" type="submit" name="confirmabsentevent" value="Confirm Absence" />                                                            </form></li>';
+						<input id="absent'.$eventid.'" type="submit" name="confirmabsentevent" value="Confirm Absence" />
+						</form></li>';
 					} else {
 						echo 'You completed this!';
 					}
@@ -125,6 +136,11 @@
 					echo '<br>';
                                 }
                         }
+
+			echo '<script type="text/javascript">',
+                        	'needsAction('.$needsaction.');',
+                        '</script>';
+			
 			echo '</div></div>';
 			echo '<div id="friendlist">';
 			
