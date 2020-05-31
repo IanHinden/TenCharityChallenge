@@ -320,6 +320,22 @@ $(document).ready(function(){
 		return false;
         });
 
+	$('.confirmcompletion').submit(function() {
+		var req = new XMLHttpRequest();
+		req.open('post', this.action);
+		req.send(new FormData(this));
+		properPostEventButton(2);
+		return false;
+	});
+
+	$('.confirmabsence').submit(function() {
+		var req = new XMLHttpRequest();
+		req.open('post', this.action);
+                req.send(new FormData(this));
+		properPostEventButton(-1);
+		return false;
+        });
+
 
 //Event page functions
 
@@ -444,13 +460,17 @@ function properPostEventButton(permission){
 
 	if (permission == 0) {
 		console.log("Sign up for an account!");
-	} else if (permission == 1 || permission == 2) {
+	} else if (permission == -1) {
 		console.log("Confirm completion of the event");
 		completion.style.display = "block";
-		absence.style.display = "block";
-	} else if (permission == 3) {
-		console.log("User not signed up. Confirm anyway?");
+		absence.style.display = "none";
+	} else if (permission == 1) {
+		console.log("You can choose both");
 		completion.style.display = "block";
+		absence.style.display = "block";
+	} else if (permission == 2) {
+		completion.style.display = "none";
+		absence.style.display = "block";
 	}
 }
 

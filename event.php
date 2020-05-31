@@ -21,6 +21,8 @@
 				//There is no user
 				$permission = 0;
 			}
+
+			$completedBoolean = -1;
 			//0 means not signed in, 1 means creator, 2 means involved, 3 means not signed up,
 
         		$sql = "SELECT * FROM eventrelationships WHERE event_id = '".$eventId."' AND user_id = '".$userId."';";
@@ -30,9 +32,13 @@
         		if ($resultCheck > 0) {
                 		while ($row = mysqli_fetch_assoc($result)) {
 					if ($row['creator'] == 1) {
-						if ($row['completed'] != -1) {
+						if ($row['completed'] >= 0) {
                         				echo "This user is the creator";
 							$permission = 1;
+							$completedBoolean = 0;
+							if($row['completed'] > 0) {
+								$completedBoolean = 1;
+							}
 						} else {
 							echo "This user is the creator, but they left this event";
 							$permission = 3;
@@ -41,6 +47,10 @@
 						if ($row['completed'] !=-1) {
 							echo "This user is involved, but not the creator";
 							$permission = 2;
+							$completedBoolean = 0;
+							if($row['completed'] > 0){
+								$completedBoolean = 1;
+							}
 						} else {
 							echo "This user was signed up but left";
 							$permission = 3;
@@ -199,17 +209,20 @@
                                                 echo '<div id="calltoaction">
                                                         <p>Want to log your volunteer hours for this event? Sign up <a href="https://tencharitychallenge.com/signup.php">here</a></p>
 						</div>';
-                                        } elseif ($permission == 1){
+					} elseif ($completedBoolean == -1) {
+						//Only see confirm completed
+						echo '<script type="text/javascript">',
+							'properPostEventButton(-1);',
+						'</script>';
+                                        } elseif ($completedBoolean == 0){
+						//See confircompleted and confirm absenece
                                                 echo '<script type="text/javascript">',
                                                         'properPostEventButton(1);',
                                                 '</script>';
-                                        } elseif ($permission == 2) {
+                                        } elseif ($completedBoolean == 1) {
+						//see confirm absence
                                                 echo '<script type="text/javascript">',
                                                         'properPostEventButton(2);',
-                                                '</script>';
-                                        } elseif ($permission == 3){
-                                                echo '<script type="text/javascript">',
-                                                        'properPostEventButton(3);',
                                                 '</script>';
                                         }
 
