@@ -445,6 +445,21 @@ function needsAction(quantity){
 }
 
 
+function properEventIndex(completed, eventid){
+	let confirm = document.getElementById("confirm" + eventid);
+	let absent = document.getElementById("absent" + eventid);
+
+	if(completed = -1) {
+		confirm.style.display = "block";
+		absent.style.display = "none";
+	}
+
+	if(completed = 1) {
+		confirm.style.display = "none";
+		absent.style.display = "block";
+	}
+}
+
 //Display proper button to interact with events in the future
 function properEventButton(permission){
 	if(document.getElementById("signupeventbutton") != null) {

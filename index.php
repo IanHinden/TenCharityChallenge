@@ -119,18 +119,25 @@
 					$completed = $item['completed'];
 
 					echo '<a href="https://www.tencharitychallenge.com/event/' . $eventid . '">' . $eventinfo. '</a>';
-					if($completed == 0){
+					echo '<form action="includes/confirmcompletedeventindex.inc.php" class="confirmcompletedeventindex" method="post" />
+                                        <input type="hidden" name="eventid" value="'. $eventid.'"/>
+                                        <input id="confirm'.$eventid.'" type="submit" name="confirmcompletedevent" value="Confirm Completion" />
+                                        </form></li>
+					<form action="includes/cancelattendeventindex.inc.php" class="cancelattendeventindex" method="post" />
+                                        <input type="hidden" name="eventid" value="'. $eventid.'"/>
+					<input id="absent'.$eventid.'" type="submit" name="confirmabsentevent" value="Confirm Absence" />
+					</form></li>';
+
+					if ($completed == -1) {
+						echo '<script type="text/javascript">',
+                                		'properEventIndex(-1, '.$eventid.');',
+                        			'</script>';
+					} else if ($completed == 0) {
 						++$needsaction;
-						echo '<form action="includes/confirmcompletedeventindex.inc.php" class="confirmcompletedeventindex" method="post" />
-                                        	<input type="hidden" name="eventid" value="'. $eventid.'"/>
-                                        	<input id="confirm'.$eventid.'" type="submit" name="confirmcompletedevent" value="Confirm Completion" />
-                                        	</form></li>
-						<form action="includes/cancelattendeventindex.inc.php" class="cancelattendeventindex" method="post" />
-                                                <input type="hidden" name="eventid" value="'. $eventid.'"/>
-						<input id="absent'.$eventid.'" type="submit" name="confirmabsentevent" value="Confirm Absence" />
-						</form></li>';
-					} else {
-						echo 'You completed this!';
+					} else if ($completed == 1) {
+						 echo '<script type="text/javascript">',
+                                		'properEventIndex(1, '.$eventid.');',
+                        			'</script>';
 					}
 
 					echo '<br>';
