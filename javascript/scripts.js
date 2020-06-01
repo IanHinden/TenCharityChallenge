@@ -340,7 +340,6 @@ $(document).ready(function(){
                 var req = new XMLHttpRequest();
                 req.open('post', this.action);
                 req.send(new FormData(this));
-                console.log(this);
                 return false;
 	});
 
@@ -348,9 +347,25 @@ $(document).ready(function(){
                 var req = new XMLHttpRequest();
                 req.open('post', this.action);
                 req.send(new FormData(this));
-                console.log(this);
                 return false;
 	});
+
+let indexconfirmbuttons = document.getElementsByClassName("confirmindex");
+console.log(indexconfirmbuttons);
+
+var removeconfirmbutton = function(){
+        console.log(this.id);
+        let confirmbutton = document.getElementById(this.id);
+        let absentbutton = document.getElementById("absent" + this.id.slice(7));
+
+        confirmbutton.style.display = "none";
+        absentbutton.style.display = "block";
+}
+
+for (var i = 0; i < indexconfirmbuttons.length; i++) {
+        console.log("Added");
+        indexconfirmbuttons[i].addEventListener('click', removeconfirmbutton, false);
+}
 
 
 //Event page functions

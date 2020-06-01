@@ -121,11 +121,11 @@
 					echo '<a href="https://www.tencharitychallenge.com/event/' . $eventid . '">' . $eventinfo. '</a>';
 					echo '<form action="includes/confirmcompletedeventindex.inc.php" class="confirmcompletedeventindex" method="post" />
                                         <input type="hidden" name="eventid" value="'. $eventid.'"/>
-                                        <input id="confirm'.$eventid.'" type="submit" name="confirmcompletedevent" value="Confirm Completion" />
+                                        <input id="confirm'.$eventid.'" type="submit" class="confirmindex" name="confirmcompletedevent" value="Confirm Completion" />
                                         </form></li>
 					<form action="includes/cancelattendeventindex.inc.php" class="cancelattendeventindex" method="post" />
                                         <input type="hidden" name="eventid" value="'. $eventid.'"/>
-					<input id="absent'.$eventid.'" type="submit" name="confirmabsentevent" value="Confirm Absence" />
+					<input id="absent'.$eventid.'" type="submit" class="absentindex" name="confirmabsentevent" value="Confirm Absence" />
 					</form></li>';
 
 					if ($completed == -1) {
