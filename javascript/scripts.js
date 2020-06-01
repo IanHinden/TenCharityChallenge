@@ -351,10 +351,8 @@ $(document).ready(function(){
 	});
 
 let indexconfirmbuttons = document.getElementsByClassName("confirmindex");
-console.log(indexconfirmbuttons);
 
 var removeconfirmbutton = function(){
-        console.log(this.id);
         let confirmbutton = document.getElementById(this.id);
         let absentbutton = document.getElementById("absent" + this.id.slice(7));
 
@@ -363,10 +361,22 @@ var removeconfirmbutton = function(){
 }
 
 for (var i = 0; i < indexconfirmbuttons.length; i++) {
-        console.log("Added");
         indexconfirmbuttons[i].addEventListener('click', removeconfirmbutton, false);
 }
 
+let indexabsentbuttons = document.getElementsByClassName("absentindex");
+
+var removeabsentbutton = function(){
+	let absentbutton = document.getElementById(this.id);
+        let confirmbutton = document.getElementById("confirm" + this.id.slice(6));
+
+	confirmbutton.style.display = "block";
+	absentbutton.style.display = "none";
+}
+
+for (var i = 0; i < indexabsentbuttons.length; i++) {
+	indexabsentbuttons[i].addEventListener('click', removeabsentbutton, false);
+}
 
 //Event page functions
 
