@@ -118,7 +118,7 @@
 				</div>';
 			}
                         echo '</form>';
-			echo '<div id="volunteers">';
+			echo '<div id="people"><div id="volunteers">';
 				$sql = "SELECT u.user_id, user_first, user_last, uniq_id, image_name, event_id, current, completed FROM users u inner join eventrelationships e on u.user_id = e.user_id left join profilepicturelocation p on p.user_id = e.user_id WHERE event_id = '".$eventId."' AND (completed >= 0) AND (current = 1 OR current IS NULL)";
 				$result = mysqli_query($conn, $sql);
                         	$resultCheck = mysqli_num_rows($result);
@@ -134,6 +134,47 @@
                         	}
 
 			echo '</div>';
+			echo '<div id="invitebox">';
+
+			$sql = "SELECT user_first, user_last, user_id FROM users INNER JOIN relationships ON relationships.user_two_id = users.user_id WHERE (user_one_id = '".$_SESSION['u_id']."') AND status = 1";
+			$result = mysqli_query($conn, $sql);
+			$resultCheck = mysqli_num_rows($result);
+
+			for ($set = array (); $row = mysqli_fetch_assoc($result); $set[] = $row);
+
+			$sql = "SELECT user_first, user_last, user_id FROM users INNER JOIN relationships ON relationships.user_one_id = users.user_id WHERE (user_two_id = '".$_SESSION['u_id']."') AND status = 1";
+			$result = mysqli_query($conn, $sql);
+                        $resultCheck = mysqli_num_rows($result);
+
+                        for ($set; $row = mysqli_fetch_assoc($result); $set[] = $row);
+
+			foreach ($set as $item){
+				echo '<div class="friend"><ul>';
+				
+					$userid = $item['user_id'];
+					$firstname = $item['user_first'];
+					$lastname = $item['user_last'];
+
+					//Profile Image
+					echo '<li>';
+					echo '<input type="checkbox" class="invitefriendcheckbox">';
+					echo '<div class="friendlistprofilepicbox">';
+					$sqlImg = "SELECT * FROM profilepicturelocation WHERE user_id = '".$userid."' AND current = 1;";
+					$resultImg = mysqli_query($conn, $sqlImg);
+					$rowresults = mysqli_num_rows($resultImg);
+					if ($rowresults > 0) {
+						while ($row = mysqli_fetch_assoc($resultImg)){
+							echo "<img class='friendlistprofilepic' src='https://tencharity.s3-us-west-2.amazonaws.com/profilepicture/" . $userid .  "/". $row['uniq_id']. $row['image_name'] . "'>";
+						}
+					} else {
+						echo "<img class='friendlistprofilepic' src='../uploads/profiledefault.jpg'>";
+					}
+					echo '</div>';
+					echo '<a class="friendlistname" href="https://www.tencharitychallenge.com/user/' . $userid . '">' . $firstname. ' ' . $lastname . '</a>';
+				echo '</li></div>';
+			}
+
+			echo '</div></div>';
 
 			if (count($set) > 0) {
 				if ($passedEvent == false) {
