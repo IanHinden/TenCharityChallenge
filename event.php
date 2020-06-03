@@ -148,6 +148,7 @@
 
                         for ($set; $row = mysqli_fetch_assoc($result); $set[] = $row);
 
+			echo '<form action="../includes/invitefriends.inc.php" method="post">';
 			foreach ($set as $item){
 				echo '<div class="friend"><ul>';
 				
@@ -157,7 +158,7 @@
 
 					//Profile Image
 					echo '<li>';
-					echo '<input type="checkbox" class="invitefriendcheckbox">';
+					echo '<input type="checkbox" name="friendlist[]" class="invitefriendcheckbox" value="'.$userid.'" id="'.$userid.'">';
 					echo '<div class="friendlistprofilepicbox">';
 					$sqlImg = "SELECT * FROM profilepicturelocation WHERE user_id = '".$userid."' AND current = 1;";
 					$resultImg = mysqli_query($conn, $sqlImg);
@@ -174,6 +175,7 @@
 				echo '</li></div>';
 			}
 
+			echo '<input type="submit" name="submit" value="Submit"/></form>';
 			echo '</div></div>';
 
 			if (count($set) > 0) {
