@@ -175,6 +175,8 @@
 				echo '</li></div>';
 			}
 
+			echo '<input type="hidden" name="userId" value="'.$userId.'"/>';
+			echo '<input type="hidden" name="eventId" value="'.$eventId.'"/>';
 			echo '<input type="submit" name="submit" value="Submit"/></form>';
 			echo '</div></div>';
 
