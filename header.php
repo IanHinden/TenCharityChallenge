@@ -78,6 +78,36 @@
 								}
 							echo '</ul></div>';
 
+							echo '<div id="eventrequestsicon"><img src="https://community.cengage.com/Chilton2/utility/anonymous.gif">';
+
+							$sql = "SELECT * FROM inviterelationships WHERE invited_user_id = '".$_SESSION['u_id']."' AND invite = 1";
+							$result = mysqli_query($conn, $sql);
+							//echo $result;
+							$totalEventRequests = mysqli_num_rows($result);
+
+							if ($totalEventRequests > 0) {
+								echo '<span id="eventalertcount" class="eventalertcount">' . $totalEventRequests . '</span>';
+							}
+
+							$sql = "SELECT events.event_id, users.user_id, user_first, user_last, event_avenue, datetime_local, invited_user_id, invite FROM users INNER JOIN inviterelationships ON inviterelationships.user_id = users.user_id INNER JOIN events ON events.event_id = inviterelationships.event_id WHERE (invited_user_id = '".$_SESSION['u_id']."') AND invite = 1";
+								$result = mysqli_query($conn, $sql);
+								$resultCheck = mysqli_num_rows($result);
+
+								if ($resultCheck > 0) {
+									echo '<div id="eventrequestpopup"><ul>';
+									while ($row = mysqli_fetch_assoc($result)) {
+										$eventid = $row['event_id'];
+                                                                                $firstname = $row['user_first'];
+                                                                                $lastname = $row['user_last'];
+										$eventavenue = $row['event_avenue'];
+
+										echo '<li id="eventrequest'.$eventid.'">';
+									}
+									echo '</ul></div>';
+								}
+
+							echo '</div>';
+
 							echo '<div class="nav-login"><p id="headergreeting">Hello, ' . $_SESSION['u_first'] . '</p>';
 							echo '<form action="includes/logout.inc.php" method="POST">
 							<button type="submit" name="submit">Logout</button>
