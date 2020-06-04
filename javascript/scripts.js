@@ -464,6 +464,11 @@ function dragLeaveHandler(e) {
         e.preventDefault();
 }
 
+var checkBoxState = function(number){
+	let invitecheckbox = document.getElementById("checkbox" + number);
+	invitecheckbox.disabled = true;
+}
+
 function needsAction(quantity){
 	let badge = document.getElementById("previouseventneedsaction");
 	badge.innerHTML = quantity;
