@@ -136,13 +136,13 @@
 			echo '</div>';
 			echo '<div id="invitebox">';
 
-			$sql = "SELECT user_first, user_last, users.user_id, invite FROM users INNER JOIN relationships ON relationships.user_two_id = users.user_id LEFT JOIN inviterelationships ON inviterelationships.invited_user_id = relationships.user_two_id WHERE (user_one_id = '".$_SESSION['u_id']."') AND status = 1";
+			$sql = "SELECT user_first, user_last, users.user_id, invite, event_id FROM users INNER JOIN relationships ON relationships.user_two_id = users.user_id LEFT JOIN inviterelationships ON inviterelationships.invited_user_id = relationships.user_two_id WHERE (user_one_id = '".$_SESSION['u_id']."') AND status = 1";
 			$result = mysqli_query($conn, $sql);
 			$resultCheck = mysqli_num_rows($result);
 
 			for ($set = array (); $row = mysqli_fetch_assoc($result); $set[] = $row);
 
-			$sql = "SELECT user_first, user_last, users.user_id, invite FROM users INNER JOIN relationships ON relationships.user_two_id = users.user_id LEFT JOIN inviterelationships ON inviterelationships.invited_user_id = relationships.user_two_id WHERE (user_two_id = '".$_SESSION['u_id']."') AND status = 1";
+			$sql = "SELECT user_first, user_last, users.user_id, invite, event_id FROM users INNER JOIN relationships ON relationships.user_two_id = users.user_id LEFT JOIN inviterelationships ON inviterelationships.invited_user_id = relationships.user_two_id WHERE (user_two_id = '".$_SESSION['u_id']."') AND status = 1";
 			$result = mysqli_query($conn, $sql);
                         $resultCheck = mysqli_num_rows($result);
 
@@ -156,12 +156,13 @@
 					$firstname = $item['user_first'];
 					$lastname = $item['user_last'];
 					$invite = $item['invite'];
+					$thiseventid = $item['event_id'];
 
 					//Profile Image
 					echo '<li>';
 					echo '<input type="checkbox" name="friendlist[]" class="invitefriendcheckbox" value="'.$userid.'" id="checkbox'.$userid.'">';
 
-					if($invite != NULL){
+					if($invite != NULL && $thiseventid == $eventId){
 						echo '<script type="text/javascript">',
 						'checkBoxState('.$userid.');',
 						'</script>';
