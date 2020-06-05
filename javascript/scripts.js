@@ -268,6 +268,10 @@ $(document).ready(function(){
                 return false;
         });
 
+	$("#eventrequestsicon").click(function(){
+		$("#eventrequestpopup").toggle();
+        });
+
 	// Code to put event listeners on friend request buttons
 	var friendacceptbuttons = document.getElementsByClassName("modifyfriend");
 

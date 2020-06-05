@@ -82,7 +82,6 @@
 
 							$sql = "SELECT * FROM inviterelationships WHERE invited_user_id = '".$_SESSION['u_id']."' AND invite = 1";
 							$result = mysqli_query($conn, $sql);
-							//echo $result;
 							$totalEventRequests = mysqli_num_rows($result);
 
 							if ($totalEventRequests > 0) {
@@ -100,8 +99,11 @@
                                                                                 $firstname = $row['user_first'];
                                                                                 $lastname = $row['user_last'];
 										$eventavenue = $row['event_avenue'];
+										$datetime = $row['datetime_local'];
 
 										echo '<li id="eventrequest'.$eventid.'">';
+										echo '<a class="requestitem" href="https://www.tencharitychallenge.com/event/' . $eventid . '">' . $eventavenue. ' : ' . $datetime . '</a>';
+										echo '</li>';
 									}
 									echo '</ul></div>';
 								}

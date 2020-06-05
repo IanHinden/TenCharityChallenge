@@ -902,6 +902,12 @@ header .nav-login a {
 	display: inline-block;
 }
 
+#eventrequestpopup {                                                                                                                                                
+	position: fixed;
+	width: 377px;
+        display: none;
+}
+
 #eventalertcount {
         position: relative;
 	right: 10px;
