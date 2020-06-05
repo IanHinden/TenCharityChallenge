@@ -136,13 +136,13 @@
 			echo '</div>';
 			echo '<div id="invitebox">';
 
-			$sql = "SELECT user_first, user_last, users.user_id, invite, event_id FROM users INNER JOIN relationships ON relationships.user_two_id = users.user_id LEFT JOIN inviterelationships ON inviterelationships.invited_user_id = relationships.user_two_id WHERE (user_one_id = '".$_SESSION['u_id']."') AND status = 1";
+			$sql = "SELECT user_first, user_last, user_id FROM users INNER JOIN relationships ON relationships.user_two_id = users.user_id WHERE (user_one_id = '".$_SESSION['u_id']."') AND status = 1";
 			$result = mysqli_query($conn, $sql);
 			$resultCheck = mysqli_num_rows($result);
 
 			for ($set = array (); $row = mysqli_fetch_assoc($result); $set[] = $row);
 
-			$sql = "SELECT user_first, user_last, users.user_id, invite, event_id FROM users INNER JOIN relationships ON relationships.user_two_id = users.user_id LEFT JOIN inviterelationships ON inviterelationships.invited_user_id = relationships.user_two_id WHERE (user_two_id = '".$_SESSION['u_id']."') AND status = 1";
+			$sql = "SELECT user_first, user_last, user_id FROM users INNER JOIN relationships ON relationships.user_one_id = users.user_id WHERE (user_two_id = '".$_SESSION['u_id']."') AND status = 1";
 			$result = mysqli_query($conn, $sql);
                         $resultCheck = mysqli_num_rows($result);
 
@@ -155,14 +155,23 @@
 					$userid = $item['user_id'];
 					$firstname = $item['user_first'];
 					$lastname = $item['user_last'];
-					$invite = $item['invite'];
-					$thiseventid = $item['event_id'];
+					
+					$sql = "SELECT invite FROM inviterelationships WHERE invited_user_id = '".$userid."' AND event_id = '".$eventId."'";
+					$result = mysqli_query($conn, $sql);
+					$resultCheck = mysqli_num_rows($result);
+					$invite = NULL;
+
+					if ($resultCheck > 0) {
+						while ($row = mysqli_fetch_assoc($result)) {
+							$invite = $row['invite'];
+						}
+					}
 
 					//Profile Image
 					echo '<li>';
 					echo '<input type="checkbox" name="friendlist[]" class="invitefriendcheckbox" value="'.$userid.'" id="checkbox'.$userid.'">';
 
-					if($invite != NULL && $thiseventid == $eventId){
+					if($invite != NULL){
 						echo '<script type="text/javascript">',
 						'checkBoxState('.$userid.');',
 						'</script>';
