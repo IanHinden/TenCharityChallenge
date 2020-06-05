@@ -879,7 +879,7 @@ header .nav-login a {
 }
 
 #friendrequestpopup {
-	position: relative;
+	position: fixed;
 	width: 377px;
 	display: none;
 }
