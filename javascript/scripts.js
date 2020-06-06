@@ -247,6 +247,7 @@ $(document).ready(function(){
 
 	$("#friendrequestsicon").click(function(){
 		$("#friendrequestpopup").toggle();
+		$("#eventrequestpopup").hide();
 	});
 
 	$('.confirmfriend').submit(function() {
@@ -270,6 +271,7 @@ $(document).ready(function(){
 
 	$("#eventrequestsicon").click(function(){
 		$("#eventrequestpopup").toggle();
+		$("#friendrequestpopup").hide();
         });
 
 	// Code to put event listeners on friend request buttons
