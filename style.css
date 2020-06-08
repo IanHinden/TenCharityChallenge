@@ -866,9 +866,11 @@ header .nav-login a {
 }
 
 #upcomingevents {
+	margin-top: 14px;
 }
 
 #previousevents {
+	margin-top: 14px;
 	display: none;
 }
 
