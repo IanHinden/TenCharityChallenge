@@ -84,6 +84,9 @@
 							$result = mysqli_query($conn, $sql);
 							$totalEventRequests = mysqli_num_rows($result);
 
+							//Convert to user local time
+							$now = date('Y-m-d h:i:s');
+
 							if ($totalEventRequests > 0) {
 								echo '<span id="eventalertcount" class="eventalertcount">' . $totalEventRequests . '</span>';
 							}
@@ -101,9 +104,11 @@
 										$eventavenue = $row['event_avenue'];
 										$datetime = $row['datetime_local'];
 
-										echo '<li id="eventrequest'.$eventid.'">';
-										echo '<a class="requestitem" href="https://www.tencharitychallenge.com/event/' . $eventid . '">' . $eventavenue. ' : ' . $datetime . '</a>';
-										echo '</li>';
+										if(date($datetime) > $now){
+											echo '<li id="eventrequest'.$eventid.'">';
+											echo '<a class="requestitem" href="https://www.tencharitychallenge.com/event/' . $eventid . '">' . $eventavenue. ' : ' . $datetime . '</a>';
+											echo '</li>';
+										}
 									}
 									echo '</ul></div>';
 								}
