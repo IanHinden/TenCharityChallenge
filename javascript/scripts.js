@@ -446,6 +446,12 @@ for (var i = 0; i < indexabsentbuttons.length; i++) {
 
 });
 
+function eventInviteNumber(number){
+	let badge = document.getElementById("eventalertcount");
+	badge.style.display = "inline-block";
+	badge.innerHTML = number;
+}
+
 function dragOverHandler(e) {
 	let zone = document.getElementById("drop_zone");
 	zone.style.border = "2px dashed black";
