@@ -209,6 +209,7 @@ header nav .alertcount {
 	font-weight: bold;
 	text-align: center;
 	display: inline-block;
+	visibility: hidden;
 }
 
 .requestitem {

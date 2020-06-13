@@ -283,7 +283,7 @@ $(document).ready(function(){
 		let friendrequestbadge = document.getElementById("alertcount");
 		let friendrequestquantity = parseInt(friendrequestbadge.innerText);
 		if (friendrequestquantity == 1) {
-			friendrequestbadge.style.display = "none";
+			friendrequestbadge.style.visibility = "hidden";
 		} else {
 			friendrequestbadge.innerText = (friendrequestquantity - 1).toString();
 		}
@@ -445,6 +445,11 @@ for (var i = 0; i < indexabsentbuttons.length; i++) {
 	});
 
 });
+
+function showFriendRequests() {
+	let friendrequestbadge = document.getElementById("alertcount");
+	friendrequestbadge.style.visibility = "visible";
+}
 
 function eventInviteNumber(number){
 	let badge = document.getElementById("eventalertcount");
