@@ -167,11 +167,22 @@
 						}
 					}
 
+					$sql = "SELECT completed  FROM eventrelationships WHERE user_id = '".$userid."' AND event_id = '".$eventId."'";
+                                        $result = mysqli_query($conn, $sql);
+                                        $resultCheck = mysqli_num_rows($result);
+                                        $completed = -1;
+
+					if ($resultCheck > 0) {
+                                                while ($row = mysqli_fetch_assoc($result)) {
+							$completed = $row['completed'];
+                                                }
+                                        }
+
 					//Profile Image
 					echo '<li>';
 					echo '<input type="checkbox" name="friendlist[]" class="invitefriendcheckbox" value="'.$userid.'" id="checkbox'.$userid.'">';
 
-					if($invite != NULL){
+					if($invite != NULL || $completed > -1){
 						echo '<script type="text/javascript">',
 						'checkBoxState('.$userid.');',
 						'</script>';
