@@ -34,11 +34,15 @@
 								$sql = "SELECT * FROM `relationships` WHERE (`user_one_id` = '".$_SESSION['u_id']."' OR `user_two_id` = '".$_SESSION['u_id']."') AND `status` = 0 AND `action_user_id` != '".$_SESSION['u_id']."'";
 								$result = mysqli_query($conn, $sql);
 								$totalFriendRequests = mysqli_num_rows($result);
-			
-								if ($totalFriendRequests > 0) {
-									echo '<span id="alertcount" class="alertcount">' . $totalFriendRequests . '</span>';
-								}
-			
+
+								echo '<span id="alertcount" class="alertcount">' . $totalFriendRequests . '</span>';
+
+								if($totalFriendRequests > 0){
+                                                                        echo '<script type="text/javascript">',
+                                                                        'showFriendRequests();',
+                                                                        '</script>';
+                                                                }
+
 								$sql = "SELECT user_first, user_last, user_id FROM users INNER JOIN relationships ON relationships.action_user_id = users.user_id WHERE (user_one_id = '".$_SESSION['u_id']."' OR user_two_id = '".$_SESSION['u_id']."') AND action_user_id !='".$_SESSION['u_id']."' AND status = 0";
 								$result = mysqli_query($conn, $sql);
 								$resultCheck = mysqli_num_rows($result);
