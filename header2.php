@@ -84,22 +84,15 @@
 
 							echo '<div id="eventrequestsicon"><img src="https://community.cengage.com/Chilton2/utility/anonymous.gif">';
 
-							$sql = "SELECT * FROM inviterelationships WHERE invited_user_id = '".$_SESSION['u_id']."' AND invite = 1";
-							$result = mysqli_query($conn, $sql);
-							$totalEventRequests = mysqli_num_rows($result);
-
 							//Convert to user local time
 							$now = date('Y-m-d h:i:s');
-
-							if ($totalEventRequests > 0) {
-								echo '<span id="eventalertcount" class="eventalertcount">' . $totalEventRequests . '</span>';
-							}
-
 							$sql = "SELECT events.event_id, users.user_id, user_first, user_last, event_avenue, datetime_local, invited_user_id, invite FROM users INNER JOIN inviterelationships ON inviterelationships.user_id = users.user_id INNER JOIN events ON events.event_id = inviterelationships.event_id WHERE (invited_user_id = '".$_SESSION['u_id']."') AND invite = 1";
-							$result = mysqli_query($conn, $sql);
-							$resultCheck = mysqli_num_rows($result);
+								$result = mysqli_query($conn, $sql);
+								$resultCheck = mysqli_num_rows($result);
+								$futureinvitetotal = 0;
 
 								if ($resultCheck > 0) {
+									echo '<span id="eventalertcount" class="eventalertcount">0</span>';
 									echo '<div id="eventrequestpopup"><ul>';
 									while ($row = mysqli_fetch_assoc($result)) {
 										$eventid = $row['event_id'];
@@ -109,12 +102,17 @@
 										$datetime = $row['datetime_local'];
 
 										if(date($datetime) > $now){
+											$futureinvitetotal++;
 											echo '<li id="eventrequest'.$eventid.'">';
 											echo '<a class="requestitem" href="https://www.tencharitychallenge.com/event/' . $eventid . '">' . $eventavenue. ' : ' . $datetime . '</a>';
 											echo '</li>';
 										}
 									}
 									echo '</ul></div>';
+
+								echo '<script type="text/javascript">',
+                                                		'eventInviteNumber('.$futureinvitetotal.');',
+                                                		'</script>';
 								}
 
 							echo '</div>';
