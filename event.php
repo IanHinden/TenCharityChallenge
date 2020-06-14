@@ -136,6 +136,8 @@
 			echo '</div>';
 			echo '<div id="invitebox">';
 
+			echo '<button id="selectall">Select All</button>';
+
 			$sql = "SELECT user_first, user_last, user_id FROM users INNER JOIN relationships ON relationships.user_two_id = users.user_id WHERE (user_one_id = '".$_SESSION['u_id']."') AND status = 1";
 			$result = mysqli_query($conn, $sql);
 			$resultCheck = mysqli_num_rows($result);

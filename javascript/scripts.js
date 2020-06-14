@@ -356,6 +356,10 @@ $(document).ready(function(){
                 return false;
 	});
 
+	$("#selectall").click(function(){
+		$('.invitefriendcheckbox').not(':disabled').prop('checked', true);
+	});
+
 let indexconfirmbuttons = document.getElementsByClassName("confirmindex");
 
 var removeconfirmbutton = function(){
@@ -445,6 +449,7 @@ for (var i = 0; i < indexabsentbuttons.length; i++) {
 	});
 
 });
+
 
 function showFriendRequests() {
 	let friendrequestbadge = document.getElementById("alertcount");
