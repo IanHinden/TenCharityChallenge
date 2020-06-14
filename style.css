@@ -681,6 +681,8 @@ header .nav-login a {
 	border: 1px solid black;
 	border-radius: 8px;
 	flex: 1;
+	height: 300px;
+	overflow-y: scroll;
 }
 
 .invitefriendcheckbox {
@@ -940,7 +942,7 @@ header .nav-login a {
 	border: 1px solid purple;
 	width: 271px;
 	height: 300px;
-	overflow: scroll;
+	overflow-y: scroll;
 	border-radius: 4px;
 	flex: 1;
 }
