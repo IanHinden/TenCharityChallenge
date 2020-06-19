@@ -132,7 +132,7 @@
 										</tr>
 										<tr>
 											<td></td>
-											<td><a href="https://tencharitychallenge.com/passwordreset.php">Forgot your password?</a></td>
+											<td><a href="'. $baseurl .'/passwordreset.php">Forgot your password?</a></td>
 											<td></td>
 										</tr>
 									</table>
