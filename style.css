@@ -481,6 +481,49 @@ header .nav-login a {
 		font-size: 17px;
 		line-height: 30px;
 	}
+
+	#loginorsignup {
+		padding-top: 20px;
+		padding-bottom: 9px;
+	}
+
+	#loginorsignup-text {
+		padding: 0px;
+	}
+
+	body #signupinstructions h1{
+		font-size: 19px;
+	}
+
+	body #signupinstructions h2 {
+		font-size: 12px;
+	}
+
+	body .signup-form {
+		width: none;
+		padding-top: 17px;
+		text-align: center;
+	}
+
+	body .signup-form input {
+		height: 25px;
+		font-size: 12px;
+		line-height: 25px;
+	}
+
+	body #show-tos {
+		height: 28px;
+		font-size: 14px;
+	}
+
+	body #partners h1 {
+		font-size: 14px;
+	}
+
+	body #footer #partners img {
+		min-width: 100px;
+		margin: 12px;
+	}
 }
 
 /*Friend Search Page*/
