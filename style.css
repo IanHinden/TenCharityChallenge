@@ -309,6 +309,44 @@ header .nav-login a {
 	margin-right: auto;
 }
 
+#mobilelogin {
+	display: none;
+}
+
+#mobilelogintext {
+	padding: 25px;
+}
+
+#mobilelogininstructions {
+	width: 80%;
+	margin: 0 auto;
+	color: #3E3076;
+}
+
+#mobilelogininstructions h1 {
+	font-size: 33px;
+}
+
+.mobilelogininstructionsform {
+	width: 80%;
+	margin: 0 auto;
+	padding-top: 30px;
+}
+
+.mobilelogininstructionsform input {
+	width: 90%;
+	height: 40px;
+	padding: 0px 5%;
+	margin-bottom: 4px;
+	border: 1px solid #3E3076;
+	background-color: #fff;
+	font-family: arial;
+	font-size: 16px;
+	color: #111;
+	line-height: 40px;
+	border-radius: 5px;
+}
+
 #loginorsignup {
 	flex: 1;
 	padding-top: 70px;
@@ -464,6 +502,10 @@ header .nav-login a {
 	#loggedoutmain {
         	flex-direction: column;
 	}
+
+	#mobilelogin {
+                display: block;
+	}
 }
 
 @media (max-width:667px)  { 
@@ -484,6 +526,31 @@ header .nav-login a {
 	.main-container-text h3 {
 		font-size: 17px;
 		line-height: 30px;
+	}
+
+	#mobilelogin {
+		padding-top: 20px;
+		padding-bottom: 9px;
+	}
+
+	#mobilelogintext {
+		padding: 0px;
+	}
+
+	body #mobilelogininstructions h1 {
+		font-size: 19px;
+	}
+
+	body .mobilelogininstructionsform {
+		width: none;
+		padding-top: 17px;
+		text-align: center;
+	}
+
+	body .mobilelogininstructionsform input {
+		height: 25px;
+		font-size: 12px;
+		line-height: 25px;
 	}
 
 	#loginorsignup {

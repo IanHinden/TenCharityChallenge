@@ -227,6 +227,20 @@
 					</div>
 			      </section>';
 
+			echo '<section id="mobilelogin">
+					<div id="mobilelogintext">
+				        	<div id="mobilelogininstructions">
+							<h1>Login</h1>
+						</div>
+						<form class="mobilelogininstructionsform" action="includes/login.inc.php" method="POST">
+							<input type="text" name="uid" placeholder="Username/email"></input>
+							<input type="password" name="pwd" placeholder="Password"></input>
+							<button type="submit" name="submit">Login</button>
+							<a href="https://tencharitychallenge.com/passwordreset.php">Forgot your password?</a>
+						</form>
+					</div>
+				</section>';
+
 			echo '<section id="loginorsignup">
 				<div id="loginorsignup-text">';
 
