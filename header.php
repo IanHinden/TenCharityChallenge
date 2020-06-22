@@ -19,14 +19,14 @@
 <header>
 	<nav>
 		<div class="main-wrapper">
-		      <span class="menu-icon">
+			<div id="logoandtitle"><img src="https://tencharity.s3-us-west-2.amazonaws.com/images/logos/10CC.png"></img><p>Ten Charity Challenge</p></div>
+		      	<span class="menu-icon">
 				<span class="menu-line menu-line-1"></span>
 				<span class="menu-line menu-line-2"></span>
 				<span class="menu-line menu-line-3"></span>
 			</span>
 			<div class="navlink">
 				<div id="header-items">
-					<div id="logoandtitle"><img src="https://tencharity.s3-us-west-2.amazonaws.com/images/logos/10CC.png"></img><p>Ten Charity Challenge</p></div>
 						<?php
 							if (isset($_SESSION['u_id'])){
 								echo '<div id="friendrequestsicon"><img src="https://community.cengage.com/Chilton2/utility/anonymous.gif">';

@@ -131,6 +131,7 @@ input, select {
 .main-wrapper {
 	margin: 0 auto;
 	width: auto;
+	max-width: 940px;
 }
 
 .main-wrapper ul li{
@@ -156,7 +157,6 @@ header nav {
 
 #header-items {
 	margin: 0 auto;
-	padding: 0px 65px 0px 83px;
 }
 
 #logoandtitle {
@@ -376,6 +376,10 @@ header .nav-login a {
 
 	.main-wrapper .menu-line-3 { 
 		bottom: 0; 
+	}
+
+	#logoandtitle {
+		margin-left: 12px;
 	}
 
 	.navlink {
