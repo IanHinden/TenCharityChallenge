@@ -1106,6 +1106,14 @@ header .nav-login a {
 	border-radius: 5px;
 }
 
+@media (max-width:667px)  {
+
+	#scores {
+		font-size: 12px;
+		line-height: 22px;
+	}
+}
+
 /*footer*/
 
 #footer {
