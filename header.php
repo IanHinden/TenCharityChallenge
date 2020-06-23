@@ -20,11 +20,15 @@
 	<nav>
 		<div class="main-wrapper">
 			<div id="logoandtitle"><img src="https://tencharity.s3-us-west-2.amazonaws.com/images/logos/10CC.png"></img><p>Ten Charity Challenge</p></div>
-		      	<span class="menu-icon">
+			<?php
+			if (isset($_SESSION['u_id'])){
+		      	echo '<span class="menu-icon">
 				<span class="menu-line menu-line-1"></span>
 				<span class="menu-line menu-line-2"></span>
 				<span class="menu-line menu-line-3"></span>
-			</span>
+			</span>';
+			}
+			?>
 			<div class="navlink">
 				<div id="header-items">
 						<?php
@@ -117,7 +121,11 @@
 
 							echo '</div>';
 
-							echo '<div class="nav-login"><p id="headergreeting">Hello, ' . $_SESSION['u_first'] . '</p>';
+							echo '<div class="nav-login">';
+							echo '<div class="mobilesearchitems" id="mobilefindfriends">Find Friends</div>';
+							echo '<div class="mobilesearchitems" id="mobilefindevents">Find Events</div>';
+							echo '<div class="mobilesearchitems" id="mobilecreateevent">Create Event</div>';
+							echo '<p id="headergreeting">Hello, ' . $_SESSION['u_first'] . '</p>';
 							echo '<form action="includes/logout.inc.php" method="POST">
 							<button type="submit" name="submit">Logout</button>
 							</form>';

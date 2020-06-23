@@ -220,6 +220,10 @@ header .nav-login {
 	float: right;
 }
 
+.mobilesearchitems {
+	display: none;
+}   
+
 header .nav-login form {
 	float: left;
 	padding-top: 15px;
@@ -458,11 +462,12 @@ header .nav-login a {
 	
 	header .nav-login {
 		position: fixed;
-		margin-top: 250px;
+		margin-top: -14px;
 		width: 100%;
 		background-color: white;
 		border-top: 1px solid black;
-		height: 60px;
+		border-bottom: 1px solid black;
+		height: 235px;
 		float: none;
 		right: -786px;
 		-webkit-transition: .5s ease-out;
@@ -498,6 +503,17 @@ header .nav-login a {
 	header .nav-login a {
 		display: none;
 	}
+
+	#headergreeting {
+		display: none;
+	}
+
+	.mobilesearchitems {
+        	display: block;
+		height: 57px;
+		line-height: 57px;
+		border-bottom: 1px solid black;
+	}   
 
 	#loggedoutmain {
         	flex-direction: column;
@@ -1001,6 +1017,7 @@ header .nav-login a {
 	position: fixed;
 	width: 377px;
 	display: none;
+	z-index: 1;
 }
 
 #friendrequestpopup ul {
@@ -1026,6 +1043,7 @@ header .nav-login a {
 	position: fixed;
 	width: 377px;
         display: none;
+	z-index: 1;
 }
 
 #eventrequestpopup ul {
