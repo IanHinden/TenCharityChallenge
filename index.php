@@ -236,8 +236,13 @@
 							<input type="text" name="uid" placeholder="Username/email"></input>
 							<input type="password" name="pwd" placeholder="Password"></input>
 							<button type="submit" name="submit">Login</button>
-							<a href="https://tencharitychallenge.com/passwordreset.php">Forgot your password?</a>
 						</form>
+						<div id="mobilepasswordreset">
+							<a href="'. $baseurl .'/passwordreset.php">Forgot your password?</a>
+						</div>
+						<div id="or">
+							<p>-OR-</>
+						</div>
 					</div>
 				</section>';
 
