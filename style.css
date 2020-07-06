@@ -1134,6 +1134,22 @@ header .nav-login a {
 		font-size: 12px;
 		line-height: 22px;
 	}
+
+	#upcomingpreviousevents {
+		margin: 0 auto;
+	}
+
+	.navbutton input {
+		font-size: 9px;
+	}
+
+	#eventsandfriends {
+		flex-flow: column;
+	}
+
+	#friendlist {
+		margin: 0 auto;
+	}
 }
 
 /*footer*/
