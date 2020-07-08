@@ -28,6 +28,8 @@ $(document).ready(function(){
 	var checkbox2 = document.getElementById("tostext");
 	var accountsignupbutton = document.getElementById("accountsignupbutton");
 
+	var acceptableemail = false;
+
 	if(checkbox1 && checkbox2){
 		checkbox1.addEventListener( 'change', function() {
 	    		if(this.checked && checkbox2.checked) {
@@ -108,9 +110,23 @@ $(document).ready(function(){
 		var emailformat = document.getElementById("emailformat");
 		if(!validateEmail(e.target.value)){
 			emailformat.style.visibility = "visible";
+			acceptableemail = false;
 		} else {
 			emailformat.style.visibility = "hidden";
+			acceptableemail = true;
 		}
+	}
+
+	function displayemailwarningsubmit() {
+		var emailformat = document.getElementById("emailformat");
+		var emailcontent = document.getElementById("email").value;
+		if(!validateEmail(emailcontent)){
+			emailformat.style.visibility = "visible";
+                        acceptableemail = false;
+                } else {
+                        emailformat.style.visibility = "hidden";
+			acceptableemail = true;
+                }
 	}
 
 	function validateEmail(email) {
@@ -158,7 +174,9 @@ $(document).ready(function(){
 			$("#lastnamewarning").css({"visibility":"hidden"});
 		}
 
-		if( $("#firstname").val() && $("#lastname").val()) {
+		displayemailwarningsubmit();
+
+		if( $("#firstname").val() && $("#lastname").val() && (acceptableemail == true)){
 			$('.opaque').addClass('opaque-out');
                 	$('.confirm').addClass('confirm-out');
 		}
