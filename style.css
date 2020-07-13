@@ -1236,14 +1236,17 @@ header .nav-login a {
 
 #firstnamewarning {
 	visibility: hidden;
+	color: red;
 }
 
 #lastnamewarning {
 	visibility: hidden;
+	color: red;
 }
 
 #usernamewarning {
 	visibility: hidden;
+	color: red;
 }
 
 #show-tos {
