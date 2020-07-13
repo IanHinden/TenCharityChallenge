@@ -29,6 +29,8 @@ $(document).ready(function(){
 	var accountsignupbutton = document.getElementById("accountsignupbutton");
 
 	var acceptableemail = false;
+	var acceptablefirstname = false;
+	var acceptablelastname = false;
 
 	if(checkbox1 && checkbox2){
 		checkbox1.addEventListener( 'change', function() {
@@ -129,6 +131,80 @@ $(document).ready(function(){
                 }
 	}
 
+	if(document.getElementById("firstname") != null) {
+                document.getElementById("firstname").addEventListener("blur", displayfirstnamewarning);
+        }
+
+	function displayfirstnamewarning(e) {
+                var firstnameformat = document.getElementById("firstnamewarning");
+                if(e.target.value == ""){
+			firstnameformat.innerText = "First name can not be blank";
+                        firstnameformat.style.visibility = "visible";
+			acceptablefirstname = false;
+                } else if (e.target.value.length > 25) {
+			firstnameformat.innerText = "First name can not be more than 25 characters";
+                        firstnameformat.style.visibility = "visible";
+			acceptablefirstname = false;
+		} else {
+			firstnameformat.style.visibility = "hidden";
+                        acceptablefirstname = true;
+                }
+        }
+
+	function displayfirstnamewarningsubmit() {
+                var firstnameformat = document.getElementById("firstnamewarning");
+                var firstnamecontent = document.getElementById("firstname").value;
+		if(firstnamecontent == ""){
+			firstnameformat.innerText = "First name can not be blank";
+			firstnameformat.style.visibility = "visible";
+			acceptablefirstname = false;
+		} else if (firstnamecontent.length > 25) {
+			firstnameformat.innerText = "First name can not be more than 25 characters";
+			firstnameformat.style.visibility = "visible";
+			acceptablefirstname = false;
+                } else {
+			firstnameformat.style.visibility = "hidden";
+			acceptablefirstname = true;
+		}
+        }
+
+	if(document.getElementById("lastname") != null) {
+                document.getElementById("lastname").addEventListener("blur", displaylastnamewarning);
+        }
+
+	function displaylastnamewarning(e) {
+                var lastnameformat = document.getElementById("lastnamewarning");
+                if(e.target.value == ""){
+			lastnameformat.innerText = "Last name can not be blank";
+                        lastnameformat.style.visibility = "visible";
+                        acceptablelastname = false;
+                } else if (e.target.value.length > 25) {
+                        lastnameformat.innerText = "Last name can not be more than 25 characters";
+                        lastnameformat.style.visibility = "visible";
+                        acceptablelastname = false;
+                } else {
+                        lastnameformat.style.visibility = "hidden";
+                        acceptablelastname = true;
+                }
+        }
+
+	function displaylastnamewarningsubmit() {
+		var lastnameformat = document.getElementById("lastnamewarning");
+		var lastnamecontent = document.getElementById("lastname").value;
+                if(lastnamecontent == ""){
+                        lastnameformat.innerText = "Last name can not be blank";
+                        lastnameformat.style.visibility = "visible";
+			acceptablelastname = false;
+                } else if (lastnamecontent.length > 25) {
+			lastnameformat.innerText = "Last name can not be more than 25 characters";
+			lastnameformat.style.visibility = "visible";
+                        acceptablelastname = false;
+		} else {
+			lastnameformat.style.visibility = "hidden";
+			acceptablelastname = true;
+		}
+	}
+
 	function validateEmail(email) {
  		var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   		return re.test(email);
@@ -175,8 +251,10 @@ $(document).ready(function(){
 		}
 
 		displayemailwarningsubmit();
+		displayfirstnamewarningsubmit();
+		displaylastnamewarningsubmit();
 
-		if( $("#firstname").val() && $("#lastname").val() && (acceptableemail == true)){
+		if( $("#firstname").val() && $("#lastname").val() && (acceptableemail == true) && (acceptablefirstname == true) && (acceptablelastname == true)){
 			$('.opaque').addClass('opaque-out');
                 	$('.confirm').addClass('confirm-out');
 		}
