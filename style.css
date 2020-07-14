@@ -1420,6 +1420,13 @@ header .nav-login a {
 	height: 15px; 
 }
 
+@media (max-width:667px)  {  
+	.warningtext {
+		font-size: 9px;
+	}
+
+}
+
 /*eventsearch.php*/
 #searcheventcontent {
 	padding-top: 41px;

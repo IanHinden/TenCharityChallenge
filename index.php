@@ -256,15 +256,15 @@
 					</div>
 					<form class="signup-form" action="includes/signup.inc.php" method="POST" onsubmit="if(document.getElementById('agree').checked) { return true; } else { alert('Please indicate that you have read and agree to the Terms of Service and Privacy Policy'); return false; }">
 					<input type="text" id="firstname" name="first" placeholder="First name"><br>
-					<p id="firstnamewarning">First name can not be blank.</p>
+					<p id="firstnamewarning" class="warningtext">First name can not be blank.</p>
 					<input type="text" id="lastname" name="last" placeholder="Last name"><br>
-					<p id="lastnamewarning">Last name can not be blank.</p>
+					<p id="lastnamewarning" class="warningtext">Last name can not be blank.</p>
 					<input type="text" id="email" name="email" placeholder="E-mail"><br>
-					<p id="emailformat">Please enter a valid email address.</p>
+					<p id="emailformat" class="warningtext">Please enter a valid email address.</p>
 					<input type="text" id="username" name="uid" placeholder="User name"><br>
-					<p id="usernamewarning">This username is already in use.</p>
+					<p id="usernamewarning" class="warningtext">This username is already in use.</p>
 					<input type="password" id="password" name="pwd" placeholder="Password"><br>
-					<p id="passwordwarning">Your password must be longer than six characters and must contain one numberic digit, one uppercase letter, and one lowercase letter.</p>
+					<p id="passwordwarning" class="warningtext">Your password must be longer than six characters and must contain one numberic digit, one uppercase letter, and one lowercase letter.</p>
 		<div class="confirm">
 			<div id="tos">
 				<p id="termsheadertext">Terms of Service</p>
