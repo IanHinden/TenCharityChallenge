@@ -31,6 +31,7 @@ $(document).ready(function(){
 	var acceptableemail = false;
 	var acceptablefirstname = false;
 	var acceptablelastname = false;
+	var acceptablepassword = false;
 
 	if(checkbox1 && checkbox2){
 		checkbox1.addEventListener( 'change', function() {
@@ -229,6 +230,38 @@ $(document).ready(function(){
 		return re.test(username);
         }
 
+	if(document.getElementById("password") !=null){
+                document.getElementById("password").addEventListener("input", invalidpasswordwarning);
+	}
+
+	function invalidpasswordwarning(e) {
+                var passwordformat = document.getElementById("passwordwarning");
+		if(!validatePassword(e.target.value)){
+			passwordformat.style.visibility = "visible";
+			acceptablepassword = false;
+		} else {
+			passwordformat.style.visibility = "hidden";
+			acceptablepassword = true;
+                }
+        }
+
+	function invalidpasswordwarningsubmit() {
+                var passwordformat = document.getElementById("passwordwarning");
+		var passwordvalue = document.getElementById("password").value;
+                if(!validatePassword(passwordvalue)){
+			passwordformat.style.visibility = "visible";
+                        acceptablepassword = false;
+		} else {
+                        passwordformat.style.visibility = "hidden";
+                        acceptablepassword = true;
+		}
+	}
+
+	function validatePassword(password) {
+		var re = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}$/
+                return re.test(password);
+	}
+
 	$("#show-tos").mouseover(function(){
   		$("#show-tos").css("background-color", "#523");
 	});
@@ -253,8 +286,9 @@ $(document).ready(function(){
 		displayemailwarningsubmit();
 		displayfirstnamewarningsubmit();
 		displaylastnamewarningsubmit();
+		invalidpasswordwarningsubmit();
 
-		if( $("#firstname").val() && $("#lastname").val() && (acceptableemail == true) && (acceptablefirstname == true) && (acceptablelastname == true)){
+		if( $("#firstname").val() && $("#lastname").val() && (acceptableemail == true) && (acceptablefirstname == true) && (acceptablelastname == true) && (acceptablepassword == true)){
 			$('.opaque').addClass('opaque-out');
                 	$('.confirm').addClass('confirm-out');
 		}

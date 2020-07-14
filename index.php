@@ -263,9 +263,8 @@
 					<p id="emailformat">Please enter a valid email address.</p>
 					<input type="text" id="username" name="uid" placeholder="User name"><br>
 					<p id="usernamewarning">This username is already in use.</p>
-					<input type="password" name="pwd" placeholder="Password"><br>
-
-
+					<input type="password" id="password" name="pwd" placeholder="Password"><br>
+					<p id="passwordwarning">Your password must be longer than six characters and must contain one numberic digit, one uppercase letter, and one lowercase letter.</p>
 		<div class="confirm">
 			<div id="tos">
 				<p id="termsheadertext">Terms of Service</p>
