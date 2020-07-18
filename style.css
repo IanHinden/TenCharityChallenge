@@ -1254,6 +1254,11 @@ header .nav-login a {
 	color: red;
 }
 
+#passwordmatchwarning {
+	visibility: hidden;
+	color: red;
+}
+
 #show-tos {
 	display: block;
 	margin: 0 auto;

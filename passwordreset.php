@@ -25,8 +25,10 @@ if(isset($selector)) {
 			echo '<form class="password-reset-confirm-form" action="includes/passwordresetconfirm.inc.php" method="POST">
                 	<p>Enter your new password and confirm below.</p>
 			<input type="hidden" name="email" value="'.$userEmail.'">
-        		<input type="text" name="password" placeholder="Password"><br>
-			<input type="text" name="passwordconfirm" placeholder="Confirm Password"><br>
+        		<input type="text" id="password" name="password" placeholder="Password"><br>
+			<p id="passwordwarning" class="warningtext">Your password must be longer than six characters and must contain one numeric digit, one uppercase letter, and one lowercase letter.</p>
+			<input type="text" id="passwordconfirm" name="passwordconfirm" placeholder="Confirm Password"><br>
+			<p id="passwordmatchwarning" class="warningtext">Passwords must match.</p>
         		<button type="submit" value="submit" name="submit">Submit</button></form>';
 		}
 

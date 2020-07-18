@@ -262,6 +262,21 @@ $(document).ready(function(){
                 return re.test(password);
 	}
 
+	if(document.getElementById("passwordconfirm") !=null){
+                document.getElementById("passwordconfirm").addEventListener("input", passwordmatch);
+        }
+
+	function passwordmatch() {
+                var passwordformat = document.getElementById("passwordmatchwarning");
+		var passwordvalue = document.getElementById("password").value;
+		var passwordmatchvalue = document.getElementById("passwordconfirm").value;
+                if(passwordvalue != passwordmatchvalue){
+                        passwordformat.style.visibility = "visible";
+		} else {
+			passwordformat.style.visibility = "hidden";
+		}
+	}
+
 	$("#show-tos").mouseover(function(){
   		$("#show-tos").css("background-color", "#523");
 	});
