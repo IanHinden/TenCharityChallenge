@@ -1,5 +1,9 @@
 <?php
 
+include_once '../header2.php';
+include_once 'dbh.inc.php';
+
+
 require '../vendor/autoload.php';
 
 use Aws\Ses\SesClient;
@@ -93,7 +97,9 @@ try {
 		],
 	]);
 	$messageId = $emailResult['MessageId'];
-	echo("Email sent! Message ID: $messageId"."\n");
+	echo '<div id="passwordresetcontent">';
+	echo '<div id="instructions">You have been sent an e-mail with instructions to reset your password. Please follow the instructions to access your account.</div>';
+	echo '</div>';
 	} catch (AwsException $e) {
    	// output error message if fails
 		echo $e->getMessage();

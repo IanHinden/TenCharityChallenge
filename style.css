@@ -669,6 +669,13 @@ header .nav-login a {
 	height: 200px;
 }
 
+#instructions {
+	max-width: 945px;
+	margin: 0 auto;
+	padding-top: 34px;
+	font-size: 24px;
+}
+
 /*Add Event page*/
 #addEventLabel {
 	padding-top: 9px;
