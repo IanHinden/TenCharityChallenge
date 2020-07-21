@@ -31,7 +31,10 @@ $(document).ready(function(){
 	var acceptableemail = false;
 	var acceptablefirstname = false;
 	var acceptablelastname = false;
+	var acceptableusername = false;
 	var acceptablepassword = false;
+
+	var usernamedata;
 
 	if(checkbox1 && checkbox2){
 		checkbox1.addEventListener( 'change', function() {
@@ -84,10 +87,8 @@ $(document).ready(function(){
 
 	ajax.onreadystatechange = function() {
 
-		var data;
-
     		if (this.readyState == 4 && this.status == 200) {
-			data = JSON.parse(this.responseText);
+			usernamedata = JSON.parse(this.responseText);
     		}
 
 		if(document.getElementById("username") != null) {
@@ -95,8 +96,8 @@ $(document).ready(function(){
 		}
 
 		function checkusernameinuse(e) {
-			for (var i = 0; i < data.length; i++) {
-    				if (data[i].user_uid === e.target.value) {
+			for (var i = 0; i < usernamedata.length; i++) {
+    				if (usernamedata[i].user_uid.toLowerCase() === e.target.value.toLowerCase()) {
         				let usernametaken = document.getElementById("usernamewarning");
 					usernametaken.innerText = "This username is already in use. Please select another.";
                                         usernametaken.style.visibility = "visible";
@@ -277,6 +278,37 @@ $(document).ready(function(){
 		}
 	}
 
+	function displayusernamewarningsubmit(){
+		var username = document.getElementById("username").value;
+		var usernameformat = document.getElementById("usernamewarning");
+
+		if(!validateUsernameSpecialChars()){
+			usernameformat.innerText = "Please choose a username with no special characters.";
+			usernameformat.style.visibility = "visible";
+			acceptableusername = false;
+		} else if (checkusernameinuse() === true){
+			usernameformat.innerText = "This username is already in use. Please select another.";
+			usernameformat.style.visibility = "visible";
+			acceptableusername = false;
+		} else if (username == ""){
+			usernameformat.innerText = "Username can not be blank.";
+			usernameformat.style.visibility = "visible";
+			acceptableusername = false;
+		} else {
+			acceptableusername = true;
+		}
+
+		function checkusernameinuse() {
+			for (var i = 0; i < usernamedata.length; i++) {
+				if (usernamedata[i].user_uid.toLowerCase() === username.toLowerCase()) {
+					return true;
+				} else {
+					return false;
+				}
+			}
+		}
+	}
+
 	$("#show-tos").mouseover(function(){
   		$("#show-tos").css("background-color", "#523");
 	});
@@ -302,8 +334,9 @@ $(document).ready(function(){
 		displayfirstnamewarningsubmit();
 		displaylastnamewarningsubmit();
 		invalidpasswordwarningsubmit();
+		displayusernamewarningsubmit();
 
-		if( $("#firstname").val() && $("#lastname").val() && (acceptableemail == true) && (acceptablefirstname == true) && (acceptablelastname == true) && (acceptablepassword == true)){
+		if( $("#firstname").val() && $("#lastname").val() && (acceptableemail == true) && (acceptablefirstname == true) && (acceptablelastname == true) && (acceptablepassword == true) && (acceptableusername == true)){
 			$('.opaque').addClass('opaque-out');
                 	$('.confirm').addClass('confirm-out');
 		}
