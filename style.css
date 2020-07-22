@@ -663,6 +663,41 @@ header .nav-login a {
 }
 
 /*Password Reset Page*/
+
+.password-reset-form {
+	width: 940px;
+	margin: 0 auto;
+	padding-top: 19px;
+	text-align: center;
+}
+
+.password-reset-form p {
+	text-align: left;
+	font-size: 24px;
+}
+
+.password-reset-form input {
+	width: 140px;
+	height: 30px;
+	margin-top: 18px;
+	padding: 0px 10px;
+	border: none;
+	font-family: arial;
+	font-size: 14px;
+	border-radius: 5px;
+}
+
+.password-reset-form button {
+	width: 60px;
+	height: 30px;
+	margin-top: 18px;
+	border: none;
+	background-color: #f3f3f3;
+	font-family: arial;
+	font-size: 14px;
+	border-radius: 5px;
+}
+
 #passwordresetcontent {
 	padding-top: 61px;
 	background-image: linear-gradient(to bottom, rgb(218, 214, 234), rgba(255, 255, 255, 0.73)),url(https://i0.wp.com/www.intelligentliving.co/wp-content/uploads/2019/08/Planting-trees.jpg?w=1751&ssl=1);

@@ -29,7 +29,7 @@ $sender_email = 'donotreply@tencharitychallenge.com';
 
 // Replace these sample addresses with the addresses of your recipients. If
 // your account is still in the sandbox, these addresses must be verified.
-$recipient_emails = ['ian.hinden@gmail.com'];
+//$recipient_emails = ['ian.hinden@gmail.com'];
 
 // Specify a configuration set. If you do not want to use a configuration
 // set, comment the following variable, and the
@@ -37,6 +37,7 @@ $recipient_emails = ['ian.hinden@gmail.com'];
 $configuration_set = 'ConfigSet';
 
 $email = $_POST['email'];
+$recipient_emails = [$email];
 
 //Create Signup token
 $selector = bin2hex(random_bytes(8));
