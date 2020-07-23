@@ -704,11 +704,18 @@ header .nav-login a {
 	height: 200px;
 }
 
+#expiredcontent {
+	max-width: 942px;
+	margin: 0 auto;
+	padding-top: 19px;
+	font-size: 24px;
+}
+
 #instructions {
 	max-width: 945px;
 	margin: 0 auto;
 	padding-top: 34px;
-	font-size: 24px;
+	font-size: 24px; 
 }
 
 /*Add Event page*/
