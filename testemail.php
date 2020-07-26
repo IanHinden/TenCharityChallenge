@@ -45,7 +45,7 @@ $html_body =  '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "h
  			<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
  				<tr>
   					<td align="center" bgcolor="#665882" style="padding: 40px 0 30px 0;">
-						<img src="https://static.irs.com/wp-content/uploads/2018/11/tax-deduction-charity-work.jpg" alt="Creating Email Magic" width="300" height="230" style="display: block;" />
+						<img src="https://tencharity.s3-us-west-2.amazonaws.com/images/logos/10CC.png" alt="Creating Email Magic" width="300" height="230" style="display: block;" />
   					</td>
  				</tr>
  				<tr>
@@ -57,14 +57,48 @@ $html_body =  '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "h
    								</td>
   							</tr>
   							<tr>
-   								<td>
+   								<td style="padding: 20px 0 30px 0;">
     									To verify that you signed up for an account, please click the link below.
 									If you did not sign up for an account, you can ignore this e-mail. 
    								</td>
   							</tr>
   							<tr>
    								<td>
-    									Row 3
+    									<table border="1" cellpadding="0" cellspacing="0" width="100%">
+										<tr>
+											<td width="260" valign="top">
+												<table border="1" cellpadding="0" cellspacing="0" width="100%">
+													<tr>
+														<td>
+															<img src="https://crescentcove.org/cms-files/size-992x992/img-5500.k.jpg" alt="Friends volunteering" width="100%" height="140" style="display: block;" />
+														</td>
+													</tr>
+													<tr>
+														<td style="padding: 25px 0 0 0;">
+															Find your friends to easily invite them to volunteer events and see where they are volunteering.
+														</td>
+													</tr>
+												</table>
+											</td>
+											<td style="font-size: 0; line-height: 0;" width="20">
+												&nbsp;
+											</td>
+											<td width="260" valign="top">
+												 <table border="1" cellpadding="0" cellspacing="0" width="100%">
+                                                                                                        <tr>
+                                                                                                                <td>
+                                                                                                                        <img src="https://www.treuleben.com/media/productdetail/700x700/801033/journal-notebook_1.jpg" alt="" width="100%" height="140" style="display: block;" />
+														</td>
+                                                                                                        </tr>
+                                                                                                        <tr>
+                                                                                                                <td style="padding: 25px 0 0 0;">
+                                                                                                                        Create volunteer events or join others to track your volunteer hours. 
+														</td>
+                                                                                                        </tr>
+                                                                                                </table>
+											</td>
+										</tr>
+									</table>
    								</td>
   							</tr>
  						</table>
