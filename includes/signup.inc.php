@@ -189,7 +189,7 @@ $configuration_set = 'ConfigSet';
 									<table border="0" cellpadding="0" cellspacing="0">
 										<tr>
 											<td>
-												<a href="https:www.twitter.com/orphanshow">
+												<a href="https://www.twitter.com/orphanshow">
 													<img src="https://toppng.com/uploads/preview/red-twitter-logo-11549680466ua0eyzyb5c.png" alt="Twitter" width="38" height="38" style="display: block;" border="0" />
 												</a>
 											</td>
