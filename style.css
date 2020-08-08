@@ -635,6 +635,16 @@ header .nav-login a {
 	}
 }
 
+/*Account confirmation*/
+
+#confirmationtext {
+	width: 940px;
+	margin: 0 auto;
+	padding-top: 19px;
+	text-align: center;
+	font-size: 24px;
+}
+
 /*Friend Search Page*/
 #searchpagecontent {
 	padding-top: 95px;

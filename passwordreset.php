@@ -49,3 +49,7 @@ echo '<form class="password-reset-form" action="includes/passwordreset.inc.php" 
 
 echo '</div>';
 ?>
+
+<?php
+	include_once 'footer.php';
+?>
