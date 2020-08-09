@@ -638,7 +638,7 @@ header .nav-login a {
 /*Account confirmation*/
 
 #confirmationtext {
-	width: 940px;
+	max-width: 940px;
 	margin: 0 auto;
 	padding-top: 19px;
 	text-align: center;
@@ -675,7 +675,7 @@ header .nav-login a {
 /*Password Reset Page*/
 
 .password-reset-form {
-	width: 940px;
+	max-width: 940px;
 	margin: 0 auto;
 	padding-top: 19px;
 	text-align: center;
