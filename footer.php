@@ -8,7 +8,8 @@
 	</section>
 	<div id="additional-links">
 		<ul>
-			<li>Privacy Policy</li>
+			<li><a href="https://tencharitychallenge.com/terms.php">Terms</a></li>
+			<li><a href="https://tencharitychallenge.com/privacy.php">Privacy</a></li>
 			<li>About</li>
 			<li>You Might Not Need This Site</li>
 		</ul>
