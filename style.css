@@ -646,16 +646,22 @@ header .nav-login a {
 }
 
 /*Privacy Policy*/
+#privacycontent {
+	padding-top: 90px;
+}
+
 #infocollected {
 	text-align: left;
 }
 
 .privacyheader {
 	font-size: 22px;
+	margin-bottom: 17px;
 }
 
 .privacylist {
 	font-size: 18px;
+	margin-bottom: 17px;
 }
 
 /*Friend Search Page*/
