@@ -645,6 +645,19 @@ header .nav-login a {
 	font-size: 24px;
 }
 
+/*Privacy Policy*/
+#infocollected {
+	text-align: left;
+}
+
+.privacyheader {
+	font-size: 22px;
+}
+
+.privacylist {
+	font-size: 18px;
+}
+
 /*Friend Search Page*/
 #searchpagecontent {
 	padding-top: 95px;
