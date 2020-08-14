@@ -31,6 +31,18 @@
 					<li>Verify that users have completed events.</li>
 					<li>Tally completed hours and inspired hours.</li>
 				</ul>
+				<p class="privacyheader">How We Keep Your Information Secure</p>
+				<ul class="privacylist">
+					<li>We follow industry standards in regards to your personal information.</li>
+					<li>You are responsible for keeping your password confidential.</li>
+					<li>No method of transmission over the Internet is 100% secure. We cannot guarantee the absolute security of your information, and any transmission is at your own risk.</li>
+				</ul>
+				<p class="privacyheader">Contact Us</p>
+				<p class="privacyheader">If you would like to contact us regarding this policy, please feel free to mail us at 3151 Soaring Gulls Dr. #2050, Las Vegas, NV 89128 or send an e-mail to Ian@tencharitychallenge.com.</p>
+				<p class="privacyheader">Opt-Out Policy</p>
+				<ul class="privacylist">
+					<li>To opt out of receiving invitation and event reminder e-mails, please click the "Unsubscribe" link at the bottom of the e-mail.</li>
+				</ul>
 			</div>';
 		echo '</div>
 			</div>';
