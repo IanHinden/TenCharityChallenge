@@ -57,13 +57,13 @@
 			</div></div></div></div>
 			<div id="navbar">
 				<form class="navbutton" method="post" action="/search.php">
-    					<input type="submit" value="SEARCH FRIENDS" />
+    					<input class="standardbutton" type="submit" value="SEARCH FRIENDS" />
 				</form>
 				<form class="navbutton" method="post" action="/eventsearch.php">
-                                        <input type="submit" value="SEARCH EVENTS" />
+                                        <input class="standardbutton" type="submit" value="SEARCH EVENTS" />
                                 </form>
 				<form class="navbutton" method="post" action="/addevent.php">
-                                        <input type="submit" value="CREATE EVENT" />
+                                        <input class ="standardbutton" type="submit" value="CREATE EVENT" />
                                 </form>';
 			
 			echo '</div>';
@@ -222,9 +222,9 @@
 						<div>
 							<h2>Easy volunteer resume reports</h2>
 						</div>
-						<h3>Join the Ten Charity Challenge.</h3>
-						<p> Thanks to Ten Charity Challenge, ' . $totalHours . ' hours of volunteer work have been performed. </p>
-					</div>
+						<h3>Join the Ten Charity Challenge.</h3>';
+						//<p> Thanks to Ten Charity Challenge, ' . $totalHours . ' hours of volunteer work have been performed. </p>
+					echo '</div>
 			      </section>';
 
 			echo '<section id="mobilelogin">
@@ -276,7 +276,7 @@
 			<div id="tosinteract">
 				<div>
 					<input type="checkbox" name="checkbox" value="check" id="agree"/>
-					<p class="tosagree">I agree to the <a href="https://tencharitychallenge.com/terms">Terms of Service</a></p>
+					<p class="tosagree">I agree to the <a href="https://tencharitychallenge.com/terms.php">Terms of Service</a> and the <a href="https://tencharitychallenge.com/privacy.php">Privacy Policy</a>.</p>
 				</div><br>
 				<div>
 					<input type="checkbox" name="tos" value="tos" id="tostext"/>

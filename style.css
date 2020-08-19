@@ -143,6 +143,16 @@ a {
 	text-decoration: none;
 }
 
+.standardbutton {
+	height: 30px;
+	border-radius: 5px;
+	border: none;
+}
+
+.standardbutton:hover {
+        background-color: #ccc;
+}    
+
 body {
 	background-color: white
 }
@@ -643,6 +653,32 @@ header .nav-login a {
 	padding-top: 19px;
 	text-align: center;
 	font-size: 24px;
+}
+
+/*Privacy Policy*/
+#privacycontent {
+	padding-top: 90px;
+}
+
+#infocollected {
+	text-align: left;
+}
+
+.privacyheader {
+	font-size: 22px;
+	margin-bottom: 17px;
+}
+
+.privacylist {
+	font-size: 18px;
+	margin-bottom: 17px;
+}
+
+@media (max-width:667px)  {  
+	
+	#confirmationtext {
+		padding: 32px;
+	}
 }
 
 /*Friend Search Page*/
