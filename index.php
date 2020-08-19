@@ -57,13 +57,13 @@
 			</div></div></div></div>
 			<div id="navbar">
 				<form class="navbutton" method="post" action="/search.php">
-    					<input type="submit" value="SEARCH FRIENDS" />
+    					<input class="standardbutton" type="submit" value="SEARCH FRIENDS" />
 				</form>
 				<form class="navbutton" method="post" action="/eventsearch.php">
-                                        <input type="submit" value="SEARCH EVENTS" />
+                                        <input class="standardbutton" type="submit" value="SEARCH EVENTS" />
                                 </form>
 				<form class="navbutton" method="post" action="/addevent.php">
-                                        <input type="submit" value="CREATE EVENT" />
+                                        <input class ="standardbutton" type="submit" value="CREATE EVENT" />
                                 </form>';
 			
 			echo '</div>';

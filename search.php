@@ -8,7 +8,7 @@ if (isset($_SESSION['u_id'])){
 	<p id="friendSearchLabel">Search Friends</p>
 	<form id="searchform" action="" method="post">
 	<input type="text" name="search">
-	<input type="submit" name="submit" value="Search">
+	<input class="standardbutton" type="submit" name="submit" value="Search">
 	</form>';
 
 

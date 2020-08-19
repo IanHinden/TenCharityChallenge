@@ -143,6 +143,16 @@ a {
 	text-decoration: none;
 }
 
+.standardbutton {
+	height: 30px;
+	border-radius: 5px;
+	border: none;
+}
+
+.standardbutton:hover {
+        background-color: #ccc;
+}    
+
 body {
 	background-color: white
 }
@@ -662,6 +672,13 @@ header .nav-login a {
 .privacylist {
 	font-size: 18px;
 	margin-bottom: 17px;
+}
+
+@media (max-width:667px)  {  
+	
+	#confirmationtext {
+		padding: 32px;
+	}
 }
 
 /*Friend Search Page*/
