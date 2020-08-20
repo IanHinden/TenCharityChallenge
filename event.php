@@ -96,7 +96,7 @@
 			$datetime = date('Y-m-d\TH:i', $datetime);
 
 			echo '<div id="pagecontent">';
-                echo '<form class="eventform" id="eventform">
+                	echo '<form class="eventform" id="eventform">
 					<div id="detailsandmap">
 						<div id="eventdetails" class="eventdetailsboxes">
                         	<div class="eventvalues"><p>Event Avenue</p><textarea rows="2" value="'.$eventAvenue.'" name="eventAvenue" id="eventAvenue" readonly="readonly">'.$eventAvenue.'</textarea></div>
@@ -120,22 +120,22 @@
 									<input type="submit">
 								</div>';
 							}
-                echo '</form>';
-				echo '<div id="people">
-					<div id="volunteers">';
+                	echo '</form>';
+			echo '<div id="people">
+				<div id="volunteers">';
 					$sql = "SELECT u.user_id, user_first, user_last, uniq_id, image_name, event_id, current, completed FROM users u inner join eventrelationships e on u.user_id = e.user_id left join profilepicturelocation p on p.user_id = e.user_id WHERE event_id = '".$eventId."' AND (completed >= 0) AND (current = 1 OR current IS NULL)";
 					$result = mysqli_query($conn, $sql);
-                    $resultCheck = mysqli_num_rows($result);
+                    			$resultCheck = mysqli_num_rows($result);
 
 					if ($resultCheck > 0) {
-                        while ($row = mysqli_fetch_assoc($result)) {
+                        			while ($row = mysqli_fetch_assoc($result)) {
 							if (is_null($row['current'])) {
 								echo "<a href='https://www.tencharitychallenge.com/user/" . $row["user_id"] . "'><img class='volunteerimage' src='../uploads/profiledefault.jpg'></a>";
 							} else {
 								echo "<a href='https://www.tencharitychallenge.com/user/" . $row["user_id"] . "'><img class='volunteerimage' src='https://tencharity.s3-us-west-2.amazonaws.com/profilepicture/" . $row['user_id'] . "/". $row['uniq_id']. $row['image_name'] . "'></a>";
 							}
-                        }
-                    }
+                        	}
+                    	}
 
 					echo '</div>';
 					echo '<div id="invitebox">';
@@ -214,7 +214,7 @@
 						echo '<input type="hidden" name="userId" value="'.$userId.'"/>';
 						echo '<input type="hidden" name="eventId" value="'.$eventId.'"/>';
 						echo '<input type="submit" name="submit" value="Submit"/></form>';
-						echo '</div></div>';
+						echo '</div></div></div>';
 
 						if (count($set) > 0) {
 							if ($passedEvent == false) {
@@ -357,6 +357,7 @@
 							echo '</div>';
 
 						echo '</div></div></div></div>';
+		echo '</div></div></div>';
 							}
 						}
 		} else {
