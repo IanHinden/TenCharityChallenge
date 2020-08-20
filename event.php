@@ -39,32 +39,32 @@
                 while ($row = mysqli_fetch_assoc($result)) {
 					if ($row['creator'] == 1) {
 						if ($row['completed'] >= 0) {
-                        	echo "This user is the creator";
+                        	//This user is the creator
 							$permission = 1;
 							$completedBoolean = 0;
 							if($row['completed'] > 0) {
 								$completedBoolean = 1;
 							}
 						} else {
-							echo "This user is the creator, but they left this event";
+							//This user is the creator, but they left this event
 							$permission = 3;
 						}
 					} else {
 						if ($row['completed'] !=-1) {
-							echo "This user is involved, but not the creator";
+							//This user is involved, but not the creator
 							$permission = 2;
 							$completedBoolean = 0;
 							if($row['completed'] > 0){
 								$completedBoolean = 1;
 							}
 						} else {
-							echo "This user was signed up but left";
+							//This user was signed up but left
 							$permission = 3;
 						}
 					}
                 		}
         	} elseif ($permission != 0) {
-                echo "This user is not signed up for this event";
+                	//This user is not signed up for this event
 				$permission = 3;
         	}
 			
@@ -84,9 +84,6 @@
 					$lastname = $item['user_last'];
 					$eventcreatorid = $item['event_user'];
                 }
-
-			echo $firstname;
-			echo $lastname;
 
 			//Check if event is future
 			$passedEvent = false;
@@ -363,7 +360,9 @@
 							}
 						}
 		} else {
-			echo "This is not an event";
+			echo '<div id="pagecontent">';
+				echo "This is not an event";
+			echo '</div>';
 		}
 		?>
 
