@@ -19,7 +19,7 @@
 <header>
 	<nav>
 		<div class="main-wrapper">
-			<div id="logoandtitle"><img src="https://tencharity.s3-us-west-2.amazonaws.com/images/logos/10CC.png"></img><p>Ten Charity Challenge</p></div>
+			<a href="/"><div id="logoandtitle"><img src="https://tencharity.s3-us-west-2.amazonaws.com/images/logos/10CC.png"></img><p>Ten Charity Challenge</p></div></a>
 		      	<?php
 			if (isset($_SESSION['u_id'])){
 			echo '<span class="menu-icon">

@@ -20,10 +20,6 @@ $(document).ready(function(){
 		$('.confirm').removeClass('confirm-out');
 	});
 
-	document.getElementById("logoandtitle").addEventListener("click", function(){
-  		document.location.href = 'https://www.tencharitychallenge.com/';
-	});
-
 	var checkbox1 = document.getElementById("agree");
 	var checkbox2 = document.getElementById("tostext");
 	var accountsignupbutton = document.getElementById("accountsignupbutton");
