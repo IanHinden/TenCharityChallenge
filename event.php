@@ -22,8 +22,14 @@
 				$permission = 0;
 			}
 
+			$sql = "SELECT * FROM events WHERE event_id = '".$eventId."';";
+        		$result = mysqli_query($conn, $sql);
+        		$eventCheck = mysqli_num_rows($result);
+
 			$completedBoolean = -1;
 			//0 means not signed in, 1 means creator, 2 means involved, 3 means not signed up,
+
+		if($eventCheck > 0) {
 
         	$sql = "SELECT * FROM eventrelationships WHERE event_id = '".$eventId."' AND user_id = '".$userId."';";
         	$result = mysqli_query($conn, $sql);
@@ -355,9 +361,10 @@
 
 						echo '</div></div></div></div>';
 							}
-						} else {
-							echo "There is no event with this ID";
 						}
+		} else {
+			echo "This is not an event";
+		}
 		?>
 
 <?php
