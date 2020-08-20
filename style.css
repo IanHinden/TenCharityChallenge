@@ -787,7 +787,7 @@ header .nav-login a {
 
 /*Event Page */
 #pagecontent {
-	margin-top: 44px;
+	padding-top: 44px;
 }
 
 #eventform {
