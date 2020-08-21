@@ -365,7 +365,11 @@
 			}
 		} else {
 			echo '<div id="pagecontent">';
-				echo "This is not an event";
+				echo '<div id="passwordresetcontent">
+                        		<div id="confirmationtext">';
+                        			echo "There is no event with that number";
+                			echo '</div>
+                        	</div>';
 			echo '</div>';
 		}
 		?>
