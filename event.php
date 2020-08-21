@@ -121,6 +121,8 @@
 								</div>';
 							}
                 	echo '</form>';
+			
+			if(isset($_SESSION['u_id'])) {
 			echo '<div id="people">
 				<div id="volunteers">';
 					$sql = "SELECT u.user_id, user_first, user_last, uniq_id, image_name, event_id, current, completed FROM users u inner join eventrelationships e on u.user_id = e.user_id left join profilepicturelocation p on p.user_id = e.user_id WHERE event_id = '".$eventId."' AND (completed >= 0) AND (current = 1 OR current IS NULL)";
@@ -360,6 +362,7 @@
 		echo '</div></div></div>';
 							}
 						}
+			}
 		} else {
 			echo '<div id="pagecontent">';
 				echo "This is not an event";
