@@ -15,7 +15,7 @@
 					if ($rowresults > 0) {
 						while ($row = mysqli_fetch_assoc($resultImg)){
 							//echo "<img id='profileimage' src='https://gastatic.s3-us-west-1.amazonaws.com/profilepicture/" . $id .  "/". $row['uniq_id']. $row['image_name'] . "'>";
-							echo "<img id='profileimage' src='https://tencharity.s3-us-west-2.amazonaws.com/profilepicture/" . $id . "/". $row['uniq_id']. $row['image_name'] . "'>";
+							echo "<img id='profileimage' src='https://" . $s3bucketname . ".s3-us-west-2.amazonaws.com/profilepicture/" . $id . "/". $row['uniq_id']. $row['image_name'] . "'>";
 						}
 					} else {
 						echo "<img id='profileimage' src='uploads/profiledefault.jpg'>";
@@ -94,7 +94,7 @@
 				if(new DateTime($item['datetime_local']) > $todayDate){
 					$eventinfo = $item['event_info'];
 					$eventid = $item['event_id'];
-					echo '<a href="https://www.tencharitychallenge.com/event/' . $eventid . '">' . $eventinfo. '</a>';
+					echo '<a href="https://tencharitychallenge.com/event/' . $eventid . '">' . $eventinfo. '</a>';
                                         echo '<form action="includes/cancelattendevent.inc.php" class="cancelattendevent" method="post" />
                                         <input type="hidden" name="eventid" value="'. $eventid.'"/>
                                         <input id="'.$eventid.'" type="submit" name="cancelattendevent" value="Cancel Attendance" />
@@ -118,7 +118,7 @@
 					$eventid = $item['event_id'];
 					$completed = $item['completed'];
 
-					echo '<a href="https://www.tencharitychallenge.com/event/' . $eventid . '">' . $eventinfo. '</a>';
+					echo '<a href="https://tencharitychallenge.com/event/' . $eventid . '">' . $eventinfo. '</a>';
 					echo '<form action="includes/confirmcompletedeventindex.inc.php" class="confirmcompletedeventindex" method="post" />
                                         <input type="hidden" name="eventid" value="'. $eventid.'"/>
                                         <input id="confirm'.$eventid.'" type="submit" class="confirmindex" name="confirmcompletedevent" value="Confirm Completion" />
@@ -177,14 +177,14 @@
 					$rowresults = mysqli_num_rows($resultImg);
 					if ($rowresults > 0) {
 						while ($row = mysqli_fetch_assoc($resultImg)){
-							echo "<img class='friendlistprofilepic' src='https://tencharity.s3-us-west-2.amazonaws.com/profilepicture/" . $userid .  "/". $row['uniq_id']. $row['image_name'] . "'>";
+							echo "<img class='friendlistprofilepic' src='https://" . $s3bucketname . ".s3-us-west-2.amazonaws.com/profilepicture/" . $userid .  "/". $row['uniq_id']. $row['image_name'] . "'>";
 						}
 					} else {
 						echo "<img class='friendlistprofilepic' src='uploads/profiledefault.jpg'>";
 					}
 					echo '</div>';
 
-					echo '<a class="friendlistname" href="https://www.tencharitychallenge.com/user/' . $userid . '">' . $firstname. ' ' . $lastname . '</a>' .
+					echo '<a class="friendlistname" href="https://tencharitychallenge.com/user/' . $userid . '">' . $firstname. ' ' . $lastname . '</a>' .
 					'<form class="removefriend" action="/removefriend.php" method="post" />
 					<input type="hidden" name="userid" value="'. $userid.'"/>
 					<input id="'.$userid.'" type="submit" name="removefriend" value="Remove Friend" />

@@ -23,7 +23,7 @@
 	use Aws\S3\Exception\S3Exception;
 	// AWS Info
 
-	$bucketName = 'tencharity';
+	$bucketName = $s3bucketname;
 	$IAM_KEY = 'AKIAYNFZXG2V7RYKEBM6';
 	$IAM_SECRET = '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';
 	// Connect to AWS

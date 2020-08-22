@@ -134,7 +134,7 @@
 							if (is_null($row['current'])) {
 								echo "<a href='https://www.tencharitychallenge.com/user/" . $row["user_id"] . "'><img class='volunteerimage' src='../uploads/profiledefault.jpg'></a>";
 							} else {
-								echo "<a href='https://www.tencharitychallenge.com/user/" . $row["user_id"] . "'><img class='volunteerimage' src='https://tencharity.s3-us-west-2.amazonaws.com/profilepicture/" . $row['user_id'] . "/". $row['uniq_id']. $row['image_name'] . "'></a>";
+								echo "<a href='https://www.tencharitychallenge.com/user/" . $row["user_id"] . "'><img class='volunteerimage' src='https://" . $s3bucketname . ".s3-us-west-2.amazonaws.com/profilepicture/" . $row['user_id'] . "/". $row['uniq_id']. $row['image_name'] . "'></a>";
 							}
                         	}
                     	}
@@ -202,7 +202,7 @@
 								$rowresults = mysqli_num_rows($resultImg);
 								if ($rowresults > 0) {
 									while ($row = mysqli_fetch_assoc($resultImg)){
-										echo "<img class='friendlistprofilepic' src='https://tencharity.s3-us-west-2.amazonaws.com/profilepicture/" . $userid .  "/". $row['uniq_id']. $row['image_name'] . "'>";
+										echo "<img class='friendlistprofilepic' src='https://" . $s3bucketname . ".s3-us-west-2.amazonaws.com/profilepicture/" . $userid .  "/". $row['uniq_id']. $row['image_name'] . "'>";
 									}
 								} else {
 										echo "<img class='friendlistprofilepic' src='../uploads/profiledefault.jpg'>";
@@ -323,7 +323,7 @@
 										$uniqId = $item['uniq_id'];
 										$imageName = $item['image_name'];
 
-										$imageURL = "<img src='https://tencharity.s3-us-west-2.amazonaws.com/event/" . $eventId. "/" . $uniqId . $imageName . "'>";
+										$imageURL = "<img src='https://" . $s3bucketname . ".s3-us-west-2.amazonaws.com/event/" . $eventId. "/" . $uniqId . $imageName . "'>";
 										//echo "<img class='eventimage' src='https://tencharity.s3-us-west-2.amazonaws.com/event/'".$eventId."'/'" .$uniqId . $image_name'">";
 										echo "<div class='eventimage'>";
 											echo $imageURL;
@@ -349,7 +349,7 @@
 									$uniqId = $item['uniq_id'];
 									$imageName = $item['image_name'];
 						
-									$imageURL = "<img class='eventimagethumb' src='https://tencharity.s3-us-west-2.amazonaws.com/event/" . $eventId. "/" . $uniqId . $imageName . "'>";
+									$imageURL = "<img class='eventimagethumb' src='https://" . $s3bucketname . ".s3-us-west-2.amazonaws.com/event/" . $eventId. "/" . $uniqId . $imageName . "'>";
 									echo "<div id='$key' class='eventimagethumbcontainers'>";
                                     echo $imageURL;
                                     echo "</div>";

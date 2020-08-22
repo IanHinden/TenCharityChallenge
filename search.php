@@ -35,7 +35,7 @@ if (isset($_SESSION['u_id'])){
 				$rowresults = mysqli_num_rows($resultImg);
 				if ($rowresults > 0) {
 					while ($row = mysqli_fetch_assoc($resultImg)){
-						echo "<a href='https://www.tencharitychallenge.com/user/".$usernumber."'><img class='searchprofileimage' src='https://tencharity.s3-us-west-2.amazonaws.com/profilepicture/" . $usernumber .  "/". $row['uniq_id']. $row['image_name'] . "'></a>";
+						echo "<a href='https://www.tencharitychallenge.com/user/".$usernumber."'><img class='searchprofileimage' src='https://" . $s3bucketname . ".s3-us-west-2.amazonaws.com/profilepicture/" . $usernumber .  "/". $row['uniq_id']. $row['image_name'] . "'></a>";
 					}
 				} else {
 					echo "<a href='https://www.tencharitychallenge.com/user/".$usernumber."'><img class='searchprofileimage' src='uploads/profiledefault.jpg'></a>";
