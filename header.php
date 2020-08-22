@@ -9,6 +9,7 @@
 <head>
 	<title>The Ten Charity Challenge</title>
 	<link rel="stylesheet" type="text/css" href="style.css"></link>
+	<link rel="icon" href="https://tencharity.s3-us-west-2.amazonaws.com/images/logos/10CC.png">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="javascript/scripts.js"></script>
 	<link href="https://fonts.googleapis.com/css?family=Montserrat|Noto+Serif+JP" rel="stylesheet"></link>
