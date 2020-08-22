@@ -23,7 +23,7 @@
 	use Aws\S3\Exception\S3Exception;
 	// AWS Info
 
-	$bucketName = 'tencharity';
+	$bucketName = $s3bucketname;
 	$IAM_KEY = 'AKIAYNFZXG2V7RYKEBM6';
 	$IAM_SECRET = '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';
 	// Connect to AWS
@@ -80,7 +80,7 @@
 	} catch (Exception $e) {
 		die('Error:' . $e->getMessage());
 	}
-	header("Location: http://www.tencharitychallenge.com/index.php");
+	header("Location: https://tencharitychallenge.com/index.php");
 	// Now that you have it working, I recommend adding some checks on the files.
 	// Example: Max size, allowed file types, etc.
 ?>
