@@ -23,10 +23,6 @@ if (isset($_POST['submit'])) {
 // This address must be verified with Amazon SES.
 $sender_email = 'donotreply@tencharitychallenge.com';
 
-// Replace these sample addresses with the addresses of your recipients. If
-// your account is still in the sandbox, these addresses must be verified.
-$recipient_emails = ['ian.hinden@gmail.com'];
-
 // Specify a configuration set. If you do not want to use a configuration
 // set, comment the following variable, and the
 // 'ConfigurationSetName' => $configuration_set argument below.
@@ -37,7 +33,12 @@ $configuration_set = 'ConfigSet';
 	$email = $_POST['email'];
 	$uid = $_POST['uid'];
 	$pwd = $_POST['pwd'];
-	
+
+
+// Replace these sample addresses with the addresses of your recipients. If
+// your account is still in the sandbox, these addresses must be verified.
+$recipient_emails = [$email];
+
 	//Error handlers
 	// Check for empty fields
 	if (empty($first)|| empty($last)|| empty($email)|| empty($uid) || empty($pwd)){
@@ -94,7 +95,7 @@ $configuration_set = 'ConfigSet';
 						mysqli_query($conn, $confirmSQL);
 
 
-                                                $url = sprintf('%sconfirm.php?%s', 'https://www.tencharitychallenge.com/', http_build_query([
+                                                $url = sprintf('%sconfirm.php?%s', 'https://' . $baseurl, http_build_query([
                                                         'selector' => $selector,
                                                         'validator' => bin2hex($token)
                                                 ]));
@@ -242,7 +243,7 @@ $configuration_set = 'ConfigSet';
 
 
 
-						header("Location: ../signup.php?signup=success");
+						header("Location: ../index.php?signup=success");
 						exit();
 					}
 				}
