@@ -95,7 +95,7 @@ $recipient_emails = [$email];
 						mysqli_query($conn, $confirmSQL);
 
 
-                                                $url = sprintf('%sconfirm.php?%s', 'https://' . $baseurl, http_build_query([
+                                                $url = sprintf('%sconfirm.php?%s', 'https://' . $baseurl . '/', http_build_query([
                                                         'selector' => $selector,
                                                         'validator' => bin2hex($token)
                                                 ]));
